@@ -6,7 +6,7 @@
     <title>אמירפאה - מרפאה וטרינרית</title>
     <link href="https://fonts.googleapis.com/css2?family=Assistant:wght@300;400;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="style.css?v=1.1">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
@@ -22,7 +22,7 @@
             <nav class="nav-links">
                 <a href="#about">אודות</a>
                 <a href="#services">השירותים</a>
-                <a href="#reviews">חוות דעת</a>
+                <a href="#testimonials">חוות דעת</a>
                 <a href="#contact">יצירת קשר</a>
             </nav>
             <div class="header-actions">
@@ -38,7 +38,7 @@
 
     <section class="hero-section">
         <div class="hero-container">
-            <div class="hero-content">
+            <div class="hero-card-overlay">
                 <h1 class="hero-title">אמירפאה</h1>
                 <h2 class="hero-subtitle">מרפאה וטרינרית <span class="heart-icon">❤️</span> עם לב גדול</h2>
                 <p class="hero-description">
@@ -46,10 +46,10 @@
                 </p>
                 <div class="hero-actions">
                     <a href="tel:072-3211711" class="btn-hero btn-orange">
-                        <i class="fas fa-phone-alt"></i> 072-3211711
+                        <i class="fa-solid fa-phone"></i> 072-3211711
                     </a>
-                    <a href="#contact" class="btn-hero btn-white">
-                        <i class="far fa-calendar-alt"></i> לקביעת תור
+                    <a href="#contact" class="btn-hero btn-outline-white">
+                        <i class="fa-regular fa-calendar-check"></i> לקביעת תור
                     </a>
                 </div>
             </div>
@@ -121,15 +121,97 @@
         </div>
     </section>
 
+    <section id="testimonials" class="testimonials-section">
+        <div class="section-title">
+            <h2>מה הלקוחות שלנו מספרים <span class="paw-icon">🐾</span></h2>
+        </div>
+        <div class="testimonials-grid">
+            <div class="testimonial-card">
+                <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                <p class="testimonial-text">"וטרינר מדהים, זמין ואנושי. ליווה אותנו ברגעים הכי קשים עם הרבה אמפתיה וסבלנות."</p>
+                <h4 class="client-name">lisamile</h4>
+            </div>
+            <div class="testimonial-card">
+                <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                <p class="testimonial-text">"מקצועי מאוד, תמיד זמין ומעניק תחושת ביטחון מלאה. מומלץ בחום."</p>
+                <h4 class="client-name">arde1976</h4>
+            </div>
+            <div class="testimonial-card">
+                <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                <p class="testimonial-text">"יחס מדהים לבעלי חיים, סבלנות ואכפתיות ברמה הגבוהה ביותר. מומלץ מאוד."</p>
+                <h4 class="client-name">אורטל יקיר</h4>
+            </div>
+        </div>
+    </section>
+
     <section id="about" class="about-section">
         <div class="about-container">
+            <div class="about-image-wrapper">
+                <img src="dr-amir.png" alt="ד"ר אמיר לבנון" class="about-image">
+            </div>
             <div class="about-content">
                 <h2>אודות ד"ר אמיר לבנון</h2>
                 <p>ד"ר אמיר לבנון מביא עמו שנות ניסיון רבות בטיפול ובליווי חיות מחמד. המרפאה הוקמה מתוך אהבה עצומה לבעלי חיים ומחויבות להעניק להם את הטיפול הרפואי המתקדם, המקצועי והרגיש ביותר.</p>
                 <p>אצלנו כל מטופל מקבל יחס אישי וחם, תוך שימוש בציוד מודרני ובטכניקות הטיפול המתקדמות ביותר.</p>
             </div>
-            <div class="about-image-wrapper">
-                <img src="dr-amir.png" alt="ד"ר אמיר לבנון" class="about-image">
+        </div>
+    </section>
+
+    <section id="contact" class="info-footer-section">
+        <div class="info-grid-container">
+            <div class="info-box">
+                <div class="info-header">
+                    <i class="fa-regular fa-clock info-main-icon"></i>
+                    <h3>שעות פעילות</h3>
+                </div>
+                <div class="info-body">
+                    <div class="time-row">
+                        <span class="day-col">ימים א' - ה'</span>
+                        <span class="hours-col">09:00 - 19:00</span>
+                    </div>
+                    <div class="time-row">
+                        <span class="day-col">יום ו'</span>
+                        <span class="hours-col">09:00 - 13:00</span>
+                    </div>
+                    <div class="time-row closed-row">
+                        <span class="day-col">יום שבת</span>
+                        <span class="hours-col">סגור</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="info-box">
+                <div class="info-header">
+                    <i class="fa-regular fa-envelope info-main-icon"></i>
+                    <h3>יצירת קשר</h3>
+                </div>
+                <div class="info-body contact-body">
+                    <a href="tel:072-3211711" class="contact-phone-link">072-3211711</a>
+                    <div class="address-detail">
+                        <i class="fa-solid fa-map-marker-alt"></i>
+                        <span>מרחביה (קיבוץ), אזור העמקים</span>
+                    </div>
+                    <a href="https://wa.me/972723211711" target="_blank" class="btn-whatsapp-footer">
+                        <i class="fa-brands fa-whatsapp"></i> שליחת הודעה בוואטסאפ
+                    </a>
+                </div>
+            </div>
+
+            <div class="info-box map-box">
+                <div class="info-header">
+                    <i class="fa-regular fa-map info-main-icon"></i>
+                    <h3>היכן אנחנו?</h3>
+                </div>
+                <div class="info-body map-body">
+                    <iframe 
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3353.4475459345244!2d35.311145299999996!3d32.5942468!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x151c56f70ca10e7b%3A0x6b4fb096e2be675b!2z157XqNeX15HXm9mK15QgK9mC15nXkdeV16Yp!5e0!3m2!1si1!2sil!4v1714734800000!5m2!1si1!2sil" 
+                        width="100%" 
+                        height="140" 
+                        style="border:0; border-radius: 8px;" 
+                        allowfullscreen="" 
+                        loading="lazy">
+                    </iframe>
+                </div>
             </div>
         </div>
     </section>
