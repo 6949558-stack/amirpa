@@ -15,12 +15,12 @@
     <div class="top-info-bar">
         <div class="top-info-container">
             <div class="top-info-right">
-                <span><i class="fa-solid fa-location-dot"></i> מרחביה (קיבוץ), עמק יזרעאל</span>
-                <span><i class="fa-solid fa-clock"></i> שעות פעילות: א'-ה' 09:00-19:00, ו' 09:00-13:00</span>
+                <span class="info-item"><i class="fa-solid fa-location-dot"></i> מרחביה (קיבוץ), עמק יזרעאל</span>
+                <span class="info-item"><i class="fa-solid fa-clock"></i> שעות פעילות: א'-ה' 09:00-19:00, ו' 09:00-13:00</span>
             </div>
             <div class="top-info-left">
-                <a href="tel:072-3211711"><i class="fa-solid fa-phone"></i> 072-3211711</a>
-                <a href="https://wa.me/972723211711" target="_blank"><i class="fa-brands fa-whatsapp"></i> וואטסאפ</a>
+                <a href="tel:072-3211711" class="info-link"><i class="fa-solid fa-phone"></i> 072-3211711</a>
+                <a href="https://wa.me/972723211711" target="_blank" class="info-link whatsapp-link"><i class="fa-brands fa-whatsapp"></i> וואטסאפ</a>
             </div>
         </div>
     </div>
@@ -28,7 +28,7 @@
     <header class="main-header">
         <div class="header-container">
             <div class="logo-area">
-                <a href="/" class="logo-link">
+                <a href="#home" class="logo-link">
                     <img src="Logo.png" alt="לוגו אמירפאה" class="site-logo">
                     <div class="logo-text">
                         <span class="brand-name">אמירפאה</span>
@@ -36,12 +36,12 @@
                     </div>
                 </a>
             </div>
-            <nav class="nav-links">
-                <a href="#home" class="active">דף הבית</a>
-                <a href="#about">אודות המרפאה</a>
-                <a href="#services">השירותים שלנו</a>
-                <a href="#faq">שאלות נפוצות</a>
-                <a href="#contact">צור קשר</a>
+            <nav class="nav-links" id="main-nav">
+                <a href="#home" class="nav-item active">דף הבית</a>
+                <a href="#about" class="nav-item">אודות המרפאה</a>
+                <a href="#services" class="nav-item">השירותים שלנו</a>
+                <a href="#faq" class="nav-item">שאלות נפוצות</a>
+                <a href="#contact" class="nav-item">צור קשר</a>
             </nav>
             <div class="header-actions">
                 <a href="#contact" class="btn-booking-nav">
@@ -55,11 +55,13 @@
         <div class="hero-overlay"></div>
         <div class="hero-container">
             <div class="hero-content-box">
-                <div class="hero-badge"><i class="fa-solid fa-shield-dog"></i> רפואה וטרינרית מתקדמת</div>
+                <div class="hero-badge">
+                    <i class="fa-solid fa-shield-dog"></i> רפואה וטרינרית מתקדמת
+                </div>
                 <h1 class="hero-title">אמירפאה</h1>
                 <h2 class="hero-subtitle">מרפאה וטרינרית <span class="heart-icon">❤️</span> עם לב גדול</h2>
                 <p class="hero-description">
-                    ברוכים הבאים לאמירפאה, הבית השני של חיות המחמד שלכם. אנו מעניקים מעטפת רפואית מלאה, מתקדמת ומכל הלב לכלבים, חתולים וחיות מחמד נוספות, תוך שימוש בציוד הרפואי החדיש ביותר ויחס אישי לכל מטופל.
+                    ברוכים הבאים לאמירפאה, הבית השני של חיות המחמד שלכם. אנו מעניקים מעטפת רפואית מלאה, מתקדמת ומכל הלב לכלבים, חתולים וחיות מחמד נוספות, תוך שימוש בציוד הרפואי החדיש ביותר ויחס אישי לכל מטופל ומטופלת.
                 </p>
                 <div class="hero-actions">
                     <a href="#contact" class="btn btn-booking">
@@ -118,7 +120,7 @@
         <div class="section-header">
             <span class="section-subtitle">מה אנחנו מציעים</span>
             <h2 class="section-title">השירותים הרפואיים שלנו <span class="paw-icon">🐾</span></h2>
-            <p class="section-desc">המרפאה מציעה מגוון רחב של טיפולים וטרינריים מתקדמים תחת קורת גג אחת, תוך שמירה על סטנדרטים רפואיים גבוהים ביותר.</p>
+            <p class="section-desc">המרפאה מציעה מגוון רחב של טיפולים וטרינריים מתקדמים תחת קורת גג אחת, תוך שמירה על הסטנדרטים הרפואיים הגבוהים ביותר.</p>
         </div>
         <div class="services-grid">
             <div class="service-card">
@@ -172,7 +174,7 @@
                 <div class="about-decorator"></div>
                 <p class="about-lead">ד"ר אמיר לבנון מקדיש את חייו המקצועיים לטיפול וליווי רפואי של בעלי חיים, מתוך אהבה עמוקה ומחויבות אמיתית לבריאותם ורווחתם.</p>
                 <p class="about-body">המרפאה הוקמה מתוך חזון להעניק לתושבי עמק יזרעאל והסביבה מענה וטרינרי מתקדם, נגיש ובגובה העיניים. אנו מאמינים כי טיפול רפואי מוצלח מתחיל בהקשבה לבעלים, יצירת סביבה רגועה לבעל החיים ושימוש בידע וטרינרי עדכני.</p>
-                <p class="about-body">אצלנו באמירפאה כל מטופל מקבל את מלוא תשומת הלב. אנו משלבים ניסיון קליני עשיר יחד עם ציוד רפואי חדשני כדי להגיע לאבחון מדויק וטיפול יעיל ככל הניתן.</p>
+                <p class="about-body">אצלנו באמירפאה כל מטופל ומטופלת מקבלים את מלוא תשומת הלב. אנו משלבים ניסיון קליני עשיר יחד עם ציוד רפואי חדשני כדי להגיע לאבחון מדויק וטיפול יעיל ככל הניתן.</p>
                 <div class="about-highlights">
                     <div class="highlight-item">
                         <i class="fa-solid fa-circle-check"></i>
@@ -242,7 +244,7 @@
             <div class="section-header">
                 <span class="section-subtitle">מידע נוסף</span>
                 <h2 class="section-title">שאלות נפוצות <span class="paw-icon">🐾</span></h2>
-                <p class="section-desc">ריכזנו עבורכם את השאלות הנפוצות ביותר שבעלי חיות מחמד שואלים אותנו. לא מצאתם תשובה? אנחנו תמיד זמינים עבורכם.</p>
+                <p class="section-desc">ריכזנו עבורכם את השאלות הנפוצות ביותר שבעלי חיות מחמד שואלים אותנו. לא מצאתם תשובה? אנחנו תמיד כאן עבורכם.</p>
             </div>
 
             <div class="faq-grid">
@@ -252,7 +254,9 @@
                         <i class="fa-solid fa-plus faq-icon"></i>
                     </button>
                     <div class="faq-answer">
-                        <p>אנו ממליצים על בדיקה שנתית מקיפה לכלבים צעירים ובוגרים. עבור כלבים מבוגרים (מעל גיל 7), מומלץ להגיע לבדיקה תקופתית בכל חצי שנה כדי להקדים ולזהות בעיות בריאותיות האופייניות לגיל השלישי.</p>
+                        <div class="faq-answer-inner">
+                            <p>אנו ממליצים על בדיקה שנתית מקיפה לכלבים צעירים ובוגרים. עבור כלבים מבוגרים (מעל גיל 7), מומלץ להגיע לבדיקה תקופתית בכל חצי שנה כדי להקדים ולזהות בעיות בריאותיות האופייניות לגיל השלישי.</p>
+                        </div>
                     </div>
                 </div>
 
@@ -262,7 +266,9 @@
                         <i class="fa-solid fa-plus faq-icon"></i>
                     </button>
                     <div class="faq-answer">
-                        <p>קביעת תור מתבצעת בקלות באמצעות מילוי הטופס כאן באתר, פנייה ישירה בוואטסאפ או בשיחת טלפון קצרה. במידה ומדובר במקרה חירום – מומלץ להתקשר ישירות לטלפון הזמין שלנו ללא דילוי.</p>
+                        <div class="faq-answer-inner">
+                            <p>קביעת תור מתבצעת בקלות באמצעות מילוי הטופס כאן באתר, פנייה ישירה בוואטסאפ או בשיחת טלפון קצרה. במידה ומדובר במקרה חירום – מומלץ להתקשר ישירות לטלפון הזמין שלנו ללא דילוי.</p>
+                        </div>
                     </div>
                 </div>
 
@@ -272,7 +278,9 @@
                         <i class="fa-solid fa-plus faq-icon"></i>
                     </button>
                     <div class="faq-answer">
-                        <p>בהחלט. המרפאה מספקת את כל מערך החיסונים המניעתיים: חיסוני משושה וכלבת לכלבים (כולל שבב), חיסוני מרובע לחתולים, וטיפולים תקופתיים נגד תולעים, פרעושים וקרציות.</p>
+                        <div class="faq-answer-inner">
+                            <p>בהחלט. המרפאה מספקת את כל מערך החיסונים המניעתיים: חיסוני משושה וכלבת לכלבים (כולל שבב), חיסוני מרובע לחתולים, וטיפולים תקופתיים נגד תולעים, פרעושים וקרציות.</p>
+                        </div>
                     </div>
                 </div>
 
@@ -282,7 +290,9 @@
                         <i class="fa-solid fa-plus faq-icon"></i>
                     </button>
                     <div class="faq-answer">
-                        <p>הבריאות של בעלי החיים שלכם היא מעל הכל. במקרה חירום דחוף מחוץ לשעות הפעילות הרגילות, ניתן ליצור איתנו קשר במספר החירום שלנו המופיע באתר לקבלת מענה מהיר והנחיות להמשך טיפול.</p>
+                        <div class="faq-answer-inner">
+                            <p>הבריאות של בעלי החיים שלכם היא מעל הכל. במקרה חירום דחוף מחוץ לשעות הפעילות הרגילות, ניתן ליצור איתנו קשר במספר החירום שלנו המופיע באתר לקבלת מענה מהיר והנחיות להמשך טיפול.</p>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -294,7 +304,7 @@
             <div class="contact-info-col">
                 <span class="contact-tag">דברו איתנו</span>
                 <h2>נשמח לעמוד לרשותכם</h2>
-                <p class="contact-lead">זקוקים לחיסון, בדיקה תקופתית או ייעוץ רפואי? צרו איתנו קשר עוד היום ונחזור אליכם בהקדם.</p>
+                <p class="contact-lead">זקוקים לחיסון, בדיקה תקופתית או ייעוץ רפואי? צרו איתנו קשר עוד היום ונחזור אליכם בהקדם האפשרי.</p>
                 <div class="contact-details-list">
                     <div class="contact-detail-item">
                         <div class="detail-icon"><i class="fa-solid fa-phone"></i></div>
@@ -359,7 +369,7 @@
         </div>
     </section>
 
-    <a href="https://wa.me/972723211711" class="whatsapp-fixed-btn" target="_blank" title="שלחו לנו הודעה בוואטסאפ">
+    <a href="https://wa.me/972723211711" class="whatsapp-fixed-btn" target="_blank" aria-label="שלחו הודעה בוואטסאפ">
         <i class="fa-brands fa-whatsapp"></i>
     </a>
 
@@ -398,23 +408,32 @@
     </footer>
 
     <script>
-        const faqItems = document.querySelectorAll('.faq-item');
-        faqItems.forEach(item => {
-            const question = item.querySelector('.faq-question');
-            question.addEventListener('click', () => {
-                faqItems.forEach(otherItem => {
-                    if (otherItem !== item && otherItem.classList.contains('active')) {
-                        otherItem.classList.remove('active');
-                        otherItem.querySelector('.faq-icon').classList.replace('fa-minus', 'fa-plus');
+        document.addEventListener('DOMContentLoaded', () => {
+            const faqItems = document.querySelectorAll('.faq-item');
+            
+            faqItems.forEach(item => {
+                const questionBtn = item.querySelector('.faq-question');
+                
+                questionBtn.addEventListener('click', () => {
+                    const isActive = item.classList.contains('active');
+                    
+                    // סגירת פריטים אחרים שפתוחים
+                    faqItems.forEach(otherItem => {
+                        if (otherItem !== item && otherItem.classList.contains('active')) {
+                            otherItem.classList.remove('active');
+                            otherItem.querySelector('.faq-icon').classList.replace('fa-minus', 'fa-plus');
+                        }
+                    });
+                    
+                    // שינוי מצב לפריט הנוכחי
+                    if (!isActive) {
+                        item.classList.add('active');
+                        questionBtn.querySelector('.faq-icon').classList.replace('fa-plus', 'fa-minus');
+                    } else {
+                        item.classList.remove('active');
+                        questionBtn.querySelector('.faq-icon').classList.replace('fa-minus', 'fa-plus');
                     }
                 });
-                const isActive = item.classList.toggle('active');
-                const icon = question.querySelector('.faq-icon');
-                if (isActive) {
-                    icon.classList.replace('fa-plus', 'fa-minus');
-                } else {
-                    icon.classList.replace('fa-minus', 'fa-plus');
-                }
             });
         });
     </script>
