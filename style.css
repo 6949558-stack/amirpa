@@ -53,7 +53,7 @@ img {
     display: block;
 }
 
-/* TOP ACCESSIBILITY BAR */
+/* TOP INFO BAR */
 .top-info-bar {
     background-color: var(--primary-color);
     color: var(--bg-white);
@@ -128,7 +128,6 @@ img {
     gap: 12px;
 }
 
-/* מוגדל את הלוגו */
 .site-logo {
     height: 110px;
     width: auto;
@@ -561,7 +560,7 @@ img {
     opacity: 0.9;
 }
 
-/* ABOUT SECTION (DR AMIR) */
+/* ABOUT SECTION (DR AMIR HALPERIN) */
 .about-section {
     max-width: var(--max-width);
     margin: 110px auto;
@@ -695,7 +694,7 @@ img {
 }
 
 .test-stars {
-    color: #ffaa00;
+    color: var(--accent-color); /* שינוי לכתום של המותג */
     margin-bottom: 18px;
     font-size: 14px;
 }
@@ -930,8 +929,6 @@ img {
     background-color: #0d121c;
     color: #a0aec0;
     padding: 70px 0 0 0;
-    direction: rtl;
-    text-align: right;
 }
 
 .footer-container {
@@ -943,30 +940,25 @@ img {
     gap: 60px;
 }
 
-.footer-logo {
-    display: flex;
-    flex-direction: column;
-    gap: 4px;
-}
-
 .footer-brand {
     font-size: 28px;
     color: var(--bg-white);
     font-weight: 800;
-    line-height: 1.2;
+    display: block;
 }
 
 .footer-sub {
-    font-size: 13px;
+    font-size: 12px;
     color: var(--accent-color);
     font-weight: 700;
+    display: block;
+    margin-top: 2px;
 }
 
 .about-col p {
     font-size: 14px;
     line-height: 1.7;
     margin-top: 18px;
-    color: #a0aec0;
 }
 
 .footer-col h4 {
@@ -999,13 +991,11 @@ img {
     display: flex;
     align-items: center;
     gap: 8px;
-    color: #a0aec0;
-    transition: var(--transition);
 }
 
 .links-col a:hover {
     color: var(--accent-color);
-    transform: translateX(-4px);
+    padding-right: 4px;
 }
 
 .links-col i {
@@ -1015,19 +1005,17 @@ img {
 .hours-col p {
     font-size: 14px;
     margin-bottom: 14px;
-    color: #a0aec0;
 }
 
 .hours-col strong {
     color: var(--bg-white);
 }
 
-/* FOOTER BOTTOM */
 .footer-bottom {
     border-top: 1px solid rgba(255,255,255,0.05);
     padding: 24px 20px;
     font-size: 13px;
-    background-color: #090d14;
+    text-align: center;
 }
 
 .footer-bottom-container {
@@ -1037,30 +1025,10 @@ img {
     justify-content: space-between;
     align-items: center;
     flex-wrap: wrap;
-    gap: 15px;
-    color: #718096;
-}
-
-.footer-bottom-container p {
-    margin: 0;
-}
-
-.footer-legal-links {
-    display: flex;
     gap: 12px;
-    align-items: center;
 }
 
-.footer-legal-links a {
-    color: #718096;
-    transition: var(--transition);
-}
-
-.footer-legal-links a:hover {
-    color: var(--accent-color);
-}
-
-/* RESPONSIVE DESIGN */
+/* RESPONSIVE DESIGN - MEDIA QUERIES */
 @media (max-width: 1024px) {
     .hero-section {
         height: auto;
@@ -1146,20 +1114,5 @@ img {
     }
     .testimonials-grid {
         grid-template-columns: 1fr;
-    }
-    .footer-col h4::after {
-        right: 50%;
-        transform: translateX(50%);
-    }
-    .links-col a {
-        justify-content: center;
-    }
-    .footer-bottom-container {
-        flex-direction: column;
-        text-align: center;
-        gap: 12px;
-    }
-    .footer-legal-links {
-        justify-content: center;
     }
 }
