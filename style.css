@@ -1,38 +1,27 @@
-/* CSS VARIABLES - THEMES & BRAND COLORS */
+/* ==========================================
+   1. הגדרות בסיס ואיפוס (CSS Reset)
+========================================== */
 :root {
-    --primary-color: #001a4d;      /* כחול כהה נקי */
-    --accent-color: #ff6600;       /* כתום מותג */
-    --hover-color: #e65c00;        /* כתום כהה לריחוף */
-    --text-color: #2b2b2b;         /* צבע טקסט ראשי */
-    --bg-light: #f4f7f6;           /* רקע בהיר נקי */
-    --bg-white: #ffffff;           /* לבן מלא */
-    --gray-light: #f8f9fa;         /* אפור בהיר מאוד */
-    --border-color: #e2e8f0;       /* צבע גבול */
-    --success-color: #28a745;      /* ירוק הצלחה */
-    --danger-color: #dc3545;       /* אדום לבבות וחירום */
-    --max-width: 1200px;
-    --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
-    --shadow-sm: 0 2px 4px rgba(0,0,0,0.05);
-    --shadow-md: 0 4px 12px rgba(0,0,0,0.08);
-    --shadow-lg: 0 10px 30px rgba(0,0,0,0.12);
+    --primary-color: #0d6efd;
+    --primary-hover: #0b5ed7;
+    --secondary-color: #ff7b00;
+    --secondary-hover: #e66f00;
+    --dark-color: #1e293b;
+    --light-bg: #f8fafc;
+    --border-color: #e2e8f0;
+    --font-family: 'Assistant', 'Heebo', sans-serif;
 }
 
-/* RESET & CORE DEFAULTS */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-html {
-    scroll-behavior: smooth;
-}
-
 body {
-    font-family: 'Assistant', 'Heebo', sans-serif;
-    direction: rtl;
-    background-color: var(--bg-light);
-    color: var(--text-color);
+    font-family: var(--font-family);
+    background-color: #ffffff;
+    color: var(--dark-color);
     line-height: 1.6;
     overflow-x: hidden;
 }
@@ -40,31 +29,21 @@ body {
 a {
     text-decoration: none;
     color: inherit;
-    transition: var(--transition);
+    transition: all 0.3s ease;
 }
 
-ul {
-    list-style: none;
-}
-
-img {
-    max-width: 100%;
-    height: auto;
-    display: block;
-}
-
-/* TOP INFO BAR */
+/* ==========================================
+   2. סרגל מידע עליון (Top Info Bar)
+========================================== */
 .top-info-bar {
-    background-color: var(--primary-color);
-    color: var(--bg-white);
-    padding: 8px 0;
-    font-size: 13px;
-    font-weight: 500;
-    border-bottom: 1px solid rgba(255,255,255,0.1);
+    background-color: var(--dark-color);
+    color: #ffffff;
+    font-size: 13.5px;
+    padding: 10px 0;
 }
 
 .top-info-container {
-    max-width: var(--max-width);
+    max-width: 1200px;
     margin: 0 auto;
     padding: 0 20px;
     display: flex;
@@ -74,47 +53,35 @@ img {
     gap: 10px;
 }
 
-.top-info-right {
+.top-info-right, .top-info-left {
     display: flex;
+    align-items: center;
     gap: 20px;
-    align-items: center;
 }
 
-.top-info-right span {
-    display: flex;
-    align-items: center;
-    gap: 6px;
-}
-
-.top-info-left {
-    display: flex;
-    gap: 15px;
-    align-items: center;
-}
-
-.top-info-left a {
-    display: flex;
-    align-items: center;
-    gap: 6px;
-    color: var(--bg-white);
+.top-info-right span i, .top-info-left a i {
+    color: var(--secondary-color);
+    margin-left: 6px;
 }
 
 .top-info-left a:hover {
-    color: var(--accent-color);
+    color: var(--primary-color);
 }
 
-/* NAVIGATION HEADER */
+/* ==========================================
+   3. תפריט ניווט ראשי (Main Header)
+========================================== */
 .main-header {
-    background-color: var(--bg-white);
-    box-shadow: var(--shadow-sm);
+    background-color: #ffffff;
+    border-bottom: 1px solid var(--border-color);
     position: sticky;
     top: 0;
     z-index: 1000;
-    transition: var(--transition);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.02);
 }
 
 .header-container {
-    max-width: var(--max-width);
+    max-width: 1200px;
     margin: 0 auto;
     padding: 12px 20px;
     display: flex;
@@ -129,8 +96,9 @@ img {
 }
 
 .site-logo {
-    height: 110px;
+    height: 52px;
     width: auto;
+    object-fit: contain;
 }
 
 .logo-text {
@@ -139,87 +107,65 @@ img {
 }
 
 .brand-name {
-    font-size: 26px;
-    color: var(--primary-color);
+    font-size: 22px;
     font-weight: 800;
+    color: var(--primary-color);
     line-height: 1.1;
-    letter-spacing: -0.5px;
 }
 
 .brand-sub {
-    font-size: 12px;
-    color: var(--accent-color);
-    font-weight: 700;
-    letter-spacing: 0.5px;
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--dark-color);
 }
 
 .nav-links {
     display: flex;
-    gap: 30px;
+    gap: 25px;
 }
 
 .nav-links a {
-    color: #4a5568;
-    font-weight: 600;
     font-size: 16px;
-    position: relative;
-    padding: 6px 0;
+    font-weight: 600;
+    color: var(--dark-color);
+    padding: 8px 0;
+    border-bottom: 2px solid transparent;
 }
 
-.nav-links a:hover,
-.nav-links a.active {
+.nav-links a:hover, .nav-links a.active {
     color: var(--primary-color);
-}
-
-.nav-links a::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    right: 0;
-    width: 0;
-    height: 3px;
-    background-color: var(--accent-color);
-    transition: var(--transition);
-    border-radius: 2px;
-}
-
-.nav-links a:hover::after,
-.nav-links a.active::after {
-    width: 100%;
+    border-bottom-color: var(--primary-color);
 }
 
 .btn-booking-nav {
-    color: var(--primary-color);
-    border: 2px solid var(--primary-color);
+    background-color: var(--secondary-color);
+    color: #ffffff;
     padding: 10px 22px;
-    border-radius: 8px;
+    border-radius: 50px;
     font-weight: 700;
     font-size: 15px;
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
+    box-shadow: 0 4px 12px rgba(255, 123, 0, 0.25);
 }
 
 .btn-booking-nav:hover {
-    background-color: var(--primary-color);
-    color: var(--bg-white);
+    background-color: var(--secondary-hover);
     transform: translateY(-2px);
-    box-shadow: var(--shadow-sm);
 }
 
-/* HERO SECTION - BACKGROUND & TRANSPARENT CONTENT BOX */
+.btn-booking-nav i {
+    margin-left: 6px;
+}
+
+/* ==========================================
+   4. אזור הירו (Hero Section)
+========================================== */
 .hero-section {
-    background-image: url('באנר2.png');
-    background-repeat: no-repeat;
-    background-position: right center;
-    background-size: cover;
-    width: 100%;
-    min-height: 620px;
-    height: 85vh;
+    position: relative;
+    background: url('באנר.png') no-repeat center center/cover;
+    min-height: 580px;
     display: flex;
     align-items: center;
-    position: relative;
-    z-index: 1;
+    padding: 60px 0;
 }
 
 .hero-overlay {
@@ -228,73 +174,60 @@ img {
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(135deg, rgba(0,26,77,0.45) 0%, rgba(0,0,0,0.1) 100%);
-    z-index: 2;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.95) 30%, rgba(255, 255, 255, 0.4) 100%);
+    z-index: 1;
 }
 
 .hero-container {
-    width: 100%;
-    max-width: var(--max-width);
+    max-width: 1200px;
     margin: 0 auto;
     padding: 0 20px;
+    width: 100%;
     position: relative;
-    z-index: 3;
-    display: flex;
-    justify-content: flex-start;
+    z-index: 2;
 }
 
 .hero-content-box {
-    max-width: 580px;
-    background-color: rgba(255, 255, 255, 0.95);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    padding: 45px;
-    border-radius: 16px;
-    color: var(--text-color);
-    direction: rtl;
-    text-align: right;
-    box-shadow: var(--shadow-lg);
-    border: 1px solid rgba(255,255,255,0.6);
+    max-width: 620px;
 }
 
 .hero-badge {
     display: inline-flex;
     align-items: center;
     gap: 8px;
-    background-color: rgba(0, 26, 77, 0.06);
+    background-color: rgba(13, 110, 253, 0.1);
     color: var(--primary-color);
-    padding: 8px 16px;
+    padding: 8px 18px;
     border-radius: 50px;
-    font-size: 13px;
     font-weight: 700;
-    text-transform: uppercase;
+    font-size: 14px;
     margin-bottom: 20px;
 }
 
 .hero-title {
-    font-size: 64px;
+    font-size: 56px;
     font-weight: 800;
-    color: var(--primary-color);
+    color: var(--dark-color);
     line-height: 1.1;
     margin-bottom: 12px;
 }
 
 .hero-subtitle {
-    font-size: 28px;
-    font-weight: 600;
-    color: #4a5568;
+    font-size: 26px;
+    font-weight: 700;
+    color: var(--primary-color);
     margin-bottom: 20px;
 }
 
-.heart-icon {
-    color: var(--danger-color);
+.hero-subtitle .heart-icon {
+    color: #ef4444;
 }
 
 .hero-description {
-    font-size: 17px;
-    line-height: 1.7;
-    color: #4a5568;
+    font-size: 17.5px;
+    color: #4b5563;
     margin-bottom: 35px;
+    max-width: 560px;
 }
 
 .hero-actions {
@@ -304,224 +237,133 @@ img {
 }
 
 .btn {
+    padding: 13px 30px;
+    border-radius: 50px;
+    font-weight: 700;
+    font-size: 16px;
     display: inline-flex;
     align-items: center;
-    justify-content: center;
-    gap: 10px;
-    padding: 14px 30px;
-    font-size: 16px;
-    font-weight: 700;
-    border-radius: 8px;
-    cursor: pointer;
-    box-shadow: var(--shadow-sm);
+    gap: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
 }
 
 .btn-booking {
-    background-color: var(--accent-color);
-    color: var(--bg-white);
+    background-color: var(--secondary-color);
+    color: #ffffff;
 }
 
 .btn-booking:hover {
-    background-color: var(--hover-color);
+    background-color: var(--secondary-hover);
     transform: translateY(-3px);
-    box-shadow: 0 6px 20px rgba(255,102,0,0.3);
 }
 
 .btn-call {
-    background-color: var(--bg-white);
-    color: var(--primary-color);
-    border: 2px solid var(--primary-color);
+    background-color: #ffffff;
+    color: var(--dark-color);
+    border: 2px solid var(--border-color);
 }
 
 .btn-call:hover {
-    background-color: var(--primary-color);
-    color: var(--bg-white);
+    background-color: var(--light-bg);
+    border-color: #cbd5e1;
     transform: translateY(-3px);
-    box-shadow: 0 6px 20px rgba(0,26,77,0.15);
 }
 
-/* FLOATING ADVANTAGES BAR */
-.features-bar {
-    max-width: 1120px;
-    margin: -50px auto 0 auto;
-    background-color: var(--bg-white);
-    box-shadow: var(--shadow-lg);
-    border-radius: 14px;
-    position: relative;
-    z-index: 100;
-    border: 1px solid rgba(0,0,0,0.03);
+/* ==========================================
+   5. אזור השירותים (Services Section)
+========================================== */
+.services-section {
+    padding: 90px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
-.bar-container {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    padding: 24px;
-}
-
-.feature-item {
-    display: flex;
-    align-items: center;
-    gap: 16px;
-    justify-content: center;
-    border-left: 1px solid var(--border-color);
-    padding: 0 10px;
-}
-
-.feature-item:last-child {
-    border-left: none;
-}
-
-.feature-icon {
-    font-size: 32px;
-    width: 60px;
-    height: 60px;
-    background-color: var(--gray-light);
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-shrink: 0;
-}
-
-.icon-blue { background-color: #ebf4ff; color: #3182ce; }
-.icon-gold { background-color: #fffaf0; color: #dd6b20; }
-.icon-pink { background-color: #fff5f5; color: #e53e3e; }
-.icon-green { background-color: #f0fff4; color: #38a169; }
-
-.feature-info h3 {
-    font-size: 17px;
-    font-weight: 700;
-    color: var(--primary-color);
-    margin-bottom: 2px;
-}
-
-.feature-info p {
-    font-size: 13px;
-    color: #718096;
-}
-
-/* SECTION HEADERS UTILITY */
 .section-header {
     text-align: center;
-    max-width: 750px;
-    margin: 0 auto 55px auto;
+    margin-bottom: 60px;
 }
 
 .section-subtitle {
-    font-size: 13px;
+    color: var(--secondary-color);
     font-weight: 700;
-    color: var(--accent-color);
+    font-size: 15px;
     text-transform: uppercase;
     letter-spacing: 1px;
     display: block;
-    margin-bottom: 8px;
+    margin-bottom: 10px;
 }
 
 .section-title {
-    font-size: 36px;
-    color: var(--primary-color);
+    font-size: 38px;
     font-weight: 800;
-    margin-bottom: 12px;
+    color: var(--dark-color);
+    margin-bottom: 15px;
 }
 
 .section-desc {
-    font-size: 16px;
-    color: #718096;
-}
-
-.paw-icon {
-    color: var(--accent-color);
-}
-
-/* SERVICES SECTION */
-.services-section {
-    max-width: var(--max-width);
-    margin: 100px auto;
-    padding: 0 20px;
+    font-size: 17px;
+    color: #64748b;
+    max-width: 650px;
+    margin: 0 auto;
 }
 
 .services-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 24px;
+    gap: 30px;
 }
 
 .service-card {
-    background-color: var(--bg-white);
+    background-color: #ffffff;
     border: 1px solid var(--border-color);
-    border-radius: 12px;
-    padding: 40px 30px;
-    text-align: right;
-    transition: var(--transition);
-    box-shadow: var(--shadow-sm);
-}
-
-.service-card:hover {
-    transform: translateY(-8px);
-    box-shadow: var(--shadow-lg);
-    border-color: rgba(255,102,0,0.3);
+    border-radius: 16px;
+    padding: 35px 30px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.01);
 }
 
 .service-card-icon {
-    font-size: 36px;
-    color: var(--accent-color);
-    background-color: rgba(255,102,0,0.08);
-    width: 74px;
-    height: 74px;
-    border-radius: 12px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-bottom: 24px;
-    transition: var(--transition);
-}
-
-.service-card:hover .service-card-icon {
-    background-color: var(--accent-color);
-    color: var(--bg-white);
-}
-
-.active-card {
-    border-color: rgba(0,26,77,0.15);
-    background-color: #fafbfc;
-}
-
-.active-card .service-card-icon {
+    font-size: 38px;
     color: var(--primary-color);
-    background-color: rgba(0,26,77,0.06);
-}
-
-.active-card:hover .service-card-icon {
-    background-color: var(--primary-color);
-    color: var(--bg-white);
+    margin-bottom: 22px;
 }
 
 .service-card h3 {
-    font-size: 20px;
-    color: var(--primary-color);
+    font-size: 21px;
     font-weight: 700;
+    color: var(--dark-color);
     margin-bottom: 12px;
 }
 
 .service-card p {
-    font-size: 14px;
-    color: #4a5568;
-    line-height: 1.6;
+    font-size: 15.5px;
+    color: #64748b;
 }
 
-/* IMAGE COVER AREA (PETS SECTION) */
+.active-card {
+    border-color: var(--primary-color);
+    background-color: #f0f7ff;
+    box-shadow: 0 10px 25px rgba(13, 110, 253, 0.08);
+}
+
+.active-card .service-card-icon {
+    color: var(--primary-hover);
+}
+
+/* ==========================================
+   6. באנר החיות (Pets Section)
+========================================== */
 .pets-image-section {
-    max-width: var(--max-width);
-    margin: 100px auto;
-    padding: 0 20px;
+    padding: 20px 0;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 .pets-image-wrapper {
     position: relative;
-    border-radius: 16px;
-    overflow: hidden;
-    box-shadow: var(--shadow-lg);
+    width: 100%;
     height: 480px;
+    border-radius: 24px;
+    overflow: hidden;
 }
 
 .pets-main-img {
@@ -529,24 +371,16 @@ img {
     height: 100%;
     object-fit: cover;
     object-position: center;
-    transition: transform 5s ease;
-}
-
-.pets-image-wrapper:hover .pets-main-img {
-    transform: scale(1.04);
 }
 
 .pets-img-overlay {
     position: absolute;
     bottom: 0;
     right: 0;
-    left: 0;
-    background: linear-gradient(to top, rgba(0,26,77,0.85) 0%, rgba(0,26,77,0) 100%);
-    padding: 50px 40px 40px 40px;
-    color: var(--bg-white);
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
+    width: 100%;
+    padding: 50px 40px;
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.75) 0%, rgba(0, 0, 0, 0) 100%);
+    color: #ffffff;
 }
 
 .pets-img-overlay h3 {
@@ -556,601 +390,254 @@ img {
 }
 
 .pets-img-overlay p {
-    font-size: 16px;
-    opacity: 0.9;
+    font-size: 18px;
+    max-width: 600px;
+    opacity: 0.95;
 }
 
-/* ABOUT SECTION (DR AMIR HALPERIN) */
+/* ==========================================
+   7. אודות הרופא (About Section)
+========================================== */
 .about-section {
-    max-width: var(--max-width);
-    margin: 110px auto;
-    padding: 0 20px;
+    padding: 100px 20px;
+    background-color: var(--light-bg);
 }
 
 .about-container {
+    max-width: 1200px;
+    margin: 0 auto;
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1.1fr 0.9fr;
     gap: 60px;
     align-items: center;
 }
 
-.about-text-content {
-    direction: rtl;
-    text-align: right;
-}
-
 .about-tag {
-    font-size: 13px;
+    color: var(--primary-color);
     font-weight: 700;
-    color: var(--accent-color);
-    text-transform: uppercase;
+    font-size: 15px;
+    letter-spacing: 1px;
     display: block;
-    margin-bottom: 8px;
+    margin-bottom: 10px;
 }
 
 .about-text-content h2 {
     font-size: 38px;
-    color: var(--primary-color);
     font-weight: 800;
-    margin-bottom: 12px;
+    color: var(--dark-color);
+    margin-bottom: 15px;
 }
 
 .about-decorator {
-    width: 60px;
-    height: 4px;
-    background-color: var(--accent-color);
-    margin-bottom: 26px;
-    border-radius: 2px;
+    width: 65px;
+    height: 5px;
+    background-color: var(--secondary-color);
+    border-radius: 10px;
+    margin-bottom: 25px;
 }
 
 .about-lead {
     font-size: 19px;
-    line-height: 1.7;
-    color: #2d3748;
-    font-weight: 600;
+    font-weight: 700;
+    color: var(--primary-color);
     margin-bottom: 18px;
 }
 
 .about-body {
-    font-size: 16px;
-    line-height: 1.7;
-    color: #4a5568;
-    margin-bottom: 18px;
-}
-
-.about-highlights {
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-    margin-top: 25px;
-}
-
-.highlight-item {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-}
-
-.highlight-item i {
-    color: var(--success-color);
-    font-size: 18px;
-}
-
-.highlight-item span {
-    font-weight: 600;
-    font-size: 15px;
-    color: var(--primary-color);
-}
-
-.about-image-column {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.about-img-frame {
-    position: relative;
-    border-radius: 16px;
-    overflow: hidden;
-    box-shadow: var(--shadow-lg);
-    border: 4px solid var(--bg-white);
-    background-color: var(--bg-white);
+    font-size: 16.5px;
+    color: #4b5563;
+    margin-bottom: 16px;
 }
 
 .about-doctor-img {
     width: 100%;
-    object-fit: cover;
-    border-radius: 12px;
-    transition: transform 0.4s ease;
+    height: auto;
+    border-radius: 20px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08);
 }
 
-/* TESTIMONIALS SECTION - ADDED BRAND BACKGROUND FOR HEADER */
+/* ==========================================
+   8. המלצות וחוות דעת (Testimonials)
+========================================== */
 .testimonials-section {
-    background-color: var(--gray-light);
-    padding: 95px 20px;
+    padding: 100px 20px;
+    background-color: #ffffff;
 }
 
 .testimonials-header-with-bg {
-    background-image: url('ChatGPT Image May 3, 2026, 06_34_20 PM.png');
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
-    padding: 50px 30px;
-    border-radius: 14px;
-    margin-bottom: 55px;
     text-align: center;
-    box-shadow: var(--shadow-md);
-    position: relative;
-    overflow: hidden;
-}
-
-/* Overlay for header to make text stand out */
-.testimonials-header-with-bg::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 26, 77, 0.4);
-    z-index: 1;
-}
-
-.testimonials-header-with-bg .section-subtitle,
-.testimonials-header-with-bg .section-title,
-.testimonials-header-with-bg .section-desc {
-    position: relative;
-    z-index: 2;
-    color: var(--bg-white);
-}
-
-.testimonials-header-with-bg .section-subtitle {
-    color: #ffca28; /* צבע בהיר יותר כדי שיבלוט על הרקע */
+    padding: 40px 20px;
+    background-image: url('טביעות-רגליים.png');
+    background-repeat: repeat;
+    background-position: center;
+    background-size: 220px auto;
+    background-color: rgba(13, 110, 253, 0.03);
+    border-radius: 20px;
+    margin-bottom: 50px;
+    border: 1px dashed var(--border-color);
 }
 
 .testimonials-grid {
-    max-width: var(--max-width);
+    max-width: 1200px;
     margin: 0 auto;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 28px;
+    gap: 30px;
 }
 
 .testimonial-card {
-    background-color: var(--bg-white);
-    border-radius: 14px;
-    padding: 35px;
-    box-shadow: var(--shadow-sm);
-    transition: var(--transition);
-    display: flex;
-    flex-direction: column;
-}
-
-.testimonial-card:hover {
-    transform: translateY(-5px);
-    box-shadow: var(--shadow-lg);
+    background-color: #ffffff;
+    border: 1px solid var(--border-color);
+    border-radius: 16px;
+    padding: 35px 30px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.01);
 }
 
 .test-stars {
-    color: var(--accent-color); /* שינוי לכתום של המותג */
+    color: #ffb703;
+    font-size: 15px;
     margin-bottom: 18px;
-    font-size: 14px;
 }
 
 .test-text {
-    font-size: 15px;
-    color: #4a5568;
-    line-height: 1.7;
+    font-size: 15.5px;
+    color: #4b5563;
     font-style: italic;
-    margin-bottom: 24px;
-    flex-grow: 1;
+    margin-bottom: 22px;
 }
 
-.test-author {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    border-top: 1px solid var(--border-color);
-    padding-top: 16px;
+.test-author strong {
+    display: block;
+    font-size: 16px;
+    color: var(--dark-color);
 }
 
-.author-info {
-    display: flex;
-    flex-direction: column;
+.test-author span {
+    font-size: 13.5px;
+    color: #64748b;
 }
 
-.author-info strong {
-    font-size: 15px;
-    color: var(--primary-color);
-}
-
-.author-info span {
-    font-size: 12px;
-    color: #a0aec0;
-}
-
-/* CONTACT SECTION */
+/* ==========================================
+   9. צור קשר (Contact Section)
+========================================== */
 .contact-section {
-    max-width: var(--max-width);
-    margin: 110px auto;
-    padding: 0 20px;
+    padding: 100px 20px;
+    background-color: var(--light-bg);
 }
 
 .contact-container {
+    max-width: 1200px;
+    margin: 0 auto;
     display: grid;
-    grid-template-columns: 1fr 1.1fr;
+    grid-template-columns: 0.9fr 1.1fr;
     gap: 60px;
-    align-items: flex-start;
-}
-
-.contact-info-col {
-    direction: rtl;
-    text-align: right;
+    align-items: center;
 }
 
 .contact-tag {
-    font-size: 13px;
+    color: var(--secondary-color);
     font-weight: 700;
-    color: var(--accent-color);
+    font-size: 15px;
     display: block;
-    margin-bottom: 8px;
+    margin-bottom: 10px;
 }
 
 .contact-info-col h2 {
     font-size: 38px;
     font-weight: 800;
-    color: var(--primary-color);
-    margin-bottom: 14px;
+    color: var(--dark-color);
+    margin-bottom: 15px;
 }
 
 .contact-lead {
-    font-size: 16px;
-    color: #4a5568;
+    font-size: 16.5px;
+    color: #64748b;
     margin-bottom: 40px;
 }
 
 .contact-details-list {
     display: flex;
     flex-direction: column;
-    gap: 30px;
+    gap: 25px;
 }
 
 .contact-detail-item {
     display: flex;
-    gap: 20px;
-    align-items: flex-start;
+    align-items: center;
+    gap: 18px;
 }
 
 .detail-icon {
-    font-size: 22px;
-    color: var(--accent-color);
-    width: 54px;
-    height: 54px;
-    background-color: rgba(255,102,0,0.08);
-    border-radius: 10px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-shrink: 0;
-}
-
-.detail-text {
-    display: flex;
-    flex-direction: column;
-    gap: 2px;
-}
-
-.detail-text strong {
-    font-size: 17px;
-    color: var(--primary-color);
-}
-
-.detail-text a,
-.detail-text span {
-    font-size: 15px;
-    color: #4a5568;
-}
-
-.detail-text a:hover {
-    color: var(--accent-color);
-}
-
-.contact-form-col {
-    background-color: var(--bg-white);
-    padding: 40px;
-    border-radius: 14px;
-    box-shadow: var(--shadow-lg);
+    width: 52px;
+    height: 52px;
+    background-color: #ffffff;
     border: 1px solid var(--border-color);
-}
-
-.appointment-form h3 {
-    font-size: 24px;
-    color: var(--primary-color);
-    font-weight: 800;
-    margin-bottom: 24px;
-    text-align: right;
-}
-
-.form-group-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 16px;
-}
-
-.form-group {
-    margin-bottom: 18px;
-    text-align: right;
-    display: flex;
-    flex-direction: column;
-    gap: 6px;
-}
-
-.form-group label {
-    font-size: 13px;
-    font-weight: 700;
-    color: var(--primary-color);
-}
-
-.form-group input,
-.form-group select,
-.form-group textarea {
-    width: 100%;
-    padding: 12px 16px;
-    border: 1.5px solid #e2e8f0;
-    border-radius: 8px;
-    font-size: 14px;
-    font-family: inherit;
-    color: var(--text-color);
-    background-color: #fafbfc;
-    transition: var(--transition);
-}
-
-.form-group input:focus,
-.form-group select:focus,
-.form-group textarea:focus {
-    outline: none;
-    border-color: var(--accent-color);
-    background-color: var(--bg-white);
-    box-shadow: 0 0 0 4px rgba(255,102,0,0.1);
-}
-
-.btn-form-submit {
-    width: 100%;
-    background-color: var(--primary-color);
-    color: var(--bg-white);
-    border: none;
-    padding: 15px;
-    border-radius: 8px;
-    font-size: 16px;
-    font-weight: 700;
-    cursor: pointer;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
-    transition: var(--transition);
-    box-shadow: var(--shadow-sm);
-}
-
-.btn-form-submit:hover {
-    background-color: #002d80;
-    transform: translateY(-2px);
-    box-shadow: 0 5px 15px rgba(0,26,77,0.25);
-}
-
-/* FLOATING WHATSAPP BUTTON */
-.whatsapp-fixed-btn {
-    position: fixed;
-    bottom: 35px;
-    left: 35px;
-    background-color: #25d366;
-    color: #ffffff;
-    width: 60px;
-    height: 60px;
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 32px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
-    z-index: 1000;
-    transition: var(--transition);
+    font-size: 20px;
+    color: var(--primary-color);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.02);
 }
 
-.whatsapp-fixed-btn:hover {
-    transform: scale(1.08) translateY(-4px);
-    background-color: #1ebd59;
-}
-
-/* FOOTER AREA */
-.site-footer {
-    background-color: #0d121c;
-    color: #a0aec0;
-    padding: 70px 0 0 0;
-}
-
-.footer-container {
-    max-width: var(--max-width);
-    margin: 0 auto;
-    padding: 0 20px 50px 20px;
-    display: grid;
-    grid-template-columns: 1.2fr 0.8fr 1fr;
-    gap: 60px;
-}
-
-.footer-brand {
-    font-size: 28px;
-    color: var(--bg-white);
-    font-weight: 800;
+.detail-text strong {
     display: block;
-}
-
-.footer-sub {
-    font-size: 12px;
-    color: var(--accent-color);
-    font-weight: 700;
-    display: block;
-    margin-top: 2px;
-}
-
-.about-col p {
     font-size: 14px;
-    line-height: 1.7;
-    margin-top: 18px;
+    color: #64748b;
 }
 
-.footer-col h4 {
-    color: var(--bg-white);
+.detail-text span, .detail-text a {
     font-size: 18px;
     font-weight: 700;
-    margin-bottom: 24px;
-    position: relative;
-    padding-bottom: 10px;
+    color: var(--dark-color);
 }
 
-.footer-col h4::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    right: 0;
-    width: 40px;
-    height: 2.5px;
-    background-color: var(--accent-color);
+/* טופס פנייה */
+.contact-form-col {
+    background-color: #ffffff;
+    border-radius: 20px;
+    padding: 40px;
+    border: 1px solid var(--border-color);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.03);
 }
 
-.links-col ul {
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
+.appointment-form h3 {
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--dark-color);
+    margin-bottom: 25px;
 }
 
-.links-col a {
-    font-size: 14px;
-    display: flex;
-    align-items: center;
-    gap: 8px;
+.form-group-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    margin-bottom: 18px;
 }
 
-.links-col a:hover {
-    color: var(--accent-color);
-    padding-right: 4px;
+.form-group {
+    margin-bottom: 18px;
 }
 
-.links-col i {
-    font-size: 11px;
+.form-group label {
+    display: block;
+    font-size: 14.5px;
+    font-weight: 600;
+    color: var(--dark-color);
+    margin-bottom: 8px;
 }
 
-.hours-col p {
-    font-size: 14px;
-    margin-bottom: 14px;
+.form-group input, .form-group select, .form-group textarea {
+    width: 100%;
+    padding: 12px 16px;
+    border-radius: 10px;
+    border: 1px solid var(--border-color);
+    background-color: var(--light-bg);
+    font-family: var(--font-family);
+    font-size: 15px;
 }
 
-.hours-col strong {
-    color: var(--bg-white);
-}
-
-.footer-bottom {
-    border-top: 1px solid rgba(255,255,255,0.05);
-    padding: 24px 20px;
-    font-size: 13px;
-    text-align: center;
-}
-
-.footer-bottom-container {
-    max-width: var(--max-width);
-    margin: 0 auto;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 12px;
-}
-
-/* RESPONSIVE DESIGN - MEDIA QUERIES */
-@media (max-width: 1024px) {
-    .hero-section {
-        height: auto;
-        padding: 100px 0 80px 0;
-        background-position: center;
-    }
-    .hero-container {
-        justify-content: center;
-    }
-    .hero-content-box {
-        max-width: 100%;
-        text-align: center;
-    }
-    .hero-actions {
-        justify-content: center;
-    }
-    .bar-container {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 20px;
-    }
-    .feature-item {
-        border-left: none;
-    }
-    .feature-item:nth-child(odd) {
-        border-left: 1px solid var(--border-color);
-    }
-    .services-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-    .about-container {
-        grid-template-columns: 1fr;
-        gap: 50px;
-    }
-    .contact-container {
-        grid-template-columns: 1fr;
-        gap: 50px;
-    }
-    .footer-container {
-        grid-template-columns: 1fr;
-        gap: 40px;
-    }
-}
-
-@media (max-width: 768px) {
-    .top-info-container {
-        justify-content: center;
-        text-align: center;
-    }
-    .header-container {
-        flex-direction: column;
-        gap: 15px;
-    }
-    .nav-links {
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 15px;
-    }
-    .hero-title {
-        font-size: 42px;
-    }
-    .hero-subtitle {
-        font-size: 22px;
-    }
-    .bar-container {
-        grid-template-columns: 1fr;
-        gap: 20px;
-    }
-    .feature-item {
-        border-left: none !important;
-        justify-content: flex-start;
-    }
-    .services-grid {
-        grid-template-columns: 1fr;
-    }
-    .pets-image-wrapper {
-        height: 320px;
-    }
-    .pets-img-overlay h3 {
-        font-size: 24px;
-    }
-    .form-group-grid {
-        grid-template-columns: 1fr;
-    }
-    .testimonials-grid {
-        grid-template-columns: 1fr;
-    }
-}
+.form-group input:focus, .form-group select:focus, .form-group textarea:focus {
+    outline: none;
+    border
