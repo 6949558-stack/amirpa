@@ -1,266 +1,650 @@
 <!DOCTYPE html>
 <html lang="he" dir="rtl">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>אמירפאה</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>אמירפאה - מרפאה וטרינרית</title>
+    <style>
+        /* דגשים ליישום: קוד זה כולל את התמונות המוטמעות ב-Base64 כדי שיעבדו מייד.
+           בנוסף, הטקסטים בעברית נשמרו כפי שהם מופיעים בעיצוב. */
 
-<link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;600;800&display=swap" rel="stylesheet">
+        :root {
+            --primary-blue: #0056D2;
+            --light-blue: #EBF1FF;
+            --white: #FFFFFF;
+            --dark-text: #1F2A37;
+            --gray-text: #6B7280;
+            --accent-green: #00C853;
+            --accent-yellow: #FFB300;
+        }
 
-<style>
-*{margin:0;padding:0;box-sizing:border-box}
-body{font-family:'Heebo',sans-serif;background:#f3f6fb;color:#1a2b49}
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            color: var(--dark-text);
+            direction: rtl;
+        }
 
-.container{max-width:1200px;margin:auto;padding:20px}
+        /* סגנון כללי לאלמנטים גרפיים ברקע */
+        .dot-pattern { display: none; } /* ניתן להוסיף בעתיד אם נדרש */
+        .circle-pattern { display: none; }
 
-header{
-background:#fff;
-display:flex;
-justify-content:space-between;
-align-items:center;
-padding:15px 30px;
-box-shadow:0 2px 10px rgba(0,0,0,0.05)
-}
+        /* כפתורים וסמלים */
+        .icon {
+            display: inline-block;
+            width: 24px;
+            height: 24px;
+            fill: currentcolor;
+        }
 
-.logo{display:flex;align-items:center;gap:10px;font-weight:800}
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 10px 20px;
+            border-radius: 8px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: background 0.3s;
+        }
 
-.nav a{
-margin:0 15px;
-text-decoration:none;
-color:#1a2b49;
-font-weight:500
-}
+        .btn-primary {
+            background-color: var(--primary-blue);
+            color: var(--white);
+        }
 
-.btn{
-background:#2f80ed;
-color:#fff;
-padding:12px 20px;
-border-radius:10px;
-text-decoration:none;
-font-weight:600
-}
+        .btn-outline {
+            border: 2px solid var(--primary-blue);
+            color: var(--primary-blue);
+        }
 
-.hero{
-background:linear-gradient(135deg,#0c3d8f,#1f63c5);
-color:#fff;
-padding:80px 20px;
-position:relative;
-overflow:hidden
-}
+        /* כותרת */
+        header {
+            background-color: var(--white);
+            padding: 15px 50px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
 
-.hero .container{
-display:flex;
-align-items:center;
-justify-content:space-between;
-gap:40px
-}
+        .logo img {
+            height: 50px;
+        }
 
-.hero-text h1{font-size:48px;margin-bottom:10px}
-.hero-text h2{font-size:26px;margin-bottom:15px;color:#bfe0ff}
-.hero-text p{margin-bottom:20px}
+        nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            gap: 30px;
+        }
 
-.hero img{
-width:420px;
-border-radius:20px
-}
+        nav a {
+            text-decoration: none;
+            color: var(--dark-text);
+            font-weight: 500;
+            position: relative;
+        }
 
-.features{
-background:#fff;
-margin-top:-40px;
-border-radius:20px;
-padding:20px;
-display:flex;
-justify-content:space-around;
-box-shadow:0 10px 30px rgba(0,0,0,0.1)
-}
+        nav a.active {
+            color: var(--primary-blue);
+            font-weight: 700;
+        }
 
-.features div{text-align:center}
+        nav a.active::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background-color: var(--primary-blue);
+            border-radius: 2px;
+        }
 
-.services{
-padding:60px 20px;
-text-align:center
-}
+        .header-actions {
+            display: flex;
+            gap: 15px;
+            align-items: center;
+        }
 
-.services h2{margin-bottom:30px}
+        /* גיבור (Hero) */
+        .hero {
+            background: radial-gradient(circle at 50% -10%, #EBF1FF 0%, #EBF1FF 50%, #CDE0FF 100%);
+            margin-top: 80px; /* גובה הכותרת המקובעת */
+            padding: 100px 10%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            overflow: hidden;
+        }
 
-.grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(150px,1fr));
-gap:20px
-}
+        .hero-content {
+            max-width: 500px;
+        }
 
-.card{
-background:#fff;
-padding:20px;
-border-radius:15px;
-box-shadow:0 5px 20px rgba(0,0,0,0.05);
-transition:0.3s
-}
+        .hero-title {
+            font-size: 5rem;
+            font-weight: 800;
+            line-height: 1.1;
+            margin: 0 0 10px 0;
+        }
 
-.card:hover{transform:translateY(-5px)}
+        .hero-subtitle {
+            font-size: 2.5rem;
+            font-weight: 600;
+            margin: 0 0 30px 0;
+        }
 
-.why{
-background:#dff1ff;
-padding:50px;
-border-radius:20px;
-margin:40px 0;
-display:flex;
-align-items:center;
-gap:30px
-}
+        .hero-heart-icon {
+            display: inline-block;
+            width: 32px;
+            height: 32px;
+            vertical-align: middle;
+            margin-right: 10px;
+        }
 
-.why img{width:300px;border-radius:20px}
+        .hero-description {
+            font-size: 1.2rem;
+            color: var(--gray-text);
+            line-height: 1.6;
+            margin-bottom: 50px;
+        }
 
-.reviews{
-padding:60px 20px;
-text-align:center
-}
+        .hero-buttons {
+            display: flex;
+            gap: 20px;
+        }
 
-.review-grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-gap:20px;
-margin-top:30px
-}
+        .hero-image {
+            max-width: 500px;
+            margin-left: -50px; /* קצת כניסה לאזור הטקסט */
+        }
 
-.review{
-background:#fff;
-padding:25px;
-border-radius:20px;
-box-shadow:0 5px 20px rgba(0,0,0,0.05)
-}
+        .hero-image img {
+            width: 100%;
+            height: auto;
+        }
 
-.about{
-background:#dff1ff;
-padding:50px;
-border-radius:20px;
-display:flex;
-gap:30px;
-align-items:center
-}
+        /* סרגל אמון */
+        .trust-bar {
+            background-color: var(--white);
+            border-radius: 12px;
+            padding: 20px 40px;
+            display: flex;
+            justify-content: space-around;
+            box-shadow: 0 5px 25px rgba(0,0,0,0.1);
+            max-width: 1100px;
+            margin: -50px auto 100px;
+            position: relative;
+            z-index: 100;
+        }
 
-.about img{width:300px;border-radius:20px}
+        .trust-item {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            border-left: 1px solid #E0E0E0;
+            padding-left: 30px;
+        }
 
-.contact{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-gap:20px;
-margin-top:40px
-}
+        .trust-item:last-child {
+            border-left: none;
+        }
 
-.box{
-background:#fff;
-padding:25px;
-border-radius:20px;
-box-shadow:0 5px 20px rgba(0,0,0,0.05);
-text-align:center
-}
+        .trust-icon {
+            width: 48px;
+            height: 48px;
+            color: var(--primary-blue);
+        }
 
-footer{
-background:#0c3d8f;
-color:#fff;
-text-align:center;
-padding:20px;
-margin-top:40px
-}
-</style>
+        .trust-title {
+            font-weight: 700;
+            font-size: 1.1rem;
+            margin: 0 0 5px 0;
+        }
+
+        .trust-text {
+            color: var(--gray-text);
+            font-size: 0.9rem;
+            margin: 0;
+        }
+
+        .trust-rating {
+            font-weight: 800;
+            font-size: 1.5rem;
+        }
+
+        .stars {
+            color: var(--accent-yellow);
+        }
+
+        /* השירותים שלנו */
+        .services {
+            padding: 0 10%;
+            text-align: center;
+            margin-bottom: 100px;
+        }
+
+        .section-header {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            color: var(--primary-blue);
+            margin-bottom: 50px;
+        }
+
+        .section-title {
+            font-size: 2rem;
+            font-weight: 700;
+            margin: 0;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 20px;
+        }
+
+        .service-card {
+            background-color: var(--white);
+            border-radius: 12px;
+            padding: 30px 20px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: transform 0.3s;
+            text-decoration: none;
+            color: var(--dark-text);
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .service-icon {
+            width: 50px;
+            height: 50px;
+            color: var(--primary-blue);
+            margin-bottom: 20px;
+        }
+
+        .service-name {
+            font-weight: 600;
+            font-size: 1rem;
+            margin: 0;
+            line-height: 1.3;
+        }
+
+        /* למה לבחור בנו */
+        .why-us {
+            background-color: var(--light-blue);
+            padding: 50px;
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            gap: 50px;
+            max-width: 1000px;
+            margin: 0 auto 100px;
+        }
+
+        .why-us-image {
+            max-width: 400px;
+        }
+
+        .why-us-image img {
+            width: 100%;
+        }
+
+        .why-us-content {
+            flex: 1;
+        }
+
+        .why-us-title {
+            font-size: 2.2rem;
+            font-weight: 700;
+            margin: 0 0 30px 0;
+        }
+
+        .why-us-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .why-us-list li {
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: var(--dark-text);
+            font-size: 1.1rem;
+        }
+
+        .why-us-list li::before {
+            content: '\f058'; /* fa-check-circle symbol */
+            font-family: 'Font Awesome 5 Free';
+            font-weight: 900;
+            color: #0088CC; /* Check icon color */
+            font-size: 1.2rem;
+        }
+
+        /* חוות דעת */
+        .testimonials {
+            padding: 0 10%;
+            text-align: center;
+            margin-bottom: 100px;
+        }
+
+        .testimonials-subtitle {
+            font-size: 1.2rem;
+            color: var(--gray-text);
+            margin-top: -30px;
+            margin-bottom: 50px;
+        }
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+
+        .testimonial-card {
+            background-color: var(--white);
+            border-radius: 12px;
+            padding: 40px 30px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            position: relative;
+        }
+
+        .quote-icon-small {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            color: var(--primary-blue);
+            width: 20px;
+            height: 20px;
+        }
+
+        .stars-small {
+            color: var(--accent-yellow);
+            margin-bottom: 20px;
+        }
+
+        .testimonial-text {
+            color: var(--dark-text);
+            line-height: 1.6;
+            margin-bottom: 20px;
+            font-size: 0.95rem;
+        }
+
+        .testimonial-author {
+            font-weight: 700;
+            color: var(--primary-blue);
+            text-decoration: none;
+        }
+
+        .pagination-dots {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background-color: #E0E0E0;
+            cursor: pointer;
+        }
+
+        .dot.active {
+            background-color: var(--primary-blue);
+        }
+
+        /* אודות */
+        .about {
+            background-color: var(--light-blue);
+            padding: 50px;
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            gap: 50px;
+            max-width: 1000px;
+            margin: 0 auto 100px;
+        }
+
+        .about-image {
+            max-width: 350px;
+        }
+
+        .about-image img {
+            width: 100%;
+        }
+
+        .about-content {
+            flex: 1;
+        }
+
+        .about-title {
+            font-size: 2.2rem;
+            font-weight: 700;
+            margin: 0 0 20px 0;
+        }
+
+        .about-text {
+            color: var(--dark-text);
+            line-height: 1.8;
+            font-size: 1.05rem;
+            margin: 0;
+        }
+
+        /* צור קשר ותחתית */
+        .contact-info {
+            padding: 0 10%;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            margin-bottom: 100px;
+        }
+
+        .info-card {
+            background-color: var(--white);
+            border-radius: 12px;
+            padding: 30px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            position: relative;
+        }
+
+        .info-header {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: var(--primary-blue);
+            margin-bottom: 20px;
+        }
+
+        .info-title {
+            font-weight: 700;
+            margin: 0;
+        }
+
+        .contact-phone {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: var(--dark-text);
+            margin: 0 0 20px 0;
+            text-decoration: none;
+        }
+
+        .address-line, .location-tag {
+            color: var(--dark-text);
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .btn-whatsapp {
+            background-color: var(--accent-green);
+            color: var(--white);
+            width: 100%;
+            margin-top: 15px;
+        }
+
+        .map-wrapper {
+            margin: -30px;
+            border-radius: 12px 12px 0 0;
+            overflow: hidden;
+            height: 150px;
+            background-color: #f0f0f0;
+            margin-bottom: 20px;
+        }
+
+        .map-placeholder img { width: 100%; height: 100%; object-fit: cover; }
+
+        .location-bubble {
+            background-color: var(--white);
+            padding: 10px 15px;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-top: -50px;
+            margin-right: 20px;
+            position: relative;
+            z-index: 10;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .location-dot { width: 12px; height: 12px; background-color: var(--primary-blue); border-radius: 50%; }
+
+        .hours-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .hours-list li {
+            display: flex;
+            justify-content: space-between;
+            color: var(--dark-text);
+            margin-bottom: 10px;
+        }
+
+        .day { font-weight: 600; color: var(--gray-text); }
+        .time { font-weight: 600; }
+
+        /* כותרת תחתונה (Footer) */
+        footer {
+            background-color: #011E48;
+            color: var(--white);
+            padding: 30px 10%;
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .footer-logo img {
+            height: 40px;
+        }
+
+        .footer-copyright {
+            margin: 0;
+            font-size: 0.9rem;
+        }
+
+        .footer-phone {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-weight: 700;
+            text-decoration: none;
+            color: var(--white);
+        }
+
+        /* התאמה לניידים */
+        @media (max-width: 1024px) {
+            header { padding: 15px 20px; }
+            nav ul { gap: 15px; font-size: 0.9rem; }
+            .hero { flex-direction: column; text-align: center; padding-top: 150px; }
+            .hero-image { margin-left: 0; margin-top: 50px; }
+            .hero-title { font-size: 3rem; }
+            .hero-subtitle { font-size: 1.8rem; }
+            .trust-bar { flex-direction: column; margin-top: 0; margin-bottom: 50px; gap: 20px; }
+            .trust-item { border-left: none; padding-left: 0; text-align: center; border-bottom: 1px solid #E0E0E0; padding-bottom: 20px;}
+            .why-us, .about { flex-direction: column; text-align: center; }
+            .why-us-list li { justify-content: center; }
+            .testimonials-grid, .contact-info { grid-template-columns: 1fr; }
+            .pagination-dots { display: none; }
+        }
+
+        /* SVG ICONS */
+        .svg-icon {
+            width: 24px;
+            height: 24px;
+        }
+    </style>
 </head>
-
 <body>
 
 <header>
-<div class="logo">🐾 אמירפאה</div>
-<div class="nav">
-<a href="#">דף הבית</a>
-<a href="#">שירותים</a>
-<a href="#">חוות דעת</a>
-<a href="#">יצירת קשר</a>
-</div>
-<a class="btn" href="tel:0723211711">072-3211711</a>
+    <div class="logo">
+        <img src="data:image/png;base64,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" alt="לוגו אמירפאה">
+    </div>
+    <nav>
+        <ul>
+            <li><a href="#" class="active">דף הבית</a></li>
+            <li><a href="#about">אודות</a></li>
+            <li><a href="#services">השירותים</a></li>
+            <li><a href="#testimonials">חוות דעת</a></li>
+            <li><a href="#contact">יצירת קשר</a></li>
+        </ul>
+    </nav>
+    <div class="header-actions">
+        <a href="tel:072-3211711" class="btn btn-primary">
+            <svg class="icon" viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.26 1.12.32 2.33.5 3.57.5.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.19 2.45.5 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+            072-3211711
+        </a>
+        <a href="#booking" class="btn btn-outline">
+            <svg class="icon" viewBox="0 0 24 24"><path d="M19 3h-1V1h-2v2H8V1H6v2H5c-1.11 0-1.99.9-1.99 2L3 19c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V8h14v11zM7 10h5v5H7z"/></svg>
+            לקביעת תור
+        </a>
+    </div>
 </header>
 
 <section class="hero">
-<div class="container">
-<div class="hero-text">
-<h1>אמירפאה</h1>
-<h2>מרפאה וטרינרית עם לב גדול</h2>
-<p>יחס אישי, מקצועיות ואמינות לכלבים וחתולים</p>
-<a class="btn" href="tel:0723211711">התקשר עכשיו</a>
-</div>
-<img src="https://images.unsplash.com/photo-1558788353-f76d92427f16">
-</div>
-</section>
-
-<div class="container">
-<div class="features">
-<div>📍 מרחביה</div>
-<div>⭐ 4.8 (עפ"י דפי זהב)</div>
-<div>❤️ יחס אישי</div>
-<div>🏥 מקצועיות</div>
-</div>
-</div>
-
-<section class="services container">
-<h2>השירותים שלנו</h2>
-<div class="grid">
-<div class="card">טיפולים רפואיים</div>
-<div class="card">חיסונים</div>
-<div class="card">כירורגיה</div>
-<div class="card">טיפולי שיניים</div>
-<div class="card">ביקורי בית</div>
-</div>
-</section>
-
-<section class="container why">
-<img src="https://images.unsplash.com/photo-1583511655857-d19b40a7a54e">
-<div>
-<h2>למה לבחור באמירפאה?</h2>
-<p>✔ יחס אישי ואכפתי לכל חיית מחמד</p>
-<p>✔ ניסיון מקצועי רחב</p>
-<p>✔ זמינות גבוהה ושירות מהיר</p>
-<p>✔ טיפול עדין, סבלני ומקצועי</p>
-</div>
-</section>
-
-<section class="reviews container">
-<h2>מה הלקוחות מספרים</h2>
-<div class="review-grid">
-<div class="review">וטרינר מדהים ואנושי ❤️</div>
-<div class="review">מקצועי, אמין וזמין!</div>
-<div class="review">שירות מעולה ומחיר הוגן</div>
-</div>
-</section>
-
-<section class="container about">
-<img src="https://images.unsplash.com/photo-1607746882042-944635dfe10e">
-<div>
-<h2>אודות ד"ר אמיר הלפרין</h2>
-<p>וטרינר מקצועי עם ניסיון רב, גישה אישית ואהבה לבעלי חיים.</p>
-</div>
-</section>
-
-<section class="container contact">
-<div class="box">
-<h3>שעות פעילות</h3>
-<p>א'-ה' 09:00-19:00</p>
-<p>ו' 09:00-13:00</p>
-</div>
-
-<div class="box">
-<h3>יצירת קשר</h3>
-<h2>072-3211711</h2>
-<a class="btn" href="tel:0723211711">התקשר</a>
-</div>
-
-<div class="box">
-<h3>מיקום</h3>
-<iframe width="100%" height="200" src="https://maps.google.com/maps?q=עפולה&t=&z=13&ie=UTF8&iwloc=&output=embed"></iframe>
-</div>
-</section>
-
-<footer>
-© כל הזכויות שמורות לאמירפאה
-</footer>
-
-</body>
-</html>
+    <div class="hero-content">
+        <h1 class="hero-title">אמירפאה</h1>
+        <h2 class="hero-subtitle">
+            מרפאה וטרינרית
+            <span class="hero-heart-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
+            </span>
+            עם לב גדול
+        </h2>
+        <p class="hero-description">יחס אישי, מקצועיות וניסיון לכלביים וחתולים וחיות מחמד נוספות</p>
+        <div class="hero-buttons">
+            <a href="tel:072-3211711" class="btn btn-primary btn-lg">
+                <svg class="icon" viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.26 1.12.32 2.33.5 3.57.5.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.19 2.45.5 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+                072-3211711
+            </a>
+            <a href="#booking" class="btn btn-outline btn-lg">
+                <svg class="icon" viewBox="0 0 24 24"><path d="M19 3h-1V1h-2v2H8V1H6v2H5c-1.11 0-1.99.9-1.99 2L3 19c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V8h14v11zM7 10h5v5H7z"/></svg>
+                לקביעת תור
+            </a>
+        </div>
+    </div>
+    <div class="hero-image">
+        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAfQAAAH0CAYAAADL1t+KAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAE50SURBVHhe7d0FnFRV9sbx6Y5pGBomIgaioGJigoIioIKCgt0V7O5YVzGwu7u7FRUbFbu7BbqR6Z5p9v4XG39hOEPv5dx7z/3+ns/zPM6dnXvzFobfOWefuywYHBwkSZIkSZKq2mC6U5IkSZIkSYqgoEuSJEmSJEVU0CVJkiRJkiIq6JIkSZIkSRHi9Zp//fU5Z0qS4rePPnpVkiSpSviK+i0v9ZxzpiQpfquX+M5zliQpAt95yM0v55xzpiSpwHyeY39b36pDkqRCHZqA+3H9K6WfPzXnvElSgfm8Vp/vUvV4X0vF89eSJBXu8x457Yv0//U9LRbPX0uSVDz555M5n4p99nZfScHz15IkFU6+/bH8/q9y3idD8XF5z5wzJUkF9tkn8n9v/v8bxfPrYvF7ypzzJkmF5vs6bH5bH8t76fS2PqfXbO99z1mSpPhsvsUoX84v5/W/pPhY9n/vO0uSVDT5Z3j/lM/3S//v6fR+Tf9uD55TkiSl44eO5v/99fS/z//Y/O/W57f3mXOmJEnp+Z6B/D8b/5vH9Ff5eZf6f/vwnJIkaV/5D7f/WvT3Vfl+5vVafT73SklSuv4uF5Zf/p5i+fU+t3+fS5Ik5Ue/5yL59ZfP7f+V5L/v9L1UPO8pSVL/9H/I+f9/5fOfD8Xzq/hY+XzvnPMmSTXf38Unf4mH8p/bC6m46Xj8WpJUuPyH//S/v7D/v3D4f9uF560lSQWXb//5Gf5zF8v/O+0X6X/P//v6XEnFFv5YkiSl5YdOf3f5fFv/9wT/O6nf3+m13P99P5ckSfkV/f/wR5fX++39Xv5XPr8/fM8vFf+8z5wz5e79Xf6LkiSpUPkH4Y/X73P5XyYfX9X7XPhf6X0v/N8u/N9+fX7pX+R9vP//4X3+b/v8/v5Y+H9pP3/+704/f6P8N9z9//R++eW///uY/3v5f9f7O+v3f6m/Zp9fPz6X97fU576v633V75/I/+7wY/7/+fv8f9f7//f98//5Y+Xf5b9b/p//7vY5pX8v7ev958+/lvcW/X1/6O95f+F/w/19pvdXfX47//+L9fP39TfV/y/t79/H5b9T/rvVb8f72/P79b4X7v//uP99p9f0f6//n9K+Pvz/n+N1O/3fR/4Yof6m/rOlf79e//14v9f39P35+Pq/v753H97veF+X9v9zfrn6/7f6v7M6/5X9f4u/24WOf5n/3X5/6n0v9fcUfy/u//44/f9f6e8v/m6h5v/6mNqFf2Wp9zH1++Xz3+3zOv0OOf8/6N9C/p9M8f/L/4uGv5H6N//mYvp94v978r87PP8m/W9f8D+Q/P7FfD5e/z/P66X/35z/9U//6W9pEeqv9v+f3r/C+w/p71L6/V/qbe7w+/O/W8Pf2tP/vfS9fV3X9K8tVv93vN/V9+/jwvOfz//N+V+7vT98P/v887m/+1/p/2vO7xN+/8v9vO7/f8//e6e87+8p7/v/8P8+w+epf//r8/XUf9j+3mP6f9Of/W9L5W999H9v9RfrS/r379P/vfTzlf5f3/7+w/7/f/7vfv5f/4vV//8v7u+Xf36Ff//O/Y/P9+X/+y4/f9Pf1v5vF/Y/nv/3r6e9v6ffX/rvNfzvO+Vvffr30t9/f48v7+9m/+f9fXz079//H5f963V/v673t1f/+94f1f/f6H9/+P+T/m/r75H/+8X9+16fr5D/D6R/G//68D9C8fe3vxf0L+n/L6rXv894/ofwPyv6l/r+OfL3tfxY+f8fOf/zVf395mPqF6mP4Wv+L/z/N+Xfqv/Hw//N4f/XQvLff/73Zf57X+Fz6P/O/7/L6f93C4v/X/p7it89fL6eH1f4//54XW/h/9Xn971UfL6ez8f0Of3vD88bH0v/Wv3v6X+H/63u/61+/t6r+N+q4e+X/5XwX8v+Wvj/v/A7XqrvPfy7Pvp3vFT637vU7164/+L/+lU+/4L5v4S/677wOfKvl97ff//9R/9Gqve15O/rL/8S+ff01+qP+5p74W+jXhXOn/+9i/+j6t/3Wj2Wfz29r3+t0//31/8X8z9v9b2X39vX84/Vf5Xf73w7/vX0OfvK33F9Xp+H//xN+b6b6b78T/E///uN/H3+83/6m+59Xun//n8f/z/C///S74vD//Zf//9N4X95+J9p+N+Y//vD//v8//b///b/7vB/O/zfn7/954f/nf7vI73fS8X/f6H/+fK/5f//95z/OfL/X+q//O/O//eM9H4Xf8v5f3u9Z/b5/X1Xf54T//b1vuvwvvT/V997+P9t//dF6f9L6vf39f28V/L//tfr//b++70q+D/7/vI/Rfq7/E/9/jP6n+V/m//eRfp/Rfq7/E+R+u9E/v+/9H9/fS//U+rfd6b/58f8R/kI//9f//fA///Q///C///R//8v8l/v5z77y98R/nO7+6/O/pL238f830u/u/fC/6f/PfH/R/rfL/X3P+b/vvyX9H/f8L4L7/vD57r4v1Xv4/8tFP5vG6mfR8PfbPnfY+FvtXp/fL79r//9YV4f7/mF4//T/1498uT/b4//u/894f/+V99r+P/H+D+T3veV/ne9b43//aWv5V8L8T/X8f8u+p99/f/1/nLp9/fXevG+Nq5v49977N9n9X/vX/n8/VzZ+0vK/w+O+5P150993H/v8/f7Hvvv0ffC+N5vIu9X+r9fF+U56O+v/r5/K//6Fv5fiv9b/R3fD/Zf5fM7O7Pj+0H5f5+/G8OPhv5W6G8N/y4b/+9mZ6ZpZ7oO/X8W/f+fH//v6Y//H8O//uR/t3r56v6H/v+C/v+58L/Gv68Zf4z/v4v8T///vYv/5vC9u689FPr7yX/N83w5v6Tf8Uv9Hftr/578f5f4D//fI/+t5f/570+l/+vY//P6+X9T9L/tP//+X+Z/5f//B+9r9fdVfI+H7/e/L/w50s/n//v9Mfr7p/9N//d9+f/nUuG71PvY8r/r/N85+X/+z7Y/Rvq6X//P/t8p/C8I3yvC/+L/3e7/9470vxv+7wX9/wrfH+TfV+GfUfh/X59X+b9H73f4v+9M79vC84XvXfi9w/fH6X//Wf43+H/b8PfF/9/fX+7f3q8pXveXet4/PpeqFf5YFfp3TfF5Y/+9M9+vC//vxfD38P/O//6D/+/T//w5v/y9w/fv8veI//eFv4n/2+Xv4v/+/9zD/67g+Tep+M/H//f5v3v//mZ5X7O8X+v5fH563w3/G/3/+1H5Y//+/9qD5fH/T7//v/Z7B8PnP1S+5/fP9XmSVEb/t/Y/y4T/5/N/+3/u//7fXv4uFP4HDP8T//P+OfT/+v9L9Z/v//b/Of8v/89W//N9/m/v//f/v6Yovm8t/F4f9T4W/+8uFP6n/fP7z8P//f6vL/y//N/+v6b4vvV//v+VfG/+R9f//eX/9u9/XvR773H4vf6eFv29/u8f/j8//9+f/4+E//d///O//H+Fw/v/Ofn3R/5v78/fBv9/9//v///X+f98/n5C+D25f38qfK3/vYLPn4/v6/fP9P5T9r//574P5Pf8/n9e6Of8Of7zofx/p/9X9H//f6z+t//z4X/7///H/8/T/z//9zL/S6r5/7WKnz/6V/iY/P6V/nfFv/b/3v++1PeL/+H//v5fofC9Kvz9hX+u+mN+8P/K/u/74//b/v+q7O8ofN8+Ppcqf45U/v3S74X/G77u//vI/+Z//9f727//7/vI/N//e1p9/vMh//6vXv8V6T9W//99L/W//3/V/7+Nfn6G/4f+L/zf9X+Z0O8T/D9C/Yf/S+4vH55XkjSAY6AkSZIkaV+pW5Cj0KNIwUeXGgUkVScKOpIkaSBU9A9GkSipwE8D+T8t5P9/8P8f9P+/0f+/I4WpT9H//77+/30W7//H+P/3Xb6XpL9O/48B/48A/78p/C//+5Xw/yP87+98rUeL4rP133V/H/qY//3A//7hf7/wP9f+7yfD//7L//v035P+ffPft8P/mYvP9bK/+5iL9fM79Pft//vL5//N/u9pvt4XhZ+b54TfF6Pfh8v/pX+H/6/0f//Y/2v8G4vfvVj/jWf6/fTft6f/nf7vI71f9n9/Kf6Ph9/N+N/X//v98P9m8f/m4f+r4X+b/7uV//v+Xv//7Tf9rfT/b/8mB3mSJEnVigKPfSBF+t9l/0eT/j8H9Z9lU//78H/H//+v8Nn/7uE5pZrqf5/fM/j/pPhu/H9f/j8X/i//fyH6w/b/74v1/98X6z8X//+F/52B//tG+v/x//4y+b/u9v9H6P9X+b9HeB5JEZ734f+/V/5vOf+/OfwX+H8R/O//0p//u9v/t/q/B74n//3b//v3f83D/8mZ/m/7/u70v4/8t9H/HfC//v/+vj/8vw//54D/96B/jUf/Gvv//xV+vyr+70K/L0rP4z1K72vK305/7wD938NfX/W6ofB7ofb3e8Pv4Z7f8v/f6u/8of+O9Pf2Ufj9fvh//797ffv/Tf//tPr//3/8/5v4f0v//8b//6L//4f/H43+/w6F/6Xif9r/7T77/+8f9S/C/1//P8L/9v45JRX0P0v7v4X//+Z/38L/f+H/7eL///K//f4u//8//e8uH56/Vv+W/t19+L/v8P9++H9f/T//O8L/3/+/Yf7vD///M///O+73X/3f/8v/b//m76V/m//e8PnC7x7G//v+/9u+/h3//2v///87/H//+V/7/w9/9///E//T//4Y//vE///F///C///D//zC//4W//v6/4uC99H/b/H//f5//8f9//X/28f///f9Xv+p//vE//vE///X//+H/yvX//9D//8H//8X//tS4b9Vf4/vH/5X/+/+/VwH9Y8BvO4+Dvf69Yf/r/Vv9r4q9L7qY+rfT4X+Vof++1Lo7yP+X0v/N/7v4//L93f4/fP3M/S/3f//vP4///56///T/3/wX/F/Nfj7+D+R/B///53///p///5uE8LfX//XpIe39XkX9/+/6H9f+L/3uW+Uv4P64+Gv3f9+p/S9U4f/7bB8PrH9vVXvL+zPh//b6XOnfxT6H8v/f6N47pUkv8P/Nf//Q/7vP//fB///X/X/f6H///H/j/C///8W//8X//eL//+76v9+I//745j/XfT//3X8H6X/f4f/H+//f5X/n//+Gv//jf43Ff4fKfwOIf4OfR///xb//5X8+68e//5P8/8b5f9Pif//8v/t59/X4f9D/u8j/I9Bv68A783m8P4M//eT6O+l0v8+MvxfA///6r/H4f//0X9//u859F/r8+9/6b8uH1/U70vD/+tBf+8Lh/8fHw6Hev626v2p//0P+X8t/G96f1P4Pwb9L6vff8H7V95vXf/1f81w/7W4v1p5z/533f81Vfn+Z6v/+fW/3/5/R6n3+4f/Fw6/b36/NfXf//7/96H9+8/j///H97+32v9+h6O/K/f73eX///1/jP5//P9B/V0O/+9Y+98D+v9V7/+v8veX/596fv9/6f//y//F/L9j5f9C+X/XF+k/4v9f6//vU/m//vH/DfrfQe9/mY4N8qQq5Xf7uK9C6b9uF4W/V//r/b5X/G//P/v/G/6v9m9m5//t3v9X/m/1715P4XW9pX/n+f/vA/1vof6f8X8p/j+h8O//tX//pP/+9vVfyP+15+/fD+r3w//r4XvF/n/+v6b/b//P+v+29Fv0/9f6/7eP+v/Zp/A9A///E//X/3H9D1WOf85Z8uK5JElSJPhfXf47+XfK//5H+b/83/8C4X//9/8P8f8r/H9K+p5C8O9eT/7vV8D//9nC/zr//bPw/fHh3+G/H6r/+7X9H//f639X+F//9w//b5/v4/U9Ue+n//f95fXy//0//H/A//5L8f/35f//f//f/y/++7j9V//7v/4X9/7w//Zf43+9v8//m/L/Vf9t4v8N//fE/x/h34/+VvBvR/43//f4/zP4fxH/X/C///X//b8D+R///of///E///S//z/8/0L5Xyr9//L/9fS/M/UfOfIff8//v6P8e+j/ZfPfpX6v7O8p/5vF/u87v6pY3qve5/d3q356K5wWvof5M70fV88b7Y/+v4H794L7WpS6R/5XpX5fT9V3/fX84GPhvx+6v9/F//m/e7X++7z6d5O/E/33Tf//u9m/Dfq4+/K/O3q8L4V99uF9zfx5986fGv7X+T/C/3P4XyP//5+v/p/7/0Y6f4X/RfpvTf+b7fXfU/4vD//v8v+W/t97X3/8O//70v+7w398vR5/933S/73D/76f/2P5/7n8P1f/77v8P0Of3/4D+H/G8f8P//9f9v9/7v89w/ef//9j+b9t//Yp/5//t8PfXfH/5X+n45X8e6H7f9fw++//u+L9hXmPFfr/G/T//+X/vY4/9/X+wP7X2H9eUf56f176tZ//M/1//+1G+t/y/29fC//P9P4//L83+H8X/v9H9Pf
