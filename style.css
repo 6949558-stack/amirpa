@@ -149,7 +149,6 @@ img {
     gap: 18px;
 }
 
-/* לוגו מוגדל בצורה יציבה להגברת נראות ונגישות */
 .site-logo {
     height: 120px;
     width: auto;
@@ -233,7 +232,7 @@ img {
 }
 
 /* ==========================================================================
-   HERO SECTION (תמונת רקע מותאמת לפי דרישה)
+   HERO SECTION
    ========================================================================== */
 .hero-section {
     background-image: url('banner.png');
@@ -400,7 +399,6 @@ img {
     font-size: 32px;
     width: 62px;
     height: 62px;
-    background-color: var(--gray-light);
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -702,7 +700,7 @@ img {
 }
 
 /* ==========================================================================
-   TESTIMONIALS SECTION (6 כרטיסיות מותאמות)
+   TESTIMONIALS SECTION (6 Cards Grid)
    ========================================================================== */
 .testimonials-section {
     background-color: var(--gray-light);
