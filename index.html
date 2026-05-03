@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>אמירפאה - מרפאה וטרינרית</title>
+    <title>אמירפאה - מרפאה וטרינרית עם לב גדול</title>
     <link href="https://fonts.googleapis.com/css2?family=Assistant:wght@300;400;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -13,134 +13,152 @@
     <header class="main-header">
         <div class="header-container">
             <div class="logo-area">
-                <div class="logo-icon-wrap">
-                    <i class="fas fa-dog site-logo-icon"></i>
-                </div>
+                <img src="Logo.png" alt="לוגו אמירפאה" class="site-logo">
                 <div class="logo-text">
-                    <h1>אמירפאה</h1>
-                    <p>מרפאה וטרינרית</p>
+                    <span class="brand-name">אמירפאה</span>
+                    <span class="brand-sub">מרפאה וטרינרית</span>
                 </div>
             </div>
-            <nav class="main-nav">
-                <ul>
-                    <li><a href="#about">אודות</a></li>
-                    <li><a href="#services">השירותים</a></li>
-                    <li><a href="#reviews">חוות דעת</a></li>
-                    <li><a href="#contact">יצירת קשר</a></li>
-                </ul>
+            <nav class="nav-links">
+                <a href="#about">אודות</a>
+                <a href="#services">השירותים</a>
+                <a href="#reviews">חוות דעת</a>
+                <a href="#contact">יצירת קשר</a>
             </nav>
             <div class="header-actions">
-                <a href="tel:072-3211711" class="btn-call">
-                    <i class="fas fa-phone-alt"></i> 072-3211711
+                <a href="tel:072-3211711" class="btn-phone">
+                    <i class="fa-solid fa-phone"></i> 072-3211711
                 </a>
-                <a href="#booking" class="btn-booking">לקביעת תור</a>
+                <a href="#contact" class="btn-outline-nav">לקביעת תור</a>
             </div>
         </div>
     </header>
 
-    <section class="hero-banner">
+    <section class="hero-section">
+        <div class="hero-overlay"></div>
         <div class="hero-container">
-            <div class="hero-text-content">
-                <span class="hero-tagline">מרפאה וטרינרית מובילה</span>
-                <h2 class="hero-title">אמירפאה</h2>
-                <h3 class="hero-subtitle">מרפאה וטרינרית עם לב גדול <i class="far fa-heart"></i></h3>
-                <p class="hero-description">
-                    יחס אישי, מקצועיות וניסיון עשיר לכלבים, לחתולים ולחיות מחמד נוספות. אנחנו כאן בשבילכם.
-                </p>
-                <div class="hero-btns">
-                    <a href="#booking" class="btn-primary-hero"><i class="far fa-calendar-alt"></i> לקביעת תור</a>
-                    <a href="tel:072-3211711" class="btn-secondary-hero"><i class="fas fa-phone-alt"></i> 072-3211711</a>
-                </div>
-            </div>
-            <div class="hero-img-wrap">
-                <img src="https://images.unsplash.com/photo-1599443011311-6655c6ff6b68?q=80&w=800" alt="כלב מחייך" class="hero-dog-img">
-            </div>
-        </div>
-    </section>
-
-    <section class="features-bar">
-        <div class="features-container">
-            <div class="feature-card">
-                <div class="feature-icon-wrap"><i class="fas fa-map-marker-alt"></i></div>
-                <div class="feature-text">
-                    <h4>מרחביה (קיבוץ)</h4>
-                    <p>אזור העמקים</p>
-                </div>
-            </div>
-            <div class="feature-card">
-                <div class="feature-icon-wrap star-icon"><i class="fas fa-star"></i></div>
-                <div class="feature-text">
-                    <h4>4.8 דירוג</h4>
-                    <p>11 דירוגים (עפ"י דפי זהב)</p>
-                </div>
-            </div>
-            <div class="feature-card">
-                <div class="feature-icon-wrap heart-icon"><i class="fas fa-heart"></i></div>
-                <div class="feature-text">
-                    <h4>יחס אישי</h4>
-                    <p>טיפול מכל הלב</p>
-                </div>
-            </div>
-            <div class="feature-card">
-                <div class="feature-icon-wrap award-icon"><i class="fas fa-award"></i></div>
-                <div class="feature-text">
-                    <h4>מקצועיות</h4>
-                    <p>וניסיון רב</p>
+            <div class="hero-content">
+                <h1 class="hero-title">אמירפאה</h1>
+                <h2 class="hero-subtitle">מרפאה וטרינרית עם לב גדול <i class="fa-regular fa-heart"></i></h2>
+                <p class="hero-description">יחס אישי, מקצועיות וניסיון עשיר לכלבים, לחתולים ולחיות מחמד נוספות.</p>
+                <div class="hero-buttons">
+                    <a href="tel:072-3211711" class="btn-hero-blue"><i class="fa-solid fa-phone"></i> 072-3211711</a>
+                    <a href="#contact" class="btn-hero-outline"><i class="fa-regular fa-calendar-check"></i> לקביעת תור</a>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="services" class="services-section">
-        <div class="section-title">
-            <h2>השירותים שלנו <i class="fas fa-paw paw-icon"></i></h2>
+    <div class="floating-features">
+        <div class="feature-card">
+            <div class="feature-icon-wrapper"><i class="fa-solid fa-location-dot"></i></div>
+            <div class="feature-text">
+                <strong>מרחביה (קיבוץ)</strong>
+                <span>אזור העמקים</span>
+            </div>
+        </div>
+        <div class="feature-card">
+            <div class="feature-icon-wrapper star"><i class="fa-solid fa-star"></i></div>
+            <div class="feature-text">
+                <strong>4.8 דירוג</strong>
+                <span>11 דירוגים (עפ"י דפי זהב)</span>
+            </div>
+        </div>
+        <div class="feature-card">
+            <div class="feature-icon-wrapper heart"><i class="fa-solid fa-hand-holding-heart"></i></div>
+            <div class="feature-text">
+                <strong>יחס אישי</strong>
+                <span>טיפול מכל הלב</span>
+            </div>
+        </div>
+        <div class="feature-card">
+            <div class="feature-icon-wrapper award"><i class="fa-solid fa-award"></i></div>
+            <div class="feature-text">
+                <strong>מקצועיות</strong>
+                <span>וניסיון רב</span>
+            </div>
+        </div>
+    </div>
+
+    <section class="services-section" id="services">
+        <div class="section-header">
+            <h3><i class="fa-solid fa-paw icon-accent"></i> השירותים שלנו</h3>
         </div>
         <div class="services-grid">
             <div class="service-box">
-                <div class="service-icon"><i class="fas fa-stethoscope"></i></div>
-                <h3>טיפולים רפואיים</h3>
+                <i class="fa-solid fa-stethoscope service-icon"></i>
+                <h4>טיפולים רפואיים</h4>
             </div>
             <div class="service-box">
-                <div class="service-icon"><i class="fas fa-syringe"></i></div>
-                <h3>חיסונים וטיפולים מונעים</h3>
+                <i class="fa-solid fa-syringe service-icon"></i>
+                <h4>חיסונים וטיפולים מונעים</h4>
             </div>
             <div class="service-box">
-                <div class="service-icon"><i class="fas fa-cut"></i></div>
-                <h3>שירותים כירורגיים</h3>
+                <i class="fa-solid fa-scissors service-icon"></i>
+                <h4>שירותים כירורגיים</h4>
             </div>
             <div class="service-box">
-                <div class="service-icon"><i class="fas fa-ambulance"></i></div>
-                <h3>טיפולי חירום</h3>
+                <i class="fa-solid fa-kit-medical service-icon"></i>
+                <h4>טיפולי חירום</h4>
             </div>
             <div class="service-box">
-                <div class="service-icon"><i class="fas fa-tooth"></i></div>
-                <h3>טיפולי שיניים</h3>
+                <i class="fa-solid fa-tooth service-icon"></i>
+                <h4>טיפולי שיניים</h4>
             </div>
             <div class="service-box">
-                <div class="service-icon"><i class="fas fa-home"></i></div>
-                <h3>ביקורי בית</h3>
+                <i class="fa-solid fa-house service-icon"></i>
+                <h4>ביקורי בית</h4>
             </div>
         </div>
     </section>
 
-    <footer class="main-footer">
-        <div class="footer-container">
-            <div class="footer-right">
-                <div class="logo-area footer-logo">
-                    <div class="logo-icon-wrap">
-                        <i class="fas fa-dog site-logo-icon"></i>
-                    </div>
-                    <div class="logo-text">
-                        <h1>אמירפאה</h1>
-                        <p>מרפאה וטרינרית</p>
-                    </div>
-                </div>
-            </div>
-            <div class="footer-left">
-                <p>© 2026 כל הזכויות שמורות למרפאת אמירפאה</p>
+    <section class="why-us-section">
+        <div class="why-us-container">
+            <div class="why-us-content">
+                <h3>למה לבחור באמירפאה?</h3>
+                <ul class="check-list">
+                    <li><i class="fa-solid fa-circle-check check-icon"></i> יחס אישי ומקצועי לכל חיית מחמד</li>
+                    <li><i class="fa-solid fa-circle-check check-icon"></i> ניסיון מקצועי רחב וידע מעודכן</li>
+                    <li><i class="fa-solid fa-circle-check check-icon"></i> זמינות גבוהה ושירות מהיר</li>
+                    <li><i class="fa-solid fa-circle-check check-icon"></i> טיפול עדין, סבלני ומקצועי</li>
+                </ul>
             </div>
         </div>
-    </footer>
+    </section>
 
-</body>
-</html>
+    <section class="reviews-section" id="reviews">
+        <div class="section-header">
+            <h3><i class="fa-solid fa-paw icon-accent"></i> מה הלקוחות מספרים</h3>
+            <span class="reviews-rating">4.8 <i class="fa-solid fa-star gold-star"></i><i class="fa-solid fa-star gold-star"></i><i class="fa-solid fa-star gold-star"></i><i class="fa-solid fa-star gold-star"></i><i class="fa-solid fa-star gold-star"></i> <small>(דפי זהב)</small></span>
+        </div>
+        <div class="reviews-grid">
+            <div class="review-card">
+                <i class="fa-solid fa-quote-right quote-icon"></i>
+                <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                <p class="review-text">יחס מדהים לבעלי חיים, סבלנות ואכפתיות ברמה גבוהה מאוד.</p>
+                <strong class="review-author">אורטל יקיר</strong>
+            </div>
+            <div class="review-card">
+                <i class="fa-solid fa-quote-right quote-icon"></i>
+                <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                <p class="review-text">מקצועי מאוד, תמיד זמין ומעניק תחושת ביטחון מלאה. ממליץ בחום.</p>
+                <strong class="review-author">arde1976</strong>
+            </div>
+            <div class="review-card">
+                <i class="fa-solid fa-quote-right quote-icon"></i>
+                <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                <p class="review-text">וטרינר מדהים, זמין ואנושי. ליווה אותנו ברגעים הכי קשים עם הרבה אמפתיה וסבלנות.</p>
+                <strong class="review-author">lisamile</strong>
+            </div>
+        </div>
+    </section>
+
+    <section class="about-section" id="about">
+        <div class="about-container">
+            <div class="about-content">
+                <h3>אודות ד"ר אמיר הלפרין</h3>
+                <p>ד"ר אמיר הלפרין מנהל המרפאה, רכש את מקצועו בעיר זאגרב שבקרואטיה, מביא עמו ידע מקצועי רחב, ניסיון עשיר ומשנת טיפול ייחודית.</p>
+                <p><strong>המטרה שלנו היא אחת = בריאות ואיכות חיים טובה יותר לחיות המחמד שלכם.</strong></p>
+            </div>
+        </div>
+    </section>
