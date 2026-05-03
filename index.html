@@ -13,56 +13,114 @@
                 extend: {
                     colors: {
                         brandBlue: '#0f62fe',
-                        brandDarkBlue: '#001d6c',
+                        brandDarkBlue: '#002868',
                         brandLightBlue: '#edf5ff',
-                        brandOrange: '#ff7849'
-                    },
-                    fontFamily: {
-                        sans: ['system-ui', '-apple-system', 'BlinkMacSystemFont', '"Segoe UI"', 'Roboto', 'sans-serif'],
+                        brandOrange: '#ff724c'
                     }
                 }
             }
         }
     </script>
+    
     <style>
-        /* התאמות נוספות עבור דיוק מושלם של עיצוב הסקיצה */
-        .hero-shapes {
-            background-image: 
-                radial-gradient(circle at 15% 50%, rgba(255, 255, 255, 0.1) 0%, transparent 40%),
-                radial-gradient(circle at 85% 30%, rgba(15, 98, 254, 0.2) 0%, transparent 50%);
+        @import url('https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;700;800;900&display=swap');
+        
+        body {
+            font-family: 'Heebo', system-ui, -apple-system, sans-serif;
         }
-        .text-stroke {
-            -webkit-text-stroke: 1px rgba(255, 255, 255, 0.1);
+
+        /* עיצוב הרקע של הבאנר העליון (Hero Section) בדיוק כמו בסקיצה */
+        .hero-banner {
+            background: linear-gradient(135deg, #0f46a9 0%, #175cd4 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* הוספת הצורות והעיגולים ברקע ה-Hero */
+        .hero-banner::before {
+            content: '';
+            position: absolute;
+            top: -50px;
+            left: -50px;
+            width: 380px;
+            height: 380px;
+            background: rgba(255, 255, 255, 0.08);
+            border-radius: 50%;
+            z-index: 1;
+        }
+
+        .hero-banner::after {
+            content: '';
+            position: absolute;
+            bottom: 40px;
+            right: 20%;
+            width: 140px;
+            height: 140px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 50%;
+            z-index: 1;
+        }
+
+        .plus-bg {
+            position: absolute;
+            top: 15%;
+            right: 8%;
+            font-size: 110px;
+            color: rgba(255, 255, 255, 0.08);
+            font-weight: 900;
+            line-height: 1;
+            user-select: none;
+            z-index: 1;
+        }
+
+        .dots-bg {
+            position: absolute;
+            bottom: 12%;
+            right: 5%;
+            opacity: 0.15;
+            z-index: 1;
+        }
+
+        /* התאמת גובה התמונות */
+        .hero-dog-img {
+            max-height: 520px;
+            width: auto;
+            object-fit: contain;
+        }
+
+        /* צלליות ואפקטים לכרטיסים */
+        .custom-card-shadow {
+            box-shadow: 0 10px 35px -5px rgba(0, 0, 0, 0.05), 0 8px 15px -8px rgba(0, 0, 0, 0.04);
         }
     </style>
 </head>
-<body class="bg-[#f4f7fb] text-slate-800 font-sans antialiased">
+<body class="bg-[#f8fafc] text-slate-800 antialiased leading-normal">
 
-    <header class="bg-white/95 backdrop-blur-md shadow-sm sticky top-0 z-50 h-24 flex items-center">
+    <header class="bg-white/95 backdrop-blur-md shadow-sm sticky top-0 z-50 h-24 flex items-center border-b border-slate-100">
         <div class="max-w-7xl mx-auto px-6 w-full flex items-center justify-between">
             <div class="flex items-center gap-3 select-none">
-                <div class="w-14 h-14 bg-white border-2 border-brandBlue rounded-2xl flex items-center justify-center text-brandBlue shadow-sm transform hover:scale-105 transition-transform">
-                    <i class="fas fa-dog text-3xl"></i>
+                <div class="w-14 h-14 bg-white border-2 border-brandBlue rounded-2xl flex items-center justify-center text-brandBlue shadow-sm transform hover:scale-105 transition duration-300">
+                    <i class="fas fa-paw text-2xl"></i>
                 </div>
-                <div class="flex flex-col">
-                    <h1 class="text-3xl font-black text-brandDarkBlue tracking-tight leading-none">אמירפאה</h1>
-                    <span class="text-xs font-bold text-brandBlue tracking-wider mt-1">מרפאה וטרינרית</span>
+                <div>
+                    <h1 class="text-3xl font-black text-brandDarkBlue tracking-wider leading-none">אמירפאה</h1>
+                    <span class="text-xs font-bold text-brandBlue tracking-widest mt-1 block">מרפאה וטרינרית</span>
                 </div>
             </div>
 
-            <nav class="hidden lg:flex items-center space-x-reverse space-x-8 font-black text-slate-600 text-base">
-                <a href="#about" class="hover:text-brandBlue transition-colors duration-200">אודות</a>
-                <a href="#services" class="hover:text-brandBlue transition-colors duration-200">השירותים</a>
-                <a href="#reviews" class="hover:text-brandBlue transition-colors duration-200">חוות דעת</a>
-                <a href="#contact" class="hover:text-brandBlue transition-colors duration-200">יצירת קשר</a>
+            <nav class="hidden lg:flex items-center space-x-reverse space-x-8 font-bold text-slate-600">
+                <a href="#about" class="hover:text-brandBlue transition">אודות</a>
+                <a href="#services" class="hover:text-brandBlue transition">השירותים</a>
+                <a href="#reviews" class="hover:text-brandBlue transition">חוות דעת</a>
+                <a href="#contact" class="hover:text-brandBlue transition">יצירת קשר</a>
             </nav>
 
             <div class="flex items-center space-x-reverse space-x-4">
-                <a href="tel:072-3211711" class="hidden sm:inline-flex bg-brandBlue hover:bg-blue-700 text-white font-black px-6 py-3.5 rounded-2xl shadow-lg hover:shadow-blue-500/30 transition-all duration-200 items-center gap-2">
+                <a href="tel:072-3211711" class="hidden sm:inline-flex bg-brandBlue hover:bg-blue-700 text-white font-black px-6 py-3.5 rounded-xl shadow-md transition items-center gap-2">
                     <i class="fas fa-phone rotate-90"></i>
                     072-3211711
                 </a>
-                <a href="#contact" class="border-2 border-brandBlue text-brandBlue hover:bg-brandLightBlue font-black px-5 py-3 rounded-2xl transition-all duration-200 flex items-center gap-2">
+                <a href="#contact" class="border-2 border-brandBlue text-brandBlue hover:bg-brandLightBlue font-black px-5 py-3 rounded-xl transition flex items-center gap-2">
                     <i class="far fa-calendar-alt"></i>
                     לקביעת תור
                 </a>
@@ -70,20 +128,18 @@
         </div>
     </header>
 
-    <main class="relative bg-gradient-to-tr from-[#0a45b0] via-[#0f62fe] to-[#1d72fe] overflow-hidden min-h-[640px] flex items-center hero-shapes">
-        <div class="absolute top-24 right-16 text-white/10 text-9xl select-none font-black z-0 animate-pulse">
-            <i class="fas fa-plus"></i>
+    <section class="hero-banner min-h-[600px] flex items-center relative">
+        <div class="plus-bg"><i class="fas fa-plus"></i></div>
+        <div class="dots-bg grid grid-cols-4 gap-2">
+            <div class="w-2.5 h-2.5 bg-white rounded-full"></div><div class="w-2.5 h-2.5 bg-white rounded-full"></div><div class="w-2.5 h-2.5 bg-white rounded-full"></div><div class="w-2.5 h-2.5 bg-white rounded-full"></div>
+            <div class="w-2.5 h-2.5 bg-white rounded-full"></div><div class="w-2.5 h-2.5 bg-white rounded-full"></div><div class="w-2.5 h-2.5 bg-white rounded-full"></div><div class="w-2.5 h-2.5 bg-white rounded-full"></div>
+            <div class="w-2.5 h-2.5 bg-white rounded-full"></div><div class="w-2.5 h-2.5 bg-white rounded-full"></div><div class="w-2.5 h-2.5 bg-white rounded-full"></div><div class="w-2.5 h-2.5 bg-white rounded-full"></div>
         </div>
-        <div class="absolute top-20 left-12 grid grid-cols-4 gap-3 opacity-20 z-0">
-            <div class="w-3 h-3 bg-white rounded-full"></div><div class="w-3 h-3 bg-white rounded-full"></div><div class="w-3 h-3 bg-white rounded-full"></div><div class="w-3 h-3 bg-white rounded-full"></div>
-            <div class="w-3 h-3 bg-white rounded-full"></div><div class="w-3 h-3 bg-white rounded-full"></div><div class="w-3 h-3 bg-white rounded-full"></div><div class="w-3 h-3 bg-white rounded-full"></div>
-            <div class="w-3 h-3 bg-white rounded-full"></div><div class="w-3 h-3 bg-white rounded-full"></div><div class="w-3 h-3 bg-white rounded-full"></div><div class="w-3 h-3 bg-white rounded-full"></div>
-        </div>
-        <div class="absolute bottom-10 left-1/3 w-96 h-96 bg-white/5 rounded-full filter blur-3xl z-0"></div>
 
         <div class="max-w-7xl mx-auto px-6 py-12 w-full flex flex-col lg:flex-row items-center justify-between relative z-10">
             <div class="w-full lg:w-1/2 text-white text-right mb-12 lg:mb-0">
-                <h2 class="text-6xl md:text-8xl font-black mb-4 tracking-tight leading-none drop-shadow-sm select-none">
+                <span class="text-blue-100 font-extrabold text-sm tracking-widest bg-white/10 px-4 py-1.5 rounded-full backdrop-blur-sm mb-6 inline-block">מרפאה וטרינרית מובילה</span>
+                <h2 class="text-6xl md:text-8xl font-black mb-4 tracking-tight leading-none">
                     אמירפאה
                 </h2>
                 <h3 class="text-3xl md:text-4xl font-extrabold mb-6 flex items-center gap-3 text-white">
@@ -94,11 +150,11 @@
                     יחס אישי, מקצועיות וניסיון עשיר לכלבים, לחתולים ולחיות מחמד נוספות.
                 </p>
                 <div class="flex flex-col sm:flex-row items-center gap-4">
-                    <a href="tel:072-3211711" class="w-full sm:w-auto bg-brandBlue hover:bg-blue-700 text-white text-xl font-black px-8 py-4.5 rounded-2xl shadow-2xl transition-all hover:scale-[1.02] flex items-center justify-center gap-3 border border-white/20">
+                    <a href="tel:072-3211711" class="w-full sm:w-auto bg-brandBlue hover:bg-blue-700 text-white text-xl font-black px-8 py-4.5 rounded-2xl shadow-2xl transition flex items-center justify-center gap-3 border border-white/20">
                         <i class="fas fa-phone rotate-90"></i>
                         072-3211711
                     </a>
-                    <a href="#contact" class="w-full sm:w-auto bg-transparent border-2 border-white hover:bg-white/10 text-white text-xl font-black px-8 py-4.5 rounded-2xl transition-all flex items-center justify-center gap-3">
+                    <a href="#contact" class="w-full sm:w-auto bg-transparent border-2 border-white hover:bg-white/10 text-white text-xl font-black px-8 py-4.5 rounded-2xl transition flex items-center justify-center gap-3">
                         <i class="far fa-calendar-check"></i>
                         לקביעת תור
                     </a>
@@ -106,15 +162,15 @@
             </div>
 
             <div class="w-full lg:w-1/2 flex justify-center lg:justify-end relative select-none">
-                <div class="absolute inset-0 bg-blue-600/20 rounded-full filter blur-3xl z-0"></div>
-                <img src="https://images.unsplash.com/photo-1552053831-71594a27632d?auto=format&fit=crop&q=80&w=650" alt="כלב מחייך" class="w-full max-w-lg object-cover z-10 drop-shadow-2xl">
+                <div class="absolute inset-0 bg-blue-600/30 rounded-full filter blur-3xl z-0"></div>
+                <img src="https://images.unsplash.com/photo-1552053831-71594a27632d?auto=format&fit=crop&q=80&w=650" alt="כלב מחייך" class="hero-dog-img object-cover z-10 drop-shadow-2xl">
             </div>
         </div>
-    </main>
+    </section>
 
     <section class="max-w-7xl mx-auto px-6 -mt-16 relative z-30 mb-24 select-none">
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
-            <div class="bg-white p-6 rounded-3xl shadow-xl hover:shadow-2xl border border-slate-100 flex items-center gap-5 transform hover:-translate-y-1 transition-all duration-300">
+            <div class="bg-white p-6 rounded-3xl custom-card-shadow border border-slate-100 flex items-center gap-5 transition duration-300 transform hover:-translate-y-1 cursor-pointer">
                 <div class="w-16 h-16 bg-blue-50 text-brandBlue rounded-2xl flex items-center justify-center text-3xl flex-shrink-0">
                     <i class="fas fa-award"></i>
                 </div>
@@ -123,7 +179,7 @@
                     <p class="text-sm text-slate-500 font-bold">וניסיון רב</p>
                 </div>
             </div>
-            <div class="bg-white p-6 rounded-3xl shadow-xl hover:shadow-2xl border border-slate-100 flex items-center gap-5 transform hover:-translate-y-1 transition-all duration-300">
+            <div class="bg-white p-6 rounded-3xl custom-card-shadow border border-slate-100 flex items-center gap-5 transition duration-300 transform hover:-translate-y-1 cursor-pointer">
                 <div class="w-16 h-16 bg-blue-50 text-brandBlue rounded-2xl flex items-center justify-center text-3xl flex-shrink-0">
                     <i class="fas fa-hand-holding-heart"></i>
                 </div>
@@ -132,7 +188,7 @@
                     <p class="text-sm text-slate-500 font-bold">טיפול מכל הלב</p>
                 </div>
             </div>
-            <div class="bg-white p-6 rounded-3xl shadow-xl hover:shadow-2xl border border-slate-100 flex items-center gap-5 transform hover:-translate-y-1 transition-all duration-300">
+            <div class="bg-white p-6 rounded-3xl custom-card-shadow border border-slate-100 flex items-center gap-5 transition duration-300 transform hover:-translate-y-1 cursor-pointer">
                 <div class="w-16 h-16 bg-blue-50 text-brandBlue rounded-2xl flex items-center justify-center text-3xl flex-shrink-0">
                     <i class="fas fa-star"></i>
                 </div>
@@ -141,7 +197,7 @@
                     <p class="text-sm text-slate-500 font-bold">11 דירוגים (עפ"י דפי זהב)</p>
                 </div>
             </div>
-            <div class="bg-white p-6 rounded-3xl shadow-xl hover:shadow-2xl border border-slate-100 flex items-center gap-5 transform hover:-translate-y-1 transition-all duration-300">
+            <div class="bg-white p-6 rounded-3xl custom-card-shadow border border-slate-100 flex items-center gap-5 transition duration-300 transform hover:-translate-y-1 cursor-pointer">
                 <div class="w-16 h-16 bg-blue-50 text-brandBlue rounded-2xl flex items-center justify-center text-3xl flex-shrink-0">
                     <i class="fas fa-map-marker-alt"></i>
                 </div>
@@ -153,46 +209,46 @@
         </div>
     </section>
 
-    <section id="services" class="py-16">
+    <section id="services" class="py-16 bg-white border-b border-slate-100">
         <div class="max-w-7xl mx-auto px-6 text-center">
             <div class="flex items-center justify-center gap-3 mb-4 select-none">
                 <i class="fas fa-paw text-brandBlue text-2xl"></i>
-                <span class="text-brandBlue font-extrabold text-sm tracking-widest uppercase">המומחיות שלנו</span>
+                <span class="text-brandBlue font-extrabold text-sm tracking-widest uppercase">מה אנחנו מציעים</span>
             </div>
             <h2 class="text-4xl md:text-5xl font-black text-brandDarkBlue mb-12">השירותים שלנו</h2>
             
             <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
-                <div class="bg-white hover:border-brandBlue border-2 border-transparent p-8 rounded-3xl shadow-md hover:shadow-2xl transition-all duration-300 group flex flex-col items-center cursor-pointer select-none transform hover:-translate-y-1">
+                <div class="bg-white hover:border-brandBlue border-2 border-transparent p-8 rounded-3xl shadow-md hover:shadow-xl transition-all duration-300 group flex flex-col items-center cursor-pointer select-none">
                     <div class="w-16 h-16 bg-blue-50 text-brandBlue group-hover:bg-brandBlue group-hover:text-white rounded-2xl flex items-center justify-center text-3xl mb-5 transition duration-300">
                         <i class="fas fa-home"></i>
                     </div>
                     <h3 class="font-bold text-brandDarkBlue text-lg text-center leading-tight">ביקורי בית</h3>
                 </div>
-                <div class="bg-white hover:border-brandBlue border-2 border-transparent p-8 rounded-3xl shadow-md hover:shadow-2xl transition-all duration-300 group flex flex-col items-center cursor-pointer select-none transform hover:-translate-y-1">
+                <div class="bg-white hover:border-brandBlue border-2 border-transparent p-8 rounded-3xl shadow-md hover:shadow-xl transition-all duration-300 group flex flex-col items-center cursor-pointer select-none">
                     <div class="w-16 h-16 bg-blue-50 text-brandBlue group-hover:bg-brandBlue group-hover:text-white rounded-2xl flex items-center justify-center text-3xl mb-5 transition duration-300">
                         <i class="fas fa-tooth"></i>
                     </div>
                     <h3 class="font-bold text-brandDarkBlue text-lg text-center leading-tight">טיפולי שיניים</h3>
                 </div>
-                <div class="bg-white hover:border-brandBlue border-2 border-transparent p-8 rounded-3xl shadow-md hover:shadow-2xl transition-all duration-300 group flex flex-col items-center cursor-pointer select-none transform hover:-translate-y-1">
+                <div class="bg-white hover:border-brandBlue border-2 border-transparent p-8 rounded-3xl shadow-md hover:shadow-xl transition-all duration-300 group flex flex-col items-center cursor-pointer select-none">
                     <div class="w-16 h-16 bg-blue-50 text-brandBlue group-hover:bg-brandBlue group-hover:text-white rounded-2xl flex items-center justify-center text-3xl mb-5 transition duration-300">
                         <i class="fas fa-ambulance"></i>
                     </div>
                     <h3 class="font-bold text-brandDarkBlue text-lg text-center leading-tight">טיפולי חירום</h3>
                 </div>
-                <div class="bg-white hover:border-brandBlue border-2 border-transparent p-8 rounded-3xl shadow-md hover:shadow-2xl transition-all duration-300 group flex flex-col items-center cursor-pointer select-none transform hover:-translate-y-1">
+                <div class="bg-white hover:border-brandBlue border-2 border-transparent p-8 rounded-3xl shadow-md hover:shadow-xl transition-all duration-300 group flex flex-col items-center cursor-pointer select-none">
                     <div class="w-16 h-16 bg-blue-50 text-brandBlue group-hover:bg-brandBlue group-hover:text-white rounded-2xl flex items-center justify-center text-3xl mb-5 transition duration-300">
                         <i class="fas fa-stethoscope"></i>
                     </div>
-                    <h3 class="font-bold text-brandDarkBlue text-lg text-center leading-tight">שירותים כירורגיים</h3>
+                    <h3 class="font-bold text-brandDarkBlue text-lg text-center leading-tight">כירורגיה</h3>
                 </div>
-                <div class="bg-white hover:border-brandBlue border-2 border-transparent p-8 rounded-3xl shadow-md hover:shadow-2xl transition-all duration-300 group flex flex-col items-center cursor-pointer select-none transform hover:-translate-y-1">
+                <div class="bg-white hover:border-brandBlue border-2 border-transparent p-8 rounded-3xl shadow-md hover:shadow-xl transition-all duration-300 group flex flex-col items-center cursor-pointer select-none">
                     <div class="w-16 h-16 bg-blue-50 text-brandBlue group-hover:bg-brandBlue group-hover:text-white rounded-2xl flex items-center justify-center text-3xl mb-5 transition duration-300">
                         <i class="fas fa-syringe"></i>
                     </div>
-                    <h3 class="font-bold text-brandDarkBlue text-lg text-center leading-tight">חיסונים מונעים</h3>
+                    <h3 class="font-bold text-brandDarkBlue text-lg text-center leading-tight">חיסונים</h3>
                 </div>
-                <div class="bg-white hover:border-brandBlue border-2 border-transparent p-8 rounded-3xl shadow-md hover:shadow-2xl transition-all duration-300 group flex flex-col items-center cursor-pointer select-none transform hover:-translate-y-1">
+                <div class="bg-white hover:border-brandBlue border-2 border-transparent p-8 rounded-3xl shadow-md hover:shadow-xl transition-all duration-300 group flex flex-col items-center cursor-pointer select-none">
                     <div class="w-16 h-16 bg-blue-50 text-brandBlue group-hover:bg-brandBlue group-hover:text-white rounded-2xl flex items-center justify-center text-3xl mb-5 transition duration-300">
                         <i class="fas fa-user-md"></i>
                     </div>
@@ -202,10 +258,10 @@
         </div>
     </section>
 
-    <section class="py-20 bg-white border-y border-slate-100">
+    <section class="py-20 bg-brandLightBlue border-b border-blue-50">
         <div class="max-w-7xl mx-auto px-6 flex flex-col lg:flex-row items-center gap-16">
-            <div class="w-full lg:w-1/2 flex justify-center relative select-none">
-                <img src="https://images.unsplash.com/photo-1581888227599-779811939961?auto=format&fit=crop&q=80&w=600" alt="כלב וחתול" class="w-full max-w-md object-cover rounded-3xl shadow-2xl border-4 border-slate-50 transform hover:scale-[1.01] transition-all">
+            <div class="w-full lg:w-1/2 flex justify-center select-none">
+                <img src="https://images.unsplash.com/photo-1581888227599-779811939961?auto=format&fit=crop&q=80&w=600" alt="כלב וחתול" class="w-full max-w-md object-cover rounded-3xl shadow-2xl border-4 border-white transform hover:scale-[1.01] transition-all">
             </div>
             <div class="w-full lg:w-1/2">
                 <h2 class="text-4xl md:text-5xl font-black text-brandDarkBlue mb-8 leading-tight">למה לבחור באמירפאה?</h2>
@@ -231,17 +287,17 @@
         </div>
     </section>
 
-    <section id="reviews" class="py-20 bg-[#f4f7fb]">
+    <section id="reviews" class="py-20 bg-[#f8fafc]">
         <div class="max-w-7xl mx-auto px-6 text-center">
             <div class="flex items-center justify-center gap-3 mb-4 select-none">
                 <i class="fas fa-comments text-brandBlue text-2xl"></i>
                 <span class="text-brandBlue font-extrabold text-sm tracking-widest uppercase">המלצות</span>
             </div>
             <h2 class="text-4xl font-black text-brandDarkBlue mb-2">מה הלקוחות מספרים</h2>
-            <p class="text-slate-500 font-bold mb-14">4.8 (11 דירוגים עפ"י דפי זהב)</p>
+            <p class="text-slate-500 font-bold mb-14 select-none">4.8 (11 דירוגים עפ"י דפי זהב)</p>
 
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <div class="bg-white p-8 rounded-3xl shadow-md border border-slate-50 text-right relative hover:shadow-xl transition-all duration-300">
+                <div class="bg-white p-8 rounded-3xl custom-card-shadow border border-slate-50 text-right relative hover:shadow-xl transition-all duration-300">
                     <i class="fas fa-quote-right text-4xl text-brandBlue/10 absolute top-6 left-6"></i>
                     <div class="flex mb-4 text-yellow-400 select-none">
                         <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
@@ -249,7 +305,7 @@
                     <p class="text-slate-600 font-semibold mb-6 leading-relaxed">"יחס מדהים לבעלי חיים, סבלנות ואכפתיות ברמה גבוהה. מאוד מומלץ!"</p>
                     <h4 class="font-black text-brandBlue text-lg">אורפז יקיר</h4>
                 </div>
-                <div class="bg-white p-8 rounded-3xl shadow-md border border-slate-50 text-right relative hover:shadow-xl transition-all duration-300">
+                <div class="bg-white p-8 rounded-3xl custom-card-shadow border border-slate-50 text-right relative hover:shadow-xl transition-all duration-300">
                     <i class="fas fa-quote-right text-4xl text-brandBlue/10 absolute top-6 left-6"></i>
                     <div class="flex mb-4 text-yellow-400 select-none">
                         <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
@@ -257,7 +313,7 @@
                     <p class="text-slate-600 font-semibold mb-6 leading-relaxed">"מקצועי מאוד, תמיד זמין ומעניק תחושת ביטחון מלאה. ממליץ בחום."</p>
                     <h4 class="font-black text-brandBlue text-lg">arde1976</h4>
                 </div>
-                <div class="bg-white p-8 rounded-3xl shadow-md border border-slate-50 text-right relative hover:shadow-xl transition-all duration-300">
+                <div class="bg-white p-8 rounded-3xl custom-card-shadow border border-slate-50 text-right relative hover:shadow-xl transition-all duration-300">
                     <i class="fas fa-quote-right text-4xl text-brandBlue/10 absolute top-6 left-6"></i>
                     <div class="flex mb-4 text-yellow-400 select-none">
                         <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
@@ -266,6 +322,12 @@
                     <h4 class="font-black text-brandBlue text-lg">lisamile</h4>
                 </div>
             </div>
+            
+            <div class="flex items-center justify-center gap-3 mt-10 select-none">
+                <div onclick="switchTestimonial(0)" class="test-dot w-3.5 h-3.5 bg-brandBlue rounded-full cursor-pointer transition-all duration-300"></div>
+                <div onclick="switchTestimonial(1)" class="test-dot w-3.5 h-3.5 bg-slate-300 rounded-full cursor-pointer hover:bg-brandBlue/40 transition-all duration-300"></div>
+                <div onclick="switchTestimonial(2)" class="test-dot w-3.5 h-3.5 bg-slate-300 rounded-full cursor-pointer hover:bg-brandBlue/40 transition-all duration-300"></div>
+            </div>
         </div>
     </section>
 
@@ -273,7 +335,7 @@
         <div class="max-w-7xl mx-auto px-6 flex flex-col lg:flex-row items-center gap-16">
             <div class="w-full lg:w-1/2">
                 <h2 class="text-4xl md:text-5xl font-black text-brandDarkBlue mb-6 leading-tight">אודות ד"ר אמיר הלפרין</h2>
-                <div class="space-y-6 text-slate-700 text-lg font-medium leading-relaxed">
+                <div class="space-y-4 text-slate-700 text-lg font-medium leading-relaxed">
                     <p>
                         ד"ר אמיר הלפרין, מנהל מרפאת "אמירפאה", רכש את מקצועו בעיר פארמה שבאיטליה. הוא מביא עמו ידע מקצועי רחב, ניסיון עשיר וגישת טיפול ייחודית ומתקדמת.
                     </p>
@@ -283,27 +345,27 @@
                 </div>
             </div>
             <div class="w-full lg:w-1/2 flex justify-center select-none">
-                <img src="https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?auto=format&fit=crop&q=80&w=600" alt="ד''ר אמיר הלפרין" class="w-full max-w-md object-cover rounded-3xl shadow-2xl border-4 border-slate-50 transform hover:scale-[1.01] transition-all">
+                <img src="https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?auto=format&fit=crop&q=80&w=600" alt="ד''ר אמיר הלפרין" class="w-full max-w-md object-cover rounded-3xl shadow-2xl border-4 border-white transform hover:scale-[1.01] transition-all">
             </div>
         </div>
     </section>
 
-    <section id="contact" class="py-20 bg-[#f4f7fb]">
+    <section id="contact" class="py-20 bg-brandLightBlue/40">
         <div class="max-w-7xl mx-auto px-6">
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
                 
-                <div class="bg-white p-8 rounded-3xl shadow-lg border border-slate-50 text-right flex flex-col justify-between">
+                <div class="bg-white p-8 rounded-3xl custom-card-shadow border border-slate-50 text-right flex flex-col justify-between">
                     <div>
                         <h3 class="text-2xl font-black text-brandDarkBlue mb-6 flex items-center gap-3 select-none">
                             <i class="far fa-clock text-brandBlue"></i>
                             שעות פעילות
                         </h3>
                         <ul class="space-y-4 font-bold text-slate-700">
-                            <li class="flex justify-between border-b pb-2 border-slate-100">
+                            <li class="flex justify-between border-b pb-2 border-slate-200">
                                 <span>ימים א' - ה'</span>
                                 <span class="font-black text-brandDarkBlue">09:00 - 19:00</span>
                             </li>
-                            <li class="flex justify-between border-b pb-2 border-slate-100">
+                            <li class="flex justify-between border-b pb-2 border-slate-200">
                                 <span>יום ו'</span>
                                 <span class="font-black text-brandDarkBlue">09:00 - 13:00</span>
                             </li>
@@ -315,7 +377,7 @@
                     </div>
                 </div>
 
-                <div class="bg-white p-8 rounded-3xl shadow-xl border-2 border-blue-100 text-center flex flex-col justify-between transform hover:-translate-y-1 transition-all">
+                <div class="bg-white p-8 rounded-3xl shadow-xl border-2 border-blue-100 text-center flex flex-col justify-between transform hover:-translate-y-1 transition duration-300">
                     <div>
                         <h3 class="text-2xl font-black text-brandDarkBlue mb-4 leading-tight">יצירת קשר</h3>
                         <a href="tel:072-3211711" class="text-4xl font-black text-brandBlue mb-4 block hover:underline tracking-tight" dir="ltr">072-3211711</a>
@@ -330,7 +392,7 @@
                     </a>
                 </div>
 
-                <div class="bg-white p-8 rounded-3xl shadow-lg border border-slate-50 text-right select-none">
+                <div class="bg-white p-8 rounded-3xl custom-card-shadow border border-slate-50 text-right select-none relative">
                     <h3 class="text-2xl font-black text-brandDarkBlue mb-6 flex items-center gap-3">
                         <i class="fas fa-map-marked-alt text-brandBlue"></i>
                         היכן אנחנו?
@@ -353,7 +415,7 @@
         <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between text-sm font-bold text-center md:text-right space-y-4 md:space-y-0">
             <p class="opacity-80">© 2026 כל הזכויות שמורות למרפאת אמירפאה - מרפאה וטרינרית במרחביה</p>
             <div class="flex items-center gap-6">
-                <a href="tel:072-3211711" class="hover:text-brandOrange transition-colors duration-200 flex items-center gap-2">
+                <a href="tel:072-3211711" class="hover:text-brandOrange transition flex items-center gap-2">
                     <i class="fas fa-phone rotate-90"></i>
                     072-3211711
                 </a>
@@ -361,5 +423,20 @@
         </div>
     </footer>
 
+    <script>
+        function switchTestimonial(index) {
+            const dots = document.querySelectorAll('.test-dot');
+            dots.forEach((dot, idx) => {
+                if(idx === index) {
+                    dot.classList.remove('bg-slate-300');
+                    dot.classList.add('bg-brandBlue', 'w-5');
+                } else {
+                    dot.classList.remove('bg-brandBlue', 'w-5');
+                    dot.classList.add('bg-slate-300');
+                }
+            });
+            // כאן אפשר להוסיף לוגיקה לגלילה או מעבר בין חוות הדעת
+        }
+    </script>
 </body>
 </html>
