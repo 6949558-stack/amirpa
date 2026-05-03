@@ -1,4 +1,4 @@
-/* איפוס והגדרות בסיס */
+/* הגדרות בסיס */
 * {
     margin: 0;
     padding: 0;
@@ -7,21 +7,21 @@
 
 body {
     font-family: 'Assistant', sans-serif;
-    direction: rtl; /* כיוון האתר מימין לשמאל */
+    direction: rtl;
     background-color: #f8fafc;
-    color: #333333;
+    color: #1e293b;
     overflow-x: hidden;
 }
 
 a {
     text-decoration: none;
-    transition: all 0.25s ease;
+    transition: all 0.3s ease;
 }
 
-/* תפריט עליון - Header */
+/* תפריט עליון */
 .main-header {
     background-color: #ffffff;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.05);
     position: sticky;
     top: 0;
     z-index: 1000;
@@ -43,8 +43,9 @@ a {
 }
 
 .site-logo {
-    height: 44px;
+    height: 50px;
     width: auto;
+    display: block;
 }
 
 .logo-text {
@@ -53,31 +54,31 @@ a {
 }
 
 .brand-name {
-    font-size: 22px;
-    color: #001a4d;
+    font-size: 24px;
+    color: #0d2b6b;
     font-weight: 800;
     line-height: 1.1;
 }
 
 .brand-sub {
-    font-size: 11px;
-    color: #0066ff;
-    font-weight: bold;
+    font-size: 12px;
+    color: #2563eb;
+    font-weight: 600;
 }
 
 .nav-links {
     display: flex;
-    gap: 28px;
+    gap: 24px;
 }
 
 .nav-links a {
-    color: #4a5568;
+    color: #475569;
     font-weight: 600;
-    font-size: 15px;
+    font-size: 16px;
 }
 
 .nav-links a:hover {
-    color: #0066ff;
+    color: #2563eb;
 }
 
 .header-actions {
@@ -86,40 +87,40 @@ a {
     gap: 12px;
 }
 
-.btn-phone {
-    background-color: #0066ff;
+.btn-phone-nav {
+    background-color: #2563eb;
     color: #ffffff;
-    padding: 10px 22px;
-    border-radius: 8px;
+    padding: 10px 20px;
+    border-radius: 50px;
     font-weight: bold;
-    font-size: 14px;
+    font-size: 15px;
     display: flex;
     align-items: center;
     gap: 8px;
 }
 
-.btn-phone:hover {
-    background-color: #0052cc;
+.btn-phone-nav:hover {
+    background-color: #1d4ed8;
 }
 
 .btn-outline-nav {
-    color: #0066ff;
-    border: 1.5px solid #0066ff;
-    padding: 9px 22px;
-    border-radius: 8px;
+    color: #2563eb;
+    border: 2px solid #2563eb;
+    padding: 9px 20px;
+    border-radius: 50px;
     font-weight: bold;
-    font-size: 14px;
+    font-size: 15px;
     display: flex;
     align-items: center;
     gap: 8px;
-    background-color: transparent;
+    background-color: #ffffff;
 }
 
 .btn-outline-nav:hover {
-    background-color: #f0f7ff;
+    background-color: #eff6ff;
 }
 
-/* באנר ראשי (Hero) */
+/* באנר ראשי */
 .hero-section {
     background: url('banner.png') no-repeat center center;
     background-size: cover;
@@ -127,7 +128,6 @@ a {
     display: flex;
     align-items: center;
     position: relative;
-    direction: rtl;
 }
 
 .hero-container {
@@ -136,42 +136,40 @@ a {
     margin: 0 auto;
     padding: 0 20px;
     display: flex;
-    justify-content: flex-start; /* מיקום התוכן בצד ימין */
-    position: relative;
-    z-index: 2;
+    justify-content: flex-start;
 }
 
 .hero-content {
-    max-width: 540px;
-    background: rgba(0, 0, 0, 0.45); /* הצללה לטקסט קריא מעל תמונת הכלב */
-    padding: 40px;
-    border-radius: 12px;
-    backdrop-filter: blur(4px);
+    max-width: 500px;
+    background: rgba(0, 0, 0, 0.4);
+    padding: 35px;
+    border-radius: 16px;
+    backdrop-filter: blur(6px);
     color: #ffffff;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
 }
 
 .hero-title {
-    font-size: 60px;
+    font-size: 56px;
     font-weight: 800;
-    margin-bottom: 5px;
+    margin-bottom: 8px;
+    line-height: 1.1;
 }
 
 .hero-subtitle {
-    font-size: 28px;
+    font-size: 26px;
     font-weight: 600;
-    margin-bottom: 15px;
+    margin-bottom: 16px;
 }
 
-.heart-text {
-    color: #ff4d79;
+.heart-icon {
+    color: #ff4d6d;
 }
 
 .hero-description {
-    font-size: 17px;
+    font-size: 16px;
     line-height: 1.6;
-    margin-bottom: 30px;
-    color: #f1f5f9;
+    margin-bottom: 25px;
+    color: #f8fafc;
 }
 
 .hero-actions {
@@ -180,22 +178,22 @@ a {
 }
 
 .btn-hero {
-    padding: 12px 28px;
+    padding: 12px 26px;
     font-size: 16px;
     font-weight: bold;
-    border-radius: 8px;
+    border-radius: 50px;
     display: flex;
     align-items: center;
     gap: 10px;
 }
 
 .btn-orange {
-    background-color: #ff6600;
+    background-color: #f97316;
     color: #ffffff;
 }
 
 .btn-orange:hover {
-    background-color: #e65c00;
+    background-color: #ea580c;
 }
 
 .btn-white {
@@ -206,16 +204,16 @@ a {
 
 .btn-white:hover {
     background-color: #ffffff;
-    color: #001a4d;
+    color: #0d2b6b;
 }
 
-/* סרגל לבן צף */
+/* סרגל צף */
 .features-bar {
     max-width: 1100px;
-    margin: -35px auto 0 auto;
+    margin: -40px auto 0 auto;
     background-color: #ffffff;
-    box-shadow: 0 4px 25px rgba(0, 0, 0, 0.06);
-    border-radius: 12px;
+    box-shadow: 0 4px 25px rgba(0, 0, 0, 0.08);
+    border-radius: 16px;
     position: relative;
     z-index: 10;
     width: calc(100% - 40px);
@@ -224,7 +222,7 @@ a {
 .bar-container {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    padding: 22px 10px;
+    padding: 20px 10px;
 }
 
 .feature-item {
@@ -232,7 +230,7 @@ a {
     align-items: center;
     justify-content: center;
     gap: 15px;
-    border-left: 1px solid #edf2f7;
+    border-left: 1px solid #e2e8f0;
 }
 
 .feature-item:last-child {
@@ -241,36 +239,28 @@ a {
 
 .feature-icon {
     font-size: 24px;
-    width: 46px;
-    height: 46px;
+    color: #2563eb;
+    background-color: #eff6ff;
+    width: 50px;
+    height: 50px;
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
-.icon-blue { background-color: #ebf8ff; color: #0066ff; }
-.icon-gold { background-color: #fffaf0; color: #ffaa00; }
-.icon-pink { background-color: #fff5f5; color: #ff4d79; }
-.icon-green { background-color: #f0fff4; color: #00cc66; }
-
-.feature-info {
-    text-align: right;
-}
-
 .feature-info h3 {
-    font-size: 15px;
+    font-size: 16px;
     font-weight: 700;
-    color: #001a4d;
-    margin-bottom: 2px;
+    color: #0d2b6b;
 }
 
 .feature-info p {
-    font-size: 12px;
-    color: #718096;
+    font-size: 13px;
+    color: #64748b;
 }
 
-/* שירותים */
+/* אזור השירותים */
 .services-section {
     max-width: 1200px;
     margin: 80px auto;
@@ -279,17 +269,17 @@ a {
 
 .section-title {
     text-align: center;
-    margin-bottom: 45px;
+    margin-bottom: 40px;
 }
 
 .section-title h2 {
     font-size: 32px;
-    color: #001a4d;
-    font-weight: 700;
+    color: #0d2b6b;
+    font-weight: 800;
 }
 
 .paw-icon {
-    color: #ff6600;
+    color: #2563eb;
 }
 
 .services-grid {
@@ -300,43 +290,118 @@ a {
 
 .service-card {
     background-color: #ffffff;
-    border: 1px solid #edf2f7;
-    border-radius: 12px;
-    padding: 25px 15px;
+    border: 1px solid #e2e8f0;
+    border-radius: 16px;
+    padding: 30px 15px;
     text-align: center;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.01);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.02);
     transition: all 0.3s ease;
 }
 
 .service-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
-    border-color: #0066ff;
+    border-color: #2563eb;
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.06);
 }
 
 .active-card {
-    border-color: #0066ff;
-    box-shadow: 0 10px 25px rgba(0, 102, 255, 0.08);
+    border-color: #2563eb;
 }
 
 .service-icon {
     font-size: 32px;
-    color: #0066ff;
-    margin-bottom: 15px;
+    color: #2563eb;
+    margin-bottom: 16px;
 }
 
 .service-card h3 {
-    font-size: 14px;
+    font-size: 15px;
     font-weight: 700;
-    color: #001a4d;
+    color: #0d2b6b;
+}
+
+/* חוות דעת */
+.reviews-section {
+    background-color: #f1f5f9;
+    padding: 80px 20px;
+}
+
+.reviews-grid {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+.review-card {
+    background-color: #ffffff;
+    border-radius: 16px;
+    padding: 30px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+}
+
+.stars {
+    color: #f59e0b;
+    margin-bottom: 12px;
+}
+
+.review-text {
+    font-size: 15px;
+    line-height: 1.6;
+    color: #475569;
+    margin-bottom: 20px;
+}
+
+.reviewer-name {
+    font-size: 16px;
+    color: #2563eb;
+    font-weight: bold;
+}
+
+/* אודות ד"ר אמיר */
+.about-section {
+    max-width: 1200px;
+    margin: 80px auto;
+    padding: 0 20px;
+}
+
+.about-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+    align-items: center;
+}
+
+.about-content h2 {
+    font-size: 32px;
+    color: #0d2b6b;
+    margin-bottom: 20px;
+    font-weight: 800;
+}
+
+.about-content p {
+    font-size: 17px;
+    line-height: 1.8;
+    color: #475569;
+    margin-bottom: 15px;
+}
+
+.about-image-wrapper {
+    width: 100%;
+}
+
+.about-image {
+    width: 100%;
+    border-radius: 16px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.05);
 }
 
 /* פוטר */
 .main-footer {
-    background-color: #001a4d;
+    background-color: #0d2b6b;
     color: #ffffff;
-    padding: 20px 0;
-    margin-top: 80px;
+    padding: 24px 0;
 }
 
 .footer-container {
@@ -356,11 +421,11 @@ a {
 
 .footer-paw {
     font-size: 18px;
-    color: #ff6600;
+    color: #f97316;
 }
 
 .footer-brand {
-    font-size: 16px;
+    font-size: 17px;
     font-weight: bold;
 }
 
@@ -369,17 +434,19 @@ a {
     color: #cbd5e1;
 }
 
-/* התאמה למובייל */
-@media (max-width: 992px) {
+/* מובייל והתאמות */
+@media (max-width: 1024px) {
     .services-grid { grid-template-columns: repeat(3, 1fr); }
     .bar-container { grid-template-columns: repeat(2, 1fr); gap: 15px; }
     .feature-item { border-left: none; }
+    .reviews-grid { grid-template-columns: 1fr; }
+    .about-container { grid-template-columns: 1fr; gap: 30px; }
 }
 
 @media (max-width: 768px) {
     .header-container { flex-direction: column; gap: 12px; }
     .nav-links { flex-wrap: wrap; justify-content: center; gap: 12px; }
-    .hero-title { font-size: 42px; }
+    .hero-title { font-size: 40px; }
     .hero-content { padding: 25px; }
     .services-grid { grid-template-columns: repeat(2, 1fr); }
     .footer-container { flex-direction: column; gap: 12px; text-align: center; }
