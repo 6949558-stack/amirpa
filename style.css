@@ -1,34 +1,36 @@
-/* הגדרות כלליות ואיפוס */
+/* איפוס הגדרות ועיצוב בסיסי */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-}
-
-body {
     font-family: 'Assistant', sans-serif;
-    direction: rtl;
-    color: #333;
-    background-color: #f8fafc;
 }
 
 :root {
-    --primary-color: #0056d2; /* כחול נקי וקלאסי */
-    --secondary-color: #002868; /* כחול כהה */
-    --accent-color: #ff9800; /* כתום עדין לדירוג */
-    --text-color: #1a1a1a;
-    --light-bg: #f1f5f9;
+    --primary-blue: #0056D2;
+    --dark-blue: #001A4D;
+    --light-blue: #EAF2FF;
+    --accent-orange: #FF6600;
+    --whatsapp-green: #25D366;
+    --gray-bg: #F8FAFC;
+    --text-color: #1E293B;
+}
+
+body {
+    background-color: var(--gray-bg);
+    color: var(--text-color);
+    line-height: 1.6;
 }
 
 a {
     text-decoration: none;
-    transition: color 0.3s ease;
+    transition: all 0.3s ease;
 }
 
-/* Header המעודכן */
+/* עיצוב ה-Header */
 .main-header {
-    background-color: #ffffff;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    background: #ffffff;
+    box-shadow: 0 2px 15px rgba(0,0,0,0.05);
     position: sticky;
     top: 0;
     z-index: 1000;
@@ -49,49 +51,42 @@ a {
     gap: 12px;
 }
 
-/* הלוגו המעודכן עם אייקון FontAwesome קלאסי */
-.logo-icon-wrap {
-    width: 45px;
-    height: 45px;
-    background-color: var(--light-bg);
-    border-radius: 50%;
+.site-logo {
+    height: 50px;
+    width: auto;
+}
+
+.logo-text {
     display: flex;
-    align-items: center;
-    justify-content: center;
-    border: 2px solid var(--primary-color);
+    flex-direction: column;
 }
 
-.site-logo-icon {
-    font-size: 20px;
-    color: var(--primary-color);
-}
-
-.logo-text h1 {
-    font-size: 22px;
-    color: var(--secondary-color);
+.brand-name {
+    font-size: 24px;
     font-weight: 800;
-    line-height: 1;
+    color: var(--dark-blue);
+    line-height: 1.1;
 }
 
-.logo-text p {
-    font-size: 12px;
-    color: var(--primary-color);
+.brand-sub {
+    font-size: 13px;
+    color: var(--primary-blue);
     font-weight: 600;
 }
 
-.main-nav ul {
-    list-style: none;
+.nav-links {
     display: flex;
-    gap: 25px;
+    gap: 24px;
 }
 
-.main-nav a {
-    color: #555;
+.nav-links a {
+    font-size: 16px;
     font-weight: 600;
+    color: var(--text-color);
 }
 
-.main-nav a:hover {
-    color: var(--primary-color);
+.nav-links a:hover {
+    color: var(--primary-blue);
 }
 
 .header-actions {
@@ -100,264 +95,517 @@ a {
     gap: 15px;
 }
 
-.btn-call {
-    background-color: var(--primary-color);
+.btn-phone {
+    background: var(--primary-blue);
     color: #fff;
-    padding: 10px 18px;
-    border-radius: 30px;
+    padding: 10px 20px;
+    border-radius: 100px;
     font-weight: 700;
-    font-size: 14px;
-    display: flex;
+    display: inline-flex;
     align-items: center;
     gap: 8px;
 }
 
-.btn-call:hover {
-    background-color: var(--secondary-color);
+.btn-phone:hover {
+    background: var(--dark-blue);
 }
 
-.btn-booking {
-    color: var(--primary-color);
-    border: 2px solid var(--primary-color);
-    padding: 8px 18px;
-    border-radius: 30px;
+.btn-outline-nav {
+    border: 2px solid var(--primary-blue);
+    color: var(--primary-blue);
+    padding: 8px 20px;
+    border-radius: 100px;
     font-weight: 700;
-    font-size: 14px;
 }
 
-.btn-booking:hover {
-    background-color: var(--primary-color);
+.btn-outline-nav:hover {
+    background: var(--primary-blue);
     color: #fff;
 }
 
-/* Hero Section */
-.hero-banner {
-    background: linear-gradient(135deg, #0d47a1 0%, #002868 100%);
+/* עיצוב הבאנר הראשי (Hero) - שיפור קריאות ומיקום */
+.hero-section {
+    position: relative;
+    height: 600px;
+    background-image: url('banner.png');
+    background-size: cover;
+    background-position: center left; /* מיקום התמונה כדי שהכלב יישאר גלוי */
+    display: flex;
+    align-items: center;
     color: #fff;
-    padding: 60px 20px;
 }
 
 .hero-container {
     max-width: 1200px;
     margin: 0 auto;
+    padding: 0 20px;
+    width: 100%;
+    z-index: 2;
     display: flex;
-    align-items: center;
-    justify-content: space-between;
+    justify-content: flex-start; /* הזזת הטקסט לימין כדי שלא יסתיר את הכלב */
 }
 
-.hero-text-content {
+.hero-content {
     max-width: 550px;
-}
-
-.hero-tagline {
-    font-size: 13px;
-    font-weight: 700;
-    text-transform: uppercase;
-    color: #a0c4ff;
-    margin-bottom: 10px;
-    display: block;
+    background: rgba(0, 26, 77, 0.45); /* רקע כהה ונעים שמאפשר קריאה קלה */
+    padding: 35px;
+    border-radius: 16px;
+    backdrop-filter: blur(4px); /* טשטוש קל ויוקרתי */
 }
 
 .hero-title {
-    font-size: 60px;
+    font-size: 64px;
     font-weight: 800;
-    line-height: 1.1;
-    margin-bottom: 10px;
+    margin-bottom: 5px;
+    color: #fff;
 }
 
 .hero-subtitle {
-    font-size: 30px;
+    font-size: 28px;
     font-weight: 600;
     margin-bottom: 20px;
-    display: flex;
-    align-items: center;
-    gap: 10px;
+    color: #fff;
 }
 
 .hero-description {
-    font-size: 16px;
-    margin-bottom: 30px;
-    color: #e0f0ff;
-    line-height: 1.6;
+    font-size: 18px;
+    margin-bottom: 35px;
+    font-weight: 400;
+    color: #f1f5f9;
 }
 
-.hero-btns {
+.hero-buttons {
     display: flex;
     gap: 15px;
 }
 
-.btn-primary-hero {
-    background-color: #fff;
-    color: var(--primary-color);
-    padding: 12px 24px;
-    border-radius: 30px;
-    font-weight: 700;
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-}
-
-.btn-secondary-hero {
-    background-color: rgba(255, 255, 255, 0.1);
+.btn-hero-blue {
+    background: var(--primary-blue);
     color: #fff;
-    border: 2px solid rgba(255, 255, 255, 0.2);
-    padding: 10px 22px;
-    border-radius: 30px;
+    padding: 12px 30px;
+    border-radius: 100px;
     font-weight: 700;
-    display: flex;
+    font-size: 18px;
+    display: inline-flex;
     align-items: center;
-    gap: 8px;
+    gap: 10px;
 }
 
-.btn-secondary-hero:hover {
-    background-color: rgba(255, 255, 255, 0.2);
+.btn-hero-blue:hover {
+    background: #0044aa;
 }
 
-.hero-dog-img {
-    max-width: 100%;
-    height: auto;
-    border-radius: 20px;
+.btn-hero-outline {
+    background: transparent;
+    border: 2px solid #fff;
+    color: #fff;
+    padding: 12px 30px;
+    border-radius: 100px;
+    font-weight: 700;
+    font-size: 18px;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
 }
 
-/* Features Bar המעודכן עם אייקונים קלאסיים */
-.features-bar {
-    background-color: #fff;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
-    margin-top: -30px;
-    position: relative;
-    z-index: 10;
-    border-radius: 15px;
+.btn-hero-outline:hover {
+    background: #fff;
+    color: var(--dark-blue);
+}
+
+/* שורת הכרטיסים הצפים */
+.floating-features {
     max-width: 1100px;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-.features-container {
+    margin: -50px auto 50px auto;
+    background: #fff;
+    border-radius: 16px;
+    box-shadow: 0 10px 35px rgba(0,0,0,0.06);
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    padding: 20px;
+    padding: 25px 15px;
+    position: relative;
+    z-index: 10;
 }
 
 .feature-card {
     display: flex;
     align-items: center;
-    gap: 15px;
+    gap: 12px;
     justify-content: center;
-    border-left: 1px solid #eee;
+    border-left: 1px solid #E2E8F0;
 }
 
 .feature-card:last-child {
     border-left: none;
 }
 
-/* הגדרות לאייקונים הקלאסיים - צבע אחיד */
-.feature-icon-wrap {
-    width: 40px;
-    height: 40px;
-    background-color: #f0f7ff;
+.feature-icon-wrapper {
+    width: 44px;
+    height: 44px;
     border-radius: 50%;
+    background: var(--light-blue);
+    color: var(--primary-blue);
     display: flex;
     align-items: center;
     justify-content: center;
-    color: var(--primary-color);
     font-size: 18px;
 }
 
-/* התאמות צבע מיוחדות לאייקונים מסוימים */
-.star-icon {
-    color: var(--accent-color);
-    background-color: #fff9f0;
+.feature-icon-wrapper.star { color: #EAB308; background: #FEF9C3; }
+.feature-icon-wrapper.heart { color: #EC4899; background: #FCE7F3; }
+.feature-icon-wrapper.award { color: #10B981; background: #D1FAE5; }
+
+.feature-text {
+    display: flex;
+    flex-direction: column;
 }
 
-.heart-icon {
-    color: #e91e63;
-    background-color: #fff0f5;
-}
-
-.award-icon {
-    color: #4caf50;
-    background-color: #f0fff0;
-}
-
-.feature-text h4 {
+.feature-text strong {
     font-size: 15px;
-    color: var(--secondary-color);
+    color: var(--dark-blue);
 }
 
-.feature-text p {
+.feature-text span {
     font-size: 12px;
-    color: #777;
+    color: #64748B;
 }
 
-/* Services Section המעודכן */
-.services-section {
-    max-width: 1200px;
-    margin: 60px auto;
-    padding: 0 20px;
-}
-
-.section-title {
+/* כותרות מקטעים */
+.section-header {
     text-align: center;
     margin-bottom: 40px;
 }
 
-.section-title h2 {
+.section-header h3 {
     font-size: 32px;
     font-weight: 800;
-    color: var(--secondary-color);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 12px;
+    color: var(--dark-blue);
+    margin-bottom: 10px;
 }
 
-.paw-icon {
-    color: var(--primary-color);
+.icon-accent {
+    color: var(--primary-blue);
+    font-size: 24px;
+}
+
+/* תיקון דירוג הכוכבים של חוות הדעת */
+.rating-badge-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.reviews-rating {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-weight: 700;
+    background: #fff;
+    padding: 8px 20px;
+    border-radius: 100px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    border: 1px solid #E2E8F0;
+    font-size: 16px;
+    color: var(--dark-blue);
+}
+
+.gold-star {
+    color: #FBBF24;
+}
+
+/* שירותים */
+.services-section {
+    max-width: 1200px;
+    margin: 0 auto 80px auto;
+    padding: 0 20px;
 }
 
 .services-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 20px;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 15px;
 }
 
 .service-box {
-    background-color: #fff;
-    padding: 30px 20px;
+    background: #fff;
+    padding: 30px 15px;
     border-radius: 12px;
     text-align: center;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.02);
+    border: 1px solid #F1F5F9;
     transition: all 0.3s ease;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.02);
-    border: 1px solid #f1f5f9;
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
+    gap: 15px;
 }
 
 .service-box:hover {
     transform: translateY(-5px);
-    border-color: var(--primary-color);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.06);
+    border-color: var(--light-blue);
 }
 
-/* אייקונים קלאסיים לשירותים - צבע אחיד */
 .service-icon {
-    font-size: 40px;
-    color: var(--primary-color);
+    font-size: 36px;
+    color: var(--primary-blue);
+}
+
+.service-box h4 {
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--dark-blue);
+}
+
+/* למה לבחור בנו */
+.why-us-section {
+    background-image: url('pets.png');
+    background-size: cover;
+    background-position: center;
+    padding: 100px 0;
+    position: relative;
+    margin-bottom: 80px;
+    border-radius: 20px;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.why-us-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 40px;
+}
+
+.why-us-content {
+    max-width: 500px;
+    background: rgba(255, 255, 255, 0.95);
+    padding: 40px;
+    border-radius: 16px;
+    box-shadow: 0 4px 25px rgba(0,0,0,0.05);
+}
+
+.why-us-content h3 {
+    font-size: 32px;
+    color: var(--dark-blue);
+    font-weight: 800;
+    margin-bottom: 25px;
+}
+
+.check-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.check-list li {
+    font-size: 16px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.check-icon {
+    color: #10B981;
+    font-size: 20px;
+}
+
+/* חוות דעת */
+.reviews-section {
+    max-width: 1200px;
+    margin: 0 auto 80px auto;
+    padding: 0 20px;
+}
+
+.reviews-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+    margin-top: 30px;
+}
+
+.review-card {
+    background: #fff;
+    padding: 35px;
+    border-radius: 16px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.03);
+    border: 1px solid #F1F5F9;
+    position: relative;
+}
+
+.quote-icon {
+    position: absolute;
+    top: 25px;
+    right: 30px;
+    font-size: 28px;
+    color: var(--light-blue);
+}
+
+.stars {
+    color: #FBBF24;
+    margin-bottom: 15px;
+}
+
+.review-text {
+    font-size: 16px;
+    color: #475569;
     margin-bottom: 20px;
 }
 
-.service-box h3 {
-    font-size: 18px;
-    color: var(--secondary-color);
+.review-author {
+    display: block;
+    font-size: 16px;
+    color: var(--primary-blue);
+    font-weight: 700;
 }
 
-/* Footer המעודכן */
-.main-footer {
-    background-color: var(--secondary-color);
+/* אודות ד"ר אמיר */
+.about-section {
+    background-image: url('dr-amir.png');
+    background-size: cover;
+    background-position: center;
+    padding: 120px 0;
     color: #fff;
-    padding: 40px 20px;
+    margin-bottom: 80px;
+    border-radius: 20px;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.about-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 40px;
+}
+
+.about-content {
+    max-width: 550px;
+    background: rgba(255, 255, 255, 0.95);
+    color: var(--text-color);
+    padding: 45px;
+    border-radius: 16px;
+    box-shadow: 0 4px 25px rgba(0,0,0,0.05);
+}
+
+.about-content h3 {
+    font-size: 32px;
+    color: var(--dark-blue);
+    font-weight: 800;
+    margin-bottom: 20px;
+}
+
+.about-content p {
+    font-size: 16px;
+    margin-bottom: 15px;
+}
+
+/* יצירת קשר */
+.contact-section {
+    max-width: 1200px;
+    margin: 0 auto 80px auto;
+    padding: 0 20px;
+}
+
+.contact-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+.contact-box {
+    background: #fff;
+    padding: 35px;
+    border-radius: 16px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.03);
+    border: 1px solid #F1F5F9;
+    text-align: center;
+}
+
+.contact-box h4 {
+    font-size: 22px;
+    color: var(--dark-blue);
+    font-weight: 800;
+    margin-bottom: 20px;
+}
+
+.hours-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.hours-list li {
+    display: flex;
+    justify-content: space-between;
+    font-size: 16px;
+    border-bottom: 1px dashed #E2E8F0;
+    padding-bottom: 6px;
+}
+
+.hours-list li:last-child {
+    border-bottom: none;
+}
+
+.contact-phone {
+    font-size: 32px;
+    font-weight: 800;
+    color: var(--primary-blue);
+    display: block;
+    margin-bottom: 15px;
+}
+
+.btn-whatsapp {
+    background: var(--whatsapp-green);
+    color: #fff;
+    padding: 12px 20px;
+    border-radius: 100px;
+    font-weight: 700;
+    font-size: 15px;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.btn-whatsapp:hover {
+    background: #1eb954;
+}
+
+.map-placeholder {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+.map-icon {
+    font-size: 44px;
+    color: var(--primary-blue);
+}
+
+.btn-map {
+    border: 1px solid var(--primary-blue);
+    color: var(--primary-blue);
+    padding: 8px 18px;
+    border-radius: 100px;
+    font-weight: 600;
+}
+
+.btn-map:hover {
+    background: var(--primary-blue);
+    color: #fff;
+}
+
+/* פוטר */
+.main-footer {
+    background: var(--dark-blue);
+    color: #fff;
+    padding: 25px 20px;
 }
 
 .footer-container {
@@ -368,24 +616,49 @@ a {
     align-items: center;
 }
 
-.footer-logo .logo-icon-wrap {
-    background-color: rgba(255, 255, 255, 0.1);
-    border: none;
+.footer-logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
 }
 
-.footer-logo .site-logo-icon {
-    color: #fff;
+.footer-logo-img {
+    height: 35px;
+    filter: brightness(0) invert(1);
 }
 
-.footer-logo .logo-text h1 {
-    color: #fff;
+.footer-logo strong {
+    font-size: 18px;
 }
 
-.footer-logo .logo-text p {
-    color: #a0c4ff;
-}
-
-.footer-left p {
+.footer-copy p {
     font-size: 14px;
-    opacity: 0.8;
+    color: #94A3B8;
+}
+
+.footer-phone a {
+    color: #fff;
+    font-weight: 700;
+}
+
+/* התאמה למובייל */
+@media (max-width: 992px) {
+    .header-container { flex-direction: column; gap: 15px; }
+    .hero-section { background-position: center; height: auto; padding: 60px 0; }
+    .hero-container { justify-content: center; text-align: center; }
+    .hero-content { max-width: 100%; }
+    .floating-features { grid-template-columns: repeat(2, 1fr); margin-top: 20px; }
+    .floating-features .feature-card { border-left: none; border-bottom: 1px solid #E2E8F0; padding-bottom: 15px; }
+    .services-grid { grid-template-columns: repeat(3, 1fr); }
+    .reviews-grid, .contact-grid { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 600px) {
+    .services-grid { grid-template-columns: repeat(2, 1fr); }
+    .nav-links { flex-direction: column; align-items: center; gap: 10px; }
+    .floating-features { grid-template-columns: 1fr; }
+    .hero-title { font-size: 44px; }
+    .hero-subtitle { font-size: 22px; }
+    .hero-buttons { flex-direction: column; width: 100%; }
+    .btn-hero-blue, .btn-hero-outline { width: 100%; justify-content: center; }
 }
