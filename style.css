@@ -10,9 +10,10 @@ body {
     direction: rtl;
     background-color: #f8fafc;
     color: #333;
+    overflow-x: hidden;
 }
 
-/* תפריט ניווט עליון */
+/* תפריט ניווט עליון - Header */
 .main-header {
     background-color: #ffffff;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
@@ -24,7 +25,7 @@ body {
 .header-container {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 15px 20px;
+    padding: 10px 20px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -36,25 +37,28 @@ body {
     gap: 12px;
 }
 
+.site-logo {
+    height: 48px;
+    width: auto;
+}
+
 .logo-text {
+    display: flex;
+    flex-direction: column;
     text-align: left;
 }
 
-.logo-text h1 {
+.brand-name {
     font-size: 22px;
     color: #001a4d;
     font-weight: 800;
+    line-height: 1.1;
 }
 
-.logo-text p {
-    font-size: 12px;
+.brand-sub {
+    font-size: 11px;
     color: #ff6600;
     font-weight: bold;
-}
-
-.paw-print {
-    font-size: 24px;
-    color: #0066ff;
 }
 
 .main-nav ul {
@@ -67,6 +71,8 @@ body {
     text-decoration: none;
     color: #555;
     font-weight: 600;
+    font-size: 15px;
+    transition: color 0.2s;
 }
 
 .main-nav a:hover {
@@ -75,41 +81,66 @@ body {
 
 .header-actions {
     display: flex;
-    gap: 15px;
+    align-items: center;
+    gap: 12px;
 }
 
-.header-btn-phone {
+.btn-phone-header {
     background-color: #0066ff;
     color: #ffffff;
     padding: 10px 18px;
-    border-radius: 6px;
+    border-radius: 50px;
     text-decoration: none;
     font-weight: bold;
+    font-size: 14px;
     display: flex;
     align-items: center;
     gap: 8px;
+    transition: background-color 0.2s;
 }
 
-.header-btn-booking {
+.btn-phone-header:hover {
+    background-color: #0052cc;
+}
+
+.btn-booking-header {
     color: #0066ff;
-    border: 2px solid #0066ff;
-    padding: 8px 18px;
-    border-radius: 6px;
+    border: 1.5px solid #0066ff;
+    padding: 9px 18px;
+    border-radius: 50px;
     text-decoration: none;
     font-weight: bold;
+    font-size: 14px;
     display: flex;
     align-items: center;
     gap: 8px;
+    transition: all 0.2s;
 }
 
-/* באנר ראשי (Hero Section) עם תיקון קריאות */
+.btn-booking-header:hover {
+    background-color: #f0f7ff;
+}
+
+/* באנר ראשי (Hero Section) */
 .hero-section {
     background: url('banner.png') no-repeat center center;
     background-size: cover;
     min-height: 550px;
     display: flex;
     align-items: center;
-    direction: rtl;
+    position: relative;
+}
+
+/* שכבת הצללה כהה עדינה מאוד על כל הבאנר לשיפור קריאות */
+.hero-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.25);
+    z-index: 1;
 }
 
 .hero-container {
@@ -119,25 +150,20 @@ body {
     padding: 0 20px;
     display: flex;
     justify-content: flex-start;
-}
-
-/* זה האלמנט שיוצר את ההצללה הכהה מתחת לטקסט בלבד */
-.hero-content-wrapper {
-    background: rgba(0, 0, 0, 0.45); /* הצללה כהה עדינה */
-    padding: 40px;
-    border-radius: 12px; /* פינות מעוגלות */
-    max-width: 550px;
-    backdrop-filter: blur(4px); /* טשטוש קל של הרקע להבלטה */
+    position: relative;
+    z-index: 2; /* מעל שכבת ה-Overlay */
 }
 
 .hero-content {
+    max-width: 550px;
     color: #ffffff;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.4); /* הצללה ישירה על הטקסט */
 }
 
 .hero-title {
     font-size: 64px;
     font-weight: 800;
-    margin-bottom: 10px;
+    margin-bottom: 5px;
     color: #ffffff;
 }
 
@@ -149,14 +175,14 @@ body {
 }
 
 .heart-text {
-    color: #ff3366; /* צבע אדום עדין ללב */
+    color: #ff3b6f;
 }
 
 .hero-description {
     font-size: 18px;
     line-height: 1.6;
     margin-bottom: 30px;
-    color: #f1f5f9;
+    color: #ffffff;
 }
 
 .hero-actions {
@@ -164,52 +190,58 @@ body {
     gap: 15px;
 }
 
-.btn {
-    display: inline-block;
-    padding: 12px 28px;
-    font-size: 18px;
-    font-weight: bold;
-    border-radius: 8px;
-    text-decoration: none;
-}
-
-.btn-phone {
-    background-color: #ff6600; /* כתום של הבאנר */
+.btn-hero-phone {
+    background-color: #0066ff;
     color: #ffffff;
-    border: none;
+    padding: 12px 28px;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 50px;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    box-shadow: 0 4px 12px rgba(0, 102, 255, 0.3);
 }
 
-.btn-booking {
+.btn-hero-booking {
     background-color: transparent;
     color: #ffffff;
     border: 2px solid #ffffff;
+    padding: 11px 28px;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 50px;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 8px;
 }
 
-/* סרגל יתרונות עליון (Floating) */
+/* סרגל יתרונות עליון (Info Bar) */
 .features-bar {
     background-color: #ffffff;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-    margin-top: -30px; /* מציף את הסרגל מעל הבאנר */
+    box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+    margin: -35px auto 0 auto;
     position: relative;
     z-index: 10;
     border-radius: 12px;
     max-width: 1100px;
-    margin-left: auto;
-    margin-right: auto;
+    width: calc(100% - 40px);
 }
 
 .bar-container {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    padding: 25px;
+    padding: 20px 10px;
 }
 
 .feature-item {
     display: flex;
     align-items: center;
-    gap: 15px;
+    gap: 12px;
     justify-content: center;
-    border-left: 1px solid #f1f5f9;
+    border-left: 1px solid #eef2f6;
 }
 
 .feature-item:last-child {
@@ -217,22 +249,29 @@ body {
 }
 
 .feature-icon {
-    font-size: 28px;
+    font-size: 26px;
     color: #0066ff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .rating-star {
-    color: #ffaa00; /* כוכב זהב */
+    color: #ffaa00;
+}
+
+.feature-info {
+    text-align: right;
 }
 
 .feature-info h3 {
-    font-size: 16px;
+    font-size: 15px;
     font-weight: bold;
-    color: #0f172a;
+    color: #001a4d;
 }
 
 .feature-info p {
-    font-size: 13px;
+    font-size: 12px;
     color: #64748b;
 }
 
@@ -251,67 +290,88 @@ body {
 .section-title h2 {
     font-size: 32px;
     color: #001a4d;
+    font-weight: 700;
 }
 
 .paw-title {
-    color: #ff6600;
+    color: #0066ff;
 }
 
 .services-grid {
     display: grid;
     grid-template-columns: repeat(6, 1fr);
-    gap: 15px;
+    gap: 20px;
 }
 
 .service-card {
     background-color: #ffffff;
-    border: 1px solid #f1f5f9;
+    border: 1px solid #eef2f6;
     border-radius: 12px;
     padding: 25px 15px;
     text-align: center;
-    transition: transform 0.2s ease;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.02);
+    transition: transform 0.2s, box-shadow 0.2s;
 }
 
 .service-card:hover {
     transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.06);
     border-color: #0066ff;
 }
 
 .service-icon {
-    font-size: 36px;
+    font-size: 32px;
     color: #0066ff;
     margin-bottom: 15px;
 }
 
 .service-card h3 {
-    font-size: 15px;
-    font-weight: bold;
-    color: #0f172a;
+    font-size: 14px;
+    font-weight: 700;
+    color: #001a4d;
 }
 
 /* פוטר (תחתית העמוד) */
 .main-footer {
     background-color: #001a4d;
-    color: #f1f5f9;
-    padding: 25px 20px;
+    color: #ffffff;
+    padding: 20px 0;
     font-size: 14px;
-    margin-top: 60px;
+    margin-top: 80px;
 }
 
 .footer-container {
     max-width: 1200px;
     margin: 0 auto;
+    padding: 0 20px;
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
-.footer-logo {
+.footer-phone {
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 16px;
+}
+
+.footer-logo-area {
     display: flex;
     align-items: center;
     gap: 10px;
 }
 
-.footer-paw {
-    color: #ff6600;
+.footer-brand {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.footer-logo-img {
+    height: 35px;
+    width: auto;
+    filter: brightness(0) invert(1); /* הופך את הלוגו ללבן כדי שיתאים לרקע הכהה */
 }
