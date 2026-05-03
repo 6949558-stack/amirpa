@@ -96,8 +96,11 @@ a {
     gap: 12px;
 }
 
+/* הלוגו המוגדל בדיוק במידה הנכונה */
 .site-logo {
-    height: 52px;
+    height: 125px;
+    width: auto;
+    transition: var(--transition);
 }
 
 .logo-text {
@@ -151,14 +154,16 @@ a {
     color: var(--bg-white);
 }
 
+/* HERO SECTION - תצוגת קוביות בהשראת צילום המסך */
 .hero-section {
-    background-image: url('banner.png');
+    background-image: url('באנר2.png');
     background-size: cover;
     background-position: center;
-    min-height: 550px;
+    min-height: 620px;
     display: flex;
     align-items: center;
     position: relative;
+    padding: 50px 0;
 }
 
 .hero-overlay {
@@ -167,7 +172,7 @@ a {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.1);
+    background: rgba(0, 0, 0, 0.15);
     z-index: 1;
 }
 
@@ -180,10 +185,16 @@ a {
     z-index: 2;
 }
 
+.hero-grid-layout {
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr;
+    gap: 40px;
+    align-items: center;
+}
+
 .hero-content-box {
-    max-width: 550px;
-    background-color: rgba(255, 255, 255, 0.95);
-    padding: 40px;
+    background-color: rgba(255, 255, 255, 0.96);
+    padding: 45px;
     border-radius: 14px;
     box-shadow: var(--shadow-lg);
 }
@@ -253,6 +264,74 @@ a {
     color: var(--bg-white);
 }
 
+/* קוביות מידע צדדיות בבאנר */
+.hero-info-cards {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.info-card-item {
+    padding: 25px;
+    border-radius: 14px;
+    box-shadow: var(--shadow-lg);
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.info-card-item .card-icon {
+    font-size: 32px;
+    width: 65px;
+    height: 65px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.info-card-item h3 {
+    font-size: 18px;
+    font-weight: 800;
+    margin-bottom: 4px;
+}
+
+.info-card-item p {
+    font-size: 14px;
+    line-height: 1.4;
+}
+
+/* סגנונות ספציפיים לקוביות */
+.card-blue {
+    background-color: var(--primary-color);
+    color: var(--bg-white);
+}
+.card-blue .card-icon {
+    background-color: rgba(255, 255, 255, 0.12);
+    color: var(--bg-white);
+}
+
+.card-white {
+    background-color: var(--bg-white);
+    color: var(--text-color);
+    border: 1px solid var(--border-color);
+}
+.card-white .card-icon {
+    background-color: rgba(255, 102, 0, 0.08);
+    color: var(--accent-color);
+}
+
+.card-orange {
+    background-color: var(--accent-color);
+    color: var(--bg-white);
+}
+.card-orange .card-icon {
+    background-color: rgba(255, 255, 255, 0.15);
+    color: var(--bg-white);
+}
+
+/* שאר חלקי האתר */
 .services-section, .about-section, .testimonials-section, .contact-section {
     max-width: var(--max-width);
     margin: 90px auto;
@@ -433,7 +512,7 @@ a {
 
 .contact-container {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr 1.1fr;
     gap: 50px;
 }
 
@@ -544,6 +623,21 @@ a {
     padding: 30px 20px;
 }
 
+@media (max-width: 1024px) {
+    .hero-grid-layout {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+    .hero-info-cards {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+    .info-card-item {
+        flex: 1 1 calc(50% - 20px);
+        min-width: 250px;
+    }
+}
+
 @media (max-width: 768px) {
     .services-grid, .testimonials-grid, .about-container, .contact-container {
         grid-template-columns: 1fr;
@@ -558,5 +652,11 @@ a {
     .nav-links {
         flex-wrap: wrap;
         justify-content: center;
+    }
+    .hero-info-cards {
+        flex-direction: column;
+    }
+    .site-logo {
+        height: 100px;
     }
 }
