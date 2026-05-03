@@ -3,11 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>אמירפאה - מרפאה וטרינרית מתקדמת | ד"ר אמיר הלפרין</title>
+    <title>מרפאה וטרינרית - שירות מקצועי ואוהב לחיות המחמד</title>
+    
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Assistant:wght@300;400;600;700;800&family=Heebo:wght@300;400;500;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Assistant:wght@300;400;600;700;800&family=Heebo:wght@300;400;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -15,61 +17,78 @@
     <div class="top-info-bar">
         <div class="top-info-container">
             <div class="top-info-right">
-                <span class="info-item"><i class="fa-solid fa-location-dot" aria-hidden="true"></i> מרחביה (קיבוץ), עמק יזרעאל</span>
-                <span class="info-item"><i class="fa-solid fa-clock" aria-hidden="true"></i> שעות פעילות: א'-ה' 09:00-19:00, ו' 09:00-13:00</span>
+                <div class="info-item">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <span>הרצל 12, תל אביב</span>
+                </div>
+                <div class="info-item">
+                    <i class="fas fa-clock"></i>
+                    <span>א'-ה': 09:00 - 19:00 | יום ו': 09:00 - 13:00</span>
+                </div>
             </div>
             <div class="top-info-left">
-                <a href="tel:072-3211711" class="info-link" aria-label="התקשרו אלינו למספר 0 7 2 . 3 2 1 1 7 1 1"><i class="fa-solid fa-phone" aria-hidden="true"></i> 072-3211711</a>
-                <a href="https://wa.me/972723211711" target="_blank" class="info-link whatsapp-link" aria-label="פנייה אלינו בוואטסאפ"><i class="fa-brands fa-whatsapp" aria-hidden="true"></i> וואטסאפ</a>
+                <a href="tel:03-1234567" class="info-link">
+                    <i class="fas fa-phone-alt"></i>
+                    <span>03-1234567</span>
+                </a>
+                <a href="https://wa.me/972501234567" class="info-link whatsapp-link" target="_blank" rel="noopener">
+                    <i class="fab fa-whatsapp"></i>
+                    <span>הודעה בווטסאפ</span>
+                </a>
             </div>
         </div>
     </div>
 
-    <header class="main-header" role="banner">
+    <header class="main-header">
         <div class="header-container">
             <div class="logo-area">
-                <a href="#home" class="logo-link" aria-label="דף הבית של אמירפאה">
-                    <img src="Logo.png" alt="לוגו אמירפאה" class="site-logo">
+                <a href="#" class="logo-link" aria-label="דף הבית">
+                    <img src="logo.png" alt="לוגו המרפאה הוטרינרית" class="site-logo">
                     <div class="logo-text">
-                        <span class="brand-name">אמירפאה</span>
-                        <span class="brand-sub">מרפאה וטרינרית</span>
+                        <span class="brand-name">וט-קליניק</span>
+                        <span class="brand-sub">מרכז רפואי לחיות מחמד</span>
                     </div>
                 </a>
             </div>
-            <nav class="nav-links" id="main-nav" aria-label="תפריט ניווט ראשי">
-                <a href="#home" class="nav-item active">דף הבית</a>
-                <a href="#about" class="nav-item">אודות המרפאה</a>
-                <a href="#services" class="nav-item">השירותים שלנו</a>
-                <a href="#testimonials" class="nav-item">המלצות</a>
-                <a href="#faq" class="nav-item">שאלות נפוצות</a>
-                <a href="#contact" class="nav-item">צור קשר</a>
+            <nav class="main-nav" aria-label="תפריט ניווט ראשי">
+                <ul class="nav-links">
+                    <li><a href="#" class="nav-item active">בית</a></li>
+                    <li><a href="#services" class="nav-item">שירותים</a></li>
+                    <li><a href="#about" class="nav-item">אודות</a></li>
+                    <li><a href="#testimonials" class="nav-item">המלצות</a></li>
+                    <li><a href="#contact" class="nav-item">צור קשר</a></li>
+                </ul>
             </nav>
-            <div class="header-actions">
-                <a href="#contact" class="btn-booking-nav" aria-label="מעבר לקביעת תור">
-                    <i class="fa-regular fa-calendar-check" aria-hidden="true"></i> לקביעת תור
+            <div class="header-cta">
+                <a href="#contact" class="btn-booking-nav">
+                    <i class="far fa-calendar-alt"></i>
+                    <span>תיאום תור</span>
                 </a>
             </div>
         </div>
     </header>
 
-    <section id="home" class="hero-section" aria-label="באנר ראשי">
+    <section class="hero-section">
         <div class="hero-overlay"></div>
         <div class="hero-container">
             <div class="hero-content-box">
-                <div class="hero-badge" aria-label="הרפואה הפרטית שלך">
-                    <i class="fa-solid fa-shield-dog" aria-hidden="true"></i> הרפואה הפרטית שלך
+                <div class="hero-badge">
+                    <i class="fas fa-certificate"></i>
+                    <span>מרפאה וטרינרית מתקדמת ונגישה</span>
                 </div>
-                <h1 class="hero-title">אמירפאה</h1>
-                <h2 class="hero-subtitle">מרפאה וטרינרית <span class="heart-icon">❤️</span> עם לב גדול</h2>
+                <h1 class="hero-title">הבריאות שלהם <br>בידיים טובות</h1>
+                <p class="hero-subtitle">טיפול רפואי מקצועי מכל הלב <i class="fas fa-heart heart-icon"></i></p>
                 <p class="hero-description">
-                    ברוכים הבאים לאמירפאה, הבית השני של חיות המחמד שלכם. אנו מעניקים מעטפת רפואית מלאה, מתקדמת ומכל הלב לכלבים, חתולים וחיות מחמד נוספות, תוך שימוש בציוד הרפואי החדיש ביותר ויחס אישי לכל מטופל.
+                    אנו מציעים שירותי רפואה וטרינרית מתקדמים, החל מחיסונים ובדיקות שגרתיות ועד לניתוחים מורכבים. הכל בסביבה נעימה, תומכת ומותאמת אישית לצרכים של חברכם על ארבע.
                 </p>
                 <div class="hero-actions">
-                    <a href="#contact" class="btn btn-booking" aria-label="לחצו לקביעת תור מהיר">
-                        <i class="fa-regular fa-calendar-check" aria-hidden="true"></i> לקביעת תור מהיר
+                    <a href="#contact" class="btn btn-booking">
+                        <i class="far fa-calendar-check"></i>
+                        <span>לקביעת תור מהיר</span>
                     </a>
-                    <a href="tel:072-3211711" class="btn btn-call" aria-label="התקשרו אלינו טלפונית">
-                        <i class="fa-solid fa-phone" aria-hidden="true"></i> 072-3211711
+                    <a href="tel:03-1234567" class="btn btn-call">
+                        <i class="fas fa-phone-alt"></i>
+                        <span>התקשרו עכשיו</span>
                     </a>
                 </div>
             </div>
@@ -80,244 +99,238 @@
         <div class="bar-container">
             <div class="feature-item">
                 <div class="feature-icon icon-blue">
-                    <i class="fas fa-map-marker-alt" aria-hidden="true"></i>
+                    <i class="fas fa-user-md"></i>
                 </div>
                 <div class="feature-info">
-                    <h3>מרחביה (קיבוץ)</h3>
-                    <p>בלב עמק יזרעאל</p>
+                    <h3>צוות מומחים</h3>
+                    <p>וטרינרים מוסמכים</p>
                 </div>
             </div>
             <div class="feature-item">
                 <div class="feature-icon icon-gold">
-                    <i class="fas fa-star" aria-hidden="true"></i>
+                    <i class="fas fa-ambulance"></i>
                 </div>
                 <div class="feature-info">
-                    <h3>4.8 דירוג</h3>
-                    <p>עפ"י חוות דעת דפי זהב</p>
+                    <h3>מענה חירום</h3>
+                    <p>זמינות גבוהה</p>
                 </div>
             </div>
             <div class="feature-item">
                 <div class="feature-icon icon-pink">
-                    <i class="fas fa-heart" aria-hidden="true"></i>
+                    <i class="fas fa-stethoscope"></i>
                 </div>
                 <div class="feature-info">
-                    <h3>יחס אישי</h3>
-                    <p>טיפול חם ומסור מכל הלב</p>
+                    <h3>ציוד מתקדם</h3>
+                    <p>אבחון מדויק ומהיר</p>
                 </div>
             </div>
             <div class="feature-item">
                 <div class="feature-icon icon-green">
-                    <i class="fas fa-award" aria-hidden="true"></i>
+                    <i class="fas fa-paw"></i>
                 </div>
                 <div class="feature-info">
-                    <h3>מקצועיות וניסיון</h3>
-                    <p>שנים רבות של מומחיות</p>
+                    <h3>גישה אוהבת</h3>
+                    <p>סביבה ללא מתח</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="services" class="services-section" aria-label="השירותים שלנו">
+    <section id="services" class="services-section">
         <div class="section-header">
             <span class="section-subtitle">מה אנחנו מציעים</span>
             <h2 class="section-title">השירותים הרפואיים שלנו</h2>
-            <p class="section-desc">המרפאה מציעה מגוון רחב של טיפולים וטרינריים מתקדמים תחת קורת גג אחת, תוך שמירה על הסטנדרטים הרפואיים הגבוהים ביותר.</p>
+            <p class="section-desc">אנו מספקים מעטפת רפואית מלאה ומקצועית לכל שלב בחיי חיית המחמד שלכם.</p>
         </div>
+        
         <div class="services-grid">
-            <div class="service-card">
-                <div class="service-card-icon"><i class="fas fa-home" aria-hidden="true"></i></div>
-                <h3>ביקורי בית</h3>
-                <p>מגיעים עד אליכם הביתה לטיפולים שוטפים, בדיקות תקופתיות והפחתת מתח לבעל החיים בסביבתו הטבעית.</p>
-            </div>
             <div class="service-card active-card">
                 <span class="badge-recommended">מומלץ</span>
-                <div class="service-card-icon"><i class="fas fa-tooth" aria-hidden="true"></i></div>
+                <div class="service-card-icon">
+                    <i class="fas fa-shield-alt"></i>
+                </div>
+                <h3>רפואה מונעת</h3>
+                <p>חיסונים תקופתיים (משושה, כלבת), טיפולים נגד תולעים ופרעושים, ובדיקות תקופתיות מקיפות לשמירה על הבריאות.</p>
+            </div>
+            
+            <div class="service-card">
+                <div class="service-card-icon">
+                    <i class="fas fa-microscope"></i>
+                </div>
+                <h3>מעבדה ואבחון</h3>
+                <p>בדיקות דם מתקדמות, בדיקות שתן, מיקרוסקופיה ודימות (רנטגן ואולטרסאונד) המבוצעים במקום לקבלת תוצאות מהירות.</p>
+            </div>
+            
+            <div class="service-card">
+                <div class="service-card-icon">
+                    <i class="fas fa-tooth"></i>
+                </div>
                 <h3>טיפולי שיניים</h3>
-                <p>ניקוי אבנית באולטרסאונד, עקירות כירורגיות וטיפול מונע למחלות חניכיים וריח פה אצל כלבים וחתולים.</p>
-            </div>
-            <div class="service-card">
-                <div class="service-card-icon"><i class="fas fa-ambulance" aria-hidden="true"></i></div>
-                <h3>טיפולי חירום</h3>
-                <p>מענה מהיר ומקצועי למצבי חירום רפואיים, פציעות, תאונות והרעלות בזמינות גבוהה במיוחד עבורכם.</p>
-            </div>
-            <div class="service-card">
-                <div class="service-card-icon"><i class="fas fa-cut" aria-hidden="true"></i></div>
-                <h3>שירותים כירורגיים</h3>
-                <p>ניתוחי רקמות רכות, עיקורים וסירוסים, וניתוחים מורכבים בחדר ניתוח סטרילי ומאובזר בטכנולוגיה חדישה.</p>
-            </div>
-            <div class="service-card">
-                <div class="service-card-icon"><i class="fas fa-syringe" aria-hidden="true"></i></div>
-                <h3>חיסונים וטיפולים מונעים</h3>
-                <p>תוכניות בריאות מותאמות אישית הכוללות חיסונים שנתיים, טיפולי תולעת הפארק, כדורים נגד פרעושים וקרציות.</p>
-            </div>
-            <div class="service-card">
-                <div class="service-card-icon"><i class="fas fa-stethoscope" aria-hidden="true"></i></div>
-                <h3>טיפולים רפואיים</h3>
-                <p>אבחון וטיפול במחלות פנימיות, בעיות עור, אלרגיות, בדיקות דם מקיפות והדמיות אולטרסאונד ורנטגן דיגיטלי.</p>
+                <p>ניקוי אבנית באמצעות אולטרסאונד, עקירות כירורגיות בעת הצורך והדרכה לשמירה על היגיינת הפה של הכלב או החתול.</p>
             </div>
         </div>
     </section>
 
-    <section class="pets-image-section" aria-label="באנר חיות מחמד">
+    <section class="pets-image-section" aria-label="גלריית המרפאה">
         <div class="pets-image-wrapper">
-            <img src="pets.png" alt="צוות חיות המחמד המטופלות אצלנו" class="pets-main-img">
+            <img src="banner.png" alt="כלבים וחתולים שמחים במרפאה" class="pets-main-img">
             <div class="pets-img-overlay">
-                <h3>אוהבים אותם? גם אנחנו! 🐕🐈</h3>
-                <p>אנחנו כאן כדי להבטיח חיים ארוכים, בריאים ומאושרים לחברים הכי טובים שלכם.</p>
+                <h3>סביבה מותאמת ומזמינה עבורם</h3>
+                <p>אנחנו דואגים שהביקור שלכם במרפאה יהיה נעים, רגוע ונטול פחדים ככל האפשר.</p>
             </div>
         </div>
     </section>
 
-    <section id="about" class="about-section" aria-label="אודות המרפאה">
+    <section id="about" class="about-section">
         <div class="about-container">
             <div class="about-text-content">
-                <span class="about-tag">הכירו אותנו</span>
-                <h2>אודות ד"ר אמיר הלפרין</h2>
+                <span class="about-tag">קצת עלינו</span>
+                <h2>הכירו את המרכז הרפואי</h2>
                 <div class="about-decorator"></div>
-                <p class="about-lead">ד"ר אמיר הלפרין מקדיש את חייו המקצועיים לטיפול וליווי רפואי של בעלי חיים, מתוך אהבה עמוקה ומחויבות אמיתית לבריאותם ורווחתם.</p>
-                <p class="about-body">המרפאה הוקמה מתוך חזון להעניק לתושבי עמק יזרעאל והסביבה מענה וטרינרי מתקדם, נגיש ובגובה העיניים. אנו מאמינים כי טיפול רפואי מוצלח מתחיל בהקשבה לבעלים, יצירת סביבה רגועה לבעל החיים ושימוש בידע וטרינרי עדכני.</p>
-                <p class="about-body">אצלנו באמירפאה כל מטופל ומטופלת מקבלים את מלוא תשומת הלב. אנו משלבים ניסיון קליני עשיר יחד עם ציוד רפואי חדשני כדי להגיע לאבחון מדויק וטיפול יעיל ככל הניתן.</p>
+                <p class="about-lead">בית חם ומקצועי לחיות המחמד שלכם כבר מעל עשור.</p>
+                <p class="about-body">
+                    מרפאתנו הוקמה מתוך חזון להעניק את הטיפול הרפואי המתקדם והמסור ביותר לחיות מחמד. אנו מאמינים כי כל בעל חיים זכאי ליחס אישי, אוהב ומכבד. הצוות הרפואי שלנו עובר השתלמויות תקופתיות ונמצא בחזית הידע הוטרינרי.
+                </p>
                 <div class="about-highlights">
                     <div class="highlight-item">
-                        <i class="fa-solid fa-circle-check" aria-hidden="true"></i>
-                        <span>רפואה מונעת והסברה לבעלי חיים</span>
+                        <i class="fas fa-check-circle"></i>
+                        <span>זמינות גבוהה למקרים דחופים</span>
                     </div>
                     <div class="highlight-item">
-                        <i class="fa-solid fa-circle-check" aria-hidden="true"></i>
-                        <span>ליווי צמוד ומענה אישי לכל אורך הדרך</span>
+                        <i class="fas fa-check-circle"></i>
+                        <span>וטרינרים ומנתחים בעלי ניסיון עשיר</span>
+                    </div>
+                    <div class="highlight-item">
+                        <i class="fas fa-check-circle"></i>
+                        <span>דגש על נגישות והסבר מפורט לבעלים</span>
                     </div>
                 </div>
             </div>
             <div class="about-image-column">
                 <div class="about-img-frame">
-                    <img src="dr-amir.png" alt="ד"ר אמיר הלפרין במרפאה" class="about-doctor-img">
+                    <img src="banner.png" alt="הרופאה הוטרינרית בבדיקה" class="about-doctor-img">
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="testimonials" class="testimonials-section" aria-label="המלצות וחוות דעת">
+    <section id="testimonials" class="testimonials-section">
         <div class="section-header">
-            <span class="section-subtitle">מה הלקוחות אומרים</span>
-            <h2 class="section-title">חוות דעת והמלצות</h2>
+            <span class="section-subtitle">מכתבי תודה</span>
+            <h2 class="section-title">מה הלקוחות שלנו מספרים</h2>
+            <p class="section-desc">אין דבר שמשמח אותנו יותר מלראות את המטופלים שלנו חוזרים הביתה בריאים ומכשכשים בזנב.</p>
         </div>
+        
         <div class="testimonials-grid">
             <div class="testimonial-card">
-                <div class="test-stars" aria-label="דירוג 5 מתוך 5 טביעות רגל">
-                    <i class="fas fa-paw" aria-hidden="true"></i><i class="fas fa-paw" aria-hidden="true"></i><i class="fas fa-paw" aria-hidden="true"></i><i class="fas fa-paw" aria-hidden="true"></i><i class="fas fa-paw" aria-hidden="true"></i>
+                <div class="test-stars">
+                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
                 </div>
-                <p class="test-text">"ד"ר אמיר הוא פשוט מלאך. הגענו אליו עם הכלב שלנו במצב חירום, והוא קיבל אותנו מיד באכפתיות וברגישות מדהימה. המקצועיות שלו הצילה את הכלב שלנו. ממליצה בחום!"</p>
+                <p class="test-text">"הגענו למרפאה עם הכלב שלנו במצב חירום בשעת לילה. הטיפול היה מהיר, מקצועי ומרגיע. תודה מקרב לב לצוות המדהים!"</p>
                 <div class="test-author">
-                    <strong>רונית א.</strong>
-                    <span>מרחביה</span>
+                    <strong>מיכל אהרוני</strong>
+                    <span>הבעלים של לואי (גולדן רטריבר)</span>
                 </div>
             </div>
+            
             <div class="testimonial-card">
-                <div class="test-stars" aria-label="דירוג 5 מתוך 5 טביעות רגל">
-                    <i class="fas fa-paw" aria-hidden="true"></i><i class="fas fa-paw" aria-hidden="true"></i><i class="fas fa-paw" aria-hidden="true"></i><i class="fas fa-paw" aria-hidden="true"></i><i class="fas fa-paw" aria-hidden="true"></i>
+                <div class="test-stars">
+                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
                 </div>
-                <p class="test-text">"מרפאה נקייה, מסודרת ונעימה מאוד. החתולה שלי בדרך כלל מאוד לחוצה אצל וטרינרים, אבל אצל ד"ר אמיר היא הייתה רגועה לחלוטין בזכות הגישה הסבלנית שלו."</p>
+                <p class="test-text">"אני מגיעה לכאן כבר שנים עם שני החתולים שלי. תמיד מקבלים אותנו בחיוך ובסבלנות, ורמת הרפואה פה היא הגבוהה ביותר שיש."</p>
                 <div class="test-author">
-                    <strong>יוסי כ.</strong>
-                    <span>עפולה</span>
+                    <strong>רוני גבע</strong>
+                    <span>הבעלים של מיצי וסימבה</span>
                 </div>
             </div>
+            
             <div class="testimonial-card">
-                <div class="test-stars" aria-label="דירוג 5 מתוך 5 טביעות רגל">
-                    <i class="fas fa-paw" aria-hidden="true"></i><i class="fas fa-paw" aria-hidden="true"></i><i class="fas fa-paw" aria-hidden="true"></i><i class="fas fa-paw" aria-hidden="true"></i><i class="fas fa-paw" aria-hidden="true"></i>
+                <div class="test-stars">
+                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
                 </div>
-                <p class="test-text">"כבר שנים שאנחנו מטופלים אצל ד"ר אמיר הלפרין. הוא תמיד זמין לשאלות, מסביר הכל בגובה העיניים ונותן תחושת ביטחון מלאה. אין וטרינרים כאלה היום!"</p>
+                <p class="test-text">"רופאים בחסד עליון! עברו איתנו ניתוח לא פשוט, הסבירו לנו כל שלב והיו זמינים לכל שאלה גם בתהליך ההחלמה בבית."</p>
                 <div class="test-author">
-                    <strong>מיכל ש.</strong>
-                    <span>גדעונה</span>
+                    <strong>דוד לוי</strong>
+                    <span>הבעלים של מקס (רועה גרמני)</span>
                 </div>
             </div>
+
             <div class="testimonial-card">
-                <div class="test-stars" aria-label="דירוג 5 מתוך 5 טביעות רגל">
-                    <i class="fas fa-paw" aria-hidden="true"></i><i class="fas fa-paw" aria-hidden="true"></i><i class="fas fa-paw" aria-hidden="true"></i><i class="fas fa-paw" aria-hidden="true"></i><i class="fas fa-paw" aria-hidden="true"></i>
+                <div class="test-stars">
+                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
                 </div>
-                <p class="test-text">"שירות יוצא מן הכלל. ד"ר אמיר משרה רוגע שאין לתאר. גם בבדיקות הפשוטות ביותר הוא משקיע את כל הלב ומקשיב בסבלנות. אנחנו מרוצים מאוד!"</p>
+                <p class="test-text">"מרפאה נקייה, מסודרת והכי חשוב - הכלבים שלי לא מפחדים להיכנס לכאן. הגישה של הצוות פשוט עושה את ההבדל."</p>
                 <div class="test-author">
-                    <strong>ניר ל.</strong>
-                    <span>עמק יזרעאל</span>
+                    <strong>אורטל ישראלי</strong>
+                    <span>הבעלים של ג'וי ובל</span>
                 </div>
             </div>
+
             <div class="testimonial-card">
-                <div class="test-stars" aria-label="דירוג 5 מתוך 5 טביעות רגל">
-                    <i class="fas fa-paw" aria-hidden="true"></i><i class="fas fa-paw" aria-hidden="true"></i><i class="fas fa-paw" aria-hidden="true"></i><i class="fas fa-paw" aria-hidden="true"></i><i class="fas fa-paw" aria-hidden="true"></i>
+                <div class="test-stars">
+                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
                 </div>
-                <p class="test-text">"הגענו לעיקור של הכלבה והיינו מאוד לחוצים. ד"ר אמיר והצוות דאגו להרגיע אותנו, לעדכן אותנו שהכל עבר בשלום וההחלמה הייתה מהירה וחלקה לחלוטין."</p>
+                <p class="test-text">"עשינו כאן ניקוי שיניים לחתול מבוגר. החשש היה גדול בגלל ההרדמה, אך הצוות הרגיע אותנו והכל עבר בשלום ובצורה מושלמת."</p>
                 <div class="test-author">
-                    <strong>טלי מ.</strong>
-                    <span>בית שאן</span>
+                    <strong>יובל מנשה</strong>
+                    <span>הבעלים של אוליבר</span>
                 </div>
             </div>
+
             <div class="testimonial-card">
-                <div class="test-stars" aria-label="דירוג 5 מתוך 5 טביעות רגל">
-                    <i class="fas fa-paw" aria-hidden="true"></i><i class="fas fa-paw" aria-hidden="true"></i><i class="fas fa-paw" aria-hidden="true"></i><i class="fas fa-paw" aria-hidden="true"></i><i class="fas fa-paw" aria-hidden="true"></i>
+                <div class="test-stars">
+                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
                 </div>
-                <p class="test-text">"מרפאה מודרנית עם הציוד הכי מתקדם שיש. רואים שהדאגה לבריאות חיות המחמד היא במקום הראשון אצל ד"ר אמיר. תודה על טיפול מסור ואוהב!"</p>
+                <p class="test-text">"השירות, המקצועיות והאמפתיה של הרופאים במרפאה הזו הם משהו שלא פוגשים כל יום. מומלץ בחום לכל מי שבאמת אוהב את חיית המחמד שלו."</p>
                 <div class="test-author">
-                    <strong>ערן ג.</strong>
-                    <span>תל עדשים</span>
+                    <strong>ענת ברק</strong>
+                    <span>הבעלים של קוקי</span>
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="faq-section" id="faq" aria-label="שאלות נפוצות">
+    <section class="faq-section" aria-label="שאלות נפוצות">
+        <div class="section-header">
+            <span class="section-subtitle">מידע חשוב</span>
+            <h2 class="section-title">שאלות נפוצות</h2>
+            <p class="section-desc">ריכזנו עבורכם תשובות לשאלות הנפוצות ביותר שמעסיקות בעלי חיות מחמד.</p>
+        </div>
+        
         <div class="faq-container">
-            <div class="section-header">
-                <span class="section-subtitle">מידע נוסף</span>
-                <h2 class="section-title">שאלות נפוצות</h2>
-                <p class="section-desc">ריכזנו עבורכם את השאלות הנפוצות ביותר שבעלי חיות מחמד שואלים אותנו. לא מצאתם תשובה? אנחנו תמיד כאן עבורכם.</p>
-            </div>
-
             <div class="faq-grid">
                 <div class="faq-item">
-                    <button class="faq-question" aria-expanded="false">
-                        <span>כל כמה זמן מומלץ להביא את הכלב לבדיקה תקופתית?</span>
-                        <i class="fa-solid fa-plus faq-icon" aria-hidden="true"></i>
+                    <button class="faq-question" aria-expanded="false" onclick="toggleFaq(this)">
+                        <span>כל כמה זמן מומלץ להגיע לבדיקה שגרתית?</span>
+                        <i class="fas fa-chevron-down faq-icon"></i>
                     </button>
                     <div class="faq-answer">
                         <div class="faq-answer-inner">
-                            <p>אנו ממליצים על בדיקה שנתית מקיפה לכלבים צעירים ובוגרים. עבור כלבים מבוגרים (מעל גיל 7), מומלץ להגיע לבדיקה תקופתית בכל חצי שנה כדי להקדים ולזהות בעיות בריאותיות האופייניות לגיל השלישי.</p>
+                            <p>עבור חיות מחמד צעירות ובריאות מומלץ להגיע פעם בשנה לבדיקה תקופתית כללית במקביל למתן החיסונים השנתיים. עבור בעלי חיים מבוגרים (מגיל 7 ומעלה), מומלץ להגיע לבדיקה מקיפה כל חצי שנה.</p>
                         </div>
                     </div>
                 </div>
 
                 <div class="faq-item">
-                    <button class="faq-question" aria-expanded="false">
-                        <span>איך מתבצע תהליך קביעת התור במרפאה?</span>
-                        <i class="fa-solid fa-plus faq-icon" aria-hidden="true"></i>
+                    <button class="faq-question" aria-expanded="false" onclick="toggleFaq(this)">
+                        <span>איך אדע אם חיית המחמד שלי סובלת מכאב?</span>
+                        <i class="fas fa-chevron-down faq-icon"></i>
                     </button>
                     <div class="faq-answer">
                         <div class="faq-answer-inner">
-                            <p>קביעת תור מתבצעת בקלות באמצעות מילוי הטופס כאן באתר, פנייה ישירה בוואטסאפ או בשיחת טלפון קצרה. במידה ומדובר במקרה חירום – מומלץ להתקשר ישירות לטלפון הזמין שלנו ללא דיחוי.</p>
+                            <p>בעלי חיים נוטים להסתיר כאב. סימנים נפוצים כוללים: שינוי בהתנהגות (התכנסות בעצמם או תוקפנות פתאומית), ירידה בתיאבון, קושי לקום או ללכת, השמעת קולות לא רגילים, או ליקוק מוגבר של אזור מסוים בגוף.</p>
                         </div>
                     </div>
                 </div>
 
                 <div class="faq-item">
-                    <button class="faq-question" aria-expanded="false">
-                        <span>האם אתם מבצעים את כל סוגי החיסונים לכלבים וחתולים?</span>
-                        <i class="fa-solid fa-plus faq-icon" aria-hidden="true"></i>
+                    <button class="faq-question" aria-expanded="false" onclick="toggleFaq(this)">
+                        <span>האם חובה לחסן חתול שנמצא רק בתוך הבית?</span>
+                        <i class="fas fa-chevron-down faq-icon"></i>
                     </button>
                     <div class="faq-answer">
                         <div class="faq-answer-inner">
-                            <p>בהחלט. המרפאה מספקת את כל מערך החיסונים המניעתיים: חיסוני משושה וכלבת לכלבים (כולל שבב), חיסוני מרובע לחתולים, וטיפולים תקופתיים נגד תולעים, פרעושים וקרציות.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="faq-item">
-                    <button class="faq-question" aria-expanded="false">
-                        <span>מה עושים במקרה של חירום מחוץ לשעות הפעילות?</span>
-                        <i class="fa-solid fa-plus faq-icon" aria-hidden="true"></i>
-                    </button>
-                    <div class="faq-answer">
-                        <div class="faq-answer-inner">
-                            <p>הבריאות של בעלי החיים שלכם היא מעל הכל. במקרה חירום דחוף מחוץ לשעות הפעילות הרגילות, ניתן ליצור איתנו קשר במספר החירום שלנו המופיע באתר לקבלת מענה מהיר והנחיות להמשך טיפול.</p>
+                            <p>כן, מומלץ מאוד לחסן גם חתולי בית. וירוסים מסוימים עלולים להגיע לתוך הבית על גבי הנעליים או הבגדים שלנו. חיסון מרובע תקופתי מעניק להם הגנה מפני מחלות נפוצות ומסוכנות אלו.</p>
                         </div>
                     </div>
                 </div>
@@ -325,148 +338,156 @@
         </div>
     </section>
 
-    <section id="contact" class="contact-section" aria-label="יצירת קשר">
+    <section id="contact" class="contact-section">
         <div class="contact-container">
             <div class="contact-info-col">
-                <span class="contact-tag">דברו איתנו</span>
-                <h2>נשמח לעמוד לרשותכם</h2>
-                <p class="contact-lead">זקוקים לחיסון, בדיקה תקופתית או ייעוץ רפואי? צרו איתנו קשר עוד היום ונחזור אליכם בהקדם האפשרי.</p>
+                <span class="contact-tag">אנחנו כאן בשבילכם</span>
+                <h2>צרו איתנו קשר</h2>
+                <p class="contact-lead">נשמח לעמוד לשירותכם, לענות על כל שאלה ולתאם עבורכם תור במרפאה.</p>
+                
                 <div class="contact-details-list">
                     <div class="contact-detail-item">
-                        <div class="detail-icon"><i class="fa-solid fa-phone" aria-hidden="true"></i></div>
+                        <div class="detail-icon">
+                            <i class="fas fa-phone-alt"></i>
+                        </div>
                         <div class="detail-text">
-                            <strong>טלפון ליצירת קשר</strong>
-                            <a href="tel:072-3211711">072-3211711</a>
+                            <strong>טלפון המרפאה</strong>
+                            <a href="tel:03-1234567">03-1234567</a>
                         </div>
                     </div>
+                    
                     <div class="contact-detail-item">
-                        <div class="detail-icon"><i class="fa-solid fa-location-dot" aria-hidden="true"></i></div>
+                        <div class="detail-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
                         <div class="detail-text">
-                            <strong>כתובת המרפאה</strong>
-                            <span>קיבוץ מרחביה, עמק יזרעאל</span>
+                            <strong>דואר אלקטרוני</strong>
+                            <a href="mailto:info@vetclinic.co.il">info@vetclinic.co.il</a>
                         </div>
                     </div>
+                    
                     <div class="contact-detail-item">
-                        <div class="detail-icon"><i class="fa-solid fa-clock" aria-hidden="true"></i></div>
+                        <div class="detail-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
                         <div class="detail-text">
-                            <strong>שעות קבלה</strong>
-                            <span>א'-ה' 09:00-19:00 | ו' 09:00-13:00</span>
+                            <strong>כתובתנו</strong>
+                            <span>הרצל 12, תל אביב (חניה שמורה למבקרים)</span>
                         </div>
                     </div>
                 </div>
             </div>
+            
             <div class="contact-form-col">
-                <form class="appointment-form" onsubmit="event.preventDefault(); alert('ההודעה נשלחה בהצלחה! ניצור קשר בהקדם.');">
+                <form class="appointment-form" action="#" method="POST" onsubmit="event.preventDefault(); alert('הפנייה התקבלה בהצלחה!');">
                     <h3>קביעת תור / פנייה מהירה</h3>
+                    
                     <div class="form-group-grid">
                         <div class="form-group">
-                            <label for="fullName">שם מלא *</label>
-                            <input type="text" id="fullName" autocomplete="name" placeholder="ישראל ישראלי" required>
+                            <label for="full-name">שם מלא *</label>
+                            <input type="text" id="full-name" name="full-name" placeholder="ישראל ישראלי" required>
                         </div>
                         <div class="form-group">
-                            <label for="phoneNumber">מספר טלפון *</label>
-                            <input type="tel" id="phoneNumber" autocomplete="tel" placeholder="050-1234567" required>
+                            <label for="phone">מספר טלפון *</label>
+                            <input type="tel" id="phone" name="phone" placeholder="050-1234567" required>
                         </div>
                     </div>
-                    <div class="form-group">
-                        <label for="petType">סוג חיית המחמד ושם</label>
-                        <input type="text" id="petType" placeholder="לדוגמה: כלב (שוקו)">
+                    
+                    <div class="form-group-grid">
+                        <div class="form-group">
+                            <label for="pet-type">סוג חיית המחמד</label>
+                            <select id="pet-type" name="pet-type">
+                                <option value="" disabled selected>בחרו מתוך הרשימה</option>
+                                <option value="dog">כלב</option>
+                                <option value="cat">חתול</option>
+                                <option value="other">אחר</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="service-type">סוג השירות המבוקש</label>
+                            <select id="service-type" name="service-type">
+                                <option value="" disabled selected>בחרו מתוך הרשימה</option>
+                                <option value="checkup">בדיקה תקופתית / חיסונים</option>
+                                <option value="treatment">טיפול רפואי / אבחון</option>
+                                <option value="dental">טיפול שיניים</option>
+                                <option value="other">אחר</option>
+                            </select>
+                        </div>
                     </div>
+                    
                     <div class="form-group">
-                        <label for="serviceType">השירות המבוקש</label>
-                        <select id="serviceType">
-                            <option value="">בחרו שירות מבוקש</option>
-                            <option value="חיסון">חיסון תקופתי / טיפול מונע</option>
-                            <option value="בדיקה">בדיקה כללית / ייעוץ</option>
-                            <option value="שיניים">טיפול שיניים</option>
-                            <option value="כירורגיה">ניתוח / עיקור / סירוס</option>
-                            <option value="אחר">אחר</option>
-                        </select>
+                        <label for="message">פרטים נוספים או הערות</label>
+                        <textarea id="message" name="message" rows="4" placeholder="נשמח לשמוע במה נוכל לעזור..."></textarea>
                     </div>
-                    <div class="form-group">
-                        <label for="message">הודעה / הערות נוספות</label>
-                        <textarea id="message" rows="4" placeholder="נשמח לשמוע פרטים נוספים..."></textarea>
-                    </div>
+                    
                     <button type="submit" class="btn-form-submit">
-                        <i class="fa-solid fa-paper-plane" aria-hidden="true"></i> שליחת בקשה לתור
+                        <i class="far fa-paper-plane"></i>
+                        <span>שליחת בקשה</span>
                     </button>
                 </form>
             </div>
         </div>
     </section>
 
-    <a href="https://wa.me/972723211711" class="whatsapp-fixed-btn" target="_blank" aria-label="צרו איתנו קשר בוואטסאפ">
-        <i class="fa-brands fa-whatsapp" aria-hidden="true"></i>
+    <a href="https://wa.me/972501234567" class="whatsapp-fixed-btn" target="_blank" rel="noopener" aria-label="צרו קשר בווטסאפ">
+        <i class="fab fa-whatsapp"></i>
     </a>
 
-    <footer class="site-footer" role="contentinfo">
+    <footer class="site-footer">
         <div class="footer-container">
             <div class="footer-col about-col">
-                <div class="footer-logo">
-                    <span class="footer-brand">אמירפאה</span>
-                    <span class="footer-sub">מרפאה וטרינרית מכל הלב</span>
-                </div>
-                <p>אנו מציעים שירותי רפואה וטרינרית ברמה הגבוהה ביותר תוך שימת דגש על יחס אישי, מקצועיות ללא פשרות ואהבה ענקית לכל בעלי החיים.</p>
+                <span class="footer-brand">וט-קליניק</span>
+                <span class="footer-sub">מרכז רפואי לחיות מחמד</span>
+                <p>המרפאה שלנו מחויבת למתן הטיפול הוטרינרי האיכותי, המתקדם והמסור ביותר. בריאות החברים על ארבע שלכם היא השליחות שלנו.</p>
             </div>
+            
             <div class="footer-col links-col">
-                <h4>ניווט מהיר</h4>
+                <h4>קישורים מהירים</h4>
                 <ul>
-                    <li><a href="#home"><i class="fa-solid fa-angle-left" aria-hidden="true"></i> דף הבית</a></li>
-                    <li><a href="#about"><i class="fa-solid fa-angle-left" aria-hidden="true"></i> אודות המרפאה</a></li>
-                    <li><a href="#services"><i class="fa-solid fa-angle-left" aria-hidden="true"></i> השירותים שלנו</a></li>
-                    <li><a href="#testimonials"><i class="fa-solid fa-angle-left" aria-hidden="true"></i> המלצות</a></li>
-                    <li><a href="#contact"><i class="fa-solid fa-angle-left" aria-hidden="true"></i> צור קשר</a></li>
+                    <li><a href="#"><i class="fas fa-chevron-left"></i> דף הבית</a></li>
+                    <li><a href="#services"><i class="fas fa-chevron-left"></i> שירותים רפואיים</a></li>
+                    <li><a href="#about"><i class="fas fa-chevron-left"></i> אודות המרפאה</a></li>
+                    <li><a href="#testimonials"><i class="fas fa-chevron-left"></i> לקוחות ממליצים</a></li>
+                    <li><a href="#contact"><i class="fas fa-chevron-left"></i> יצירת קשר</a></li>
                 </ul>
             </div>
+            
             <div class="footer-col accessibility-col">
-                <h4>פרטיות ונגישות</h4>
+                <h4>נגישות ומידע</h4>
                 <ul>
-                    <li><a href="#privacy"><i class="fa-solid fa-shield-halved" aria-hidden="true"></i> מדיניות פרטיות</a></li>
-                    <li><a href="#accessibility"><i class="fa-solid fa-universal-access" aria-hidden="true"></i> הצהרת נגישות</a></li>
+                    <li><a href="#"><i class="fas fa-wheelchair"></i> הצהרת נגישות</a></li>
+                    <li><a href="#"><i class="fas fa-user-shield"></i> מדיניות פרטיות</a></li>
+                    <li><a href="#faq"><i class="fas fa-question-circle"></i> שאלות ותשובות</a></li>
                 </ul>
-                <div class="accessibility-note">
-                    <p>אתר זה מותאם לגלישה עבור אנשים עם מוגבלויות לשיפור חווית המשתמש ונוחות הגלישה.</p>
-                </div>
+                <p class="accessibility-note">המרפאה והאתר מונגשים באופן מלא עבור אנשים עם מוגבלויות.</p>
             </div>
         </div>
+        
         <div class="footer-bottom">
             <div class="footer-bottom-container">
-                <p>&copy; 2026 כל הזכויות שמורות לאמירפאה - מרפאה וטרינרית ד"ר אמיר הלפרין.</p>
-                <p>עוצב ונבנה באהבה ❤️ עבור בעלי החיים שלכם.</p>
+                <p>&copy; 2026 וט-קליניק. כל הזכויות שמורות.</p>
+                <p>נבנה באהבה לבעלי החיים <i class="fas fa-heart" style="color: var(--accent-color)"></i></p>
             </div>
         </div>
     </footer>
 
     <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const faqItems = document.querySelectorAll('.faq-item');
+        function toggleFaq(button) {
+            const faqItem = button.parentElement;
+            const isOpen = faqItem.classList.contains('active');
             
-            faqItems.forEach(item => {
-                const questionBtn = item.querySelector('.faq-question');
-                
-                questionBtn.addEventListener('click', () => {
-                    const isActive = item.classList.contains('active');
-                    
-                    faqItems.forEach(otherItem => {
-                        if (otherItem !== item && otherItem.classList.contains('active')) {
-                            otherItem.classList.remove('active');
-                            otherItem.querySelector('.faq-icon').classList.replace('fa-minus', 'fa-plus');
-                            otherItem.querySelector('.faq-question').setAttribute('aria-expanded', 'false');
-                        }
-                    });
-                    
-                    if (!isActive) {
-                        item.classList.add('active');
-                        questionBtn.querySelector('.faq-icon').classList.replace('fa-plus', 'fa-minus');
-                        questionBtn.setAttribute('aria-expanded', 'true');
-                    } else {
-                        item.classList.remove('active');
-                        questionBtn.querySelector('.faq-icon').classList.replace('fa-minus', 'fa-plus');
-                        questionBtn.setAttribute('aria-expanded', 'false');
-                    }
-                });
+            // סגירת כל שאר השאלות הפתוחות
+            document.querySelectorAll('.faq-item').forEach(item => {
+                item.classList.remove('active');
+                item.querySelector('.faq-question').setAttribute('aria-expanded', 'false');
             });
-        });
+
+            // פתיחה או השארה סגור בהתאם למצב הקודם
+            if (!isOpen) {
+                faqItem.classList.add('active');
+                button.setAttribute('aria-expanded', 'true');
+            }
+        }
     </script>
 </body>
 </html>
