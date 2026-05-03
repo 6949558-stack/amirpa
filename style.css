@@ -386,7 +386,7 @@ ul {
 }
 
 .service-card.active-card::after {
-    content: "מומלץ";
+    content: "נפוץ"; /* הותאם לטיפולי שיניים */
     position: absolute;
     top: 20px;
     left: 20px;
@@ -520,7 +520,7 @@ ul {
 .about-image-column {
     flex: 1 1 400px;
     display: flex;
-    justify-content: center;
+    justify(content: center;
 }
 
 .about-img-frame {
