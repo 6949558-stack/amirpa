@@ -122,7 +122,7 @@ body {
     color: var(--white);
 }
 
-/* Hero Section - בהיר ונקי ללא שכבה כהה */
+/* Hero Section */
 .hero-section {
     background: url('banner.png') no-repeat center center;
     background-size: cover;
@@ -140,11 +140,14 @@ body {
     width: 100%;
 }
 
+/* העברת כל התוכן לצד שמאל */
 .hero-content {
     max-width: 580px;
-    margin-right: auto;
+    margin-left: auto; /* הופך את היישור לשמאל מלא */
+    margin-right: 0;
     color: var(--dark-color);
     padding-bottom: 20px;
+    text-align: right; /* שומר על יישור הטקסט עצמו לימין בשביל השפה העברית */
 }
 
 .mobile-badge {
@@ -243,7 +246,6 @@ body {
     padding: 10px;
 }
 
-/* אייקונים קלאסיים (צבע אחיד) */
 .info-card .card-icon {
     width: 42px;
     height: 42px;
@@ -287,7 +289,7 @@ body {
     color: #64748b;
 }
 
-/* Sections Global */
+/* Global Section Header */
 .section-header {
     text-align: center;
     margin-bottom: 40px;
@@ -699,6 +701,7 @@ body {
     .hero-content {
         max-width: 100%;
         text-align: center;
+        margin-left: 0;
     }
     .hero-actions {
         justify-content: center;
