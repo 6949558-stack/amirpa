@@ -478,7 +478,7 @@ a {
 }
 
 /* ==========================================
-   8. המלצות וחוות דעת (6 המלצות עם אייקון כפות)
+   8. המלצות וחוות דעת (Testimonials Section)
 ========================================== */
 .testimonials-section {
     padding: 105px 20px;
@@ -541,7 +541,140 @@ a {
 }
 
 /* ==========================================
-   9. צור קשר (Contact Section)
+   9. שאלות ותשובות (FAQ Section)
+========================================== */
+.faq-section {
+    padding: 100px 20px;
+    background-color: #ffffff;
+}
+
+.faq-container {
+    max-width: 850px;
+    margin: 40px auto 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.faq-category-title {
+    font-size: 22px;
+    font-weight: 800;
+    color: var(--primary-color);
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    border-bottom: 2px solid var(--border-color);
+    padding-bottom: 12px;
+}
+
+.faq-category-title i {
+    color: var(--secondary-color);
+}
+
+.faq-item {
+    background-color: #ffffff;
+    border: 1px solid var(--border-color);
+    border-radius: 14px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.01);
+    transition: all 0.3s ease;
+}
+
+.faq-item:hover {
+    border-color: rgba(255, 123, 0, 0.3);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.04);
+}
+
+.faq-question {
+    width: 100%;
+    background: none;
+    border: none;
+    padding: 22px 28px;
+    text-align: right;
+    font-size: 18.5px;
+    font-weight: 700;
+    color: var(--dark-color);
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+    font-family: var(--font-family);
+    transition: all 0.3s ease;
+}
+
+.faq-icon {
+    font-size: 14px;
+    color: var(--secondary-color);
+    transition: transform 0.3s ease;
+}
+
+/* מצב פתוח (Active FAQ) */
+.faq-item.active {
+    border-color: var(--secondary-color);
+    box-shadow: 0 6px 16px rgba(255, 123, 0, 0.08);
+}
+
+.faq-item.active .faq-icon {
+    transform: rotate(180deg);
+}
+
+.faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out, padding 0.3s ease;
+    background-color: var(--light-bg);
+    padding: 0 28px;
+}
+
+.faq-item.active .faq-answer {
+    max-height: 1000px; /* גובה מקסימלי שמאפשר גלילה חלקה */
+    padding: 8px 28px 25px 28px;
+    border-top: 1px solid var(--border-color);
+}
+
+.faq-answer p {
+    font-size: 16.5px;
+    color: #475569;
+    line-height: 1.75;
+    margin-top: 12px;
+    margin-bottom: 8px;
+}
+
+.faq-answer ul {
+    margin: 12px 22px 16px 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.faq-answer ul li {
+    font-size: 16px;
+    color: #475569;
+    position: relative;
+    padding-right: 20px;
+    line-height: 1.65;
+}
+
+.faq-answer ul li::before {
+    content: "•";
+    color: var(--secondary-color);
+    font-weight: bold;
+    font-size: 22px;
+    position: absolute;
+    right: 0;
+    top: -2px;
+}
+
+.faq-answer strong {
+    color: var(--dark-color);
+}
+
+/* ==========================================
+   10. צור קשר (Contact Section)
 ========================================== */
 .contact-section {
     padding: 105px 20px;
@@ -687,7 +820,7 @@ a {
 }
 
 /* ==========================================
-   10. וואטסאפ צף וכותרת תחתונה
+   11. וואטסאפ צף וכותרת תחתונה
 ========================================== */
 .whatsapp-fixed-btn {
     position: fixed;
@@ -739,7 +872,7 @@ a {
 }
 
 /* ==========================================
-   11. התאמה רספונסיבית מושלמת (Responsive Design)
+   12. התאמה רספונסיבית (Responsive Design)
 ========================================== */
 @media (max-width: 1024px) {
     .services-grid, .testimonials-grid {
@@ -785,5 +918,15 @@ a {
     }
     .pets-img-overlay h3 {
         font-size: 26px;
+    }
+    .faq-question {
+        padding: 18px 22px;
+        font-size: 16.5px;
+    }
+    .faq-answer {
+        padding: 0 22px;
+    }
+    .faq-item.active .faq-answer {
+        padding: 8px 22px 22px 22px;
     }
 }
