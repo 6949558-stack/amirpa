@@ -1,152 +1,578 @@
 <!DOCTYPE html>
 <html lang="he" dir="rtl">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>אמירפאה</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>אמירפאה | מרפאה וטרינרית</title>
+  <meta name="description" content="אמירפאה - מרפאה וטרינרית במרחביה. טיפולים רפואיים, חיסונים, כירורגיה, חירום, טיפולי שיניים וביקורי בית." />
+  <style>
+    :root{
+      --blue:#0867ff;
+      --blue2:#0b4fab;
+      --navy:#06346c;
+      --deep:#042b62;
+      --cyan:#bff6ef;
+      --mint:#c9fff0;
+      --soft:#eef6ff;
+      --text:#0a2b58;
+      --orange:#ff9c1a;
+      --shadow:0 18px 45px rgba(4,43,98,.12);
+      --radius:28px;
+    }
 
-<style>
-body {
-  margin:0;
-  font-family: Arial;
-  background:#f5f7fb;
-}
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      font-family: Arial, "Noto Sans Hebrew", sans-serif;
+      background:#f7fbff;
+      color:var(--text);
+      overflow-x:hidden;
+    }
+    a{text-decoration:none;color:inherit}
+    .container{width:min(1120px,92%);margin:auto}
 
-.header {
-  background:white;
-  padding:15px 30px;
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  box-shadow:0 2px 10px rgba(0,0,0,0.05);
-}
+    /* HEADER */
+    header{
+      position:sticky;
+      top:0;
+      z-index:1000;
+      height:86px;
+      background:rgba(255,255,255,.96);
+      backdrop-filter:blur(12px);
+      box-shadow:0 4px 25px rgba(0,0,0,.05);
+    }
+    .nav{
+      height:86px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:22px;
+    }
+    .brand{
+      display:flex;
+      align-items:center;
+      gap:12px;
+      min-width:230px;
+    }
+    .brand-mark{
+      width:66px;height:66px;border:3px solid var(--navy);border-radius:18px;
+      display:grid;place-items:center;position:relative;background:white;
+    }
+    .brand-mark svg{width:54px;height:54px}
+    .brand-text strong{display:block;font-size:30px;line-height:1;color:var(--navy);font-weight:900}
+    .brand-text span{display:block;font-size:16px;margin-top:4px;color:#153764}
+    .menu{display:flex;align-items:center;gap:36px;font-weight:800;color:#0e315c}
+    .menu a.active{color:var(--blue);position:relative}
+    .menu a.active:after{content:"";position:absolute;right:0;left:0;margin:auto;bottom:-12px;width:54px;height:4px;border-radius:99px;background:var(--blue)}
+    .nav-actions{display:flex;align-items:center;gap:12px;direction:ltr}
+    .btn{
+      border:0;border-radius:14px;padding:14px 22px;font-weight:900;display:inline-flex;align-items:center;justify-content:center;gap:8px;cursor:pointer;transition:.25s transform,.25s box-shadow,.25s background;
+      box-shadow:0 10px 24px rgba(8,103,255,.20);
+      white-space:nowrap;
+    }
+    .btn:hover{transform:translateY(-2px)}
+    .btn-primary{background:linear-gradient(135deg,#08b7ff,var(--blue));color:white}
+    .btn-outline{border:2px solid rgba(8,103,255,.55);color:var(--blue);background:white;box-shadow:none}
+    .btn-orange{background:linear-gradient(135deg,#ffb037,#ff8c16);color:white;box-shadow:0 12px 28px rgba(255,156,26,.25)}
 
-.hero {
-  background:linear-gradient(135deg,#0b3c6d,#1f66c2);
-  color:white;
-  padding:80px 30px;
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  flex-wrap:wrap;
-}
+    /* HERO */
+    .hero{
+      position:relative;
+      overflow:hidden;
+      color:white;
+      min-height:760px;
+      background:
+        radial-gradient(circle at 83% 20%, rgba(203,235,255,.45) 0 0, transparent 19%),
+        radial-gradient(circle at 4% 45%, rgba(162,206,255,.35) 0 0, transparent 15%),
+        linear-gradient(135deg,#08356f 0%,#063f92 43%,#0870ff 100%);
+    }
+    .hero:before{
+      content:"";
+      position:absolute;inset:0;
+      background:
+        radial-gradient(circle at 54% 22%, rgba(179,213,255,.55) 0 28px, transparent 29px),
+        radial-gradient(circle at 91% 48%, rgba(255,255,255,.75) 0 28px, transparent 29px);
+      opacity:.65;
+      pointer-events:none;
+    }
+    .blob{position:absolute;border-radius:45% 55% 60% 40%/50% 45% 55% 50%;opacity:.9;filter:blur(.1px)}
+    .blob.one{width:300px;height:520px;background:#8bbfff;left:-130px;top:70px}
+    .blob.two{width:420px;height:420px;background:linear-gradient(135deg,#c2fff3,#85e6dc);right:47%;bottom:-170px}
+    .blob.three{width:320px;height:650px;background:#bddbff;right:-120px;top:0}
+    .dots{position:absolute;width:86px;height:120px;background-image:radial-gradient(circle,rgba(255,255,255,.35) 5px,transparent 6px);background-size:25px 25px}
+    .dots.d1{left:65px;bottom:160px}.dots.d2{right:42%;top:250px}.dots.d3{right:80px;bottom:110px}
+    .plus{position:absolute;color:white;font-size:82px;font-weight:900;opacity:.75}
+    .plus.p1{right:88px;top:125px}.plus.p2{right:45%;top:230px;color:#b2d2ff}
+    .hero-inner{
+      position:relative;
+      min-height:670px;
+      display:grid;
+      grid-template-columns:1fr 1.02fr;
+      align-items:center;
+      gap:40px;
+      padding:70px 0 120px;
+    }
+    .hero-copy{padding-top:20px;z-index:2}
+    .hero h1{font-size:88px;line-height:.96;margin:0 0 18px;font-weight:950;letter-spacing:-2px}
+    .hero h2{font-size:48px;line-height:1.1;margin:0 0 24px;color:#bff6ef;font-weight:950}
+    .hero p{font-size:23px;line-height:1.7;max-width:520px;margin:0 0 28px;color:#eaf5ff;font-weight:700}
+    .hero-buttons{display:flex;gap:16px;flex-wrap:wrap}
+    .dog-wrap{
+      position:relative;
+      height:610px;
+      display:flex;
+      align-items:flex-end;
+      justify-content:center;
+      z-index:2;
+    }
+    .dog-wrap:before{
+      content:"";
+      position:absolute;
+      width:610px;height:610px;border-radius:55% 45% 50% 50%;
+      background:radial-gradient(circle at 40% 38%,#d8edff 0 0,rgba(177,211,255,.8) 55%,rgba(94,151,255,.55) 100%);
+      right:0;bottom:0;
+      opacity:.85;
+    }
+    .dog{
+      position:relative;
+      width:min(560px,95%);
+      height:600px;
+      object-fit:cover;
+      object-position:center;
+      filter:drop-shadow(0 30px 45px rgba(0,0,0,.18));
+      border-radius:42% 42% 0 0;
+      animation:floaty 5.5s ease-in-out infinite;
+    }
+    @keyframes floaty{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
 
-.hero-text {
-  max-width:500px;
-}
+    .trust-card{
+      position:relative;
+      z-index:5;
+      margin:-76px auto 0;
+      background:white;
+      border-radius:26px;
+      min-height:126px;
+      box-shadow:var(--shadow);
+      display:grid;
+      grid-template-columns:repeat(4,1fr);
+      overflow:hidden;
+      border:1px solid rgba(5,60,120,.08);
+    }
+    .trust-item{
+      display:flex;align-items:center;justify-content:center;gap:18px;padding:24px;border-left:1px solid #e3edf8;
+      min-width:0;
+    }
+    .trust-item:last-child{border-left:0}
+    .icon-round{width:58px;height:58px;border:3px solid #1081ff;border-radius:20px;color:#0870ff;display:grid;place-items:center;font-size:34px;font-weight:900}
+    .trust-item strong{display:block;font-size:21px;color:#092f62;margin-bottom:4px}
+    .trust-item span{display:block;color:#5d728b;font-weight:700;font-size:15px}
+    .stars{color:#ffc107;letter-spacing:2px}
 
-.hero h1 {
-  font-size:52px;
-  margin:0;
-}
+    /* GENERAL SECTIONS */
+    section{padding:72px 0}
+    .section-title{text-align:center;margin:0 0 34px}
+    .section-title h2{font-size:40px;margin:0;color:#082f60;font-weight:950}
+    .section-title .paw{color:#1280ff;margin-right:8px}
+    .section-title p{font-size:19px;color:#526b86;margin:8px 0 0}
 
-.hero p {
-  margin:15px 0;
-  font-size:18px;
-}
+    .services-grid{
+      display:grid;
+      grid-template-columns:repeat(6,1fr);
+      gap:20px;
+    }
+    .service{
+      background:white;
+      border-radius:24px;
+      min-height:175px;
+      box-shadow:0 16px 35px rgba(5,63,145,.08);
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+      justify-content:center;
+      gap:14px;
+      transition:.25s;
+      border:1px solid rgba(8,103,255,.06);
+    }
+    .service:hover{transform:translateY(-6px);box-shadow:0 24px 55px rgba(5,63,145,.13)}
+    .service .svc-ico{
+      width:70px;height:70px;border-radius:50%;
+      display:grid;place-items:center;
+      font-size:32px;color:#0870ff;background:#edf6ff;
+    }
+    .service:nth-child(2) .svc-ico{background:#e9fff7;color:#0caa82}
+    .service:nth-child(3) .svc-ico{background:#fff4e7;color:#ff9517}
+    .service:nth-child(4) .svc-ico{background:#f0eaff;color:#5b39ff}
+    .service h3{margin:0;font-size:20px;color:#0a3568}
+    .service p{margin:0;color:#50687f;font-weight:700}
+    .center{text-align:center;margin-top:24px}
 
-.btn {
-  background:#ff8c00;
-  color:white;
-  padding:14px 25px;
-  border-radius:10px;
-  text-decoration:none;
-  font-weight:bold;
-}
+    .why{
+      padding-top:20px;
+    }
+    .why-card{
+      background:linear-gradient(135deg,#dff8ff,#eefeff);
+      border-radius:34px;
+      min-height:275px;
+      display:grid;
+      grid-template-columns:.95fr 1fr;
+      align-items:center;
+      overflow:hidden;
+      box-shadow:var(--shadow);
+      position:relative;
+    }
+    .why-card:before{
+      content:"";
+      position:absolute;inset:0;
+      background:radial-gradient(circle at 18% 30%,rgba(8,103,255,.16) 0 48px,transparent 49px),radial-gradient(circle at 34% 78%,rgba(8,103,255,.09) 0 80px,transparent 81px);
+      opacity:.7;
+    }
+    .pet-duo{
+      position:relative;
+      min-height:280px;
+      display:flex;
+      align-items:end;
+      justify-content:center;
+      padding:20px;
+    }
+    .pet-duo img{
+      width:78%;
+      max-height:240px;
+      object-fit:cover;
+      object-position:center;
+      border-radius:24px;
+      box-shadow:0 18px 42px rgba(0,0,0,.12);
+    }
+    .why-text{position:relative;padding:34px 48px}
+    .why-text h2{font-size:38px;margin:0 0 20px;color:#07325f}
+    .check{display:flex;align-items:center;gap:12px;margin:15px 0;font-size:19px;font-weight:800;color:#143f6f}
+    .check i{width:28px;height:28px;border-radius:50%;background:#18b7c9;color:white;display:grid;place-items:center;font-style:normal}
 
-.hero img {
-  width:350px;
-  border-radius:20px;
-}
+    .reviews-wrap{
+      background:linear-gradient(135deg,#eaf9ff,#f5fcff);
+      border-radius:34px;
+      padding:44px 28px;
+      position:relative;
+      box-shadow:var(--shadow);
+      overflow:hidden;
+    }
+    .reviews-wrap:before{
+      content:"";
+      position:absolute;left:-70px;bottom:-40px;width:240px;height:260px;
+      background:radial-gradient(circle,#bfe3ff 0 38%,transparent 39%);
+      opacity:.45;
+    }
+    .rating-line{text-align:center;font-size:22px;font-weight:900;margin:-18px 0 26px;color:#08396f}
+    .review-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;position:relative}
+    .review{
+      background:white;border-radius:24px;padding:32px 26px;box-shadow:0 14px 35px rgba(5,63,145,.08);
+      min-height:220px;text-align:center;
+    }
+    .quote{font-size:54px;line-height:.7;color:#0870ff;font-weight:900}
+    .review .stars{font-size:22px;margin:8px 0 14px}
+    .review p{font-size:18px;line-height:1.6;color:#243d5c;margin:0 0 18px;font-weight:700}
+    .review strong{color:#0870ff}
 
-.trust {
-  background:white;
-  padding:20px;
-  display:flex;
-  justify-content:space-around;
-  text-align:center;
-  margin-top:-30px;
-  border-radius:15px;
-  max-width:900px;
-  margin-right:auto;
-  margin-left:auto;
-  box-shadow:0 10px 20px rgba(0,0,0,0.05);
-}
+    .about-card{
+      background:linear-gradient(135deg,#dff8ff,#f2fbff);
+      border-radius:34px;
+      padding:0;
+      display:grid;
+      grid-template-columns:.95fr 1.05fr;
+      align-items:center;
+      overflow:hidden;
+      box-shadow:var(--shadow);
+    }
+    .doctor-img{
+      min-height:310px;
+      display:flex;
+      align-items:flex-end;
+      justify-content:center;
+      padding:22px 22px 0;
+    }
+    .doctor-img img{
+      width:90%;
+      max-height:310px;
+      object-fit:cover;
+      border-radius:28px 28px 0 0;
+      box-shadow:0 18px 42px rgba(0,0,0,.12);
+    }
+    .about-text{padding:46px}
+    .about-text h2{font-size:40px;margin:0 0 18px;color:#082f60}
+    .about-text p{font-size:20px;line-height:1.8;margin:0;color:#21486f;font-weight:700}
 
-.section {
-  padding:60px 20px;
-  text-align:center;
-}
+    .contact-grid{display:grid;grid-template-columns:1fr 1fr 1.15fr;gap:22px}
+    .contact-box{
+      background:white;border-radius:26px;padding:28px;text-align:center;box-shadow:var(--shadow);min-height:235px;border:1px solid rgba(5,60,120,.06)
+    }
+    .contact-box h3{font-size:22px;margin:0 0 20px;color:#08396f}
+    .hours-row{display:flex;justify-content:space-between;border-bottom:1px solid #edf2f8;padding:10px 0;color:#173e68;font-weight:800}
+    .big-phone{font-size:39px;font-weight:950;color:#0b56c2;margin:18px 0}
+    .map-box{padding:0;overflow:hidden}
+    .map-box iframe{width:100%;height:235px;border:0;display:block;filter:saturate(.9)}
 
-.services {
-  display:flex;
-  flex-wrap:wrap;
-  gap:20px;
-  justify-content:center;
-}
+    .cta-strip{
+      margin-top:28px;background:linear-gradient(135deg,#0075ff,#003fbb);color:white;min-height:82px;
+      display:flex;align-items:center;justify-content:center;gap:24px;font-weight:900;font-size:24px;
+    }
+    .cta-strip .phone-pill{background:#bff6ef;color:#04366b;border-radius:18px;padding:16px 28px}
 
-.card {
-  background:white;
-  padding:20px;
-  border-radius:12px;
-  width:180px;
-  box-shadow:0 5px 15px rgba(0,0,0,0.05);
-}
+    footer{background:#052b60;color:white}
+    .service-areas{
+      background:linear-gradient(135deg,#0870ff,#0045ba);
+      padding:30px 0;text-align:center;font-size:18px;font-weight:800
+    }
+    .footer-main{padding:36px 0;display:flex;align-items:center;justify-content:space-between;gap:20px}
+    .footer-logo{display:flex;align-items:center;gap:12px}
+    .footer-logo .brand-mark{width:58px;height:58px;border-color:white;background:transparent}
+    .footer-logo strong{font-size:25px}
+    .social{display:flex;gap:12px;direction:ltr}
+    .social a{width:34px;height:34px;border-radius:50%;background:#0d65d8;display:grid;place-items:center}
 
-.footer {
-  background:#0b3c6d;
-  color:white;
-  padding:30px;
-  text-align:center;
-}
-</style>
+    .mobile-call{
+      position:fixed;right:18px;bottom:18px;z-index:1001;background:#0dbd76;color:white;border-radius:999px;padding:14px 20px;font-weight:950;box-shadow:0 18px 40px rgba(13,189,118,.35);display:none
+    }
+
+    /* subtle animations */
+    .reveal{animation:rise .65s ease both}
+    @keyframes rise{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:translateY(0)}}
+
+    @media (max-width:1000px){
+      header{height:auto}.nav{height:auto;padding:14px 0;flex-wrap:wrap}.menu{order:3;width:100%;justify-content:center;gap:18px;font-size:14px}
+      .hero-inner{grid-template-columns:1fr;padding:44px 0 110px;text-align:center}.hero-copy{margin:auto}.hero p{margin:auto auto 24px}.hero-buttons{justify-content:center}.dog-wrap{height:420px}.dog-wrap:before{width:430px;height:430px}.dog{height:420px;width:420px}.hero h1{font-size:62px}.hero h2{font-size:36px}
+      .trust-card{grid-template-columns:1fr 1fr;margin-top:-55px}.trust-item{border-bottom:1px solid #e3edf8}
+      .services-grid{grid-template-columns:repeat(3,1fr)}
+      .why-card,.about-card{grid-template-columns:1fr}.pet-duo{order:2}.contact-grid{grid-template-columns:1fr}
+      .review-grid{grid-template-columns:1fr}
+    }
+    @media (max-width:640px){
+      .brand-text strong{font-size:24px}.brand-mark{width:56px;height:56px}.nav-actions .btn-outline{display:none}.menu{display:none}.nav{justify-content:center}.nav-actions{width:100%;justify-content:center}
+      .hero{min-height:auto}.hero h1{font-size:54px}.hero h2{font-size:31px}.hero p{font-size:18px}.dog-wrap{height:330px}.dog{height:330px;width:330px}.dog-wrap:before{width:330px;height:330px}
+      .trust-card{grid-template-columns:1fr}.services-grid{grid-template-columns:1fr 1fr}.service{min-height:150px}.why-text,.about-text{padding:28px}.why-text h2,.about-text h2{font-size:30px}
+      .hero-buttons .btn{width:100%}.mobile-call{display:block}.cta-strip{font-size:17px;flex-direction:column;padding:18px}.footer-main{flex-direction:column;text-align:center}.service-areas{font-size:14px}
+    }
+  </style>
 </head>
 
 <body>
+  <a class="mobile-call" href="tel:0723211711">📞 התקשרו</a>
 
-<div class="header">
-  <div>📞 072-3211711</div>
-  <div><b>אמירפאה</b></div>
-</div>
+  <header>
+    <div class="container nav">
+      <div class="brand">
+        <div class="brand-mark" aria-label="אמירפאה לוגו">
+          <svg viewBox="0 0 80 80" fill="none" aria-hidden="true">
+            <rect x="5" y="5" width="70" height="70" rx="18" stroke="#06346c" stroke-width="4"/>
+            <path d="M47 24c6-9 20-5 19 9v23" stroke="#06346c" stroke-width="4" stroke-linecap="round"/>
+            <path d="M48 25c-8 0-15 7-15 16v17" stroke="#06346c" stroke-width="4" stroke-linecap="round"/>
+            <path d="M21 56V37l7-7 6 7" stroke="#06346c" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M24 44c5-7 13-5 17 0" stroke="#06346c" stroke-width="4" stroke-linecap="round"/>
+            <circle cx="51" cy="34" r="2.5" fill="#06346c"/>
+            <circle cx="24" cy="42" r="2.2" fill="#06346c"/>
+            <ellipse cx="55" cy="62" rx="7" ry="6" fill="#ff9c1a"/>
+            <circle cx="44" cy="57" r="4" fill="#ff9c1a"/>
+            <circle cx="52" cy="52" r="4" fill="#ff9c1a"/>
+            <circle cx="61" cy="53" r="4" fill="#ff9c1a"/>
+            <circle cx="66" cy="60" r="4" fill="#ff9c1a"/>
+          </svg>
+        </div>
+        <div class="brand-text">
+          <strong>אמירפאה</strong>
+          <span>מרפאה וטרינרית</span>
+        </div>
+      </div>
 
-<div class="hero">
-  <div class="hero-text">
-    <h1>אמירפאה</h1>
-    <h2>מרפאה וטרינרית עם לב גדול</h2>
-    <p>יחס אישי וטיפול מכל הלב לכלבים וחתולים</p>
-    <a class="btn" href="tel:0723211711">התקשר עכשיו</a>
-  </div>
+      <nav class="menu">
+        <a class="active" href="#home">דף הבית</a>
+        <a href="#about">אודות</a>
+        <a href="#services">שירותים</a>
+        <a href="#reviews">חוות דעת</a>
+        <a href="#contact">יצירת קשר</a>
+      </nav>
 
-  <img src="https://images.unsplash.com/photo-1558788353-f76d92427f16" />
-</div>
+      <div class="nav-actions">
+        <a class="btn btn-primary" href="tel:0723211711">📞 072-3211711</a>
+        <a class="btn btn-outline" href="#contact">קביעת תור 📅</a>
+      </div>
+    </div>
+  </header>
 
-<div class="trust">
-  <div>📍 מרחביה</div>
-  <div>⭐ 4.8 (11 דירוגים עפ"י דפי זהב)</div>
-  <div>❤️ יחס אישי</div>
-</div>
+  <main id="home">
+    <section class="hero">
+      <div class="blob one"></div>
+      <div class="blob two"></div>
+      <div class="blob three"></div>
+      <div class="dots d1"></div>
+      <div class="dots d2"></div>
+      <div class="dots d3"></div>
+      <div class="plus p1">+</div>
+      <div class="plus p2">+</div>
 
-<div class="section">
-  <h2>השירותים שלנו</h2>
-  <div class="services">
-    <div class="card">טיפולים רפואיים</div>
-    <div class="card">חיסונים</div>
-    <div class="card">כירורגיה</div>
-    <div class="card">חירום</div>
-    <div class="card">בדיקות</div>
-  </div>
-</div>
+      <div class="container hero-inner">
+        <div class="hero-copy reveal">
+          <h1>אמירפאה</h1>
+          <h2>מרפאה וטרינרית<br>עם לב גדול ♡</h2>
+          <p>מרפאה וטרינרית מקצועית ואמינה עם יחס אישי וטיפול מכל הלב לכלבים, חתולים וחיות מחמד נוספות.</p>
+          <div class="hero-buttons">
+            <a class="btn btn-primary" href="tel:0723211711">📞 072-3211711</a>
+            <a class="btn btn-outline" style="color:white;border-color:white;background:transparent" href="#contact">קביעת תור 📅</a>
+          </div>
+        </div>
 
-<div class="section">
-  <h2>חוות דעת</h2>
-  <p>⭐️⭐️⭐️⭐️⭐️ וטרינר מדהים ואנושי</p>
-  <p>⭐️⭐️⭐️⭐️⭐️ מקצועי וזמין תמיד</p>
-</div>
+        <div class="dog-wrap reveal">
+          <img class="dog" alt="כלב גולדן רטריבר מחייך" src="https://images.unsplash.com/photo-1558788353-f76d92427f16?auto=format&fit=crop&w=900&q=90">
+        </div>
+      </div>
+    </section>
 
-<div class="footer">
-  <h2>צריכים וטרינר?</h2>
-  <a class="btn" href="tel:0723211711">התקשר עכשיו</a>
-</div>
+    <div class="container trust-card reveal">
+      <div class="trust-item">
+        <div class="icon-round">📍</div>
+        <div><strong>מרחביה (קיבוץ)</strong><span>אזור העמקים</span></div>
+      </div>
+      <div class="trust-item">
+        <div class="icon-round">☆</div>
+        <div><strong>4.8 <span class="stars">★★★★★</span></strong><span>11 דירוגים (עפ״י דפי זהב)</span></div>
+      </div>
+      <div class="trust-item">
+        <div class="icon-round">♡</div>
+        <div><strong>יחס אישי</strong><span>וטיפול מכל הלב</span></div>
+      </div>
+      <div class="trust-item">
+        <div class="icon-round">♁</div>
+        <div><strong>מקצועיות</strong><span>וניסיון רב</span></div>
+      </div>
+    </div>
 
+    <section id="services">
+      <div class="container">
+        <div class="section-title">
+          <h2>השירותים שלנו <span class="paw">🐾</span></h2>
+        </div>
+        <div class="services-grid">
+          <article class="service"><div class="svc-ico">🩺</div><h3>טיפולים</h3><p>רפואיים</p></article>
+          <article class="service"><div class="svc-ico">🦷</div><h3>טיפולי</h3><p>שיניים</p></article>
+          <article class="service"><div class="svc-ico">💉</div><h3>חיסונים</h3><p>וטיפולים מונעים</p></article>
+          <article class="service"><div class="svc-ico">✂️</div><h3>שירותים</h3><p>כירורגיים</p></article>
+          <article class="service"><div class="svc-ico">🚑</div><h3>טיפולי</h3><p>חירום</p></article>
+          <article class="service"><div class="svc-ico">⌂</div><h3>שירות</h3><p>ביקורי בית</p></article>
+        </div>
+        <div class="center">
+          <a class="btn btn-primary" href="#contact">לכל השירותים 🐾</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="why">
+      <div class="container why-card">
+        <div class="pet-duo">
+          <img alt="כלב וחתול" src="https://images.unsplash.com/photo-1583337130417-3346a1be7dee?auto=format&fit=crop&w=800&q=90">
+        </div>
+        <div class="why-text">
+          <h2>למה לבחור באמירפאה?</h2>
+          <div class="check"><i>✓</i> יחס אישי ואכפתי לכל חיית מחמד</div>
+          <div class="check"><i>✓</i> ניסיון מקצועי וידע רחב</div>
+          <div class="check"><i>✓</i> זמינות גבוהה ושירות מהיר</div>
+          <div class="check"><i>✓</i> טיפול עדין, סבלני ומקצועי</div>
+        </div>
+      </div>
+    </section>
+
+    <section id="reviews">
+      <div class="container reviews-wrap">
+        <div class="section-title">
+          <h2>מה לקוחות מספרים עלינו <span class="paw">🐾</span></h2>
+        </div>
+        <div class="rating-line">4.8 <span class="stars">★★★★★</span> <small>11 דירוגים (עפ״י דפי זהב)</small></div>
+        <div class="review-grid">
+          <article class="review">
+            <div class="quote">״</div>
+            <div class="stars">★★★★★</div>
+            <p>וטרינר מדהים, רגיש ואנושי. ליווה אותנו ברגעים הכי קשים עם הרבה אמפתיה וסבלנות.</p>
+            <strong>lisamile</strong>
+          </article>
+          <article class="review">
+            <div class="quote">״</div>
+            <div class="stars">★★★★★</div>
+            <p>מקצועי מאוד, תמיד זמין ומעניק תחושת ביטחון מלאה. ממליץ בחום.</p>
+            <strong>arde1976</strong>
+          </article>
+          <article class="review">
+            <div class="quote">״</div>
+            <div class="stars">★★★★★</div>
+            <p>יחס מדהים לבעלי חיים, סבלנות ואכפתיות ברמה גבוהה מאוד.</p>
+            <strong>אורפז ויקיר</strong>
+          </article>
+        </div>
+        <div class="center">
+          <a class="btn btn-primary" href="tel:0723211711">לפרטים וקביעת תור</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="about">
+      <div class="container about-card">
+        <div class="doctor-img">
+          <img alt="וטרינר עם כלב" src="https://images.unsplash.com/photo-1628009368231-7bb7cfcb0def?auto=format&fit=crop&w=900&q=90">
+        </div>
+        <div class="about-text">
+          <h2>אודות ד״ר אמיר הלפרין</h2>
+          <p>ד״ר אמיר הלפרין, מנהל המרפאה, רכש את מקצועו בעיר פארמה שבאיטליה. לרשותכם עומדים ידע מקצועי רחב, ניסיון עשיר וגישה טיפולית ייחודית. המטרה שלנו היא אחת: בריאות ואיכות חיים טובה יותר לחיית המחמד שלכם.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="container contact-grid">
+        <div class="contact-box">
+          <h3>שעות פעילות ⏱</h3>
+          <div class="hours-row"><span>ימים א׳, ה׳</span><span>09:00 - 12:00<br>16:00 - 19:00</span></div>
+          <div class="hours-row"><span>ימים ב׳, ד׳</span><span>09:00 - 12:00<br>20:00 - 22:00</span></div>
+          <div class="hours-row"><span>ימים ג׳, ו׳</span><span>09:00 - 12:00</span></div>
+        </div>
+        <div class="contact-box">
+          <h3>יצירת קשר</h3>
+          <div class="big-phone">072-3211711</div>
+          <p><strong>מרחביה (קיבוץ)</strong><br>אזור העמקים</p>
+          <a class="btn btn-primary" href="tel:0723211711">התקשרו עכשיו</a>
+        </div>
+        <div class="contact-box map-box">
+          <iframe title="מפה אמירפאה מרחביה" loading="lazy" allowfullscreen
+            src="https://www.google.com/maps?q=%D7%9E%D7%A8%D7%97%D7%91%D7%99%D7%94%20%D7%A7%D7%99%D7%91%D7%95%D7%A5&output=embed"></iframe>
+        </div>
+      </div>
+    </section>
+
+    <div class="cta-strip">
+      <span>צריכים וטרינר? אנחנו כאן בשבילכם</span>
+      <a class="phone-pill" href="tel:0723211711">072-3211711</a>
+    </div>
+  </main>
+
+  <footer>
+    <div class="service-areas">
+      אזורי שירות: בית שאן | טבריה | יקנעם | מגדל העמק | נצרת | עפולה | פרדס חנה-כרכור
+    </div>
+    <div class="container footer-main">
+      <div class="footer-logo">
+        <div class="brand-mark">
+          <svg viewBox="0 0 80 80" fill="none" aria-hidden="true">
+            <rect x="5" y="5" width="70" height="70" rx="18" stroke="white" stroke-width="4"/>
+            <path d="M47 24c6-9 20-5 19 9v23" stroke="white" stroke-width="4" stroke-linecap="round"/>
+            <path d="M48 25c-8 0-15 7-15 16v17" stroke="white" stroke-width="4" stroke-linecap="round"/>
+            <path d="M21 56V37l7-7 6 7" stroke="white" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+            <ellipse cx="55" cy="62" rx="7" ry="6" fill="#ff9c1a"/>
+            <circle cx="44" cy="57" r="4" fill="#ff9c1a"/>
+            <circle cx="52" cy="52" r="4" fill="#ff9c1a"/>
+            <circle cx="61" cy="53" r="4" fill="#ff9c1a"/>
+            <circle cx="66" cy="60" r="4" fill="#ff9c1a"/>
+          </svg>
+        </div>
+        <div><strong>אמירפאה</strong><br><span>מרפאה וטרינרית</span></div>
+      </div>
+      <div>© כל הזכויות שמורות לאמירפאה מרפאה וטרינרית</div>
+      <div class="social"><a>f</a><a>◎</a></div>
+    </div>
+  </footer>
 </body>
 </html>
