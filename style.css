@@ -122,7 +122,7 @@ body {
     color: var(--white);
 }
 
-/* Hero Section - ללא שום שכבה כהה, רקע בהיר וחלק לחלוטין */
+/* Hero Section - בהיר ונקי ללא שכבה כהה */
 .hero-section {
     background: url('banner.png') no-repeat center center;
     background-size: cover;
@@ -140,7 +140,6 @@ body {
     width: 100%;
 }
 
-/* טקסט כהה מעט כדי שיהיה קריא מאוד על רקע ה-Banner הבהיר */
 .hero-content {
     max-width: 580px;
     margin-right: auto;
@@ -149,7 +148,7 @@ body {
 }
 
 .mobile-badge {
-    background-color: rgba(13, 71, 161, 0.1);
+    background-color: rgba(13, 71, 161, 0.08);
     color: var(--primary-color);
     display: inline-block;
     padding: 4px 14px;
@@ -195,7 +194,7 @@ body {
     display: inline-flex;
     align-items: center;
     gap: 8px;
-    box-shadow: 0 4px 12px rgba(13, 71, 161, 0.25);
+    box-shadow: 0 4px 12px rgba(13, 71, 161, 0.2);
     transition: transform 0.2s ease;
 }
 
@@ -244,7 +243,7 @@ body {
     padding: 10px;
 }
 
-/* אייקונים קלאסיים בלבד ובצבע אחיד */
+/* אייקונים קלאסיים (צבע אחיד) */
 .info-card .card-icon {
     width: 42px;
     height: 42px;
@@ -258,7 +257,7 @@ body {
     flex-shrink: 0;
 }
 
-.info-card .card-icon.star-icon {
+.info-card .card-icon.rating-icon {
     background-color: #fffef0;
     color: var(--secondary-color);
 }
@@ -288,7 +287,7 @@ body {
     color: #64748b;
 }
 
-/* Global Sections */
+/* Sections Global */
 .section-header {
     text-align: center;
     margin-bottom: 40px;
@@ -404,7 +403,7 @@ body {
     font-size: 18px;
 }
 
-/* Reviews - ממורכז ואחיד */
+/* Reviews */
 .reviews-section {
     padding: 80px 20px;
     max-width: 1200px;
@@ -503,7 +502,7 @@ body {
     border-radius: 12px;
 }
 
-/* Footer Top Section */
+/* Contact & Footer */
 .footer-top {
     background-color: var(--white);
     padding: 60px 20px;
@@ -656,7 +655,7 @@ body {
 .footer-logo-img {
     height: 34px;
     width: auto;
-    filter: brightness(0) invert(1); /* מנקה את הלוגו ומשאיר אותו לבן עבור הרקע הכהה */
+    filter: brightness(0) invert(1);
 }
 
 .footer-logo-text {
@@ -679,7 +678,7 @@ body {
     gap: 6px;
 }
 
-/* Mobile Responsive */
+/* Responsive */
 @media (max-width: 768px) {
     .header-container {
         flex-direction: column;
