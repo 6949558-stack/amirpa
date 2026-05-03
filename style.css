@@ -120,14 +120,13 @@ a {
     background-color: #eff6ff;
 }
 
-/* באנר ראשי (Hero) - תמונה לצד טקסט */
+/* באנר ראשי (Hero) */
 .hero-section {
     background: url('banner.png') no-repeat center center;
     background-size: cover;
-    min-height: 520px;
+    min-height: 480px;
     display: flex;
     align-items: center;
-    position: relative;
 }
 
 .hero-container {
@@ -135,29 +134,23 @@ a {
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 20px;
+    display: flex;
+    justify-content: flex-start;
 }
 
-.hero-grid {
-    display: grid;
-    grid-template-columns: 1.2fr 1fr;
-    align-items: center;
-    gap: 40px;
-    width: 100%;
-}
-
-.hero-text-side {
-    max-width: 540px;
+.hero-card-overlay {
     background-color: rgba(13, 43, 107, 0.45);
     backdrop-filter: blur(8px);
     -webkit-backdrop-filter: blur(8px);
     border-radius: 16px;
     padding: 35px;
+    max-width: 500px;
     border: 1px solid rgba(255, 255, 255, 0.15);
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
 }
 
 .hero-title {
-    font-size: 56px;
+    font-size: 52px;
     font-weight: 800;
     color: #ffffff;
     margin-bottom: 6px;
@@ -175,7 +168,7 @@ a {
 }
 
 .hero-description {
-    font-size: 17px;
+    font-size: 16px;
     line-height: 1.6;
     margin-bottom: 24px;
     color: #f1f5f9;
@@ -205,29 +198,15 @@ a {
     background-color: #ea580c;
 }
 
-.btn-white {
+.btn-outline-white {
     background-color: transparent;
     color: #ffffff;
     border: 2px solid #ffffff;
 }
 
-.btn-white:hover {
+.btn-outline-white:hover {
     background-color: #ffffff;
     color: #0d2b6b;
-}
-
-/* תמונת חיות המחמד בצד שמאל */
-.hero-image-side {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.hero-pets-img {
-    max-width: 100%;
-    height: auto;
-    object-fit: contain;
-    filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.15));
 }
 
 /* סרגל תכונות צף (Features) */
@@ -347,6 +326,29 @@ a {
     font-size: 14px;
     font-weight: 700;
     color: #0d2b6b;
+}
+
+/* תמונת חיות המחמד מתחת לשירותים */
+.pets-image-section {
+    width: 100%;
+    margin: 60px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.pets-image-container {
+    max-width: 1000px;
+    width: 100%;
+    padding: 0 20px;
+    text-align: center;
+}
+
+.pets-banner-img {
+    max-width: 100%;
+    height: auto;
+    object-fit: contain;
+    filter: drop-shadow(0 10px 25px rgba(0, 0, 0, 0.06));
 }
 
 /* חוות דעת */
@@ -565,9 +567,6 @@ a {
 
 /* התאמה למובייל ומסכים קטנים */
 @media (max-width: 1024px) {
-    .hero-grid { grid-template-columns: 1fr; gap: 30px; text-align: center; }
-    .hero-text-side { max-width: 100%; margin: 0 auto; }
-    .hero-actions { justify-content: center; }
     .services-grid { grid-template-columns: repeat(3, 1fr); }
     .testimonials-grid { grid-template-columns: 1fr; }
     .bar-container { grid-template-columns: repeat(2, 1fr); gap: 15px; }
