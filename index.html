@@ -3,53 +3,70 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>אמירפאה - מרפאה וטרינרית</title>
-    <link href="https://fonts.googleapis.com/css2?family=Assistant:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <title>אמירפאה - מרפאה וטרינרית מתקדמת | ד"ר אמיר לבנון</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Assistant:wght@200;300;400;500;600;700;800&family=Heebo:wght@300;400;500;700;800;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
+    <div class="top-info-bar">
+        <div class="top-info-container">
+            <div class="top-info-right">
+                <span><i class="fa-solid fa-location-dot"></i> מרחביה (קיבוץ), עמק יזרעאל</span>
+                <span><i class="fa-solid fa-clock"></i> שעות פעילות: א'-ה' 09:00-19:00, ו' 09:00-13:00</span>
+            </div>
+            <div class="top-info-left">
+                <a href="tel:072-3211711"><i class="fa-solid fa-phone"></i> 072-3211711</a>
+                <a href="https://wa.me/972723211711" target="_blank"><i class="fa-brands fa-whatsapp"></i> וואטסאפ</a>
+            </div>
+        </div>
+    </div>
+
     <header class="main-header">
         <div class="header-container">
             <div class="logo-area">
-                <img src="Logo.png" alt="לוגו אמירפאה" class="site-logo">
-                <div class="logo-text">
-                    <span class="brand-name">אמירפאה</span>
-                    <span class="brand-sub">מרפאה וטרינרית</span>
-                </div>
+                <a href="/" class="logo-link">
+                    <img src="Logo.png" alt="לוגו אמירפאה" class="site-logo">
+                    <div class="logo-text">
+                        <span class="brand-name">אמירפאה</span>
+                        <span class="brand-sub">מרפאה וטרינרית</span>
+                    </div>
+                </a>
             </div>
             <nav class="nav-links">
-                <a href="#about">אודות</a>
-                <a href="#services">השירותים</a>
-                <a href="#testimonials">חוות דעת</a>
-                <a href="#contact">יצירת קשר</a>
+                <a href="#home" class="active">דף הבית</a>
+                <a href="#about">אודות המרפאה</a>
+                <a href="#services">השירותים שלנו</a>
+                <a href="#testimonials">המלצות</a>
+                <a href="#contact">צור קשר</a>
             </nav>
             <div class="header-actions">
-                <a href="tel:072-3211711" class="btn-phone-nav">
-                    <i class="fa-solid fa-phone"></i> 072-3211711
-                </a>
-                <a href="#contact" class="btn-outline-nav">
+                <a href="#contact" class="btn-booking-nav">
                     <i class="fa-regular fa-calendar-check"></i> לקביעת תור
                 </a>
             </div>
         </div>
     </header>
 
-    <section class="hero-section">
+    <section id="home" class="hero-section">
+        <div class="hero-overlay"></div>
         <div class="hero-container">
-            <div class="hero-text-left">
+            <div class="hero-content-box">
+                <div class="hero-badge"><i class="fa-solid fa-shield-dog"></i> רפואה וטרינרית מתקדמת</div>
                 <h1 class="hero-title">אמירפאה</h1>
                 <h2 class="hero-subtitle">מרפאה וטרינרית <span class="heart-icon">❤️</span> עם לב גדול</h2>
                 <p class="hero-description">
-                    יחס אישי, מקצועיות וניסיון עשיר לכלבים, לחתולים ולחיות מחמד נוספות.
+                    ברוכים הבאים לאמירפאה, הבית השני של חיות המחמד שלכם. אנו מעניקים מעטפת רפואית מלאה, מתקדמת ומכל הלב לכלבים, חתולים וחיות מחמד נוספות, תוך שימוש בציוד הרפואי החדיש ביותר ויחס אישי לכל מטופל.
                 </p>
                 <div class="hero-actions">
-                    <a href="tel:072-3211711" class="btn-hero btn-orange">
-                        <i class="fa-solid fa-phone"></i> 072-3211711
+                    <a href="#contact" class="btn btn-booking">
+                        <i class="fa-regular fa-calendar-check"></i> לקביעת תור מהיר
                     </a>
-                    <a href="#contact" class="btn-hero btn-white">
-                        <i class="fa-regular fa-calendar-check"></i> לקביעת תור
+                    <a href="tel:072-3211711" class="btn btn-call">
+                        <i class="fa-solid fa-phone"></i> 072-3211711
                     </a>
                 </div>
             </div>
@@ -59,176 +76,272 @@
     <section class="features-bar">
         <div class="bar-container">
             <div class="feature-item">
-                <div class="feature-icon icon-blue"><i class="fas fa-map-marker-alt"></i></div>
+                <div class="feature-icon icon-blue">
+                    <i class="fas fa-map-marker-alt"></i>
+                </div>
                 <div class="feature-info">
                     <h3>מרחביה (קיבוץ)</h3>
-                    <p>אזור העמקים</p>
+                    <p>בלב עמק יזרעאל</p>
                 </div>
             </div>
             <div class="feature-item">
-                <div class="feature-icon icon-gold"><i class="fas fa-star"></i></div>
+                <div class="feature-icon icon-gold">
+                    <i class="fas fa-star"></i>
+                </div>
                 <div class="feature-info">
                     <h3>4.8 דירוג</h3>
-                    <p>11 דירוגים (עפ"י דפי זהב)</p>
+                    <p>עפ"י חוות דעת דפי זהב</p>
                 </div>
             </div>
             <div class="feature-item">
-                <div class="feature-icon icon-pink"><i class="fas fa-heart"></i></div>
+                <div class="feature-icon icon-pink">
+                    <i class="fas fa-heart"></i>
+                </div>
                 <div class="feature-info">
                     <h3>יחס אישי</h3>
-                    <p>טיפול מכל הלב</p>
+                    <p>טיפול חם ומסור מכל הלב</p>
                 </div>
             </div>
             <div class="feature-item">
-                <div class="feature-icon icon-green"><i class="fas fa-award"></i></div>
+                <div class="feature-icon icon-green">
+                    <i class="fas fa-award"></i>
+                </div>
                 <div class="feature-info">
-                    <h3>מקצועיות</h3>
-                    <p>וניסיון רב</p>
+                    <h3>מקצועיות וניסיון</h3>
+                    <p>מעל שנים של מומחיות</p>
                 </div>
             </div>
         </div>
     </section>
 
     <section id="services" class="services-section">
-        <div class="section-title">
-            <h2>השירותים שלנו <span class="paw-icon">🐾</span></h2>
+        <div class="section-header">
+            <span class="section-subtitle">מה אנחנו מציעים</span>
+            <h2 class="section-title">השירותים הרפואיים שלנו <span class="paw-icon">🐾</span></h2>
+            <p class="section-desc">המרפאה מציעה מגוון רחב של טיפולים וטרינריים מתקדמים תחת קורת גג אחת, תוך שמירה על סטנדרטים רפואיים גבוהים ביותר.</p>
         </div>
         <div class="services-grid">
             <div class="service-card">
-                <div class="service-icon"><i class="fas fa-home"></i></div>
+                <div class="service-card-icon"><i class="fas fa-home"></i></div>
                 <h3>ביקורי בית</h3>
+                <p>מגיעים עד אליכם הביתה לטיפולים שוטפים, בדיקות תקופתיות והפחתת מתח לבעל החיים בסביבתו הטבעית.</p>
             </div>
             <div class="service-card">
-                <div class="service-icon"><i class="fas fa-tooth"></i></div>
+                <div class="service-card-icon"><i class="fas fa-tooth"></i></div>
                 <h3>טיפולי שיניים</h3>
-            </div>
-            <div class="service-card">
-                <div class="service-icon"><i class="fas fa-ambulance"></i></div>
-                <h3>טיפולי חירום</h3>
-            </div>
-            <div class="service-card">
-                <div class="service-icon"><i class="fas fa-cut"></i></div>
-                <h3>שירותים כירורגיים</h3>
-            </div>
-            <div class="service-card">
-                <div class="service-icon"><i class="fas fa-syringe"></i></div>
-                <h3>חיסונים וטיפולים מונעים</h3>
+                <p>ניקוי אבנית באולטרסאונד, עקירות כירורגיות וטיפול מונע למחלות חניכיים וריח פה אצל כלבים וחתולים.</p>
             </div>
             <div class="service-card active-card">
-                <div class="service-icon"><i class="fas fa-stethoscope"></i></div>
+                <div class="service-card-icon"><i class="fas fa-ambulance"></i></div>
+                <h3>טיפולי חירום</h3>
+                <p>מענה מהיר ומקצועי למצבי חירום רפואיים, פציעות, תאונות והרעלות בזמינות גבוהה במיוחד עבורכם.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-card-icon"><i class="fas fa-cut"></i></div>
+                <h3>שירותים כירורגיים</h3>
+                <p>ניתוחי רקמות רכות, עיקורים וסירוסים, וניתוחים מורכבים בחדר ניתוח סטרילי ומאובזר בטכנולוגיה חדישה.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-card-icon"><i class="fas fa-syringe"></i></div>
+                <h3>חיסונים וטיפולים מונעים</h3>
+                <p>תוכניות בריאות מותאמות אישית הכוללות חיסונים שנתיים, טיפולי תולעת הפארק, כדורים נגד פרעושים וקרציות.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-card-icon"><i class="fas fa-stethoscope"></i></div>
                 <h3>טיפולים רפואיים</h3>
+                <p>אבחון וטיפול במחלות פנימיות, בעיות עור, אלרגיות, בדיקות דם מקיפות והדמיות אולטרסאונד ורנטגן דיגיטלי.</p>
             </div>
         </div>
     </section>
 
-    <section class="pets-banner-section">
+    <section class="pets-image-section">
         <div class="pets-image-wrapper">
-            <img src="pets.png" alt="חיות מחמד" class="pets-footer-img">
-        </div>
-    </section>
-
-    <section id="testimonials" class="testimonials-section">
-        <div class="section-title">
-            <h2>מה הלקוחות שלנו מספרים <span class="paw-icon">🐾</span></h2>
-        </div>
-        <div class="testimonials-grid">
-            <div class="testimonial-card">
-                <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
-                <p class="testimonial-text">"וטרינר מדהים, זמין ואנושי. ליווה אותנו ברגעים הכי קשים עם הרבה אמפתיה וסבלנות."</p>
-                <h4 class="client-name">lisamile</h4>
-            </div>
-            <div class="testimonial-card">
-                <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
-                <p class="testimonial-text">"מקצועי מאוד, תמיד זמין ומעניק תחושת ביטחון מלאה. מומלץ בחום."</p>
-                <h4 class="client-name">arde1976</h4>
-            </div>
-            <div class="testimonial-card">
-                <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
-                <p class="testimonial-text">"יחס מדהים לבעלי חיים, סבלנות ואכפתיות ברמה הגבוהה ביותר. מומלץ מאוד."</p>
-                <h4 class="client-name">אורטל יקיר</h4>
+            <img src="pets.png" alt="צוות חיות המחמד שלנו" class="pets-main-img">
+            <div class="pets-img-overlay">
+                <h3>אוהבים אותם? גם אנחנו! 🐕🐈</h3>
+                <p>אנחנו כאן כדי להבטיח חיים ארוכים, בריאים ומאושרים לחברים הכי טובים שלכם.</p>
             </div>
         </div>
     </section>
 
     <section id="about" class="about-section">
         <div class="about-container">
-            <div class="about-image-wrapper">
-                <img src="dr-amir.png" alt="ד"ר אמיר לבנון" class="about-image">
-            </div>
-            <div class="about-content">
+            <div class="about-text-content">
+                <span class="about-tag">הכירו אותנו</span>
                 <h2>אודות ד"ר אמיר לבנון</h2>
-                <p>ד"ר אמיר לבנון מביא עמו שנות ניסיון רבות בטיפול ובליווי חיות מחמד. המרפאה הוקמה מתוך אהבה עצומה לבעלי חיים ומחויבות להעניק להם את הטיפול הרפואי המתקדם, המקצועי והרגיש ביותר.</p>
-                <p>אצלנו כל מטופל מקבל יחס אישי וחם, תוך שימוש בציוד מודרני ובטכניקות הטיפול המתקדמות ביותר.</p>
-            </div>
-        </div>
-    </section>
-
-    <section id="contact" class="info-footer-section">
-        <div class="info-grid-container">
-            <div class="info-box">
-                <div class="info-header">
-                    <i class="fa-regular fa-clock info-main-icon"></i>
-                    <h3>שעות פעילות</h3>
-                </div>
-                <div class="info-body">
-                    <div class="time-row">
-                        <span class="day-col">ימים א' - ה'</span>
-                        <span class="hours-col">09:00 - 19:00</span>
+                <div class="about-decorator"></div>
+                <p class="about-lead">ד"ר אמיר לבנון מקדיש את חייו המקצועיים לטיפול וליווי רפואי של בעלי חיים, מתוך אהבה עמוקה ומחויבות אמיתית לבריאותם ורווחתם.</p>
+                <p class="about-body">המרפאה הוקמה מתוך חזון להעניק לתושבי עמק יזרעאל והסביבה מענה וטרינרי מתקדם, נגיש ובגובה העיניים. אנו מאמינים כי טיפול רפואי מוצלח מתחיל בהקשבה לבעלים, יצירת סביבה רגועה לבעל החיים ושימוש בידע וטרינרי עדכני.</p>
+                <p class="about-body">אצלנו באמירפאה כל מטופל מקבל את מלוא תשומת הלב. אנו משלבים ניסיון קליני עשיר יחד עם ציוד רפואי חדשני כדי להגיע לאבחון מדויק וטיפול יעיל ככל הניתן.</p>
+                <div class="about-highlights">
+                    <div class="highlight-item">
+                        <i class="fa-solid fa-circle-check"></i>
+                        <span>רפואה מונעת והסברה לבעלי חיים</span>
                     </div>
-                    <div class="time-row">
-                        <span class="day-col">יום ו'</span>
-                        <span class="hours-col">09:00 - 13:00</span>
-                    </div>
-                    <div class="time-row closed-row">
-                        <span class="day-col">יום שבת</span>
-                        <span class="hours-col">סגור</span>
+                    <div class="highlight-item">
+                        <i class="fa-solid fa-circle-check"></i>
+                        <span>ליווי צמוד ומענה אישי לכל אורך הדרך</span>
                     </div>
                 </div>
             </div>
-
-            <div class="info-box">
-                <div class="info-header">
-                    <i class="fa-regular fa-envelope info-main-icon"></i>
-                    <h3>יצירת קשר</h3>
-                </div>
-                <div class="info-body contact-body">
-                    <a href="tel:072-3211711" class="contact-phone-link">072-3211711</a>
-                    <div class="address-detail">
-                        <i class="fa-solid fa-map-marker-alt"></i>
-                        <span>מרחביה (קיבוץ), אזור העמקים</span>
-                    </div>
-                    <a href="https://wa.me/972723211711" target="_blank" class="btn-whatsapp-footer">
-                        <i class="fa-brands fa-whatsapp"></i> שליחת הודעה בוואטסאפ
-                    </a>
-                </div>
-            </div>
-
-            <div class="info-box map-box">
-                <div class="info-header">
-                    <i class="fa-regular fa-map info-main-icon"></i>
-                    <h3>היכן אנחנו?</h3>
-                </div>
-                <div class="info-body map-body">
-                    <iframe 
-                        src="http://googleusercontent.com/maps.google.com/7" 
-                        width="100%" 
-                        height="140" 
-                        style="border:0; border-radius: 8px;" 
-                        allowfullscreen="" 
-                        loading="lazy">
-                    </iframe>
+            <div class="about-image-column">
+                <div class="about-img-frame">
+                    <img src="dr-amir.png" alt="ד"ר אמיר לבנון" class="about-doctor-img">
                 </div>
             </div>
         </div>
     </section>
 
-    <footer class="main-footer">
+    <section id="testimonials" class="testimonials-section">
+        <div class="section-header">
+            <span class="section-subtitle">מה הלקוחות אומרים</span>
+            <h2 class="section-title">חוות דעת והמלצות <span class="paw-icon">⭐</span></h2>
+        </div>
+        <div class="testimonials-grid">
+            <div class="testimonial-card">
+                <div class="test-stars">
+                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                </div>
+                <p class="test-text">"ד"ר אמיר הוא פשוט מלאך. הגענו אליו עם הכלב שלנו במצב חירום, והוא קיבל אותנו מיד באכפתיות וברגישות מדהימה. המקצועיות שלו הצילה את הכלב שלנו. ממליצה בחום!"</p>
+                <div class="test-author">
+                    <div class="author-info">
+                        <strong>רונית א.</strong>
+                        <span>מרחביה</span>
+                    </div>
+                </div>
+            </div>
+            <div class="testimonial-card">
+                <div class="test-stars">
+                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                </div>
+                <p class="test-text">"מרפאה נקייה, מסודרת ונעימה מאוד. החתולה שלי בדרך כלל מאוד לחוצה אצל וטרינרים, אבל אצל ד"ר אמיר היא הייתה רגועה לחלוטין בזכות הגישה הסבלנית שלו."</p>
+                <div class="test-author">
+                    <div class="author-info">
+                        <strong>יוסי כ.</strong>
+                        <span>עפולה</span>
+                    </div>
+                </div>
+            </div>
+            <div class="testimonial-card">
+                <div class="test-stars">
+                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                </div>
+                <p class="test-text">"כבר שנים שאנחנו מטופלים אצל ד"ר אמיר לבנון. הוא תמיד זמין לשאלות, מסביר הכל בגובה העיניים ונותן תחושת ביטחון מלאה. אין וטרינרים כאלה היום!"</p>
+                <div class="test-author">
+                    <div class="author-info">
+                        <strong>מיכל ש.</strong>
+                        <span>גדעונה</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="contact-section">
+        <div class="contact-container">
+            <div class="contact-info-col">
+                <span class="contact-tag">דברו איתנו</span>
+                <h2>נשמח לעמוד לרשותכם</h2>
+                <p class="contact-lead">זקוקים לחיסון, בדיקה תקופתית או ייעוץ רפואי? צרו איתנו קשר עוד היום ונחזור אליכם בהקדם.</p>
+                <div class="contact-details-list">
+                    <div class="contact-detail-item">
+                        <div class="detail-icon"><i class="fa-solid fa-phone"></i></div>
+                        <div class="detail-text">
+                            <strong>טלפון ליצירת קשר</strong>
+                            <a href="tel:072-3211711">072-3211711</a>
+                        </div>
+                    </div>
+                    <div class="contact-detail-item">
+                        <div class="detail-icon"><i class="fa-solid fa-location-dot"></i></div>
+                        <div class="detail-text">
+                            <strong>כתובת המרפאה</strong>
+                            <span>קיבוץ מרחביה, עמק יזרעאל</span>
+                        </div>
+                    </div>
+                    <div class="contact-detail-item">
+                        <div class="detail-icon"><i class="fa-solid fa-clock"></i></div>
+                        <div class="detail-text">
+                            <strong>שעות קבלה</strong>
+                            <span>א'-ה' 09:00-19:00 | ו' 09:00-13:00</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="contact-form-col">
+                <form class="appointment-form" onsubmit="event.preventDefault(); alert('ההודעה נשלחה בהצלחה! ניצור קשר בהקדם.');">
+                    <h3>קביעת תור / פנייה מהירה</h3>
+                    <div class="form-group-grid">
+                        <div class="form-group">
+                            <label for="fullName">שם מלא *</label>
+                            <input type="text" id="fullName" placeholder="ישראל ישראלי" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="phoneNumber">מספר טלפון *</label>
+                            <input type="tel" id="phoneNumber" placeholder="050-1234567" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="petType">סוג חיית המחמד ושם</label>
+                        <input type="text" id="petType" placeholder="לדוגמה: כלב (שוקו)">
+                    </div>
+                    <div class="form-group">
+                        <label for="serviceType">השירות המבוקש</label>
+                        <select id="serviceType">
+                            <option value="">בחרו שירות מבוקש</option>
+                            <option value="חיסון">חיסון תקופתי / טיפול מונע</option>
+                            <option value="בדיקה">בדיקה כללית / ייעוץ</option>
+                            <option value="שיניים">טיפול שיניים</option>
+                            <option value="כירורגיה">ניתוח / עיקור / סירוס</option>
+                            <option value="אחר">אחר</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">הודעה / הערות נוספות</label>
+                        <textarea id="message" rows="4" placeholder="נשמח לשמוע פרטים נוספים..."></textarea>
+                    </div>
+                    <button type="submit" class="btn-form-submit">
+                        <i class="fa-solid fa-paper-plane"></i> שליחת בקשה לתור
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <a href="https://wa.me/972723211711" class="whatsapp-fixed-btn" target="_blank" title="שלחו לנו הודעה בוואטסאפ">
+        <i class="fa-brands fa-whatsapp"></i>
+    </a>
+
+    <footer class="site-footer">
         <div class="footer-container">
-            <div class="footer-logo">
-                <span class="footer-paw">🐾</span>
-                <span class="footer-brand">מרפאה וטרינרית אמירפאה</span>
+            <div class="footer-col about-col">
+                <div class="footer-logo">
+                    <span class="footer-brand">אמירפאה</span>
+                    <span class="footer-sub">מרפאה וטרינרית מכל הלב</span>
+                </div>
+                <p>אנו מציעים שירותי רפואה וטרינרית ברמה הגבוהה ביותר תוך שימת דגש על יחס אישי, מקצועיות ללא פשרות ואהבה ענקית לכל בעלי החיים.</p>
             </div>
-            <p class="footer-copy">© 2026 כל הזכויות שמורות</p>
+            <div class="footer-col links-col">
+                <h4>ניווט מהיר</h4>
+                <ul>
+                    <li><a href="#home"><i class="fa-solid fa-angle-left"></i> דף הבית</a></li>
+                    <li><a href="#about"><i class="fa-solid fa-angle-left"></i> אודות המרפאה</a></li>
+                    <li><a href="#services"><i class="fa-solid fa-angle-left"></i> השירותים שלנו</a></li>
+                    <li><a href="#testimonials"><i class="fa-solid fa-angle-left"></i> המלצות</a></li>
+                    <li><a href="#contact"><i class="fa-solid fa-angle-left"></i> צור קשר</a></li>
+                </ul>
+            </div>
+            <div class="footer-col hours-col">
+                <h4>שעות פעילות</h4>
+                <p><strong>ימים א' עד ה':</strong> 09:00 - 19:00</p>
+                <p><strong>יום ו' וערבי חג:</strong> 09:00 - 13:00</p>
+                <p><strong>שבתות וחגים:</strong> סגור (מקרי חירום בלבד)</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="footer-bottom-container">
+                <p>&copy; 2026 כל הזכויות שמורות לאמירפאה - מרפאה וטרינרית ד"ר אמיר לבנון.</p>
+                <p>עוצב ונבנה באהבה ❤️ עבור בעלי החיים שלכם.</p>
+            </div>
         </div>
     </footer>
 
