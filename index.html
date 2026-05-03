@@ -6,7 +6,7 @@
     <title>אמירפאה - מרפאה וטרינרית</title>
     <link href="https://fonts.googleapis.com/css2?family=Assistant:wght@300;400;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css?v=1.1">
 </head>
 <body>
 
@@ -26,11 +26,11 @@
                 <a href="#contact">יצירת קשר</a>
             </nav>
             <div class="header-actions">
-                <a href="tel:072-3211711" class="btn-phone">
-                    <i class="fas fa-phone-alt"></i> 072-3211711
+                <a href="tel:072-3211711" class="btn-phone-nav">
+                    <i class="fa-solid fa-phone"></i> 072-3211711
                 </a>
-                <a href="#booking" class="btn-outline-nav">
-                    <i class="far fa-calendar-check"></i> לקביעת תור
+                <a href="#contact" class="btn-outline-nav">
+                    <i class="fa-regular fa-calendar-check"></i> לקביעת תור
                 </a>
             </div>
         </div>
@@ -45,38 +45,42 @@
                     יחס אישי, מקצועיות וניסיון עשיר לכלבים, לחתולים ולחיות מחמד נוספות.
                 </p>
                 <div class="hero-actions">
-                    <a href="#booking" class="btn btn-primary">לקביעת תור</a>
-                    <a href="tel:072-3211711" class="btn btn-secondary">072-3211711</a>
+                    <a href="tel:072-3211711" class="btn-hero btn-orange">
+                        <i class="fas fa-phone-alt"></i> 072-3211711
+                    </a>
+                    <a href="#contact" class="btn-hero btn-white">
+                        <i class="far fa-calendar-alt"></i> לקביעת תור
+                    </a>
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="floating-features-bar">
+    <section class="features-bar">
         <div class="bar-container">
             <div class="feature-item">
-                <div class="feature-icon"><i class="fas fa-paw paw-icon"></i></div>
+                <div class="feature-icon icon-blue"><i class="fas fa-map-marker-alt"></i></div>
                 <div class="feature-info">
                     <h3>מרחביה (קיבוץ)</h3>
                     <p>אזור העמקים</p>
                 </div>
             </div>
             <div class="feature-item">
-                <div class="feature-icon"><i class="fas fa-star rating-star"></i></div>
+                <div class="feature-icon icon-gold"><i class="fas fa-star"></i></div>
                 <div class="feature-info">
                     <h3>4.8 דירוג</h3>
                     <p>11 דירוגים (עפ"י דפי זהב)</p>
                 </div>
             </div>
             <div class="feature-item">
-                <div class="feature-icon"><i class="fas fa-heart"></i></div>
+                <div class="feature-icon icon-pink"><i class="fas fa-heart"></i></div>
                 <div class="feature-info">
                     <h3>יחס אישי</h3>
                     <p>טיפול מכל הלב</p>
                 </div>
             </div>
             <div class="feature-item">
-                <div class="feature-icon"><i class="fas fa-award"></i></div>
+                <div class="feature-icon icon-green"><i class="fas fa-award"></i></div>
                 <div class="feature-info">
                     <h3>מקצועיות</h3>
                     <p>וניסיון רב</p>
@@ -91,14 +95,14 @@
         </div>
         <div class="services-grid">
             <div class="service-card">
+                <div class="service-icon"><i class="fas fa-home"></i></div>
+                <h3>ביקורי בית</h3>
+            </div>
+            <div class="service-card">
                 <div class="service-icon"><i class="fas fa-tooth"></i></div>
                 <h3>טיפולי שיניים</h3>
             </div>
             <div class="service-card">
-                <div class="service-icon"><i class="fas fa-home"></i></div>
-                <h3>ביקורי בית</h3>
-            </div>
-            <div class="service-card active-card">
                 <div class="service-icon"><i class="fas fa-ambulance"></i></div>
                 <h3>טיפולי חירום</h3>
             </div>
@@ -110,9 +114,22 @@
                 <div class="service-icon"><i class="fas fa-syringe"></i></div>
                 <h3>חיסונים וטיפולים מונעים</h3>
             </div>
-            <div class="service-card">
+            <div class="service-card active-card">
                 <div class="service-icon"><i class="fas fa-stethoscope"></i></div>
                 <h3>טיפולים רפואיים</h3>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="about-section">
+        <div class="about-container">
+            <div class="about-content">
+                <h2>אודות ד"ר אמיר לבנון</h2>
+                <p>ד"ר אמיר לבנון מביא עמו שנות ניסיון רבות בטיפול ובליווי חיות מחמד. המרפאה הוקמה מתוך אהבה עצומה לבעלי חיים ומחויבות להעניק להם את הטיפול הרפואי המתקדם, המקצועי והרגיש ביותר.</p>
+                <p>אצלנו כל מטופל מקבל יחס אישי וחם, תוך שימוש בציוד מודרני ובטכניקות הטיפול המתקדמות ביותר.</p>
+            </div>
+            <div class="about-image-wrapper">
+                <img src="dr-amir.png" alt="ד"ר אמיר לבנון" class="about-image">
             </div>
         </div>
     </section>
@@ -120,10 +137,10 @@
     <footer class="main-footer">
         <div class="footer-container">
             <div class="footer-logo">
-                <span class="footer-brand">מרפאה וטרינרית אמירפאה</span>
                 <span class="footer-paw">🐾</span>
+                <span class="footer-brand">מרפאה וטרינרית אמירפאה</span>
             </div>
-            <p>© 2026 כל הזכויות שמורות</p>
+            <p class="footer-copy">© 2026 כל הזכויות שמורות</p>
         </div>
     </footer>
 
