@@ -13,58 +13,63 @@
     <header class="main-header">
         <div class="header-container">
             <div class="header-actions">
-                <a href="tel:072-3211711" class="btn-phone-header">
-                    <i class="fas fa-phone-alt"></i> 072-3211711
+                <a href="tel:072-3211711" class="btn-phone">
+                    <i class="fa-solid fa-phone"></i> 072-3211711
                 </a>
-                <a href="#booking" class="btn-booking-header">
-                    <i class="far fa-calendar-alt"></i> לקביעת תור
-                </a>
+                <a href="#booking" class="btn-outline-nav">לקביעת תור</a>
             </div>
-            <nav class="main-nav">
-                <ul>
-                    <li><a href="#contact">יצירת קשר</a></li>
-                    <li><a href="#reviews">חוות דעת</a></li>
-                    <li><a href="#services">השירותים</a></li>
-                    <li><a href="#about">אודות</a></li>
-                </ul>
+            <nav class="nav-links">
+                <a href="#about">אודות</a>
+                <a href="#services">השירותים</a>
+                <a href="#reviews">חוות דעת</a>
+                <a href="#contact">יצירת קשר</a>
             </nav>
             <div class="logo-area">
+                <img src="Logo.png" alt="לוגו אמירפאה" class="site-logo">
                 <div class="logo-text">
                     <span class="brand-name">אמירפאה</span>
                     <span class="brand-sub">מרפאה וטרינרית</span>
                 </div>
-                <img src="Logo.png" alt="לוגו אמירפאה" class="site-logo">
             </div>
         </div>
     </header>
 
     <section class="hero-section">
         <div class="hero-container">
-            <div class="hero-content">
-                <h1 class="hero-title">אמירפאה</h1>
-                <h2 class="hero-subtitle">מרפאה וטרינרית <span class="heart-text"><i class="fas fa-heart"></i> עם לב גדול</span></h2>
-                <p class="hero-description">
-                    יחס אישי, מקצועיות וניסיון עשיר לכלבים, לחתולים ולחיות מחמד נוספות.
-                </p>
-                <div class="hero-actions">
-                    <a href="tel:072-3211711" class="btn-hero-phone">
-                        <i class="fas fa-phone-alt"></i> 072-3211711
-                    </a>
-                    <a href="#booking" class="btn-hero-booking">
-                        <i class="far fa-calendar-alt"></i> לקביעת תור
-                    </a>
+            <div class="hero-content-wrapper">
+                <div class="hero-content">
+                    <h1 class="hero-title">אמירפאה</h1>
+                    <h2 class="hero-subtitle">מרפאה וטרינרית <span class="heart-text"><i class="fas fa-heart"></i> עם לב גדול</span></h2>
+                    <p class="hero-description">
+                        יחס אישי, מקצועיות וניסיון עשיר לכלבים, לחתולים ולחיות מחמד נוספות.
+                    </p>
+                    <div class="hero-actions">
+                        <a href="tel:072-3211711" class="btn btn-phone-hero">
+                            <i class="fas fa-phone-alt"></i> 072-3211711
+                        </a>
+                        <a href="#booking" class="btn btn-booking-hero">
+                            <i class="far fa-calendar-alt"></i> לקביעת תור
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="features-bar">
+    <section class="floating-features-bar">
         <div class="bar-container">
             <div class="feature-item">
-                <div class="feature-icon"><i class="fas fa-map-marker-alt"></i></div>
+                <div class="feature-icon"><i class="fas fa-award award-icon"></i></div>
                 <div class="feature-info">
-                    <h3>מרחביה (קיבוץ)</h3>
-                    <p>אזור העמקים</p>
+                    <h3>מקצועיות</h3>
+                    <p>וניסיון רב</p>
+                </div>
+            </div>
+            <div class="feature-item">
+                <div class="feature-icon"><i class="fas fa-hand-holding-heart heart-icon"></i></div>
+                <div class="feature-info">
+                    <h3>יחס אישי</h3>
+                    <p>טיפול מכל הלב</p>
                 </div>
             </div>
             <div class="feature-item">
@@ -75,17 +80,10 @@
                 </div>
             </div>
             <div class="feature-item">
-                <div class="feature-icon"><i class="fas fa-hand-holding-heart"></i></div>
+                <div class="feature-icon"><i class="fas fa-map-marker-alt location-icon"></i></div>
                 <div class="feature-info">
-                    <h3>אנחנו אוהבים</h3>
-                    <p>את מה שאנחנו עושים</p>
-                </div>
-            </div>
-            <div class="feature-item">
-                <div class="feature-icon"><i class="fas fa-award"></i></div>
-                <div class="feature-info">
-                    <h3>יחס חם ואוהב</h3>
-                    <p>כל חיית מחמד היא משפחה</p>
+                    <h3>מרחביה (קיבוץ)</h3>
+                    <p>אזור העמקים</p>
                 </div>
             </div>
         </div>
@@ -116,7 +114,7 @@
                 <i class="fas fa-syringe service-icon"></i>
                 <h3>חיסונים וטיפולים מונעים</h3>
             </div>
-            <div class="service-card">
+            <div class="service-box service-box-active">
                 <i class="fas fa-stethoscope service-icon"></i>
                 <h3>טיפולים רפואיים</h3>
             </div>
