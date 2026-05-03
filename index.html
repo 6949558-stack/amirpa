@@ -18,21 +18,17 @@ body {
   display:flex;
   justify-content:space-between;
   align-items:center;
-}
-
-.logo {
-  font-size:22px;
-  font-weight:bold;
-  color:#0b3c6d;
+  box-shadow:0 2px 10px rgba(0,0,0,0.05);
 }
 
 .hero {
   background:linear-gradient(135deg,#0b3c6d,#1f66c2);
   color:white;
-  padding:60px 30px;
+  padding:80px 30px;
   display:flex;
-  justify-content:space-between;
   align-items:center;
+  justify-content:space-between;
+  flex-wrap:wrap;
 }
 
 .hero-text {
@@ -40,22 +36,45 @@ body {
 }
 
 .hero h1 {
-  font-size:48px;
+  font-size:52px;
   margin:0;
+}
+
+.hero p {
+  margin:15px 0;
+  font-size:18px;
 }
 
 .btn {
   background:#ff8c00;
   color:white;
-  padding:12px 20px;
-  border-radius:8px;
-  display:inline-block;
-  margin-top:15px;
+  padding:14px 25px;
+  border-radius:10px;
   text-decoration:none;
+  font-weight:bold;
+}
+
+.hero img {
+  width:350px;
+  border-radius:20px;
+}
+
+.trust {
+  background:white;
+  padding:20px;
+  display:flex;
+  justify-content:space-around;
+  text-align:center;
+  margin-top:-30px;
+  border-radius:15px;
+  max-width:900px;
+  margin-right:auto;
+  margin-left:auto;
+  box-shadow:0 10px 20px rgba(0,0,0,0.05);
 }
 
 .section {
-  padding:50px 30px;
+  padding:60px 20px;
   text-align:center;
 }
 
@@ -70,14 +89,15 @@ body {
   background:white;
   padding:20px;
   border-radius:12px;
-  width:200px;
+  width:180px;
+  box-shadow:0 5px 15px rgba(0,0,0,0.05);
 }
 
 .footer {
   background:#0b3c6d;
   color:white;
-  text-align:center;
   padding:30px;
+  text-align:center;
 }
 </style>
 </head>
@@ -85,8 +105,8 @@ body {
 <body>
 
 <div class="header">
-  <div class="logo">אמירפאה</div>
   <div>📞 072-3211711</div>
+  <div><b>אמירפאה</b></div>
 </div>
 
 <div class="hero">
@@ -96,6 +116,14 @@ body {
     <p>יחס אישי וטיפול מכל הלב לכלבים וחתולים</p>
     <a class="btn" href="tel:0723211711">התקשר עכשיו</a>
   </div>
+
+  <img src="https://images.unsplash.com/photo-1558788353-f76d92427f16" />
+</div>
+
+<div class="trust">
+  <div>📍 מרחביה</div>
+  <div>⭐ 4.8 (11 דירוגים עפ"י דפי זהב)</div>
+  <div>❤️ יחס אישי</div>
 </div>
 
 <div class="section">
@@ -115,15 +143,9 @@ body {
   <p>⭐️⭐️⭐️⭐️⭐️ מקצועי וזמין תמיד</p>
 </div>
 
-<div class="section">
-  <h2>יצירת קשר</h2>
-  <p>📞 072-3211711</p>
-  <p>📍 מרחביה</p>
-</div>
-
 <div class="footer">
   <h2>צריכים וטרינר?</h2>
-  <p>📞 התקשר עכשיו</p>
+  <a class="btn" href="tel:0723211711">התקשר עכשיו</a>
 </div>
 
 </body>
