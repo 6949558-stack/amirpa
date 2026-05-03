@@ -122,7 +122,7 @@ body {
     color: var(--white);
 }
 
-/* Hero Section - מיושר וממוקם מחדש */
+/* Hero Section */
 .hero-section {
     background: url('banner.png') no-repeat center center;
     background-size: cover;
@@ -134,21 +134,36 @@ body {
     position: relative;
 }
 
+/* שכבה כהה מעל הבאנר במקור */
+.hero-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
+
 .hero-container {
     max-width: 1200px;
     margin: 0 auto;
     width: 100%;
+    position: relative;
+    z-index: 2;
 }
 
 .hero-content {
     max-width: 580px;
-    margin-right: auto; /* דוחף את הטקסט לשמאל/מרכז כדי שלא יסתיר את הכלב בצד ימין */
-    color: var(--white);
+    margin-right: auto;
+    color: var(--dark-color);
     padding-bottom: 20px;
 }
 
 .mobile-badge {
-    background-color: rgba(255,255,255,0.2);
+    background-color: rgba(13, 71, 161, 0.08);
+    color: var(--primary-color);
     display: inline-block;
     padding: 4px 14px;
     border-radius: 20px;
@@ -162,19 +177,20 @@ body {
     font-weight: 800;
     line-height: 1.1;
     margin-bottom: 10px;
+    color: var(--primary-color);
 }
 
 .hero-subtitle {
     font-size: 26px;
     font-weight: 600;
     margin-bottom: 15px;
-    color: #e2e8f0;
+    color: var(--primary-light);
 }
 
 .hero-description {
     font-size: 16px;
     margin-bottom: 25px;
-    color: #f1f5f9;
+    color: #475569;
 }
 
 .hero-actions {
@@ -183,25 +199,7 @@ body {
 }
 
 .btn-primary {
-    background-color: var(--white);
-    color: var(--primary-color);
-    text-decoration: none;
-    padding: 12px 24px;
-    border-radius: 30px;
-    font-weight: 700;
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-    transition: transform 0.2s ease;
-}
-
-.btn-primary:hover {
-    transform: translateY(-2px);
-}
-
-.btn-secondary {
-    background-color: var(--primary-light);
+    background-color: var(--primary-color);
     color: var(--white);
     text-decoration: none;
     padding: 12px 24px;
@@ -210,7 +208,26 @@ body {
     display: inline-flex;
     align-items: center;
     gap: 8px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    box-shadow: 0 4px 12px rgba(13, 71, 161, 0.2);
+    transition: transform 0.2s ease;
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+}
+
+.btn-secondary {
+    background-color: var(--white);
+    color: var(--primary-color);
+    border: 2px solid var(--primary-color);
+    text-decoration: none;
+    padding: 11px 24px;
+    border-radius: 30px;
+    font-weight: 700;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
     transition: transform 0.2s ease;
 }
 
@@ -231,6 +248,8 @@ body {
     border-radius: 12px;
     box-shadow: 0 8px 30px rgba(0,0,0,0.08);
     transform: translateY(35px);
+    position: relative;
+    z-index: 2;
 }
 
 .info-card {
@@ -258,6 +277,16 @@ body {
     color: var(--secondary-color);
 }
 
+.info-card .card-icon.heart-icon {
+    background-color: #fff0f5;
+    color: #e91e63;
+}
+
+.info-card .card-icon.award-icon {
+    background-color: #f0fff0;
+    color: #4caf50;
+}
+
 .card-text {
     display: flex;
     flex-direction: column;
@@ -271,29 +300,6 @@ body {
 .card-text span {
     font-size: 12px;
     color: #64748b;
-}
-
-/* Sections Global */
-.section-header {
-    text-align: center;
-    margin-bottom: 40px;
-}
-
-.section-tag {
-    color: var(--primary-light);
-    font-weight: 700;
-    text-transform: uppercase;
-    font-size: 13px;
-    display: inline-flex;
-    align-items: center;
-    gap: 6px;
-    margin-bottom: 6px;
-}
-
-.section-header h2 {
-    font-size: 32px;
-    font-weight: 800;
-    color: var(--dark-color);
 }
 
 /* Services */
@@ -326,7 +332,7 @@ body {
 }
 
 .service-icon {
-    font-size: 32px;
+    font-size: 36px;
     color: var(--primary-color);
     margin-bottom: 12px;
 }
@@ -389,7 +395,7 @@ body {
     font-size: 18px;
 }
 
-/* Reviews - דירוג לקוחות משופר וממורכז */
+/* Reviews */
 .reviews-section {
     padding: 80px 20px;
     max-width: 1200px;
@@ -488,7 +494,7 @@ body {
     border-radius: 12px;
 }
 
-/* Contact & Top Footer */
+/* Contact & Footer */
 .footer-top {
     background-color: var(--white);
     padding: 60px 20px;
@@ -641,7 +647,7 @@ body {
 .footer-logo-img {
     height: 34px;
     width: auto;
-    filter: brightness(0) invert(1); /* הופך את צבע הלוגו ללבן כדי שיראה נקי על הרקע הכחול הכהה */
+    filter: brightness(0) invert(1);
 }
 
 .footer-logo-text {
