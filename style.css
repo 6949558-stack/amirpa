@@ -1931,3 +1931,17 @@ div[id] {
         white-space: nowrap !important;
     }
 }
+
+.main-header {
+    position: sticky !important;
+    top: 0 !important;
+    z-index: 9999 !important;
+    background-color: var(--bg-white) !important;
+}
+
+@media (max-width: 900px) {
+    .main-header {
+        position: sticky !important;
+        top: 0 !important;
+    }
+}
