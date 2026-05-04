@@ -2147,3 +2147,93 @@ div[id] {
         padding-bottom: 86px !important;
     }
 }
+
+@media (max-width: 900px) {
+
+    /* מיקום בצד ימין */
+    .mobile-bottom-cta {
+        position: fixed;
+        bottom: 20px;
+        right: 14px;
+        left: auto;
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+        z-index: 99999;
+        background: none;
+        box-shadow: none;
+        border: none;
+    }
+
+    /* כל כפתור */
+    .mobile-bottom-cta a {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        width: 58px;
+        height: 58px;
+        border-radius: 999px;
+        overflow: hidden;
+        transition: all 0.25s ease;
+        box-shadow: 0 6px 16px rgba(0,0,0,0.25);
+        font-size: 0; /* מסתיר טקסט */
+        padding: 0;
+    }
+
+    /* אייקון */
+    .mobile-bottom-cta a i {
+        min-width: 58px;
+        text-align: center;
+        font-size: 22px;
+        color: #fff;
+    }
+
+    /* טקסטים לפי כפתור */
+    .mobile-cta-call::after {
+        content: "התקשר";
+    }
+
+    .mobile-cta-whatsapp::after {
+        content: "WhatsApp";
+    }
+
+    .mobile-cta-waze::after {
+        content: "Waze";
+    }
+
+    /* עיצוב טקסט */
+    .mobile-bottom-cta a::after {
+        white-space: nowrap;
+        color: #fff;
+        font-size: 14px;
+        font-weight: 700;
+        padding-left: 8px;
+        opacity: 0;
+        transition: 0.2s;
+    }
+
+    /* פתיחה בלחיצה / hover */
+    .mobile-bottom-cta a:active,
+    .mobile-bottom-cta a:hover {
+        width: 150px;
+        padding-left: 10px;
+    }
+
+    .mobile-bottom-cta a:active::after,
+    .mobile-bottom-cta a:hover::after {
+        opacity: 1;
+    }
+
+    /* צבעים */
+    .mobile-cta-call {
+        background: var(--accent-color);
+    }
+
+    .mobile-cta-whatsapp {
+        background: #25d366;
+    }
+
+    .mobile-cta-waze {
+        background: var(--waze-color);
+    }
+}
