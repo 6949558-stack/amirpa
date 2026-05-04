@@ -444,4 +444,182 @@ a {
 .contact-detail-item {
     display: flex;
     align-items: flex-start;
-    gap
+    gap: 20px;
+}
+
+.detail-icon {
+    background-color: var(--white);
+    color: var(--primary-color);
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+}
+
+.detail-text strong {
+    font-size: 16px;
+    margin-bottom: 4px;
+}
+
+.detail-text a {
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.appointment-form {
+    background-color: var(--white);
+    padding: 40px;
+    border-radius: 16px;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.25);
+}
+
+.appointment-form h3 {
+    color: var(--primary-color);
+    font-size: 24px;
+    font-weight: 800;
+    margin-bottom: 25px;
+}
+
+.form-group-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    color: var(--primary-color);
+    font-weight: 700;
+    margin-bottom: 8px;
+}
+
+.form-group input, .form-group textarea {
+    width: 100%;
+    padding: 13px 18px;
+    border: 1px solid #e1e8f0;
+    border-radius: 8px;
+    font-family: var(--font-main);
+}
+
+.btn-form-submit {
+    width: 100%;
+    background-color: var(--secondary-color);
+    color: var(--white);
+    border: none;
+    padding: 15px;
+    border-radius: 8px;
+    font-weight: 800;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.btn-form-submit:hover {
+    background-color: #e65c00;
+}
+
+/* ==========================================================================
+   FOOTER (סיום האתר בצבע #011a4b)
+   ========================================================================== */
+.site-footer {
+    background-color: var(--primary-color); /* צבע זהה לפתיחת האתר */
+    color: var(--white);
+    padding: 70px 20px 0;
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 50px;
+    padding-bottom: 50px;
+}
+
+.footer-brand {
+    font-size: 28px;
+    font-weight: 800;
+    color: var(--white);
+    margin-bottom: 15px;
+    display: block;
+}
+
+.footer-col h4 {
+    font-size: 18px;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+.footer-col ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.footer-col ul li a:hover {
+    color: var(--secondary-color);
+}
+
+.footer-bottom {
+    border-top: 1px solid rgba(255,255,255,0.1);
+    padding: 25px 20px;
+    text-align: center;
+}
+
+/* ==========================================================================
+   MOBILE WHATSAPP
+   ========================================================================== */
+.whatsapp-fixed-btn {
+    position: fixed;
+    bottom: 30px;
+    left: 30px;
+    background-color: #25d366;
+    color: var(--white);
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 30px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    z-index: 999;
+}
+
+/* ==========================================================================
+   RESPONSIVENESS (התאמה מלאה למובייל, טאבלט ומחשבים)
+   ========================================================================== */
+@media (max-width: 1024px) {
+    .about-container, .contact-container {
+        flex-direction: column;
+        gap: 40px;
+    }
+    .footer-container {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 768px) {
+    .header-container {
+        flex-direction: column;
+        gap: 15px;
+    }
+    .nav-links {
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+    .form-group-grid {
+        grid-template-columns: 1fr;
+        gap: 0;
+    }
+    .hero-title {
+        font-size: 32px;
+    }
+}
