@@ -3,569 +3,683 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>אמירפאה – ד"ר אמיר הלפרין | וטרינר בעמק יזרעאל ועפולה</title>
-    <meta name="description" content="מחפשים וטרינר בעפולה או בעמק יזרעאל? באמירפאה תקבלו טיפול מקצועי לכלבים וחתולים – חיסונים, בדיקות, טיפולי חירום וניתוחים עם יחס אישי וזמינות גבוהה.">
-    
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Assistant:wght@300;400;600;700;800&family=Heebo:wght@300;400;500;700;800;900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="style.css">
+    <title>מרפאה וטרינרית עמירפחה</title>
+    <style>
+        /* ==========================================================================
+           הגדרות כלליות ומשתנים (פלטת צבעים: לבן, כחול וכתום)
+           ========================================================================== */
+        :root {
+            --primary-blue: #1e40af;
+            --primary-hover: #1d4ed8;
+            --accent-orange: #f97316;
+            --accent-hover: #ea580c;
+            --text-dark: #1f2937;
+            --text-light: #6b7280;
+            --bg-light: #f8fafc;
+            --bg-white: #ffffff;
+            --border-color: #e2e8f0;
+            --max-width: 1200px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-light);
+            color: var(--text-dark);
+            line-height: 1.6;
+            font-size: 16px;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        /* ==========================================================================
+           2. ניווט עליון (Header)
+           ========================================================================== */
+        .site-header {
+            background-color: var(--bg-white);
+            border-bottom: 1px solid var(--border-color);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.02);
+        }
+
+        .header-container {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: 16px 24px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo-area {
+            display: flex;
+            align-items: center;
+        }
+
+        .site-logo {
+            height: 48px;
+            width: auto;
+            object-fit: contain;
+        }
+
+        .main-nav ul {
+            display: flex;
+            list-style: none;
+            gap: 32px;
+        }
+
+        .main-nav a {
+            font-weight: 600;
+            color: var(--text-dark);
+            transition: color 0.2s;
+        }
+
+        .main-nav a:hover {
+            color: var(--primary-blue);
+        }
+
+        /* ==========================================================================
+           3. אזור ראשי (Hero Section)
+           ========================================================================== */
+        .hero-section {
+            background-color: var(--bg-white);
+            padding: 80px 24px;
+            text-align: center;
+        }
+
+        .hero-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .hero-subtitle {
+            font-size: 20px;
+            color: var(--accent-orange);
+            font-weight: 700;
+            margin-bottom: 16px;
+        }
+
+        .hero-title {
+            font-size: 44px;
+            font-weight: 800;
+            color: var(--primary-blue);
+            line-height: 1.2;
+            margin-bottom: 20px;
+        }
+
+        .hero-text {
+            font-size: 18px;
+            color: var(--text-light);
+            margin-bottom: 32px;
+        }
+
+        /* ==========================================================================
+           4. אזור אודות (About Section)
+           ========================================================================== */
+        .about-section {
+            padding: 80px 24px;
+            background-color: var(--bg-light);
+        }
+
+        .about-container {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1.2fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .about-content {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .about-title {
+            font-size: 32px;
+            font-weight: 800;
+            color: var(--primary-blue);
+            margin-bottom: 20px;
+        }
+
+        .about-lead {
+            font-size: 18px;
+            font-weight: 600;
+            color: var(--text-dark);
+            margin-bottom: 16px;
+        }
+
+        .about-desc {
+            font-size: 16px;
+            color: var(--text-light);
+            margin-bottom: 24px;
+        }
+
+        .about-image-wrapper {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+        }
+
+        .about-doctor-img {
+            width: 100%;
+            max-width: 480px;
+            height: auto;
+            border-radius: 16px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+            object-fit: cover;
+        }
+
+        /* ==========================================================================
+           5. שירותי המרפאה (Services Section)
+           ========================================================================== */
+        .services-section {
+            padding: 80px 24px;
+            background-color: var(--bg-white);
+        }
+
+        .services-container {
+            max-width: var(--max-width);
+            margin: 0 auto;
+        }
+
+        .section-title {
+            font-size: 32px;
+            font-weight: 800;
+            color: var(--primary-blue);
+            text-align: center;
+            margin-bottom: 48px;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 32px;
+        }
+
+        .service-card {
+            background-color: var(--bg-light);
+            padding: 36px 28px;
+            border-radius: 16px;
+            border: 1px solid var(--border-color);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .service-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 24px rgba(0,0,0,0.04);
+        }
+
+        .service-card-title {
+            font-size: 20px;
+            font-weight: 700;
+            color: var(--primary-blue);
+            margin-bottom: 16px;
+        }
+
+        .service-list {
+            list-style: none;
+        }
+
+        .service-list li {
+            position: relative;
+            padding-right: 20px;
+            margin-bottom: 10px;
+            color: var(--text-dark);
+            font-size: 15px;
+        }
+
+        .service-list li::before {
+            content: "•";
+            color: var(--accent-orange);
+            font-weight: bold;
+            font-size: 18px;
+            position: absolute;
+            right: 0;
+            top: -1px;
+        }
+
+        /* ==========================================================================
+           6. המלצות (Testimonials Section)
+           ========================================================================== */
+        .testimonials-section {
+            padding: 80px 24px;
+            background-color: var(--bg-light);
+        }
+
+        .testimonials-container {
+            max-width: var(--max-width);
+            margin: 0 auto;
+        }
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 32px;
+        }
+
+        .testimonial-card {
+            background-color: var(--bg-white);
+            padding: 32px;
+            border-radius: 16px;
+            border: 1px solid var(--border-color);
+            box-shadow: 0 4px 6px rgba(0,0,0,0.01);
+        }
+
+        .testimonial-text {
+            font-size: 15px;
+            color: var(--text-dark);
+            font-style: italic;
+            margin-bottom: 20px;
+            line-height: 1.6;
+        }
+
+        .testimonial-author {
+            font-weight: 700;
+            color: var(--primary-blue);
+            font-size: 16px;
+        }
+
+        /* ==========================================================================
+           7. צור קשר (Contact Section)
+           ========================================================================== */
+        .faq-contact-section {
+            padding: 80px 24px;
+            background-color: var(--bg-white);
+        }
+
+        .contact-container {
+            max-width: 680px;
+            margin: 0 auto;
+        }
+
+        .contact-form-box {
+            background-color: var(--bg-light);
+            padding: 40px;
+            border-radius: 20px;
+            border: 1px solid var(--border-color);
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+
+        .form-body label {
+            display: block;
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: var(--text-dark);
+            font-size: 14px;
+        }
+
+        .form-body input, .form-body select, .form-body textarea {
+            width: 100%;
+            padding: 14px 16px;
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
+            background-color: var(--bg-white);
+            font-size: 16px;
+            color: var(--text-dark);
+            outline: none;
+            transition: border-color 0.2s;
+        }
+
+        .form-body input:focus, .form-body select:focus, .form-body textarea:focus {
+            border-color: var(--primary-blue);
+        }
+
+        .full-width {
+            grid-column: span 2;
+        }
+
+        .form-actions {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 14px;
+            margin-top: 28px;
+        }
+
+        .btn-submit-form, .contact-phone-btn, .contact-waze-btn {
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            padding: 14px 18px;
+            font-weight: 700;
+            border-radius: 8px;
+            cursor: pointer;
+            text-align: center;
+            font-size: 15px;
+            transition: background-color 0.2s, transform 0.1s;
+            border: none;
+        }
+
+        .btn-submit-form {
+            background-color: var(--primary-blue);
+            color: var(--bg-white);
+        }
+
+        .btn-submit-form:hover {
+            background-color: var(--primary-hover);
+        }
+
+        .contact-phone-btn {
+            background-color: var(--bg-white);
+            color: var(--primary-blue);
+            border: 1px solid var(--primary-blue);
+        }
+
+        .contact-phone-btn:hover {
+            background-color: rgba(30, 64, 175, 0.04);
+        }
+
+        .contact-waze-btn {
+            background-color: var(--accent-orange);
+            color: var(--bg-white);
+        }
+
+        .contact-waze-btn:hover {
+            background-color: var(--accent-hover);
+        }
+
+        /* ==========================================================================
+           8. התאמה ידנית מלאה למובייל (רספונסיביות מלאה)
+           ========================================================================== */
+        @media screen and (max-width: 768px) {
+            .header-container {
+                padding: 12px 16px;
+            }
+
+            .main-nav ul {
+                gap: 16px;
+            }
+
+            .main-nav a {
+                font-size: 14px;
+            }
+
+            /* 1. מניעת מתיחה של תמונות ושמירה על פרופורציות */
+            .about-doctor-img {
+                width: 100% !important;
+                height: 280px !important;
+                object-fit: cover !important;
+                border-radius: 12px !important;
+                margin-top: 20px !important;
+            }
+
+            .site-logo {
+                height: 40px !important;
+                width: auto !important;
+            }
+
+            /* 2. סידור כותרות גדולות שנשברות בנייד */
+            .hero-title {
+                font-size: 28px !important;
+                line-height: 1.25 !important;
+                margin-bottom: 14px !important;
+            }
+
+            .about-title, .section-title {
+                font-size: 24px !important;
+                line-height: 1.3 !important;
+                text-align: center !important;
+                margin-bottom: 24px !important;
+            }
+
+            .hero-subtitle {
+                font-size: 18px !important;
+                line-height: 1.3 !important;
+            }
+
+            /* 3. שליטה במרווחים ומניעת הידבקות לקצוות */
+            .hero-section {
+                padding: 48px 16px !important;
+            }
+
+            .about-section, .services-section, .testimonials-section, .faq-contact-section {
+                padding: 48px 16px !important;
+            }
+
+            .about-container {
+                grid-template-columns: 1fr !important;
+                gap: 32px !important;
+            }
+
+            .about-desc, .about-lead, .hero-text {
+                font-size: 15px !important;
+                line-height: 1.6 !important;
+                text-align: center !important;
+            }
+
+            /* 4. פתרון מחיקה והסתרה של אלמנטים */
+            .hide-on-mobile {
+                display: none !important;
+            }
+
+            /* 5. סידור כרטיסי שירותים והמלצות - טור אחד מסודר */
+            .services-grid, .testimonials-grid {
+                grid-template-columns: 1fr !important;
+                gap: 20px !important;
+            }
+
+            .service-card, .testimonial-card {
+                padding: 28px 20px !important;
+                text-align: center !important;
+            }
+
+            .service-list {
+                align-items: center !important;
+            }
+
+            .service-list li {
+                padding-right: 0 !important;
+                text-align: center !important;
+            }
+
+            .service-list li::before {
+                display: none !important;
+            }
+
+            /* 6. סידור טופס יצירת קשר */
+            .contact-form-box {
+                padding: 28px 16px !important;
+                border-radius: 16px !important;
+            }
+
+            .form-row {
+                grid-template-columns: 1fr !important;
+                gap: 16px !important;
+            }
+
+            .full-width {
+                grid-column: span 1;
+            }
+
+            .form-body input, .form-body select, .form-body textarea {
+                padding: 12px !important;
+                font-size: 15px !important;
+            }
+
+            .form-actions {
+                grid-template-columns: 1fr !important;
+                gap: 12px !important;
+            }
+
+            .contact-phone-btn, .contact-waze-btn, .btn-submit-form {
+                width: 100% !important;
+                padding: 14px !important;
+                font-size: 15px !important;
+            }
+        }
+    </style>
 </head>
 <body>
 
-    <div class="top-info-bar">
-        <div class="bar-container">
-            <div class="top-info-right">
-                <span class="top-info-item">
-                    <a href="https://waze.com/ul?q=מרחביה" target="_blank" class="top-waze-link" aria-label="ניווט למרפאה באמצעות Waze">
-                        <i class="fa-solid fa-location-dot" aria-hidden="true"></i> מרחביה (ניווט ב-Waze)
-                    </a>
-                </span>
-                <span class="top-info-item">
-                    <i class="fa-solid fa-clock" aria-hidden="true"></i> א'-ה' 09:00-19:00 | יום ו' 09:00-13:00
-                </span>
-            </div>
-            <div class="top-info-left">
-                <a href="https://wa.me/972528667909" target="_blank" class="top-link whatsapp-link" aria-label="פנייה בוואטסאפ">
-                    <i class="fa-brands fa-whatsapp" aria-hidden="true"></i> WhatsApp
-                </a>
-                <a href="tel:0528667909" class="top-link phone-link">
-                    <i class="fa-solid fa-phone" aria-hidden="true"></i> 052-8667909
-                </a>
-            </div>
-        </div>
-    </div>
-
-    <header class="main-header" role="banner">
+    <!-- Header -->
+    <header class="site-header">
         <div class="header-container">
             <div class="logo-area">
-                <a href="#home" class="logo-link">
-                    <img src="Logo.png" alt="לוגו אמירפאה" class="site-logo">
-                    <div class="logo-text">
-                        <span class="brand-name">אמירפאה</span>
-                        <span class="brand-sub">מרפאה וטרינרית</span>
-                    </div>
-                </a>
+                <img src="https://via.placeholder.com/160x48?text=Amirpaha" alt="Amirpaha" class="site-logo">
             </div>
-            <nav class="nav-links" id="main-nav" aria-label="תפריט ניווט ראשי">
-                <a href="#home" class="nav-item">דף הבית</a>
-                <a href="#about" class="nav-item">אודות</a>
-                <a href="#services" class="nav-item">שירותים</a>
-                <a href="#testimonials" class="nav-item">המלצות</a>
-                <a href="#faq" class="nav-item">שאלות נפוצות</a>
-                <a href="#contact" class="nav-item">צור קשר</a>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="#about">אודות</a></li>
+                    <li><a href="#services">שירותים</a></li>
+                    <li><a href="#contact">צור קשר</a></li>
+                </ul>
             </nav>
-            <div class="header-actions">
-                <a href="#contact" class="btn-booking-nav">
-                    <i class="fa-regular fa-calendar-check" aria-hidden="true"></i> לקביעת תור
-                </a>
-            </div>
         </div>
     </header>
 
-    <section id="home" class="hero-section">
-        <div class="hero-overlay"></div>
+    <!-- Hero Section -->
+    <section class="hero-section">
         <div class="hero-container">
-            <div class="hero-content">
-                <div class="hero-tag">
-                    <i class="fa-solid fa-location-dot" aria-hidden="true"></i> וטרינר בעמק יזרעאל לכלבים וחתולים
-                </div>
-                <h1 class="hero-title">אמירפאה – ד"ר אמיר הלפרין</h1>
-                <h2 class="hero-subtitle">ד"ר אמיר עם ניסיון של יותר מ-20 שנה!</h2>
-                <p class="hero-text">
-                    מרפאה וטרינרית מתקדמת המציעה טיפולים מקיפים, בדיקות דם במקום, צילומי רנטגן וחדר ניתוח מאובזר – הכל מתוך אהבה ומסירות אמיתית לבעלי החיים שלכם.
-                </p>
-                <div class="hero-buttons">
-                    <a href="#contact" class="btn-hero btn-orange">לקביעת תור מהיר</a>
-                    <a href="https://waze.com/ul?q=מרחביה" target="_blank" class="btn-hero btn-waze">
-                        <i class="fa-brands fa-waze" aria-hidden="true"></i> ניווט ב-Waze
-                    </a>
-                </div>
-            </div>
+            <div class="hero-subtitle">מרפאה וטרינרית מודרנית</div>
+            <h1 class="hero-title">עמירפחה - המרפאה של ד"ר אמיר</h1>
+            <p class="hero-text">רפואה וטרינרית מתקדמת, יחס אישי ומקצועיות ללא פשרות עבור בני המשפחה על ארבע שלכם.</p>
         </div>
     </section>
 
+    <!-- About Section -->
     <section id="about" class="about-section">
         <div class="about-container">
             <div class="about-content">
-                <span class="section-tag">קצת עלינו</span>
-                <h2 class="about-title">תמיד פה עבורכם</h2>
-                <p class="about-lead">
-                    ד"ר אמיר הלפרין - מוסמך ומנוסה, מלווה ומטפל בחיות המחמד עם המון סבלנות וידע מקצועי עשיר.
-                </p>
+                <h2 class="about-title">הכירו את ד"ר אמיר</h2>
+                <p class="about-lead">טיפול מסור, מודרני ומקיף לכלבים וחתולים</p>
                 <p class="about-desc">
-                    ד"ר הלפרין רכש את מקצועו בעיר פארמה שבאיטליה ומביא איתו ניסיון עשיר של למעלה מ-20 שנה. אנו באמירפאה מאמינים כי אבחון מוקדם ויחס אישי הם המפתח לבריאות ארוכת טווח של חיית המחמד שלכם. המרפאה מצוידת בטכנולוגיות המתקדמות ביותר כדי להבטיח אבחון מהיר ומדויק לכל בעיה.
+                    מרפאת עמירפחה הוקמה במטרה להעניק את הטיפול הטוב והמתקדם ביותר לבעלי החיים שלכם. ד"ר אמיר מביא איתו ניסיון עשיר, ידע עדכני ואהבה גדולה למקצוע, תוך שימוש בציוד הרפואי החדיש ביותר המאפשר אבחון וטיפול מהיר ומדויק.
                 </p>
-                <div class="about-features">
-                    <div class="about-feat-item">
-                        <i class="fa-solid fa-check" aria-hidden="true"></i>
-                        <span>רפואה מונעת וחיסונים</span>
-                    </div>
-                    <div class="about-feat-item">
-                        <i class="fa-solid fa-check" aria-hidden="true"></i>
-                        <span>מעבדת דם ורנטגן דיגיטלי במקום</span>
-                    </div>
-                    <div class="about-feat-item">
-                        <i class="fa-solid fa-check" aria-hidden="true"></i>
-                        <span>חדר ניתוח כירורגי מאובזר</span>
-                    </div>
-                </div>
-                <a href="#contact" class="btn-about">
-                    לקביעת תור מהיר <i class="fa-regular fa-calendar-check" aria-hidden="true"></i>
-                </a>
             </div>
             <div class="about-image-wrapper">
-                <img src="dr-amir.png" alt="ד&quot;ר אמיר בטיפול" class="about-doctor-img" loading="lazy">
+                <img src="https://via.placeholder.com/480x360?text=Dr.+Amir" alt="ד&quot;ר אמיר" class="about-doctor-img">
             </div>
         </div>
     </section>
 
+    <!-- Services Section -->
     <section id="services" class="services-section">
-        <div class="section-container">
-            <div class="section-header">
-                <span class="section-tag center">השירותים שלנו</span>
-                <h2 class="section-title">כל השירותים תחת קורת גג אחת</h2>
-                <p class="section-subtitle">אנחנו מעניקים את המעטפת הרפואית המלאה והמתקדמת ביותר לחיית המחמד שלכם</p>
-            </div>
+        <div class="services-container">
+            <h2 class="section-title">השירותים שלנו</h2>
             <div class="services-grid">
+                
+                <!-- שירות 1 -->
                 <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fa-solid fa-star" aria-hidden="true"></i>
-                    </div>
-                    <h3 class="service-title">שירותים מיוחדים</h3>
+                    <h3 class="service-card-title">רפואה מונעת</h3>
                     <ul class="service-list">
-                        <li>מנוי רפואי שנתי לבע"ח</li>
-                        <li>שירות ביקורי בית</li>
-                        <li>ציוד וטרינרי מתקדם</li>
+                        <li>חיסונים שגרתיים (משושה, כלבת)</li>
+                        <li>טיפולים נגד תולעים ופרעושים</li>
+                        <li>בדיקות תקופתיות מקיפות</li>
+                        <li>ייעוץ תזונתי מותאם אישית</li>
                     </ul>
                 </div>
 
+                <!-- שירות 2 -->
                 <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fa-solid fa-kit-medical" aria-hidden="true"></i>
-                    </div>
-                    <h3 class="service-title">ניתוחים וחירום</h3>
+                    <h3 class="service-card-title">אבחון וכירורגיה</h3>
                     <ul class="service-list">
-                        <li>שירותים כירורגיים</li>
-                        <li>עיקור וסירוס</li>
-                        <li>טיפולי חירום ואשפוז</li>
+                        <li>בדיקות דם מתקדמות במקום</li>
+                        <li>צילומי רנטגן דיגיטליים</li>
+                        <li>ניתוחי רקמות רכות</li>
+                        <li>עיקורים וסירוסים</li>
                     </ul>
                 </div>
 
+                <!-- שירות 3 -->
                 <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fa-solid fa-microscope" aria-hidden="true"></i>
-                    </div>
-                    <h3 class="service-title">אבחון ורפואה פנימית</h3>
+                    <h3 class="service-card-title">טיפולי שיניים</h3>
                     <ul class="service-list">
-                        <li>בדיקות מעבדה</li>
-                        <li>רפואה פנימית</li>
-                        <li>אנדוקרינולוגיה ונוירולוגיה</li>
+                        <li>ניקוי אבן שיניים באולטרסאונד</li>
+                        <li>עקירות כירורגיות</li>
+                        <li>טיפול בדלקות חניכיים</li>
+                        <li>הדרכה לשמירה על היגיינת הפה</li>
                     </ul>
                 </div>
 
-                <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fa-solid fa-shield-dog" aria-hidden="true"></i>
-                    </div>
-                    <h3 class="service-title">טיפולים מונעים</h3>
-                    <ul class="service-list">
-                        <li>חיסונים ובדיקות תקופתיות</li>
-                        <li>תילוע וטיפול בקרציות ופרעושים</li>
-                        <li>רפואה מונעת כוללת</li>
-                    </ul>
-                </div>
-
-                <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fa-solid fa-tooth" aria-hidden="true"></i>
-                    </div>
-                    <h3 class="service-title">טיפולים רפואיים</h3>
-                    <ul class="service-list">
-                        <li>טיפולי שיניים לבע"ח</li>
-                        <li>אורטופדיה וגריאטריה</li>
-                        <li>פוריות לבעלי חיים</li>
-                    </ul>
-                </div>
-
-                <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fa-solid fa-paw" aria-hidden="true"></i>
-                    </div>
-                    <h3 class="service-title">שירותים נלווים</h3>
-                    <ul class="service-list">
-                        <li>ייעוץ תזונתי והתאמה אישית</li>
-                        <li>מעקב בריאותי מתמשך</li>
-                        <li>זמינות מלאה לכל שאלה</li>
-                    </ul>
-                </div>
             </div>
         </div>
     </section>
 
-    <section id="testimonials" class="testimonials-section">
-        <div class="section-container">
-            <div class="section-header">
-                <span class="section-tag center">המלצות</span>
-                <h2 class="section-title">לקוחות ממליצים</h2>
-                <p class="section-subtitle">האהבה והטיפול המקצועי שלנו משתקפים בחוות הדעת של הלקוחות</p>
-            </div>
-            <div class="testimonials-slider-container">
-                <button class="slider-btn prev-btn" aria-label="המלצה קודמת">
-                    <i class="fa-solid fa-chevron-right" aria-hidden="true"></i>
-                </button>
-                <div class="testimonials-slider">
-                    <div class="testimonial-slide active">
-                        <div class="testimonials-grid">
-                            <div class="testimonial-card">
-                                <div class="testi-header">
-                                    <div class="stars" aria-label="5 כוכבים">
-                                        <i class="fa-solid fa-star" aria-hidden="true"></i>
-                                        <i class="fa-solid fa-star" aria-hidden="true"></i>
-                                        <i class="fa-solid fa-star" aria-hidden="true"></i>
-                                        <i class="fa-solid fa-star" aria-hidden="true"></i>
-                                        <i class="fa-solid fa-star" aria-hidden="true"></i>
-                                    </div>
-                                    <span class="testi-date">26/09/2021</span>
-                                </div>
-                                <h4 class="testi-title">ויטרינר מדהים ואנושי</h4>
-                                <p class="testi-text">
-                                    "כבר מהשיחה הראשונה אפשר להרגיש את האמפתיה הרבה שיש לו, את הקשב ההבנה והסובלנות הרבה. העדינות והאהבה שבה הוא טיפל בנו... אני לעולם לא אשכח את אמיר."
-                                </p>
-                                <div class="testi-author">lisamile</div>
-                            </div>
-                            <div class="testimonial-card">
-                                <div class="testi-header">
-                                    <div class="stars" aria-label="5 כוכבים">
-                                        <i class="fa-solid fa-star" aria-hidden="true"></i>
-                                        <i class="fa-solid fa-star" aria-hidden="true"></i>
-                                        <i class="fa-solid fa-star" aria-hidden="true"></i>
-                                        <i class="fa-solid fa-star" aria-hidden="true"></i>
-                                        <i class="fa-solid fa-star" aria-hidden="true"></i>
-                                    </div>
-                                    <span class="testi-date">17/04/2020</span>
-                                </div>
-                                <h4 class="testi-title">מומלץ !!!</h4>
-                                <p class="testi-text">
-                                    "לדעתי הדוקטור הטוב ביותר בצפון. מומלץ מאוד. תמיד זמין ומקצועי. כלבים וחתולים בידיים הכי בטוחות שיש."
-                                </p>
-                                <div class="testi-author">arde1976</div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="testimonial-slide">
-                        <div class="testimonials-grid">
-                            <div class="testimonial-card">
-                                <div class="testi-header">
-                                    <div class="stars" aria-label="5 כוכבים">
-                                        <i class="fa-solid fa-star" aria-hidden="true"></i>
-                                        <i class="fa-solid fa-star" aria-hidden="true"></i>
-                                        <i class="fa-solid fa-star" aria-hidden="true"></i>
-                                        <i class="fa-solid fa-star" aria-hidden="true"></i>
-                                        <i class="fa-solid fa-star" aria-hidden="true"></i>
-                                    </div>
-                                    <span class="testi-date">19/02/2019</span>
-                                </div>
-                                <h4 class="testi-title">מושלם</h4>
-                                <p class="testi-text">
-                                    "אמיר הוא בן אדם מדהים וד"ר מצוין. הגישה שלו לתינוקת שלי והביטחון שהרגשתי שהשארתי אותה שם. אמיר והעוזרת שלו כל כך סבלניים ועדינים."
-                                </p>
-                                <div class="testi-author">אורפז ויקיר</div>
-                            </div>
-                            <div class="testimonial-card">
-                                <div class="testi-header">
-                                    <div class="stars" aria-label="5 כוכבים">
-                                        <i class="fa-solid fa-star" aria-hidden="true"></i>
-                                        <i class="fa-solid fa-star" aria-hidden="true"></i>
-                                        <i class="fa-solid fa-star" aria-hidden="true"></i>
-                                        <i class="fa-solid fa-star" aria-hidden="true"></i>
-                                        <i class="fa-solid fa-star" aria-hidden="true"></i>
-                                    </div>
-                                    <span class="testi-date">07/07/2018</span>
-                                </div>
-                                <h4 class="testi-title">מומלץ!</h4>
-                                <p class="testi-text">
-                                    "כבר מספר שנים הכלב שלי מטופל אצלו ולא מחליפה אותו! שירות מעולה, תמיד זמין, מחיר הוגן לכל בעיה. ממליצה בחום!"
-                                </p>
-                                <div class="testi-author">Marina</div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="testimonial-slide">
-                        <div class="testimonials-grid">
-                            <div class="testimonial-card">
-                                <div class="testi-header">
-                                    <div class="stars" aria-label="4.5 כוכבים">
-                                        <i class="fa-solid fa-star" aria-hidden="true"></i>
-                                        <i class="fa-solid fa-star" aria-hidden="true"></i>
-                                        <i class="fa-solid fa-star" aria-hidden="true"></i>
-                                        <i class="fa-solid fa-star" aria-hidden="true"></i>
-                                        <i class="fa-solid fa-star-half-stroke" aria-hidden="true"></i>
-                                    </div>
-                                    <span class="testi-date">20/04/2016</span>
-                                </div>
-                                <h4 class="testi-title">מקצועיות ויחס נפלא</h4>
-                                <p class="testi-text">
-                                    "פניתי לצורך טיפול בכלב, השירות שקיבלתי היה מקצועי מאוד. היחס היה נפלא, קיבלו אותי בדיוק בזמן והמחיר היה סביר לחלוטין."
-                                </p>
-                                <div class="testi-author">יוסי</div>
-                            </div>
-                            <div class="testimonial-card">
-                                <div class="testi-header">
-                                    <div class="stars" aria-label="5 כוכבים">
-                                        <i class="fa-solid fa-star" aria-hidden="true"></i>
-                                        <i class="fa-solid fa-star" aria-hidden="true"></i>
-                                        <i class="fa-solid fa-star" aria-hidden="true"></i>
-                                        <i class="fa-solid fa-star" aria-hidden="true"></i>
-                                        <i class="fa-solid fa-star" aria-hidden="true"></i>
-                                    </div>
-                                    <span class="testi-date">17/03/2016</span>
-                                </div>
-                                <h4 class="testi-title">מרפאה מצוינת</h4>
-                                <p class="testi-text">
-                                    "הכלבה שלי מפחדת ולא רוצה שיתקרבו אליה, אך אמיר הצליח להתחבב עליה ולבדוק אותה. הטיפול היה אדיב ומקצועי ותמיד מתקשר לשאול מה שלומה."
-                                </p>
-                                <div class="testi-author">Arbel</div>
-                            </div>
-                        </div>
-                    </div>
+    <!-- Testimonials Section -->
+    <section class="testimonials-section">
+        <div class="testimonials-container">
+            <h2 class="section-title">מה הלקוחות שלנו מספרים</h2>
+            <div class="testimonials-grid">
+                
+                <div class="testimonial-card">
+                    <p class="testimonial-text">"הגענו לד"ר אמיר עם הכלב שלנו אחרי המון חיפושים, ומצאנו רופא מדהים, אכפתי ומקצועי ברמות הגבוהות ביותר."</p>
+                    <div class="testimonial-author">רוני לוי (והכלב לוקי)</div>
                 </div>
-                <button class="slider-btn next-btn" aria-label="המלצה הבאה">
-                    <i class="fa-solid fa-chevron-left" aria-hidden="true"></i>
-                </button>
+
+                <div class="testimonial-card">
+                    <p class="testimonial-text">"המרפאה תמיד נקייה, נעימה ומזמינה. השירות מהיר והכי חשוב - החתולה שלי רגועה בידיים של ד"ר אמיר."</p>
+                    <div class="testimonial-author">מיכל כהן (והחתולה מיצי)</div>
+                </div>
+
+                <div class="testimonial-card">
+                    <p class="testimonial-text">"אבחון מדויק ויחס חם. ד"ר אמיר מסביר הכל בגובה העיניים ובסבלנות אין קץ. ממליץ בחום לכל מי שאוהב את בעל החיים שלו."</p>
+                    <div class="testimonial-author">אייל גולן (והכלב סימבה)</div>
+                </div>
+
             </div>
         </div>
     </section>
 
-    <section id="faq-contact" class="faq-contact-section">
-        <div class="combined-container">
-            <div class="faq-side" id="faq">
-                <span class="section-tag">שאלות נפוצות</span>
-                <h2 class="combined-title">שאלות נפוצות</h2>
-                <div class="faq-accordion">
-                    <div class="faq-item active">
-                        <button class="faq-question" aria-expanded="true">
-                            <span>זמינות ושעות פעילות</span>
-                            <i class="fa-solid fa-minus faq-icon" aria-hidden="true"></i>
-                        </button>
-                        <div class="faq-answer">
-                            <p>אנו פתוחים בימים א'-ה' בין 09:00 ל-19:00 ובימי שישי בין 09:00 ל-13:00. במקרי חירום ניתן ליצור קשר טלפוני בכל שעה.</p>
+    <!-- Contact Section -->
+    <section id="contact" class="faq-contact-section">
+        <div class="contact-container">
+            <h2 class="section-title">צרו קשר</h2>
+            <div class="contact-form-box">
+                <form class="form-body">
+                    <div class="form-row">
+                        <div>
+                            <label for="full-name">שם מלא</label>
+                            <input type="text" id="full-name" placeholder="השם שלך" required>
+                        </div>
+                        <div>
+                            <label for="phone">טלפון</label>
+                            <input type="tel" id="phone" placeholder="מספר הטלפון שלך" required>
                         </div>
                     </div>
-                    <div class="faq-item">
-                        <button class="faq-question" aria-expanded="false">
-                            <span>חיסונים וטיפולים מונעים</span>
-                            <i class="fa-solid fa-plus faq-icon" aria-hidden="true"></i>
-                        </button>
-                        <div class="faq-answer">
-                            <p>מומלץ לחסן חיות מחמד באופן שנתי כדי להבטיח הגנה מלאה מפני מחלות נפוצות ומסוכנות בסביבה.</p>
+                    <div class="form-row">
+                        <div class="full-width">
+                            <label for="pet-type">סוג בעל החיים</label>
+                            <select id="pet-type">
+                                <option value="" disabled selected>בחרו סוג</option>
+                                <option value="dog">כלב</option>
+                                <option value="cat">חתול</option>
+                                <option value="other">אחר</option>
+                            </select>
                         </div>
                     </div>
-                    <div class="faq-item">
-                        <button class="faq-question" aria-expanded="false">
-                            <span>הזמנת תורים למרפאה</span>
-                            <i class="fa-solid fa-plus faq-icon" aria-hidden="true"></i>
-                        </button>
-                        <div class="faq-answer">
-                            <p>ניתן להזמין תור מראש בטופס יצירת הקשר באתר, או בשיחה מהירה בוואטסאפ ובטלפון הזמינים באתר.</p>
+                    <div class="form-row">
+                        <div class="full-width">
+                            <label for="message">הודעה</label>
+                            <textarea id="message" rows="4" placeholder="איך נוכל לעזור לכם?"></textarea>
                         </div>
                     </div>
-                    <div class="faq-item">
-                        <button class="faq-question" aria-expanded="false">
-                            <span>שירותים מיוחדים וחירום</span>
-                            <i class="fa-solid fa-plus faq-icon" aria-hidden="true"></i>
-                        </button>
-                        <div class="faq-answer">
-                            <p>במרפאה קיים חדר ניתוח מאובזר, רנטגן דיגיטלי מתקדם ומעבדת דם לתוצאות מיידיות במקום.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="contact-side" id="contact">
-                <div class="contact-form-box">
-                    <span class="section-tag">צור קשר</span>
-                    <h3 class="contact-form-title">יצירת קשר מהירה</h3>
-                    <p class="contact-form-subtitle">השאירו פרטים ונחזור אליכם בהקדם</p>
                     
-                    <form action="https://formsubmit.co/amirpavet@gmail.com" method="POST" class="form-body">
-                        <input type="hidden" name="_captcha" value="false">
-                        <input type="hidden" name="_next" value="https://6949558-stack.github.io/amirpa/index.html">
-                        
-                        <div class="form-row">
-                            <input type="text" name="שם מלא" placeholder="שם מלא" required>
-                            <input type="tel" name="טלפון" placeholder="מספר טלפון" required>
-                        </div>
-                        <div class="form-row">
-                            <select name="סוג חיה" required>
-                                <option value="" disabled selected>בחרו סוג חיה</option>
-                                <option value="חתול">חתול</option>
-                                <option value="כלב">כלב</option>
-                                <option value="אחר">אחר</option>
-                            </select>
-                            <select name="סיבת פנייה" required>
-                                <option value="" disabled selected>סיבת פנייה</option>
-                                <option value="תור">תור</option>
-                                <option value="חיסון">חיסון</option>
-                                <option value="תשלום">תשלום</option>
-                                <option value="ניתוח">ניתוח</option>
-                                <option value="חירום">חירום</option>
-                                <option value="אחר">אחר</option>
-                            </select>
-                        </div>
-                        <div class="form-row full-width">
-                            <input type="email" name="דואר אלקטרוני" placeholder="דואר אלקטרוני">
-                        </div>
-                        <div class="form-row full-width">
-                            <textarea name="הודעה" rows="4" placeholder="איך נוכל לעזור לכם ולחיית המחמד שלכם?" required></textarea>
-                        </div>
-                        <div class="form-actions">
-                            <a href="tel:0528667909" class="contact-phone-btn">
-                                <i class="fa-solid fa-phone" aria-hidden="true"></i> 052-8667909
-                            </a>
-                            <a href="https://waze.com/ul?q=מרחביה" target="_blank" class="contact-waze-btn" aria-label="ניווט באמצעות Waze">
-                                <i class="fa-brands fa-waze" aria-hidden="true"></i> Waze
-                            </a>
-                            <button type="submit" class="btn-submit-form">לקביעת תור מהיר</button>
-                        </div>
-                    </form>
-                </div>
+                    <div class="form-actions">
+                        <button type="submit" class="btn-submit-form">שליחת הודעה</button>
+                        <a href="tel:0501234567" class="contact-phone-btn">חיוג למרפאה</a>
+                        <a href="https://waze.com" target="_blank" class="contact-waze-btn">ניווט ב-Waze</a>
+                    </div>
+                </form>
             </div>
         </div>
     </section>
-
-    <a href="https://wa.me/972528667909" target="_blank" class="floating-whatsapp-btn" aria-label="פנייה מהירה בוואטסאפ">
-        <i class="fa-brands fa-whatsapp" aria-hidden="true"></i>
-    </a>
-
-    <footer class="site-footer">
-        <div class="footer-container">
-            <div class="footer-grid">
-                <div class="footer-col about-col">
-                    <h3>אמירפאה</h3>
-                    <p>מרפאה וטרינרית מתקדמת ומקצועית במרחביה ועמק יזרעאל.</p>
-                    <p>אנו מעניקים טיפול רפואי מלא ומקיף לכלבים וחתולים מכל הלב.</p>
-                </div>
-                <div class="footer-col links-col">
-                    <h3>קישורים ומידע</h3>
-                    <ul class="footer-links-list">
-                        <li><a href="accessibility.html"><i class="fa-solid fa-wheelchair" aria-hidden="true"></i> הצהרת נגישות</a></li>
-                        <li><a href="privacy.html"><i class="fa-solid fa-shield-halved" aria-hidden="true"></i> מדיניות פרטיות</a></li>
-                    </ul>
-                </div>
-                <div class="footer-col contact-col">
-                    <h3>פרטי התקשרות</h3>
-                    <p>
-                        <i class="fa-solid fa-location-dot" aria-hidden="true"></i> כתובת: 
-                        <a href="https://waze.com/ul?q=מרחביה" target="_blank" class="footer-waze-link">
-                            מרחביה (ניווט ב-Waze <i class="fa-brands fa-waze" aria-hidden="true"></i>)
-                        </a>
-                    </p>
-                    <p><i class="fa-solid fa-phone" aria-hidden="true"></i> טלפון: <a href="tel:0528667909">052-8667909</a></p>
-                    <p><i class="fa-solid fa-envelope" aria-hidden="true"></i> מייל: <a href="mailto:halperin.vet@gmail.com">halperin.vet@gmail.com</a></p>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>&copy; 2026 כל הזכויות שמורות לאמירפאה – ד"ר אמיר הלפרין</p>
-                <p>עוצב ונבנה על ידי <a href="mailto:6949558@gmail.com" class="designer-link">חן יובל סרוסי</a></p>
-            </div>
-        </div>
-    </footer>
-
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            // תמיכה בגלילה חלקה עבור קישורי עוגן
-            const internalLinks = document.querySelectorAll('a[href^="#"]');
-            internalLinks.forEach(link => {
-                link.addEventListener('click', (e) => {
-                    const targetId = link.getAttribute('href');
-                    if (targetId !== "#") {
-                        e.preventDefault();
-                        const targetSection = document.querySelector(targetId);
-                        if (targetSection) {
-                            targetSection.scrollIntoView({
-                                behavior: 'smooth',
-                                block: 'start'
-                            });
-                        }
-                    }
-                });
-            });
-
-            // אקורדיון שאלות נפוצות
-            const faqItems = document.querySelectorAll('.faq-item');
-            faqItems.forEach(item => {
-                const questionBtn = item.querySelector('.faq-question');
-                questionBtn.addEventListener('click', () => {
-                    const isActive = item.classList.contains('active');
-                    faqItems.forEach(otherItem => {
-                        if (otherItem !== item && otherItem.classList.contains('active')) {
-                            otherItem.classList.remove('active');
-                            otherItem.querySelector('.faq-icon').classList.replace('fa-minus', 'fa-plus');
-                            otherItem.querySelector('.faq-question').setAttribute('aria-expanded', 'false');
-                        }
-                    });
-                    if (!isActive) {
-                        item.classList.add('active');
-                        questionBtn.querySelector('.faq-icon').classList.replace('fa-plus', 'fa-minus');
-                        questionBtn.setAttribute('aria-expanded', 'true');
-                    } else {
-                        item.classList.remove('active');
-                        questionBtn.querySelector('.faq-icon').classList.replace('fa-minus', 'fa-plus');
-                        questionBtn.setAttribute('aria-expanded', 'false');
-                    }
-                });
-            });
-
-            // סליידר המלצות
-            const slides = document.querySelectorAll('.testimonial-slide');
-            const prevBtn = document.querySelector('.prev-btn');
-            const nextBtn = document.querySelector('.next-btn');
-            let currentSlide = 0;
-            let slideInterval;
-
-            function showSlide(index) {
-                slides.forEach((slide, i) => {
-                    slide.classList.toggle('active', i === index);
-                });
-            }
-
-            function nextSlide() {
-                currentSlide = (currentSlide + 1) % slides.length;
-                showSlide(currentSlide);
-            }
-
-            function prevSlide() {
-                currentSlide = (currentSlide - 1 + slides.length) % slides.length;
-                showSlide(currentSlide);
-            }
-
-            if (nextBtn && prevBtn && slides.length > 0) {
-                nextBtn.addEventListener('click', () => {
-                    nextSlide();
-                    resetInterval();
-                });
-                prevBtn.addEventListener('click', () => {
-                    prevSlide();
-                    resetInterval();
-                });
-                
-                function startInterval() {
-                    slideInterval = setInterval(nextSlide, 6000);
-                }
-                
-                function resetInterval() {
-                    clearInterval(slideInterval);
-                    startInterval();
-                }
-
-                startInterval();
-            }
-        });
-    </script>
 
 </body>
 </html>
