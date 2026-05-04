@@ -2109,3 +2109,9 @@ div[id] {
         font-size: 13px;
     }
 }
+
+@media (max-width: 900px) {
+    .hero-buttons {
+        display: none !important;
+    }
+}
