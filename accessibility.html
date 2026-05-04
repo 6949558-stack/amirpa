@@ -1,0 +1,303 @@
+כן. תיצור קובץ חדש בשם:
+
+```text
+accessibility.html
+```
+
+ותדביק בו את כל זה:
+
+```html
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>הצהרת נגישות | אמירפאה</title>
+    <meta name="description" content="הצהרת נגישות לאתר אמירפאה – מרפאה וטרינרית במרחביה ועמק יזרעאל.">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Assistant:wght@300;400;600;700;800&family=Heebo:wght@300;400;500;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        .legal-page {
+            background: var(--bg-light);
+            padding: 70px 18px;
+        }
+
+        .legal-card {
+            max-width: 900px;
+            margin: 0 auto;
+            background: #ffffff;
+            border-radius: 18px;
+            padding: 44px;
+            box-shadow: var(--shadow-md);
+            text-align: right;
+        }
+
+        .legal-card h1 {
+            color: var(--primary-color);
+            font-size: 38px;
+            margin-bottom: 24px;
+            font-family: var(--font-heading);
+        }
+
+        .legal-card h2 {
+            color: var(--primary-color);
+            font-size: 24px;
+            margin: 30px 0 12px;
+            font-family: var(--font-heading);
+        }
+
+        .legal-card p,
+        .legal-card li {
+            font-size: 17px;
+            line-height: 1.85;
+            color: #475569;
+        }
+
+        .legal-card ul {
+            padding-right: 24px;
+            margin: 12px 0;
+        }
+
+        .legal-card a {
+            color: var(--accent-color);
+            font-weight: 800;
+        }
+
+        .legal-note {
+            margin-top: 28px;
+            padding: 18px 20px;
+            background: #f8fafc;
+            border: 1px solid var(--border-color);
+            border-radius: 14px;
+            color: var(--primary-color);
+            font-weight: 700;
+        }
+
+        @media (max-width: 768px) {
+            .legal-page {
+                padding: 44px 14px 90px;
+            }
+
+            .legal-card {
+                padding: 28px 20px;
+            }
+
+            .legal-card h1 {
+                font-size: 30px;
+            }
+
+            .legal-card h2 {
+                font-size: 22px;
+            }
+
+            .legal-card p,
+            .legal-card li {
+                font-size: 16px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="top-info-bar">
+        <div class="bar-container">
+            <div class="top-info-right">
+                <span class="top-info-item">
+                    <a href="https://waze.com/ul?q=מרחביה" target="_blank" class="top-waze-link" aria-label="ניווט למרפאה באמצעות Waze">
+                        <i class="fa-solid fa-location-dot" aria-hidden="true"></i> מרחביה (ניווט ב-Waze)
+                    </a>
+                </span>
+                <span class="top-info-item top-hours-short">
+                    <i class="fa-solid fa-clock" aria-hidden="true"></i> שעות פעילות משתנות לפי ימים – פירוט באתר
+                </span>
+            </div>
+            <div class="top-info-left">
+                <a href="https://wa.me/972528667909" target="_blank" class="top-link whatsapp-link" aria-label="פנייה בוואטסאפ">
+                    <i class="fa-brands fa-whatsapp" aria-hidden="true"></i> WhatsApp
+                </a>
+                <a href="tel:0528667909" class="top-link phone-link" aria-label="התקשרות למרפאה">
+                    <i class="fa-solid fa-phone" aria-hidden="true"></i> 052-8667909
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <header class="main-header" role="banner">
+        <div class="header-container">
+            <div class="logo-area">
+                <a href="index.html#home" class="logo-link" aria-label="חזרה לדף הבית של אמירפאה">
+                    <img src="Logo.png" alt="לוגו אמירפאה" class="site-logo">
+                    <div class="logo-text">
+                        <span class="brand-name">אמירפאה</span>
+                        <span class="brand-sub">מרפאה וטרינרית</span>
+                    </div>
+                </a>
+            </div>
+
+            <button class="mobile-menu-toggle show-only-on-mobile" aria-label="פתח תפריט">
+                תפריט ☰
+            </button>
+
+            <nav class="nav-links hide-on-mobile" id="main-nav" aria-label="תפריט ניווט ראשי">
+                <a href="index.html#home" class="nav-item">דף הבית</a>
+                <a href="index.html#about" class="nav-item">אודות</a>
+                <a href="index.html#services" class="nav-item">שירותים</a>
+                <a href="index.html#testimonials" class="nav-item">המלצות</a>
+                <a href="index.html#faq" class="nav-item">שאלות נפוצות</a>
+                <a href="index.html#contact" class="nav-item">צור קשר</a>
+            </nav>
+
+            <div class="header-actions hide-on-mobile">
+                <a href="index.html#contact" class="btn-booking-nav">
+                    <i class="fa-regular fa-calendar-check" aria-hidden="true"></i> לקביעת תור
+                </a>
+            </div>
+        </div>
+
+        <div class="mobile-menu-dropdown show-only-on-mobile">
+            <nav class="mobile-nav-links" aria-label="תפריט מובייל">
+                <a href="index.html#home" class="mobile-nav-item">דף הבית</a>
+                <a href="index.html#about" class="mobile-nav-item">אודות</a>
+                <a href="index.html#services" class="mobile-nav-item">שירותים</a>
+                <a href="index.html#testimonials" class="mobile-nav-item">המלצות</a>
+                <a href="index.html#faq" class="mobile-nav-item">שאלות נפוצות</a>
+                <a href="index.html#contact" class="mobile-nav-item">צור קשר</a>
+                <a href="index.html#contact" class="btn-booking-nav-mobile">
+                    <i class="fa-regular fa-calendar-check" aria-hidden="true"></i> לקביעת תור
+                </a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="legal-page">
+        <section class="legal-card" aria-labelledby="accessibility-title">
+            <h1 id="accessibility-title">הצהרת נגישות</h1>
+
+            <p>
+                אתר אמירפאה פועל כדי לאפשר גלישה נוחה וברורה ככל האפשר לכלל המשתמשים, כולל אנשים עם מוגבלות.
+                אנו עושים מאמץ לשפר את נגישות האתר, את קריאות התוכן ואת נוחות השימוש בו.
+            </p>
+
+            <h2>התאמות שבוצעו באתר</h2>
+            <ul>
+                <li>מבנה אתר פשוט וברור.</li>
+                <li>התאמה לשימוש במכשירים ניידים.</li>
+                <li>שימוש בכותרות מסודרות ובהיררכיית תוכן ברורה.</li>
+                <li>קישורים וכפתורים עם טקסט ברור.</li>
+                <li>ניגודיות צבעים טובה ככל האפשר בין טקסט לרקע.</li>
+                <li>אפשרות ניווט בסיסית באמצעות מקלדת.</li>
+                <li>טקסט חלופי לתמונות מרכזיות באתר.</li>
+            </ul>
+
+            <h2>חשוב לדעת</h2>
+            <p>
+                למרות המאמצים להנגיש את האתר, ייתכן שחלקים מסוימים עדיין אינם מונגשים באופן מלא או דורשים שיפור נוסף.
+                אם נתקלתם בקושי בגלישה באתר, נשמח שתעדכנו אותנו כדי שנוכל לטפל בכך.
+            </p>
+
+            <h2>יצירת קשר בנושא נגישות</h2>
+            <p>
+                אם נתקלתם בבעיית נגישות באתר או אם אתם צריכים סיוע בקבלת מידע מהאתר, ניתן לפנות אלינו:
+            </p>
+
+            <ul>
+                <li>טלפון: <a href="tel:0528667909">052-8667909</a></li>
+                <li>וואטסאפ: <a href="https://wa.me/972528667909" target="_blank">שליחת הודעה ב-WhatsApp</a></li>
+                <li>דואר אלקטרוני: <a href="mailto:halperin.vet@gmail.com">halperin.vet@gmail.com</a></li>
+            </ul>
+
+            <h2>פרטי המרפאה</h2>
+            <p>
+                אמירפאה – מרפאה וטרינרית במרחביה ועמק יזרעאל.
+            </p>
+
+            <p class="legal-note">
+                ההצהרה נוסחה עבור אתר קטן ומטרתה לשקף מאמץ סביר להנגשת האתר ולמתן מענה נגיש למשתמשים.
+            </p>
+        </section>
+    </main>
+
+    <div class="mobile-bottom-cta" aria-label="פעולות מהירות">
+        <a href="tel:0528667909" class="mobile-cta-call">
+            <i class="fa-solid fa-phone" aria-hidden="true"></i> התקשר עכשיו
+        </a>
+        <a href="https://wa.me/972528667909" target="_blank" class="mobile-cta-whatsapp">
+            <i class="fa-brands fa-whatsapp" aria-hidden="true"></i> WhatsApp
+        </a>
+        <a href="https://waze.com/ul?q=מרחביה" target="_blank" class="mobile-cta-waze">
+            <i class="fa-brands fa-waze" aria-hidden="true"></i> Waze
+        </a>
+    </div>
+
+    <a href="https://wa.me/972528667909" target="_blank" class="floating-whatsapp-btn" aria-label="פנייה מהירה בוואטסאפ">
+        <i class="fa-brands fa-whatsapp" aria-hidden="true"></i>
+    </a>
+
+    <footer class="site-footer">
+        <div class="footer-container">
+            <div class="footer-grid">
+                <div class="footer-col about-col">
+                    <h3>אמירפאה</h3>
+                    <p>מרפאה וטרינרית מתקדמת ומקצועית במרחביה ועמק יזרעאל.</p>
+                    <p>אנו מעניקים טיפול רפואי מלא ומקיף לכלבים וחתולים מכל הלב.</p>
+                </div>
+
+                <div class="footer-col links-col">
+                    <h3>קישורים ומידע</h3>
+                    <ul class="footer-links-list">
+                        <li><a href="accessibility.html"><i class="fa-solid fa-wheelchair" aria-hidden="true"></i> הצהרת נגישות</a></li>
+                        <li><a href="privacy.html"><i class="fa-solid fa-shield-halved" aria-hidden="true"></i> מדיניות פרטיות</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col contact-col">
+                    <h3>פרטי התקשרות</h3>
+                    <p>
+                        <i class="fa-solid fa-location-dot" aria-hidden="true"></i> כתובת:
+                        <a href="https://waze.com/ul?q=מרחביה" target="_blank" class="footer-waze-link">
+                            מרחביה (ניווט ב-Waze <i class="fa-brands fa-waze" aria-hidden="true"></i>)
+                        </a>
+                    </p>
+                    <p><i class="fa-solid fa-phone" aria-hidden="true"></i> טלפון: <a href="tel:0528667909">052-8667909</a></p>
+                    <p><i class="fa-solid fa-envelope" aria-hidden="true"></i> מייל: <a href="mailto:halperin.vet@gmail.com">halperin.vet@gmail.com</a></p>
+                    <p><i class="fa-solid fa-clock" aria-hidden="true"></i> שעות: משתנות לפי ימים – ראו פירוט בשאלות נפוצות</p>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2026 כל הזכויות שמורות לאמירפאה – ד"ר אמיר הלפרין</p>
+                <p>עוצב ונבנה על ידי <a href="mailto:6949558@gmail.com" class="designer-link">חן יובל סרוסי</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const menuToggle = document.querySelector('.mobile-menu-toggle');
+            const mobileMenu = document.querySelector('.mobile-menu-dropdown');
+
+            if (menuToggle && mobileMenu) {
+                menuToggle.addEventListener('click', () => {
+                    mobileMenu.classList.toggle('active');
+
+                    if (mobileMenu.classList.contains('active')) {
+                        menuToggle.textContent = 'סגור ✕';
+                        menuToggle.setAttribute('aria-label', 'סגור תפריט');
+                    } else {
+                        menuToggle.textContent = 'תפריט ☰';
+                        menuToggle.setAttribute('aria-label', 'פתח תפריט');
+                    }
+                });
+            }
+        });
+    </script>
+
+</body>
+</html>
+```
