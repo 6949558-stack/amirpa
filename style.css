@@ -1,24 +1,22 @@
 /* ==========================================================================
-   DESIGN SYSTEM & CONSTANTS (10. כחול כהה #011a4b בהתחלה ובסוף)
+   משתני עיצוב מותאמים
    ========================================================================== */
 :root {
-    --primary-color: #011a4b;      /* צבע כחול כהה זהה לחלוטין בהתחלה ובסוף */
-    --accent-color: #ff6600;       /* כתום מותג חי */
+    --primary-color: #011a4b;      /* כחול כהה מקצועי ונקי */
+    --accent-color: #ff6600;       /* כתום מותג בהיר */
     --hover-color: #e65c00;        /* כתום כהה לריחוף */
-    --text-color: #242424;         /* צבע טקסט ראשי */
-    --bg-light: #f5f8f7;           /* רקע כללי בהיר */
+    --text-color: #334155;         /* טקסט כהה וקריא */
+    --bg-light: #f8fafc;           /* רקע בהיר מודרני */
     --bg-white: #ffffff;           /* לבן מלא */
-    --gray-light: #f1f3f5;         /* אפור בהיר לרקעים */
-    --border-color: #cbd5e1;       /* צבע גבול נקי */
-    --max-width: 1200px;
+    --border-color: #e2e8f0;       /* גבולות עדינים */
+    --max-width: 1240px;
     --transition: all 0.3s ease-in-out;
-    --shadow-sm: 0 2px 6px rgba(0,0,0,0.06);
-    --shadow-md: 0 5px 18px rgba(0,0,0,0.08);
-    --shadow-lg: 0 12px 40px rgba(0,0,0,0.12);
+    --shadow-md: 0 4px 20px rgba(0, 0, 0, 0.08);
+    --shadow-lg: 0 12px 35px rgba(0, 0, 0, 0.12);
 }
 
 /* ==========================================================================
-   RESET & BASE STYLES
+   אתחול כללי
    ========================================================================== */
 * {
     margin: 0;
@@ -33,11 +31,10 @@ html {
 body {
     font-family: 'Assistant', 'Heebo', sans-serif;
     direction: rtl;
-    background-color: var(--bg-light);
+    background-color: var(--bg-white);
     color: var(--text-color);
-    line-height: 1.65;
+    line-height: 1.6;
     overflow-x: hidden;
-    -webkit-font-smoothing: antialiased;
 }
 
 a {
@@ -47,55 +44,14 @@ a {
 }
 
 /* ==========================================================================
-   SECTION STRUCTURE & TYPOGRAPHY
-   ========================================================================== */
-.section-container {
-    max-width: var(--max-width);
-    margin: 0 auto;
-    padding: 80px 20px;
-}
-
-.section-header {
-    text-align: center;
-    max-width: 700px;
-    margin: 0 auto 55px;
-}
-
-.section-badge {
-    background-color: rgba(1, 26, 75, 0.08);
-    color: var(--primary-color);
-    font-size: 14px;
-    font-weight: 700;
-    padding: 6px 18px;
-    border-radius: 30px;
-    display: inline-block;
-    margin-bottom: 14px;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-}
-
-.section-title {
-    font-size: 38px;
-    font-weight: 900;
-    color: var(--primary-color);
-    margin-bottom: 16px;
-    line-height: 1.25;
-}
-
-.section-subtitle {
-    font-size: 18.5px;
-    color: #475569;
-}
-
-/* ==========================================================================
-   TOP INFO BAR (#011a4b)
+   בר עליון (Top Bar)
    ========================================================================== */
 .top-info-bar {
     background-color: var(--primary-color);
     color: var(--bg-white);
-    padding: 12px 0;
-    font-size: 14.5px;
-    font-weight: 600;
+    padding: 10px 0;
+    font-size: 14px;
+    font-weight: 500;
 }
 
 .top-info-container {
@@ -106,73 +62,63 @@ a {
     justify-content: space-between;
     align-items: center;
     flex-wrap: wrap;
-    gap: 12px;
+    gap: 10px;
 }
 
 .top-info-right {
-    display: flex;
-    gap: 24px;
-    align-items: center;
-}
-
-.info-item {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-}
-
-.top-info-left {
     display: flex;
     gap: 20px;
     align-items: center;
 }
 
-.info-link {
+.top-info-left {
     display: flex;
-    align-items: center;
-    gap: 6px;
-    color: var(--bg-white);
+    gap: 20px;
 }
 
-.info-link:hover {
-    color: var(--accent-color);
+.info-item i, .info-link i {
+    margin-left: 6px;
 }
 
-.whatsapp-link i {
+.whatsapp-top i {
     color: #25d366;
 }
 
 /* ==========================================================================
-   NAVIGATION HEADER
+   תפריט ניווט ראשי (Header)
    ========================================================================== */
 .main-header {
     background-color: var(--bg-white);
-    box-shadow: var(--shadow-sm);
+    border-bottom: 1px solid var(--border-color);
     position: sticky;
     top: 0;
     z-index: 1000;
-    border-bottom: 1px solid var(--border-color);
+    box-shadow: 0 2px 10px rgba(0,0,0,0.03);
 }
 
 .header-container {
     max-width: var(--max-width);
     margin: 0 auto;
-    padding: 14px 20px;
+    padding: 12px 20px;
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
-.logo-area .logo-link {
+.logo-area {
     display: flex;
     align-items: center;
-    gap: 18px;
+}
+
+.logo-link {
+    display: flex;
+    align-items: center;
+    gap: 12px;
 }
 
 .site-logo {
-    height: 120px;
+    height: 60px;
     width: auto;
-    object-fit: contain;
 }
 
 .logo-text {
@@ -181,340 +127,599 @@ a {
 }
 
 .brand-name {
-    font-size: 32px;
-    color: var(--primary-color);
+    font-size: 24px;
     font-weight: 800;
-    line-height: 1;
+    color: var(--primary-color);
+    line-height: 1.1;
 }
 
 .brand-sub {
-    font-size: 15px;
+    font-size: 13px;
     color: var(--accent-color);
-    font-weight: 700;
+    font-weight: 600;
 }
 
 .nav-links {
     display: flex;
-    gap: 28px;
+    gap: 24px;
 }
 
 .nav-item {
-    color: #334155;
     font-weight: 700;
-    font-size: 17.5px;
-    position: relative;
-    padding: 8px 0;
+    font-size: 16px;
+    color: #475569;
+    padding: 6px 0;
 }
 
-.nav-item:hover,
-.nav-item.active {
-    color: var(--primary-color);
+.nav-item:hover, .nav-item.active {
+    color: var(--accent-color);
 }
 
 .btn-booking-nav {
-    color: var(--primary-color);
-    border: 2px solid var(--primary-color);
-    padding: 12px 26px;
-    border-radius: 8px;
-    font-weight: 800;
-    font-size: 16px;
+    background-color: var(--accent-color);
+    color: var(--bg-white);
+    padding: 10px 22px;
+    border-radius: 6px;
+    font-weight: 700;
+    font-size: 15px;
     display: inline-flex;
     align-items: center;
     gap: 8px;
 }
 
 .btn-booking-nav:hover {
-    background-color: var(--primary-color);
-    color: var(--bg-white);
+    background-color: var(--hover-color);
     transform: translateY(-2px);
 }
 
 /* ==========================================================================
-   HERO SECTION
+   באנר ראשי (Hero Section) - העיצוב בתמונה הימנית
    ========================================================================== */
 .hero-section {
     background-image: url('banner.png');
-    background-repeat: no-repeat;
-    background-position: center;
     background-size: cover;
-    width: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
     min-height: 580px;
     display: flex;
     align-items: center;
     position: relative;
+    padding: 60px 0;
 }
 
 .hero-overlay {
     position: absolute;
     top: 0; left: 0; width: 100%; height: 100%;
-    background: rgba(0, 0, 0, 0.25);
+    background: rgba(0, 0, 0, 0.45);
+    z-index: 1;
 }
 
 .hero-container {
-    width: 100%;
     max-width: var(--max-width);
     margin: 0 auto;
-    padding: 40px 20px;
+    padding: 0 20px;
     position: relative;
-    z-index: 3;
+    z-index: 2;
+    width: 100%;
+    display: flex;
+    justify-content: flex-end; /* יישור הטקסט לצד שמאל */
 }
 
-.hero-content-box {
+.hero-content {
     max-width: 620px;
-    background-color: rgba(255, 255, 255, 0.96);
-    backdrop-filter: blur(8px);
-    padding: 48px;
-    border-radius: 18px;
-    color: var(--text-color);
-    box-shadow: var(--shadow-lg);
-    border: 1px solid rgba(255, 255, 255, 0.8);
+    color: var(--bg-white);
+    text-align: right;
 }
 
-.hero-badge {
+.hero-location-tag {
+    font-size: 14px;
+    background-color: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(5px);
     display: inline-flex;
     align-items: center;
     gap: 8px;
-    background-color: rgba(1, 26, 75, 0.08);
-    color: var(--primary-color);
-    padding: 8px 16px;
-    border-radius: 30px;
-    font-weight: 700;
-    font-size: 14px;
-    margin-bottom: 22px;
+    padding: 6px 16px;
+    border-radius: 20px;
+    margin-bottom: 20px;
+    font-weight: 600;
 }
 
 .hero-title {
-    font-size: 46px;
+    font-size: 42px;
     font-weight: 900;
-    color: var(--primary-color);
-    line-height: 1.15;
-    margin-bottom: 16px;
+    margin-bottom: 12px;
+    line-height: 1.2;
 }
 
 .hero-subtitle {
-    font-size: 24px;
+    font-size: 22px;
     font-weight: 700;
     color: var(--accent-color);
-    margin-bottom: 18px;
+    margin-bottom: 20px;
 }
 
-.hero-description {
-    font-size: 18.5px;
-    color: #475569;
-    margin-bottom: 34px;
+.hero-text {
+    font-size: 17.5px;
+    margin-bottom: 30px;
+    color: rgba(255, 255, 255, 0.9);
 }
 
-.hero-actions {
+.hero-buttons {
     display: flex;
-    gap: 18px;
+    gap: 16px;
     flex-wrap: wrap;
 }
 
-.btn {
+.btn-hero {
+    padding: 14px 34px;
+    border-radius: 8px;
+    font-weight: 800;
+    font-size: 16.5px;
     display: inline-flex;
     align-items: center;
     gap: 10px;
-    padding: 16px 36px;
-    border-radius: 10px;
-    font-weight: 800;
-    font-size: 17.5px;
 }
 
-.btn-booking {
+.btn-orange {
     background-color: var(--accent-color);
     color: var(--bg-white);
-    box-shadow: 0 4px 14px rgba(255, 102, 0, 0.3);
 }
 
-.btn-booking:hover {
+.btn-orange:hover {
     background-color: var(--hover-color);
     transform: translateY(-2px);
 }
 
-.btn-call {
-    background-color: #25d366;
-    color: var(--bg-white);
-    box-shadow: 0 4px 14px rgba(37, 211, 102, 0.3);
+.btn-outline {
+    background-color: var(--bg-white);
+    color: var(--primary-color);
 }
 
-.btn-call:hover {
-    background-color: #1ebd5b;
+.btn-outline:hover {
+    background-color: var(--bg-light);
     transform: translateY(-2px);
 }
 
 /* ==========================================================================
-   ABOUT SECTION
+   אודות (About Section)
    ========================================================================== */
 .about-section {
+    padding: 90px 0;
     background-color: var(--bg-white);
 }
 
-.about-grid {
+.about-container {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 0 20px;
     display: grid;
-    grid-template-columns: 1.2fr 0.8fr;
-    gap: 65px;
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: 60px;
     align-items: center;
+}
+
+.about-title {
+    font-size: 34px;
+    font-weight: 800;
+    color: var(--primary-color);
+    margin-bottom: 16px;
 }
 
 .about-lead {
-    font-size: 21px;
+    font-size: 19px;
     font-weight: 600;
-    color: var(--text-color);
-    margin-bottom: 18px;
-    line-height: 1.45;
+    color: #475569;
+    margin-bottom: 16px;
+    line-height: 1.5;
 }
 
-.about-text {
-    font-size: 17.5px;
-    color: #556980;
-    margin-bottom: 34px;
+.about-desc {
+    font-size: 16.5px;
+    color: #64748b;
+    margin-bottom: 28px;
 }
 
-.about-features {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 30px;
-}
-
-.feature-item {
-    display: flex;
-    gap: 16px;
-}
-
-.feature-item i {
-    color: var(--accent-color);
-    font-size: 24px;
-    background-color: rgba(255,102,0,0.08);
-    width: 54px;
-    height: 54px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 10px;
-    flex-shrink: 0;
-}
-
-.feature-item h4 {
-    font-size: 17px;
+.btn-about {
+    background-color: var(--accent-color);
+    color: var(--bg-white);
+    padding: 12px 28px;
+    border-radius: 6px;
     font-weight: 700;
-    margin-bottom: 4px;
-    color: var(--primary-color);
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
 }
 
-.feature-item p {
-    font-size: 15px;
-    color: #556980;
+.btn-about:hover {
+    background-color: var(--hover-color);
+    transform: translateY(-2px);
 }
 
-.about-image-wrapper {
-    position: relative;
-    border-radius: 20px;
-    overflow: hidden;
+.about-doctor-img {
+    width: 100%;
+    height: 420px;
+    object-fit: cover;
+    border-radius: 12px;
     box-shadow: var(--shadow-lg);
 }
 
-.about-img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
+/* ==========================================================================
+   שירותים והמלצות
+   ========================================================================== */
+.services-section, .testimonials-section {
+    padding: 85px 0;
+    background-color: var(--bg-light);
 }
 
-/* ==========================================================================
-   SERVICES SECTION
-   ========================================================================== */
-.services-section {
-    background-color: var(--bg-light);
+.testimonials-section {
+    background-color: var(--bg-white);
+}
+
+.section-container {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.section-header {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.section-title {
+    font-size: 34px;
+    font-weight: 800;
+    color: var(--primary-color);
+    margin-bottom: 12px;
+}
+
+.section-subtitle {
+    font-size: 17.5px;
+    color: #64748b;
 }
 
 .services-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 32px;
+    gap: 30px;
 }
 
 .service-card {
     background-color: var(--bg-white);
-    padding: 44px 34px;
-    border-radius: 16px;
+    padding: 40px 30px;
+    border-radius: 12px;
     border: 1px solid var(--border-color);
-    transition: var(--transition);
     text-align: center;
+    transition: var(--transition);
 }
 
 .service-card:hover {
-    transform: translateY(-8px);
-    box-shadow: var(--shadow-lg);
-    border-color: transparent;
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-md);
 }
 
-.service-icon-box {
-    width: 76px;
-    height: 76px;
-    background-color: rgba(1, 26, 75, 0.06);
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 0 auto 24px;
-    color: var(--primary-color);
-    font-size: 28px;
-    transition: var(--transition);
-}
-
-.service-card:hover .service-icon-box {
-    background-color: var(--accent-color);
-    color: var(--bg-white);
+.service-icon {
+    font-size: 32px;
+    color: var(--accent-color);
+    margin-bottom: 22px;
 }
 
 .service-card h3 {
-    font-size: 22px;
+    font-size: 20px;
     color: var(--primary-color);
-    font-weight: 800;
-    margin-bottom: 14px;
-}
-
-.service-card p {
-    color: #475569;
-    font-size: 16px;
-}
-
-/* ==========================================================================
-   TESTIMONIALS SECTION
-   ========================================================================== */
-.testimonials-section {
-    background-color: var(--bg-white);
+    margin-bottom: 12px;
 }
 
 .testimonials-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 36px;
+    gap: 30px;
 }
 
 .testimonial-card {
     background-color: var(--bg-light);
-    padding: 44px;
-    border-radius: 16px;
-    box-shadow: var(--shadow-sm);
+    padding: 35px;
+    border-radius: 12px;
     border: 1px solid var(--border-color);
-    position: relative;
 }
 
 .testimonial-card .stars {
-    color: #fbbf24;
-    margin-bottom: 18px;
-    font-size: 16px;
-}
-
-.testi-text {
-    font-size: 18px;
-    color: #334155;
-    font-style: italic;
-    line-height: 1.5;
-    margin-bottom: 24px;
+    color: #f59e0b;
+    margin-bottom: 14px;
 }
 
 .testi-author {
-    border-top: 1px solid var(--border-color);
-    padding-top:
+    margin-top: 18px;
+    font-weight: 700;
+    color: var(--primary-color);
+}
+
+/* ==========================================================================
+   חלק משולב: FAQ ויצירת קשר (טופס לבן לצד שאלות)
+   ========================================================================== */
+.faq-contact-section {
+    background-color: var(--bg-light);
+    padding: 90px 0;
+}
+
+.combined-container {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 0 20px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 55px;
+    align-items: flex-start;
+}
+
+.combined-title {
+    font-size: 34px;
+    font-weight: 800;
+    color: var(--primary-color);
+    margin-bottom: 30px;
+}
+
+.faq-accordion {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.faq-item {
+    background-color: var(--bg-white);
+    border-radius: 8px;
+    border: 1px solid var(--border-color);
+    overflow: hidden;
+    transition: var(--transition);
+}
+
+.faq-question {
+    width: 100%;
+    padding: 18px 24px;
+    background: none;
+    border: none;
+    text-align: right;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 17px;
+    font-weight: 700;
+    color: var(--primary-color);
+    cursor: pointer;
+}
+
+.faq-arrow {
+    transition: var(--transition);
+    color: var(--accent-color);
+}
+
+.faq-answer {
+    padding: 0 24px;
+    max-height: 0;
+    overflow: hidden;
+    transition: var(--transition);
+    color: #475569;
+}
+
+.faq-item.active {
+    border-color: var(--accent-color);
+    box-shadow: var(--shadow-md);
+}
+
+.faq-item.active .faq-arrow {
+    transform: rotate(180deg);
+}
+
+.faq-item.active .faq-answer {
+    padding-bottom: 18px;
+    max-height: 200px;
+}
+
+/* קופסת טופס יצירת הקשר - התאמה מלאה */
+.contact-form-box {
+    background-color: var(--bg-white);
+    padding: 45px 40px;
+    border-radius: 14px;
+    box-shadow: var(--shadow-lg);
+    border: 1px solid var(--border-color);
+}
+
+.contact-form-title {
+    font-size: 28px;
+    font-weight: 800;
+    color: var(--primary-color);
+    margin-bottom: 4px;
+}
+
+.contact-form-subtitle {
+    font-size: 15.5px;
+    color: #64748b;
+    margin-bottom: 32px;
+}
+
+.form-body {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+}
+
+.form-row.full-width {
+    grid-template-columns: 1fr;
+}
+
+.form-body input, .form-body textarea {
+    width: 100%;
+    padding: 14px 18px;
+    border-radius: 6px;
+    border: 1px solid #cbd5e1;
+    background-color: #fcfcfc;
+    font-family: inherit;
+    font-size: 15.5px;
+}
+
+.form-body input:focus, .form-body textarea:focus {
+    outline: none;
+    border-color: var(--accent-color);
+    background-color: var(--bg-white);
+}
+
+.form-actions {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    align-items: center;
+    margin-top: 12px;
+}
+
+.contact-phone-btn {
+    background-color: var(--bg-light);
+    color: var(--primary-color);
+    padding: 14px;
+    border-radius: 6px;
+    text-align: center;
+    font-weight: 800;
+    font-size: 16.5px;
+    border: 1px solid var(--border-color);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+.contact-phone-btn:hover {
+    background-color: var(--border-color);
+}
+
+.btn-submit-form {
+    background-color: var(--accent-color);
+    color: var(--bg-white);
+    padding: 15px;
+    border: none;
+    border-radius: 6px;
+    font-weight: 800;
+    font-size: 16.5px;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(255, 102, 0, 0.25);
+}
+
+.btn-submit-form:hover {
+    background-color: var(--hover-color);
+    transform: translateY(-2px);
+}
+
+/* ==========================================================================
+   פוטר וכפתור וואטסאפ צף
+   ========================================================================== */
+.floating-whatsapp-btn {
+    position: fixed;
+    bottom: 30px;
+    left: 30px;
+    background-color: #25d366;
+    color: var(--bg-white);
+    width: 58px;
+    height: 58px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 30px;
+    box-shadow: var(--shadow-lg);
+    z-index: 9999;
+}
+
+.floating-whatsapp-btn:hover {
+    transform: scale(1.08);
+}
+
+.site-footer {
+    background-color: var(--primary-color);
+    color: var(--bg-white);
+    padding: 55px 0 25px;
+}
+
+.footer-container {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.footer-grid {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 40px;
+    padding-bottom: 35px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.footer-col h3 {
+    margin-bottom: 18px;
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.footer-col p {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 15.5px;
+    margin-bottom: 10px;
+}
+
+.footer-col a {
+    color: var(--accent-color);
+}
+
+.footer-bottom {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 12px;
+    padding-top: 25px;
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.designer-link {
+    color: var(--accent-color);
+    font-weight: 700;
+}
+
+/* ==========================================================================
+   רספונסיביות מלאה (Mobile & Tablet Optimization)
+   ========================================================================== */
+@media (max-width: 1024px) {
+    .about-container, .combined-container {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+    .services-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .header-container {
+        flex-direction: column;
+        gap: 14px;
+        text-align: center;
+    }
+    .nav-links {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 16px;
+    }
+    .services-grid, .testimonials-grid {
+        grid-template-columns: 1fr;
+    }
+    .hero-title {
+        font-size: 32px;
+    }
+    .form-row, .form-actions {
+        grid-template-columns: 1fr;
+    }
+}
