@@ -50,7 +50,7 @@
             </div>
             
             <button class="mobile-menu-toggle show-only-on-mobile" aria-label="פתח תפריט">
-                <i class="fa-solid fa-bars" aria-hidden="true"></i>
+                תפריט ☰
             </button>
             
             <nav class="nav-links hide-on-mobile" id="main-nav" aria-label="תפריט ניווט ראשי">
@@ -497,35 +497,55 @@
 
     <script>
         document.addEventListener('DOMContentLoaded', () => {
-            // תמיכה בגלילה חלקה עבור קישורי עוגן
+            const menuToggle = document.querySelector('.mobile-menu-toggle');
+            const mobileMenu = document.querySelector('.mobile-menu-dropdown');
+
+            function closeMobileMenu() {
+                if (mobileMenu && mobileMenu.classList.contains('active')) {
+                    mobileMenu.classList.remove('active');
+                }
+
+                if (menuToggle) {
+                    menuToggle.textContent = 'תפריט ☰';
+                    menuToggle.setAttribute('aria-label', 'פתח תפריט');
+                }
+            }
+
+            function scrollToSection(targetSection) {
+                const headerOffset = window.innerWidth <= 900 ? 104 : 126;
+                const elementPosition = targetSection.getBoundingClientRect().top;
+                const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+                window.scrollTo({
+                    top: offsetPosition,
+                    behavior: 'smooth'
+                });
+            }
+
             const internalLinks = document.querySelectorAll('a[href^="#"]');
             internalLinks.forEach(link => {
                 link.addEventListener('click', (e) => {
                     const targetId = link.getAttribute('href');
-                    if (targetId !== "#") {
-                        e.preventDefault();
+
+                    if (targetId && targetId !== "#") {
                         const targetSection = document.querySelector(targetId);
+
                         if (targetSection) {
-                            targetSection.scrollIntoView({
-                                behavior: 'smooth',
-                                block: 'start'
-                            });
-                            // סגירת תפריט המובייל לאחר לחיצה (אם פתוח)
-                            const mobileMenu = document.querySelector('.mobile-menu-dropdown');
-                            if (mobileMenu && mobileMenu.classList.contains('active')) {
-                                mobileMenu.classList.remove('active');
-                            }
+                            e.preventDefault();
+                            closeMobileMenu();
+                            scrollToSection(targetSection);
                         }
                     }
                 });
             });
 
-            // אקורדיון שאלות נפוצות
             const faqItems = document.querySelectorAll('.faq-item');
             faqItems.forEach(item => {
                 const questionBtn = item.querySelector('.faq-question');
+
                 questionBtn.addEventListener('click', () => {
                     const isActive = item.classList.contains('active');
+
                     faqItems.forEach(otherItem => {
                         if (otherItem !== item && otherItem.classList.contains('active')) {
                             otherItem.classList.remove('active');
@@ -533,6 +553,7 @@
                             otherItem.querySelector('.faq-question').setAttribute('aria-expanded', 'false');
                         }
                     });
+
                     if (!isActive) {
                         item.classList.add('active');
                         questionBtn.querySelector('.faq-icon').classList.replace('fa-plus', 'fa-minus');
@@ -545,7 +566,6 @@
                 });
             });
 
-            // סליידר המלצות
             const slides = document.querySelectorAll('.testimonial-slide');
             const prevBtn = document.querySelector('.prev-btn');
             const nextBtn = document.querySelector('.next-btn');
@@ -573,6 +593,7 @@
                     nextSlide();
                     resetInterval();
                 });
+
                 prevBtn.addEventListener('click', () => {
                     prevSlide();
                     resetInterval();
@@ -590,19 +611,15 @@
                 startInterval();
             }
             
-            // תפריט המבורגר למובייל - חדש!
-            const menuToggle = document.querySelector('.mobile-menu-toggle');
-            const mobileMenu = document.querySelector('.mobile-menu-dropdown');
-            
             if (menuToggle && mobileMenu) {
                 menuToggle.addEventListener('click', () => {
                     mobileMenu.classList.toggle('active');
-                    const icon = menuToggle.querySelector('i');
+
                     if (mobileMenu.classList.contains('active')) {
-                        icon.classList.replace('fa-bars', 'fa-xmark');
+                        menuToggle.textContent = 'סגור ✕';
                         menuToggle.setAttribute('aria-label', 'סגור תפריט');
                     } else {
-                        icon.classList.replace('fa-xmark', 'fa-bars');
+                        menuToggle.textContent = 'תפריט ☰';
                         menuToggle.setAttribute('aria-label', 'פתח תפריט');
                     }
                 });
