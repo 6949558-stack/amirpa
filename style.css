@@ -1919,3 +1919,15 @@ div[id] {
         min-height: 520px;
     }
 }
+
+@media (max-width: 900px) {
+    .mobile-menu-toggle {
+        min-width: 92px !important;
+        width: auto !important;
+        height: 42px !important;
+        padding: 0 14px !important;
+        font-size: 15px !important;
+        font-weight: 900 !important;
+        white-space: nowrap !important;
+    }
+}
