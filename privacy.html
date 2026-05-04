@@ -4,7 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>מדיניות פרטיות | אמירפאה</title>
+    <meta name="description" content="מדיניות פרטיות לאתר אמירפאה – מרפאה וטרינרית במרחביה ועמק יזרעאל.">
 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Assistant:wght@300;400;600;700;800&family=Heebo:wght@300;400;500;700;800;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
@@ -56,6 +59,16 @@
             font-weight: 800;
         }
 
+        .legal-note {
+            margin-top: 28px;
+            padding: 18px 20px;
+            background: #f8fafc;
+            border: 1px solid var(--border-color);
+            border-radius: 14px;
+            color: var(--primary-color);
+            font-weight: 700;
+        }
+
         @media (max-width: 768px) {
             .legal-page {
                 padding: 44px 14px 90px;
@@ -83,107 +96,205 @@
 
 <body>
 
-<header class="main-header">
-    <div class="header-container">
-        <div class="logo-area">
-            <a href="index.html#home" class="logo-link">
-                <img src="Logo.png" class="site-logo">
-                <div class="logo-text">
-                    <span class="brand-name">אמירפאה</span>
-                    <span class="brand-sub">מרפאה וטרינרית</span>
+    <div class="top-info-bar">
+        <div class="bar-container">
+            <div class="top-info-right">
+                <span class="top-info-item">
+                    <a href="https://waze.com/ul?q=מרחביה" target="_blank" class="top-waze-link" aria-label="ניווט למרפאה באמצעות Waze">
+                        <i class="fa-solid fa-location-dot" aria-hidden="true"></i> מרחביה (ניווט ב-Waze)
+                    </a>
+                </span>
+                <span class="top-info-item top-hours-short">
+                    <i class="fa-solid fa-clock" aria-hidden="true"></i> שעות פעילות משתנות לפי ימים – פירוט באתר
+                </span>
+            </div>
+            <div class="top-info-left">
+                <a href="https://wa.me/972528667909" target="_blank" class="top-link whatsapp-link" aria-label="פנייה בוואטסאפ">
+                    <i class="fa-brands fa-whatsapp" aria-hidden="true"></i> WhatsApp
+                </a>
+                <a href="tel:0528667909" class="top-link phone-link" aria-label="התקשרות למרפאה">
+                    <i class="fa-solid fa-phone" aria-hidden="true"></i> 052-8667909
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <header class="main-header" role="banner">
+        <div class="header-container">
+            <div class="logo-area">
+                <a href="index.html#home" class="logo-link" aria-label="חזרה לדף הבית של אמירפאה">
+                    <img src="Logo.png" alt="לוגו אמירפאה" class="site-logo">
+                    <div class="logo-text">
+                        <span class="brand-name">אמירפאה</span>
+                        <span class="brand-sub">מרפאה וטרינרית</span>
+                    </div>
+                </a>
+            </div>
+
+            <button class="mobile-menu-toggle show-only-on-mobile" aria-label="פתח תפריט">
+                תפריט ☰
+            </button>
+
+            <nav class="nav-links hide-on-mobile" id="main-nav" aria-label="תפריט ניווט ראשי">
+                <a href="index.html#home" class="nav-item">דף הבית</a>
+                <a href="index.html#about" class="nav-item">אודות</a>
+                <a href="index.html#services" class="nav-item">שירותים</a>
+                <a href="index.html#testimonials" class="nav-item">המלצות</a>
+                <a href="index.html#faq" class="nav-item">שאלות נפוצות</a>
+                <a href="index.html#contact" class="nav-item">צור קשר</a>
+            </nav>
+
+            <div class="header-actions hide-on-mobile">
+                <a href="index.html#contact" class="btn-booking-nav">
+                    <i class="fa-regular fa-calendar-check" aria-hidden="true"></i> לקביעת תור
+                </a>
+            </div>
+        </div>
+
+        <div class="mobile-menu-dropdown show-only-on-mobile">
+            <nav class="mobile-nav-links" aria-label="תפריט מובייל">
+                <a href="index.html#home" class="mobile-nav-item">דף הבית</a>
+                <a href="index.html#about" class="mobile-nav-item">אודות</a>
+                <a href="index.html#services" class="mobile-nav-item">שירותים</a>
+                <a href="index.html#testimonials" class="mobile-nav-item">המלצות</a>
+                <a href="index.html#faq" class="mobile-nav-item">שאלות נפוצות</a>
+                <a href="index.html#contact" class="mobile-nav-item">צור קשר</a>
+                <a href="index.html#contact" class="btn-booking-nav-mobile">
+                    <i class="fa-regular fa-calendar-check" aria-hidden="true"></i> לקביעת תור
+                </a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="legal-page">
+        <section class="legal-card" aria-labelledby="privacy-title">
+            <h1 id="privacy-title">מדיניות פרטיות</h1>
+
+            <p>
+                אנו באמירפאה מכבדים את פרטיות המשתמשים באתר ומתחייבים לשמור על המידע האישי הנמסר לנו.
+            </p>
+
+            <h2>איסוף מידע</h2>
+            <p>
+                האתר אוסף מידע רק כאשר המשתמש בוחר להשאיר פרטים בטופס יצירת קשר, כגון שם, טלפון, כתובת דואר אלקטרוני, סוג חיה וסיבת הפנייה.
+            </p>
+
+            <h2>שימוש במידע</h2>
+            <p>
+                המידע שנמסר ישמש לצורך יצירת קשר עם הפונה בלבד, מתן מענה, תיאום תורים, טיפול בפנייה ושירות מול המרפאה.
+            </p>
+
+            <h2>שמירת מידע</h2>
+            <p>
+                אנו נוקטים באמצעים סבירים לשמירה על המידע האישי, ולא נעביר אותו לצד שלישי ללא הסכמה, למעט אם הדבר נדרש על פי חוק.
+            </p>
+
+            <h2>טפסים ושירותים חיצוניים</h2>
+            <p>
+                ייתכן שטופס יצירת הקשר באתר עושה שימוש בשירות חיצוני לצורך שליחת ההודעה למרפאה. המידע נמסר רק לצורך טיפול בפנייה.
+            </p>
+
+            <h2>עוגיות וכלי מדידה</h2>
+            <p>
+                האתר עשוי להשתמש בכלים בסיסיים של הדפדפן או שירותי צד שלישי לצורך תפעול תקין, אבטחה, שיפור חוויית המשתמש או מדידת שימוש באתר.
+            </p>
+
+            <h2>יצירת קשר בנושא פרטיות</h2>
+            <p>
+                לכל שאלה בנושא פרטיות או בקשה בנוגע למידע שנמסר באתר, ניתן לפנות אלינו:
+            </p>
+
+            <ul>
+                <li>טלפון: <a href="tel:0528667909">052-8667909</a></li>
+                <li>וואטסאפ: <a href="https://wa.me/972528667909" target="_blank">שליחת הודעה ב-WhatsApp</a></li>
+                <li>דואר אלקטרוני: <a href="mailto:halperin.vet@gmail.com">halperin.vet@gmail.com</a></li>
+            </ul>
+
+            <h2>פרטי המרפאה</h2>
+            <p>
+                אמירפאה – מרפאה וטרינרית במרחביה ועמק יזרעאל.
+            </p>
+
+            <p class="legal-note">
+                מדיניות זו נוסחה עבור אתר תדמית קטן, ומטרתה להסביר בשפה פשוטה כיצד נעשה שימוש בפרטים שנמסרים דרך האתר.
+            </p>
+        </section>
+    </main>
+
+    <div class="mobile-bottom-cta" aria-label="פעולות מהירות">
+        <a href="tel:0528667909" class="mobile-cta-call">
+            <i class="fa-solid fa-phone" aria-hidden="true"></i> התקשר עכשיו
+        </a>
+        <a href="https://wa.me/972528667909" target="_blank" class="mobile-cta-whatsapp">
+            <i class="fa-brands fa-whatsapp" aria-hidden="true"></i> WhatsApp
+        </a>
+        <a href="https://waze.com/ul?q=מרחביה" target="_blank" class="mobile-cta-waze">
+            <i class="fa-brands fa-waze" aria-hidden="true"></i> Waze
+        </a>
+    </div>
+
+    <a href="https://wa.me/972528667909" target="_blank" class="floating-whatsapp-btn" aria-label="פנייה מהירה בוואטסאפ">
+        <i class="fa-brands fa-whatsapp" aria-hidden="true"></i>
+    </a>
+
+    <footer class="site-footer">
+        <div class="footer-container">
+            <div class="footer-grid">
+                <div class="footer-col about-col">
+                    <h3>אמירפאה</h3>
+                    <p>מרפאה וטרינרית מתקדמת ומקצועית במרחביה ועמק יזרעאל.</p>
+                    <p>אנו מעניקים טיפול רפואי מלא ומקיף לכלבים וחתולים מכל הלב.</p>
                 </div>
-            </a>
-        </div>
 
-        <button class="mobile-menu-toggle show-only-on-mobile">
-            תפריט ☰
-        </button>
+                <div class="footer-col links-col">
+                    <h3>קישורים ומידע</h3>
+                    <ul class="footer-links-list">
+                        <li><a href="accessibility.html"><i class="fa-solid fa-wheelchair" aria-hidden="true"></i> הצהרת נגישות</a></li>
+                        <li><a href="privacy.html"><i class="fa-solid fa-shield-halved" aria-hidden="true"></i> מדיניות פרטיות</a></li>
+                    </ul>
+                </div>
 
-        <nav class="nav-links hide-on-mobile">
-            <a href="index.html#home">דף הבית</a>
-            <a href="index.html#about">אודות</a>
-            <a href="index.html#services">שירותים</a>
-            <a href="index.html#testimonials">המלצות</a>
-            <a href="index.html#faq">שאלות</a>
-            <a href="index.html#contact">צור קשר</a>
-        </nav>
-    </div>
-</header>
-
-<main class="legal-page">
-    <section class="legal-card">
-        <h1>מדיניות פרטיות</h1>
-
-        <p>
-            אנו באמירפאה מכבדים את פרטיות המשתמשים באתר ומתחייבים לשמור על המידע האישי הנמסר לנו.
-        </p>
-
-        <h2>איסוף מידע</h2>
-        <p>
-            האתר אוסף מידע רק כאשר המשתמש בוחר להשאיר פרטים בטופס יצירת קשר, כגון שם, טלפון או כתובת דוא"ל.
-        </p>
-
-        <h2>שימוש במידע</h2>
-        <p>
-            המידע שנמסר ישמש לצורך יצירת קשר עם הפונה בלבד, מתן שירות ותיאום תורים.
-        </p>
-
-        <h2>שמירת מידע</h2>
-        <p>
-            אנו נוקטים באמצעים סבירים לשמירה על המידע האישי, ולא נעביר אותו לצד שלישי ללא הסכמה, למעט אם נדרש על פי חוק.
-        </p>
-
-        <h2>יצירת קשר</h2>
-        <p>
-            לכל שאלה בנושא פרטיות ניתן ליצור קשר בטלפון:
-            <a href="tel:0528667909">052-8667909</a>
-        </p>
-    </section>
-</main>
-
-<footer class="site-footer">
-    <div class="footer-container">
-        <div class="footer-grid">
-            <div class="footer-col">
-                <h3>אמירפאה</h3>
-                <p>מרפאה וטרינרית במרחביה ועמק יזרעאל.</p>
+                <div class="footer-col contact-col">
+                    <h3>פרטי התקשרות</h3>
+                    <p>
+                        <i class="fa-solid fa-location-dot" aria-hidden="true"></i> כתובת:
+                        <a href="https://waze.com/ul?q=מרחביה" target="_blank" class="footer-waze-link">
+                            מרחביה (ניווט ב-Waze <i class="fa-brands fa-waze" aria-hidden="true"></i>)
+                        </a>
+                    </p>
+                    <p><i class="fa-solid fa-phone" aria-hidden="true"></i> טלפון: <a href="tel:0528667909">052-8667909</a></p>
+                    <p><i class="fa-solid fa-envelope" aria-hidden="true"></i> מייל: <a href="mailto:halperin.vet@gmail.com">halperin.vet@gmail.com</a></p>
+                    <p><i class="fa-solid fa-clock" aria-hidden="true"></i> שעות: משתנות לפי ימים – ראו פירוט בשאלות נפוצות</p>
+                </div>
             </div>
 
-            <div class="footer-col">
-                <h3>קישורים</h3>
-                <ul>
-                    <li><a href="accessibility.html">הצהרת נגישות</a></li>
-                    <li><a href="privacy.html">מדיניות פרטיות</a></li>
-                </ul>
-            </div>
-
-            <div class="footer-col">
-                <h3>יצירת קשר</h3>
-                <p>טלפון: 052-8667909</p>
-                <p>מייל: halperin.vet@gmail.com</p>
+            <div class="footer-bottom">
+                <p>&copy; 2026 כל הזכויות שמורות לאמירפאה – ד"ר אמיר הלפרין</p>
+                <p>עוצב ונבנה על ידי <a href="mailto:6949558@gmail.com" class="designer-link">חן יובל סרוסי</a></p>
             </div>
         </div>
-    </div>
-</footer>
+    </footer>
 
-<script>
-document.addEventListener('DOMContentLoaded', () => {
-    const menuToggle = document.querySelector('.mobile-menu-toggle');
-    const mobileMenu = document.querySelector('.mobile-menu-dropdown');
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const menuToggle = document.querySelector('.mobile-menu-toggle');
+            const mobileMenu = document.querySelector('.mobile-menu-dropdown');
 
-    if (menuToggle && mobileMenu) {
-        menuToggle.addEventListener('click', () => {
-            mobileMenu.classList.toggle('active');
+            if (menuToggle && mobileMenu) {
+                menuToggle.addEventListener('click', () => {
+                    mobileMenu.classList.toggle('active');
 
-            if (mobileMenu.classList.contains('active')) {
-                menuToggle.textContent = 'סגור ✕';
-            } else {
-                menuToggle.textContent = 'תפריט ☰';
+                    if (mobileMenu.classList.contains('active')) {
+                        menuToggle.textContent = 'סגור ✕';
+                        menuToggle.setAttribute('aria-label', 'סגור תפריט');
+                    } else {
+                        menuToggle.textContent = 'תפריט ☰';
+                        menuToggle.setAttribute('aria-label', 'פתח תפריט');
+                    }
+                });
             }
         });
-    }
-});
-</script>
+    </script>
 
 </body>
 </html>
