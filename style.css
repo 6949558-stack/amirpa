@@ -319,6 +319,59 @@ a {
 }
 
 /* ==========================================================================
+   TESTIMONIALS (חוות דעת)
+   ========================================================================== */
+.testimonials-section {
+    padding: 100px 20px;
+    background-color: var(--bg-light);
+}
+
+.testimonials-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.testimonial-card {
+    background: var(--white);
+    padding: 30px;
+    border-radius: 12px;
+    border: 1px solid #eef2f5;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.02);
+}
+
+.test-stars {
+    color: var(--secondary-color);
+    margin-bottom: 15px;
+    display: flex;
+    gap: 4px;
+}
+
+.test-text {
+    font-size: 15.5px;
+    color: #4a4a4a;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.test-author {
+    display: flex;
+    flex-direction: column;
+}
+
+.test-author strong {
+    color: var(--primary-color);
+    font-size: 16px;
+}
+
+.test-author span {
+    color: #888;
+    font-size: 13px;
+}
+
+/* ==========================================================================
    FAQ
    ========================================================================== */
 .faq-section {
@@ -375,8 +428,7 @@ a {
     padding: 100px 20px;
 }
 
-.contact-section::before {
-    content: '';
+.contact-overlay {
     position: absolute;
     top: 0; left: 0; right: 0; bottom: 0;
     background: rgba(1, 26, 75, 0.65);
