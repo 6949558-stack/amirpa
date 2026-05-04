@@ -1,8 +1,8 @@
 /* ==========================================================================
-   RESET & GLOBAL VARIABLES
+   RESET & VARIABLES
    ========================================================================== */
 :root {
-    --primary-color: #011a4b; /* תיקון 10: תחילת וסיום האתר בצבע זה */
+    --primary-color: #011a4b; /* צבע זהה לפתיחה ולסיום האתר */
     --secondary-color: #ff6600;
     --text-color: #333333;
     --bg-light: #f9fbfd;
@@ -37,7 +37,7 @@ a {
 }
 
 /* ==========================================================================
-   TOP BAR & HEADER
+   TOP INFO BAR (התחלת האתר)
    ========================================================================== */
 .top-info-bar {
     background-color: var(--primary-color);
@@ -61,7 +61,6 @@ a {
     display: flex;
     align-items: center;
     gap: 15px;
-    flex-wrap: wrap;
 }
 
 .info-item i, .info-link i {
@@ -79,6 +78,9 @@ a {
     background-color: #1ebd59;
 }
 
+/* ==========================================================================
+   HEADER
+   ========================================================================== */
 .main-header {
     background-color: var(--white);
     box-shadow: 0 4px 12px rgba(0,0,0,0.05);
@@ -107,11 +109,6 @@ a {
     width: auto;
 }
 
-.logo-text {
-    display: flex;
-    flex-direction: column;
-}
-
 .brand-name {
     font-size: 24px;
     font-weight: 800;
@@ -122,7 +119,6 @@ a {
     font-size: 13px;
     color: var(--secondary-color);
     font-weight: 600;
-    margin-top: -3px;
 }
 
 .nav-links {
@@ -134,13 +130,10 @@ a {
     font-size: 16px;
     font-weight: 600;
     color: var(--primary-color);
-    padding: 5px 0;
-    border-bottom: 2px solid transparent;
 }
 
 .nav-item:hover, .nav-item.active {
     color: var(--secondary-color);
-    border-bottom-color: var(--secondary-color);
 }
 
 .btn-booking-nav {
@@ -149,9 +142,6 @@ a {
     padding: 10px 20px;
     border-radius: 25px;
     font-weight: 700;
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
     box-shadow: 0 4px 10px rgba(255, 102, 0, 0.3);
 }
 
@@ -176,7 +166,7 @@ a {
 .hero-overlay {
     position: absolute;
     top: 0; left: 0; right: 0; bottom: 0;
-    background: rgba(1, 26, 75, 0.5);
+    background: rgba(1, 26, 75, 0.55);
     z-index: 1;
 }
 
@@ -187,22 +177,6 @@ a {
     padding: 0 20px;
     position: relative;
     z-index: 2;
-}
-
-.hero-content-box {
-    max-width: 650px;
-}
-
-.hero-badge {
-    background-color: var(--secondary-color);
-    padding: 6px 16px;
-    border-radius: 30px;
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    font-weight: 600;
-    font-size: 14px;
-    margin-bottom: 20px;
 }
 
 .hero-title {
@@ -216,7 +190,6 @@ a {
     font-size: 24px;
     font-weight: 700;
     margin-bottom: 25px;
-    opacity: 0.95;
     color: #ffd6b3;
 }
 
@@ -236,7 +209,6 @@ a {
     padding: 14px 28px;
     border-radius: 30px;
     font-weight: 700;
-    font-size: 16px;
     display: inline-flex;
     align-items: center;
     gap: 8px;
@@ -247,23 +219,13 @@ a {
     color: var(--white);
 }
 
-.btn-booking:hover {
-    background-color: #e65c00;
-    transform: translateY(-2px);
-}
-
 .btn-call {
     background-color: var(--white);
     color: var(--primary-color);
 }
 
-.btn-call:hover {
-    background-color: #f1f1f1;
-    transform: translateY(-2px);
-}
-
 /* ==========================================================================
-   SERVICES & ABOUT
+   SERVICES
    ========================================================================== */
 .services-section {
     padding: 100px 20px;
@@ -276,27 +238,16 @@ a {
     margin-bottom: 60px;
 }
 
-.section-subtitle {
-    color: var(--secondary-color);
-    font-weight: 700;
-    font-size: 14px;
-}
-
 .section-title {
     color: var(--primary-color);
     font-size: 34px;
     font-weight: 800;
-    margin: 10px 0 15px;
-}
-
-.section-desc {
-    color: #666666;
-    font-size: 16px;
+    margin: 10px 0;
 }
 
 .services-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 30px;
 }
 
@@ -315,18 +266,6 @@ a {
     margin-bottom: 20px;
 }
 
-.service-card h3 {
-    color: var(--primary-color);
-    font-size: 20px;
-    margin-bottom: 15px;
-    font-weight: 700;
-}
-
-.service-card p {
-    color: #666;
-    font-size: 15px;
-}
-
 .active-card {
     border-color: var(--secondary-color);
 }
@@ -337,11 +276,13 @@ a {
     background-color: var(--secondary-color);
     color: var(--white);
     font-size: 11px;
-    font-weight: bold;
     padding: 3px 10px;
     border-radius: 12px;
 }
 
+/* ==========================================================================
+   ABOUT
+   ========================================================================== */
 .about-section {
     background-color: var(--white);
     padding: 100px 20px;
@@ -359,24 +300,17 @@ a {
     flex: 1;
 }
 
-.about-tag {
-    color: var(--secondary-color);
-    font-weight: 700;
-    font-size: 14px;
-}
-
 .about-text-content h2 {
     font-size: 36px;
     color: var(--primary-color);
     font-weight: 800;
-    margin: 8px 0 15px;
 }
 
 .about-decorator {
     width: 60px;
     height: 4px;
     background-color: var(--secondary-color);
-    margin-bottom: 25px;
+    margin: 15px 0 25px;
     border-radius: 2px;
 }
 
@@ -384,96 +318,87 @@ a {
     font-size: 18px;
     font-weight: 600;
     color: var(--primary-color);
-    margin-bottom: 20px;
-}
-
-.about-body {
-    color: #555555;
     margin-bottom: 15px;
-    font-size: 16px;
 }
 
-.about-highlights {
-    margin-top: 30px;
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-}
-
-.highlight-item {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    font-weight: 600;
-    color: var(--primary-color);
-}
-
-.highlight-item i {
-    color: #28a745;
-}
-
-.about-image-column {
-    flex: 1;
-    display: flex;
-    justify-content: center;
-}
-
-.about-doctor-img {
-    width: 100%;
-    max-width: 450px;
-    height: auto;
+.about-image-column img {
+    max-width: 100%;
     border-radius: 16px;
     box-shadow: 0 15px 35px rgba(0,0,0,0.08);
 }
 
-.pets-image-section {
-    padding: 60px 20px;
-    background-color: var(--bg-light);
-}
-
-.pets-image-wrapper {
-    max-width: 1200px;
-    margin: 0 auto;
-    position: relative;
-    border-radius: 16px;
-    overflow: hidden;
-    height: 350px;
-}
-
-.pets-main-img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-.pets-img-overlay {
-    position: absolute;
-    bottom: 0; right: 0; left: 0;
-    background: linear-gradient(to top, rgba(1,26,75,0.9), transparent);
-    padding: 40px;
-    color: var(--white);
-}
-
-.pets-img-overlay h3 {
-    font-size: 28px;
-    font-weight: 800;
-    margin-bottom: 8px;
-}
-
 /* ==========================================================================
-   CONTACT SECTION WITH ORANGEBANNER (תיקון 11 ו-12)
+   FAQ
    ========================================================================== */
-.contact-section {
-    background: url('orangebanner.png') no-repeat center center/cover;
-    position: relative;
+.faq-section {
     padding: 100px 20px;
 }
 
-.contact-section::before {
-    content: '';
+.faq-container {
+    max-width: 850px;
+    margin: 0 auto;
+}
+
+.faq-items-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin-top: 40px;
+}
+
+.faq-item {
+    background: var(--white);
+    border: 1px solid #e1e8f0;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.faq-question {
+    width: 100%;
+    padding: 22px 30px;
+    background: none;
+    border: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: var(--font-main);
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--primary-color);
+    cursor: pointer;
+    text-align: right;
+}
+
+.faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    padding: 0 30px;
+    transition: all 0.3s ease;
+    color: #555;
+}
+
+.faq-item.active .faq-answer {
+    max-height: 500px;
+    padding-bottom: 22px;
+}
+
+/* ==========================================================================
+   CONTACT SECTION (עם באנר orangebanner וכיסוי רקע)
+   ========================================================================== */
+.contact-section {
+    position: relative;
+    background: url('orangebanner.png') no-repeat center center/cover;
+    background-attachment: scroll;
+    padding: 100px 20px;
+    min-height: 600px;
+    display: flex;
+    align-items: center;
+}
+
+.contact-overlay {
     position: absolute;
     top: 0; left: 0; right: 0; bottom: 0;
-    background: rgba(1, 26, 75, 0.65); /* שכבת כהות שקופה מוגברת לקריאות מושלמת */
+    background: rgba(1, 26, 75, 0.75); /* שכבת כיסוי כהה לשיפור הניגודיות */
     z-index: 1;
 }
 
@@ -483,11 +408,12 @@ a {
     display: flex;
     gap: 60px;
     position: relative;
-    z-index: 2;
+    z-index: 2; /* מעל שכבת ה-Overlay */
     color: var(--white);
+    width: 100%;
 }
 
-.contact-info-col {
+.contact-info-col, .contact-form-col {
     flex: 1;
 }
 
@@ -500,7 +426,7 @@ a {
 .contact-info-col h2 {
     font-size: 40px;
     font-weight: 900;
-    margin: 10px 0 15px;
+    margin: 10px 0;
 }
 
 .contact-lead {
@@ -518,319 +444,4 @@ a {
 .contact-detail-item {
     display: flex;
     align-items: flex-start;
-    gap: 20px;
-}
-
-.detail-icon {
-    background-color: var(--white);
-    color: var(--primary-color);
-    width: 45px;
-    height: 45px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 18px;
-    flex-shrink: 0;
-}
-
-.detail-text {
-    display: flex;
-    flex-direction: column;
-}
-
-.detail-text strong {
-    font-size: 16px;
-    margin-bottom: 4px;
-}
-
-.detail-text a, .detail-text span {
-    font-size: 18px;
-    font-weight: 600;
-    opacity: 0.95;
-}
-
-.detail-text a:hover {
-    color: var(--secondary-color);
-}
-
-.waze-link {
-    text-decoration: underline;
-}
-
-.contact-form-col {
-    flex: 1;
-}
-
-.appointment-form {
-    background-color: var(--white);
-    padding: 40px;
-    border-radius: 16px;
-    box-shadow: 0 15px 40px rgba(0,0,0,0.2);
-}
-
-.appointment-form h3 {
-    color: var(--primary-color);
-    font-size: 24px;
-    font-weight: 800;
-    margin-bottom: 25px;
-}
-
-.form-group-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 20px;
-}
-
-.form-group {
-    margin-bottom: 20px;
-}
-
-.form-group label {
-    display: block;
-    color: var(--primary-color);
-    font-weight: 700;
-    margin-bottom: 8px;
-    font-size: 14px;
-}
-
-.form-group input, .form-group textarea {
-    width: 100%;
-    padding: 13px 18px;
-    border: 1px solid #e1e8f0;
-    border-radius: 8px;
-    font-family: var(--font-main);
-    font-size: 15px;
-    background-color: #fdfdfd;
-    color: var(--text-color);
-    transition: var(--transition);
-}
-
-.form-group input:focus, .form-group textarea:focus {
-    outline: none;
-    border-color: var(--secondary-color);
-    background-color: var(--white);
-    box-shadow: 0 0 8px rgba(255,102,0,0.1);
-}
-
-.btn-form-submit {
-    width: 100%;
-    background-color: var(--secondary-color);
-    color: var(--white);
-    border: none;
-    padding: 15px;
-    border-radius: 8px;
-    font-weight: 800;
-    font-size: 16px;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
-    transition: var(--transition);
-}
-
-.btn-form-submit:hover {
-    background-color: #e65c00;
-    transform: translateY(-2px);
-}
-
-/* ==========================================================================
-   FOOTER (תיקון 10: תחילת וסיום בצבע זהה)
-   ========================================================================== */
-.site-footer {
-    background-color: var(--primary-color);
-    color: var(--white);
-    padding: 70px 20px 0;
-}
-
-.footer-container {
-    max-width: 1200px;
-    margin: 0 auto;
-    display: grid;
-    grid-template-columns: 2fr 1fr 1fr;
-    gap: 50px;
-    padding-bottom: 50px;
-}
-
-.footer-logo {
-    display: flex;
-    flex-direction: column;
-    margin-bottom: 20px;
-}
-
-.footer-brand {
-    font-size: 28px;
-    font-weight: 800;
-    color: var(--white);
-}
-
-.footer-sub {
-    font-size: 13px;
-    color: var(--secondary-color);
-    font-weight: 600;
-}
-
-.footer-col p {
-    font-size: 15px;
-    opacity: 0.85;
-    line-height: 1.7;
-}
-
-.footer-col h4 {
-    font-size: 18px;
-    font-weight: 700;
-    margin-bottom: 25px;
-    color: var(--white);
-    position: relative;
-    display: inline-block;
-}
-
-.footer-col h4::after {
-    content: '';
-    position: absolute;
-    bottom: -8px; right: 0;
-    width: 35px;
-    height: 2px;
-    background-color: var(--secondary-color);
-}
-
-.footer-col ul {
-    list-style: none;
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-}
-
-.footer-col ul li a {
-    font-size: 15px;
-    opacity: 0.85;
-    display: flex;
-    align-items: center;
-    gap: 8px;
-}
-
-.footer-col ul li a:hover {
-    color: var(--secondary-color);
-    opacity: 1;
-}
-
-.footer-bottom {
-    border-top: 1px solid rgba(255,255,255,0.1);
-    padding: 25px 20px;
-    text-align: center;
-}
-
-.footer-bottom-container {
-    max-width: 1200px;
-    margin: 0 auto;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 15px;
-    font-size: 14px;
-    opacity: 0.85;
-}
-
-.developer-credit {
-    font-weight: 700;
-    text-decoration: underline;
-}
-
-.developer-credit:hover {
-    color: var(--secondary-color);
-}
-
-/* ==========================================================================
-   תיקון 2: כפתור וואטסאפ מרחף בצד שמאל (Left)
-   ========================================================================== */
-.whatsapp-fixed-btn {
-    position: fixed;
-    bottom: 30px;
-    left: 30px; /* תיקון מצד שמאל */
-    background-color: #25d366;
-    color: var(--white);
-    width: 60px;
-    height: 60px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 30px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.25);
-    z-index: 999;
-}
-
-.whatsapp-fixed-btn:hover {
-    background-color: #1ebd59;
-    transform: scale(1.08);
-}
-
-/* ==========================================================================
-   תיקון 12: התאמה מושלמת למובייל, טאבלט, טלפון, ודפדפנים שונים
-   ========================================================================== */
-@media (max-width: 1024px) {
-    .about-container, .contact-container {
-        flex-direction: column;
-        gap: 40px;
-    }
-    .footer-container {
-        grid-template-columns: 1fr 1fr;
-    }
-    .hero-title {
-        font-size: 38px;
-    }
-}
-
-@media (max-width: 768px) {
-    .header-container {
-        flex-direction: column;
-        gap: 15px;
-        text-align: center;
-    }
-    .nav-links {
-        justify-content: center;
-        flex-wrap: wrap;
-        gap: 12px;
-    }
-    .form-group-grid {
-        grid-template-columns: 1fr;
-        gap: 0;
-    }
-    .footer-container {
-        grid-template-columns: 1fr;
-        gap: 30px;
-    }
-    .footer-bottom-container {
-        flex-direction: column;
-        text-align: center;
-    }
-    .hero-section {
-        padding: 60px 0;
-        min-height: auto;
-    }
-    .hero-title {
-        font-size: 32px;
-    }
-    .hero-subtitle {
-        font-size: 20px;
-    }
-}
-
-@media (max-width: 480px) {
-    .top-info-container {
-        flex-direction: column;
-        text-align: center;
-        gap: 6px;
-    }
-    .top-info-right, .top-info-left {
-        justify-content: center;
-    }
-    .hero-title {
-        font-size: 28px;
-    }
-    .appointment-form {
-        padding: 25px 20px;
-    }
-}
+    gap
