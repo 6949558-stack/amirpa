@@ -1,5 +1,5 @@
 /* ==========================================================================
-   CSS VARIABLES & DESIGN SYSTEM (Accessibility First)
+   1. CSS VARIABLES & DESIGN SYSTEM (Accessibility First)
    ========================================================================== */
 :root {
     --primary-color: #001a4d;      /* כחול כהה נקי ויוקרתי */
@@ -23,7 +23,7 @@
 }
 
 /* ==========================================================================
-   RESET & BASE STYLES
+   2. RESET & BASE STYLES
    ========================================================================== */
 * {
     margin: 0;
@@ -85,7 +85,7 @@ img {
 }
 
 /* ==========================================================================
-   TOP INFO BAR
+   3. TOP INFO BAR
    ========================================================================== */
 .top-info-bar {
     background-color: var(--primary-color);
@@ -120,7 +120,6 @@ img {
     color: var(--accent-color);
 }
 
-/* Waze Link in Top Bar */
 .top-waze-link {
     display: inline-flex;
     align-items: center;
@@ -161,7 +160,7 @@ img {
 }
 
 /* ==========================================================================
-   MAIN HEADER & NAVIGATION
+   4. MAIN HEADER & NAVIGATION
    ========================================================================== */
 .main-header {
     background-color: var(--bg-white);
@@ -183,7 +182,7 @@ img {
 
 .logo-area {
     display: flex;
-    align-align: center;
+    align-items: center;
 }
 
 .logo-link {
@@ -278,7 +277,7 @@ img {
 }
 
 /* ==========================================================================
-   HERO SECTION
+   5. HERO SECTION
    ========================================================================== */
 .hero-section {
     background-image: url('banner.png');
@@ -402,7 +401,7 @@ img {
 }
 
 /* ==========================================================================
-   ABOUT SECTION
+   6. ABOUT SECTION
    ========================================================================== */
 .about-section {
     padding: 100px 0;
@@ -493,6 +492,7 @@ img {
 
 .about-image-wrapper {
     position: relative;
+    width: 100%;
 }
 
 .about-doctor-img {
@@ -505,7 +505,7 @@ img {
 }
 
 /* ==========================================================================
-   SERVICES SECTION
+   7. SERVICES SECTION
    ========================================================================== */
 .services-section {
     padding: 100px 0;
@@ -606,7 +606,7 @@ img {
 }
 
 /* ==========================================================================
-   TESTIMONIALS SECTION (With Slider)
+   8. TESTIMONIALS SECTION (With Slider)
    ========================================================================== */
 .testimonials-section {
     padding: 100px 0;
@@ -739,7 +739,7 @@ img {
 }
 
 /* ==========================================================================
-   FAQ & CONTACT SECTION (Combined & Height Synced)
+   9. FAQ & CONTACT SECTION
    ========================================================================== */
 .faq-contact-section {
     background-color: var(--bg-light);
@@ -818,10 +818,9 @@ img {
 
 .faq-item.active .faq-answer {
     padding-bottom: 24px;
-    max-height: 1000px; /* תמיכה בטקסטים ארוכים מבלי להיחתך */
+    max-height: 1000px;
 }
 
-/* Contact Form Box (Enhanced Presence) */
 .contact-form-box {
     background-color: var(--bg-white);
     padding: 52px 46px;
@@ -887,7 +886,6 @@ img {
     box-shadow: 0 0 0 4px rgba(255, 102, 0, 0.06);
 }
 
-/* נגישות משופרת לשדות קלט בפוקוס מקלדת */
 .form-body input:focus-visible, 
 .form-body select:focus-visible, 
 .form-body textarea:focus-visible {
@@ -968,7 +966,7 @@ img {
 }
 
 /* ==========================================================================
-   FOOTER & FLOATING WHATSAPP
+   10. FOOTER & FLOATING WHATSAPP
    ========================================================================== */
 .floating-whatsapp-btn {
     position: fixed;
@@ -1040,7 +1038,6 @@ img {
     color: var(--hover-color);
 }
 
-/* Waze Link in Footer */
 .footer-waze-link {
     color: var(--accent-color) !important;
     display: inline-flex;
@@ -1087,106 +1084,155 @@ img {
 }
 
 /* ==========================================================================
-   RESPONSIVE DESIGN (All Devices)
+   11. RESPONSIVE DESIGN (Full Sync & Mobile Fixes)
    ========================================================================== */
 @media (max-width: 1024px) {
     .about-container, .combined-container {
-        grid-template-columns: 1fr;
-        gap: 55px;
+        grid-template-columns: 1fr !important;
+        gap: 40px !important;
     }
     .services-grid, .testimonials-grid {
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(2, 1fr) !important;
     }
     .testimonials-slider-container {
-        padding: 0;
+        padding: 0 !important;
     }
     .slider-btn {
-        display: none; 
+        display: none !important; 
     }
     .about-doctor-img {
-        height: 380px;
+        height: 380px !important;
+        width: 100% !important;
+        max-width: 480px !important;
+        margin: 0 auto !important;
     }
 }
 
 @media (max-width: 768px) {
     .bar-container {
-        grid-template-columns: 1fr;
-        gap: 12px;
-        text-align: center;
+        grid-template-columns: 1fr !important;
+        gap: 12px !important;
+        text-align: center !important;
     }
     .top-info-right, .top-info-left {
-        justify-content: center;
-        flex-wrap: wrap;
-        gap: 14px;
+        justify-content: center !important;
+        flex-wrap: wrap !important;
+        gap: 14px !important;
     }
     .header-container {
-        flex-direction: column;
-        gap: 20px;
-        text-align: center;
-        padding: 18px 24px;
+        flex-direction: column !important;
+        gap: 20px !important;
+        text-align: center !important;
+        padding: 18px 24px !important;
+    }
+    .logo-area {
+        justify-content: center !important;
     }
     .site-logo {
-        height: 52px;
+        height: 52px !important;
+        width: auto !important;
     }
     .nav-links {
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 20px;
+        flex-wrap: wrap !important;
+        justify-content: center !important;
+        gap: 20px !important;
     }
     .nav-item {
-        font-size: 15px;
+        font-size: 15px !important;
     }
     .services-grid, .testimonials-grid {
-        grid-template-columns: 1fr;
+        grid-template-columns: 1fr !important;
+        gap: 24px !important;
     }
     .hero-section {
-        min-height: auto;
-        padding: 60px 0;
+        min-height: auto !important;
+        padding: 60px 0 !important;
     }
     .hero-content {
-        text-align: center;
+        text-align: center !important;
     }
     .hero-tag {
-        justify-content: center;
+        justify-content: center !important;
     }
     .hero-title {
-        font-size: 34px;
+        font-size: 32px !important;
+        line-height: 1.25 !important;
     }
     .hero-subtitle {
-        font-size: 20px;
+        font-size: 20px !important;
+    }
+    .hero-text {
+        font-size: 16px !important;
+        margin-bottom: 28px !important;
     }
     .hero-buttons {
-        justify-content: center;
+        justify-content: center !important;
+        gap: 12px !important;
+    }
+    .btn-hero {
+        width: 100% !important;
+        justify-content: center !important;
+        padding: 14px 24px !important;
+    }
+    .about-section, .services-section, .testimonials-section, .faq-contact-section {
+        padding: 60px 0 !important;
+    }
+    .about-title, .section-title, .combined-title {
+        font-size: 28px !important;
+        text-align: center !important;
+        margin-bottom: 20px !important;
+    }
+    .about-lead, .about-desc {
+        text-align: center !important;
+        font-size: 15.5px !important;
+    }
+    .about-features {
+        align-items: center !important;
+    }
+    .about-doctor-img {
+        width: 100% !important;
+        height: 280px !important;
+        object-fit: cover !important;
+        border-radius: 12px !important;
+        margin-top: 10px !important;
     }
     .form-row {
-        grid-template-columns: 1fr;
+        grid-template-columns: 1fr !important;
+        gap: 16px !important;
+    }
+    .form-row.full-width {
+        grid-template-columns: 1fr !important;
     }
     .form-actions {
-        grid-template-columns: 1fr;
-        gap: 12px;
+        grid-template-columns: 1fr !important;
+        gap: 12px !important;
     }
     .contact-form-box {
-        padding: 36px 26px;
+        padding: 32px 20px !important;
+        border-radius: 16px !important;
+    }
+    .contact-form-title {
+        font-size: 28px !important;
+        text-align: center !important;
+    }
+    .contact-form-subtitle {
+        text-align: center !important;
+        margin-bottom: 24px !important;
     }
     .faq-question {
-        font-size: 17px;
-        padding: 20px 24px;
+        font-size: 17px !important;
+        padding: 20px 24px !important;
     }
 }
 
-/* התאמה נוספת לטלפונים ניידים קטנים מאוד */
 @media (max-width: 480px) {
     .hero-title {
-        font-size: 28px;
+        font-size: 26px !important;
     }
     .hero-subtitle {
-        font-size: 18px;
-    }
-    .hero-buttons .btn-hero {
-        width: 100%;
-        justify-content: center;
+        font-size: 18px !important;
     }
     .contact-form-title {
-        font-size: 26px;
+        font-size: 24px !important;
     }
 }
