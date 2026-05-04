@@ -5,12 +5,14 @@
     --primary-color: #001a4d;      /* כחול כהה נקי ויוקרתי */
     --accent-color: #ff6600;       /* כתום מותג חי */
     --hover-color: #e65c00;        /* כתום כהה לריחוף */
-    --text-color: #242424;         /* צבע טקסט ראשי - הכהה לשיפור ניגודיות */
+    --text-color: #242424;         /* צבע טקסט ראשי */
     --bg-light: #f5f8f7;           /* רקע כללי בהיר */
     --bg-white: #ffffff;           /* לבן מלא */
     --gray-light: #f1f3f5;         /* אפור בהיר לרקעים */
     --border-color: #cbd5e1;       /* צבע גבול נקי וברור */
     --success-color: #1e7e34;      /* ירוק מותג מותאם לנגישות */
+    --waze-color: #29b6f6;         /* כחול Waze רשמי */
+    --waze-hover: #0099e5;         /* כחול Waze כהה לריחוף */
     --font-heading: 'Heebo', 'Assistant', sans-serif;
     --font-body: 'Assistant', 'Heebo', sans-serif;
     --max-width: 1240px;
@@ -116,6 +118,19 @@ img {
 
 .top-info-item i {
     color: var(--accent-color);
+}
+
+/* Waze Link in Top Bar */
+.top-waze-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    color: var(--bg-white);
+    transition: var(--transition);
+}
+
+.top-waze-link:hover {
+    color: var(--waze-color);
 }
 
 .top-info-left {
@@ -374,16 +389,16 @@ img {
     box-shadow: 0 6px 20px rgba(255, 102, 0, 0.35);
 }
 
-.btn-outline {
-    background-color: var(--bg-white);
-    color: var(--primary-color);
-    box-shadow: var(--shadow-sm);
+.btn-waze {
+    background-color: var(--waze-color);
+    color: var(--bg-white);
+    box-shadow: 0 4px 14px rgba(41, 182, 246, 0.25);
 }
 
-.btn-outline:hover {
-    background-color: var(--bg-light);
+.btn-waze:hover {
+    background-color: var(--waze-hover);
     transform: translateY(-2px);
-    box-shadow: var(--shadow-md);
+    box-shadow: 0 6px 20px rgba(41, 182, 246, 0.35);
 }
 
 /* ==========================================================================
@@ -873,8 +888,8 @@ img {
 
 .form-actions {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 20px;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
     align-items: center;
     margin-top: 12px;
 }
@@ -887,7 +902,7 @@ img {
     text-align: center;
     font-family: var(--font-heading);
     font-weight: 800;
-    font-size: 16.5px;
+    font-size: 15px;
     border: 1px solid var(--border-color);
     display: inline-flex;
     align-items: center;
@@ -900,6 +915,29 @@ img {
     background-color: var(--border-color);
 }
 
+.contact-waze-btn {
+    background-color: #f0faff;
+    color: #0077b6;
+    padding: 16px;
+    border-radius: 10px;
+    text-align: center;
+    font-family: var(--font-heading);
+    font-weight: 800;
+    font-size: 15px;
+    border: 1px solid #bde0fe;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    transition: var(--transition);
+}
+
+.contact-waze-btn:hover {
+    background-color: #e2f1ff;
+    border-color: var(--waze-color);
+    color: var(--waze-hover);
+}
+
 .btn-submit-form {
     background-color: var(--accent-color);
     color: var(--bg-white);
@@ -908,7 +946,7 @@ img {
     border-radius: 10px;
     font-family: var(--font-heading);
     font-weight: 800;
-    font-size: 17px;
+    font-size: 16px;
     cursor: pointer;
     box-shadow: 0 4px 14px rgba(255, 102, 0, 0.25);
     transition: var(--transition);
@@ -991,6 +1029,18 @@ img {
 
 .footer-col a:hover {
     color: var(--hover-color);
+}
+
+/* Waze Link in Footer */
+.footer-waze-link {
+    color: var(--accent-color) !important;
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.footer-waze-link:hover {
+    color: var(--hover-color) !important;
 }
 
 .footer-links-list {
@@ -1099,8 +1149,12 @@ img {
     .hero-buttons {
         justify-content: center;
     }
-    .form-row, .form-actions {
+    .form-row {
         grid-template-columns: 1fr;
+    }
+    .form-actions {
+        grid-template-columns: 1fr;
+        gap: 12px;
     }
     .contact-form-box {
         padding: 36px 26px;
