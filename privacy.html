@@ -4,10 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>מדיניות פרטיות | אמירפאה</title>
-    <meta name="description" content="מדיניות פרטיות לאתר אמירפאה – מרפאה וטרינרית במרחביה ועמק יזרעאל.">
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Assistant:wght@300;400;600;700;800&family=Heebo:wght@300;400;500;700;800;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
@@ -59,16 +56,6 @@
             font-weight: 800;
         }
 
-        .legal-note {
-            margin-top: 28px;
-            padding: 18px 20px;
-            background: #f8fafc;
-            border: 1px solid var(--border-color);
-            border-radius: 14px;
-            color: var(--primary-color);
-            font-weight: 700;
-        }
-
         @media (max-width: 768px) {
             .legal-page {
                 padding: 44px 14px 90px;
@@ -96,110 +83,107 @@
 
 <body>
 
-    <!-- HEADER זהה לאתר -->
-    <header class="main-header">
-        <div class="header-container">
-            <div class="logo-area">
-                <a href="index.html#home" class="logo-link">
-                    <img src="Logo.png" alt="לוגו אמירפאה" class="site-logo">
-                    <div class="logo-text">
-                        <span class="brand-name">אמירפאה</span>
-                        <span class="brand-sub">מרפאה וטרינרית</span>
-                    </div>
-                </a>
+<header class="main-header">
+    <div class="header-container">
+        <div class="logo-area">
+            <a href="index.html#home" class="logo-link">
+                <img src="Logo.png" class="site-logo">
+                <div class="logo-text">
+                    <span class="brand-name">אמירפאה</span>
+                    <span class="brand-sub">מרפאה וטרינרית</span>
+                </div>
+            </a>
+        </div>
+
+        <button class="mobile-menu-toggle show-only-on-mobile">
+            תפריט ☰
+        </button>
+
+        <nav class="nav-links hide-on-mobile">
+            <a href="index.html#home">דף הבית</a>
+            <a href="index.html#about">אודות</a>
+            <a href="index.html#services">שירותים</a>
+            <a href="index.html#testimonials">המלצות</a>
+            <a href="index.html#faq">שאלות</a>
+            <a href="index.html#contact">צור קשר</a>
+        </nav>
+    </div>
+</header>
+
+<main class="legal-page">
+    <section class="legal-card">
+        <h1>מדיניות פרטיות</h1>
+
+        <p>
+            אנו באמירפאה מכבדים את פרטיות המשתמשים באתר ומתחייבים לשמור על המידע האישי הנמסר לנו.
+        </p>
+
+        <h2>איסוף מידע</h2>
+        <p>
+            האתר אוסף מידע רק כאשר המשתמש בוחר להשאיר פרטים בטופס יצירת קשר, כגון שם, טלפון או כתובת דוא"ל.
+        </p>
+
+        <h2>שימוש במידע</h2>
+        <p>
+            המידע שנמסר ישמש לצורך יצירת קשר עם הפונה בלבד, מתן שירות ותיאום תורים.
+        </p>
+
+        <h2>שמירת מידע</h2>
+        <p>
+            אנו נוקטים באמצעים סבירים לשמירה על המידע האישי, ולא נעביר אותו לצד שלישי ללא הסכמה, למעט אם נדרש על פי חוק.
+        </p>
+
+        <h2>יצירת קשר</h2>
+        <p>
+            לכל שאלה בנושא פרטיות ניתן ליצור קשר בטלפון:
+            <a href="tel:0528667909">052-8667909</a>
+        </p>
+    </section>
+</main>
+
+<footer class="site-footer">
+    <div class="footer-container">
+        <div class="footer-grid">
+            <div class="footer-col">
+                <h3>אמירפאה</h3>
+                <p>מרפאה וטרינרית במרחביה ועמק יזרעאל.</p>
             </div>
 
-            <button class="mobile-menu-toggle show-only-on-mobile">
-                תפריט ☰
-            </button>
+            <div class="footer-col">
+                <h3>קישורים</h3>
+                <ul>
+                    <li><a href="accessibility.html">הצהרת נגישות</a></li>
+                    <li><a href="privacy.html">מדיניות פרטיות</a></li>
+                </ul>
+            </div>
 
-            <nav class="nav-links hide-on-mobile">
-                <a href="index.html#home">דף הבית</a>
-                <a href="index.html#about">אודות</a>
-                <a href="index.html#services">שירותים</a>
-                <a href="index.html#testimonials">המלצות</a>
-                <a href="index.html#faq">שאלות</a>
-                <a href="index.html#contact">צור קשר</a>
-            </nav>
-        </div>
-    </header>
-
-    <!-- תוכן -->
-    <main class="legal-page">
-        <section class="legal-card">
-            <h1>מדיניות פרטיות</h1>
-
-            <p>
-                אתר אמירפאה מכבד את פרטיות המשתמשים ופועל לשמירה על המידע הנמסר בעת השימוש באתר.
-            </p>
-
-            <h2>איסוף מידע</h2>
-            <p>
-                האתר אוסף מידע רק כאשר המשתמש בוחר למסור אותו, למשל בעת מילוי טופס יצירת קשר.
-            </p>
-
-            <h2>סוגי מידע שנאספים</h2>
-            <ul>
-                <li>שם מלא</li>
-                <li>מספר טלפון</li>
-                <li>כתובת דואר אלקטרוני (אם נמסרה)</li>
-                <li>תוכן ההודעה</li>
-            </ul>
-
-            <h2>שימוש במידע</h2>
-            <p>
-                המידע ישמש לצורך יצירת קשר בלבד, מתן מענה לפניות ושיפור השירות.
-                המידע לא יימכר ולא יועבר לצדדים שלישיים.
-            </p>
-
-            <h2>אבטחת מידע</h2>
-            <p>
-                אנו עושים מאמצים לשמור על המידע באמצעים סבירים, אך אין אפשרות להבטיח אבטחה מלאה.
-            </p>
-
-            <h2>יצירת קשר</h2>
-            <p>
-                בכל שאלה ניתן לפנות אלינו:
-            </p>
-
-            <ul>
-                <li>טלפון: <a href="tel:0528667909">052-8667909</a></li>
-                <li>מייל: <a href="mailto:halperin.vet@gmail.com">halperin.vet@gmail.com</a></li>
-            </ul>
-
-            <p class="legal-note">
-                השימוש באתר מהווה הסכמה למדיניות זו.
-            </p>
-        </section>
-    </main>
-
-    <!-- FOOTER -->
-    <footer class="site-footer">
-        <div class="footer-container">
-            <div class="footer-grid">
-
-                <div class="footer-col">
-                    <h3>אמירפאה</h3>
-                    <p>מרפאה וטרינרית מתקדמת בעמק יזרעאל.</p>
-                </div>
-
-                <div class="footer-col">
-                    <h3>קישורים</h3>
-                    <ul>
-                        <li><a href="accessibility.html">הצהרת נגישות</a></li>
-                        <li><a href="privacy.html">מדיניות פרטיות</a></li>
-                    </ul>
-                </div>
-
-                <div class="footer-col">
-                    <h3>צור קשר</h3>
-                    <p><a href="tel:0528667909">052-8667909</a></p>
-                    <p><a href="mailto:halperin.vet@gmail.com">halperin.vet@gmail.com</a></p>
-                </div>
-
+            <div class="footer-col">
+                <h3>יצירת קשר</h3>
+                <p>טלפון: 052-8667909</p>
+                <p>מייל: halperin.vet@gmail.com</p>
             </div>
         </div>
-    </footer>
+    </div>
+</footer>
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+    const menuToggle = document.querySelector('.mobile-menu-toggle');
+    const mobileMenu = document.querySelector('.mobile-menu-dropdown');
+
+    if (menuToggle && mobileMenu) {
+        menuToggle.addEventListener('click', () => {
+            mobileMenu.classList.toggle('active');
+
+            if (mobileMenu.classList.contains('active')) {
+                menuToggle.textContent = 'סגור ✕';
+            } else {
+                menuToggle.textContent = 'תפריט ☰';
+            }
+        });
+    }
+});
+</script>
 
 </body>
 </html>
