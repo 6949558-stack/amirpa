@@ -183,7 +183,7 @@ img {
 
 .logo-area {
     display: flex;
-    align-items: center;
+    align-align: center;
 }
 
 .logo-link {
@@ -497,7 +497,8 @@ img {
 
 .about-doctor-img {
     width: 100%;
-    height: 480px;
+    height: auto;
+    max-height: 480px;
     object-fit: cover;
     border-radius: 16px;
     box-shadow: var(--shadow-lg);
@@ -817,7 +818,7 @@ img {
 
 .faq-item.active .faq-answer {
     padding-bottom: 24px;
-    max-height: 220px;
+    max-height: 1000px; /* תמיכה בטקסטים ארוכים מבלי להיחתך */
 }
 
 /* Contact Form Box (Enhanced Presence) */
@@ -884,6 +885,14 @@ img {
     border-color: var(--accent-color);
     background-color: var(--bg-white);
     box-shadow: 0 0 0 4px rgba(255, 102, 0, 0.06);
+}
+
+/* נגישות משופרת לשדות קלט בפוקוס מקלדת */
+.form-body input:focus-visible, 
+.form-body select:focus-visible, 
+.form-body textarea:focus-visible {
+    outline: 3px solid var(--accent-color);
+    outline-offset: 2px;
 }
 
 .form-actions {
@@ -1162,5 +1171,22 @@ img {
     .faq-question {
         font-size: 17px;
         padding: 20px 24px;
+    }
+}
+
+/* התאמה נוספת לטלפונים ניידים קטנים מאוד */
+@media (max-width: 480px) {
+    .hero-title {
+        font-size: 28px;
+    }
+    .hero-subtitle {
+        font-size: 18px;
+    }
+    .hero-buttons .btn-hero {
+        width: 100%;
+        justify-content: center;
+    }
+    .contact-form-title {
+        font-size: 26px;
     }
 }
