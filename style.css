@@ -2,8 +2,8 @@
    RESET & VARIABLES
    ========================================================================== */
 :root {
-    --primary-color: #011a4b; /* צבע זהה לפתיחה ולסיום האתר */
-    --secondary-color: #ff6600;
+    --primary-color: #011a4b; /* כחול כהה - התחלה וסיום האתר */
+    --secondary-color: #ff6600; /* כתום */
     --text-color: #333333;
     --bg-light: #f9fbfd;
     --white: #ffffff;
@@ -37,7 +37,7 @@ a {
 }
 
 /* ==========================================================================
-   TOP INFO BAR (התחלת האתר)
+   TOP INFO BAR
    ========================================================================== */
 .top-info-bar {
     background-color: var(--primary-color);
@@ -95,7 +95,7 @@ a {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 15px 20px;
+    padding: 12px 20px;
 }
 
 .logo-area .logo-link {
@@ -105,14 +105,21 @@ a {
 }
 
 .site-logo {
-    height: 55px;
+    height: 60px;
     width: auto;
+    display: block;
+}
+
+.logo-text {
+    display: flex;
+    flex-direction: column;
 }
 
 .brand-name {
     font-size: 24px;
     font-weight: 800;
     color: var(--primary-color);
+    line-height: 1.1;
 }
 
 .brand-sub {
@@ -143,6 +150,9 @@ a {
     border-radius: 25px;
     font-weight: 700;
     box-shadow: 0 4px 10px rgba(255, 102, 0, 0.3);
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
 }
 
 .btn-booking-nav:hover {
@@ -151,7 +161,7 @@ a {
 }
 
 /* ==========================================================================
-   HERO SECTION
+   HERO SECTION (באנר ראשי)
    ========================================================================== */
 .hero-section {
     position: relative;
@@ -166,7 +176,7 @@ a {
 .hero-overlay {
     position: absolute;
     top: 0; left: 0; right: 0; bottom: 0;
-    background: rgba(1, 26, 75, 0.55);
+    background: rgba(1, 26, 75, 0.4);
     z-index: 1;
 }
 
@@ -179,8 +189,21 @@ a {
     z-index: 2;
 }
 
+.hero-badge {
+    background: rgba(255, 255, 255, 0.15);
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 16px;
+    border-radius: 30px;
+    font-size: 14px;
+    font-weight: 600;
+    backdrop-filter: blur(5px);
+    margin-bottom: 20px;
+}
+
 .hero-title {
-    font-size: 46px;
+    font-size: 48px;
     font-weight: 900;
     line-height: 1.2;
     margin-bottom: 15px;
@@ -194,9 +217,10 @@ a {
 }
 
 .hero-description {
-    font-size: 17px;
+    font-size: 18px;
     margin-bottom: 35px;
-    opacity: 0.9;
+    max-width: 700px;
+    opacity: 0.95;
 }
 
 .hero-actions {
@@ -217,11 +241,23 @@ a {
 .btn-booking {
     background-color: var(--secondary-color);
     color: var(--white);
+    box-shadow: 0 5px 15px rgba(255, 102, 0, 0.35);
+}
+
+.btn-booking:hover {
+    background-color: #e65c00;
+    transform: translateY(-2px);
 }
 
 .btn-call {
     background-color: var(--white);
     color: var(--primary-color);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.btn-call:hover {
+    background-color: #f1f1f1;
+    transform: translateY(-2px);
 }
 
 /* ==========================================================================
@@ -238,11 +274,26 @@ a {
     margin-bottom: 60px;
 }
 
+.section-subtitle {
+    font-size: 14px;
+    font-weight: 800;
+    color: var(--secondary-color);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
 .section-title {
     color: var(--primary-color);
-    font-size: 34px;
+    font-size: 36px;
     font-weight: 800;
     margin: 10px 0;
+}
+
+.section-desc {
+    color: #666;
+    font-size: 17px;
+    max-width: 600px;
+    margin: 0 auto;
 }
 
 .services-grid {
@@ -258,12 +309,25 @@ a {
     border: 1px solid #f0f0f0;
     position: relative;
     box-shadow: 0 10px 30px rgba(0,0,0,0.03);
+    transition: var(--transition);
+}
+
+.service-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.06);
 }
 
 .service-card-icon {
-    font-size: 36px;
+    font-size: 38px;
     color: var(--secondary-color);
     margin-bottom: 20px;
+}
+
+.service-card h3 {
+    font-size: 21px;
+    font-weight: 700;
+    color: var(--primary-color);
+    margin-bottom: 12px;
 }
 
 .active-card {
@@ -278,6 +342,7 @@ a {
     font-size: 11px;
     padding: 3px 10px;
     border-radius: 12px;
+    font-weight: 700;
 }
 
 /* ==========================================================================
@@ -300,10 +365,17 @@ a {
     flex: 1;
 }
 
+.about-tag {
+    color: var(--secondary-color);
+    font-weight: 800;
+    font-size: 14px;
+}
+
 .about-text-content h2 {
-    font-size: 36px;
+    font-size: 38px;
     color: var(--primary-color);
     font-weight: 800;
+    margin: 8px 0;
 }
 
 .about-decorator {
@@ -321,8 +393,20 @@ a {
     margin-bottom: 15px;
 }
 
-.about-image-column img {
+.about-body {
+    color: #555;
+    font-size: 16px;
+}
+
+.about-image-column {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.about-doctor-img {
     max-width: 100%;
+    height: auto;
     border-radius: 16px;
     box-shadow: 0 15px 35px rgba(0,0,0,0.08);
 }
@@ -351,6 +435,7 @@ a {
     border: 1px solid #e1e8f0;
     border-radius: 10px;
     overflow: hidden;
+    transition: var(--transition);
 }
 
 .faq-question {
@@ -369,26 +454,32 @@ a {
     text-align: right;
 }
 
+.faq-icon {
+    transition: var(--transition);
+    color: var(--secondary-color);
+}
+
 .faq-answer {
     max-height: 0;
     overflow: hidden;
     padding: 0 30px;
-    transition: all 0.3s ease;
+    transition: all 0.3s cubic-bezier(0, 1, 0, 1);
     color: #555;
+    font-size: 16px;
 }
 
 .faq-item.active .faq-answer {
     max-height: 500px;
     padding-bottom: 22px;
+    transition: all 0.3s cubic-bezier(1, 0, 1, 0);
 }
 
 /* ==========================================================================
-   CONTACT SECTION (עם באנר orangebanner וכיסוי רקע)
+   CONTACT SECTION (תמונת הרקע מעל באנר orangebanner)
    ========================================================================== */
 .contact-section {
     position: relative;
     background: url('orangebanner.png') no-repeat center center/cover;
-    background-attachment: scroll;
     padding: 100px 20px;
     min-height: 600px;
     display: flex;
@@ -398,7 +489,7 @@ a {
 .contact-overlay {
     position: absolute;
     top: 0; left: 0; right: 0; bottom: 0;
-    background: rgba(1, 26, 75, 0.75); /* שכבת כיסוי כהה לשיפור הניגודיות */
+    background: rgba(1, 26, 75, 0.72); /* כהות לשמירה על קריאות וצבע המותג */
     z-index: 1;
 }
 
@@ -408,9 +499,10 @@ a {
     display: flex;
     gap: 60px;
     position: relative;
-    z-index: 2; /* מעל שכבת ה-Overlay */
+    z-index: 2;
     color: var(--white);
     width: 100%;
+    align-items: center;
 }
 
 .contact-info-col, .contact-form-col {
@@ -424,7 +516,7 @@ a {
 }
 
 .contact-info-col h2 {
-    font-size: 40px;
+    font-size: 42px;
     font-weight: 900;
     margin: 10px 0;
 }
@@ -450,16 +542,18 @@ a {
 .detail-icon {
     background-color: var(--white);
     color: var(--primary-color);
-    width: 45px;
-    height: 45px;
+    width: 50px;
+    height: 50px;
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 18px;
+    font-size: 20px;
+    flex-shrink: 0;
 }
 
 .detail-text strong {
+    display: block;
     font-size: 16px;
     margin-bottom: 4px;
 }
@@ -467,13 +561,14 @@ a {
 .detail-text a {
     font-size: 18px;
     font-weight: 600;
+    color: var(--white);
 }
 
 .appointment-form {
     background-color: var(--white);
     padding: 40px;
     border-radius: 16px;
-    box-shadow: 0 15px 40px rgba(0,0,0,0.25);
+    box-shadow: 0 15px 40px rgba(0,0,0,0.2);
 }
 
 .appointment-form h3 {
@@ -506,6 +601,7 @@ a {
     border: 1px solid #e1e8f0;
     border-radius: 8px;
     font-family: var(--font-main);
+    font-size: 15px;
 }
 
 .btn-form-submit {
@@ -518,6 +614,11 @@ a {
     font-weight: 800;
     cursor: pointer;
     font-size: 16px;
+    transition: var(--transition);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
 }
 
 .btn-form-submit:hover {
@@ -525,10 +626,10 @@ a {
 }
 
 /* ==========================================================================
-   FOOTER (סיום האתר בצבע #011a4b)
+   FOOTER (צבע זהה לחלק העליון ביותר של האתר #011a4b)
    ========================================================================== */
 .site-footer {
-    background-color: var(--primary-color); /* צבע זהה לפתיחת האתר */
+    background-color: var(--primary-color);
     color: var(--white);
     padding: 70px 20px 0;
 }
@@ -563,12 +664,20 @@ a {
     gap: 12px;
 }
 
+.footer-col ul li a {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: rgba(255, 255, 255, 0.8);
+}
+
 .footer-col ul li a:hover {
     color: var(--secondary-color);
+    padding-right: 5px;
 }
 
 .footer-bottom {
-    border-top: 1px solid rgba(255,255,255,0.1);
+    border-top: 1px solid rgba(255,255,255,0.08);
     padding: 25px 20px;
     text-align: center;
 }
@@ -591,15 +700,25 @@ a {
     font-size: 30px;
     box-shadow: 0 4px 15px rgba(0,0,0,0.2);
     z-index: 999;
+    transition: var(--transition);
+}
+
+.whatsapp-fixed-btn:hover {
+    transform: scale(1.08);
+    background-color: #1ebd59;
 }
 
 /* ==========================================================================
-   RESPONSIVENESS (התאמה מלאה למובייל, טאבלט ומחשבים)
+   RESPONSIVENESS (התאמה מושלמת למובייל, טאבלט, טלפונים)
    ========================================================================== */
 @media (max-width: 1024px) {
     .about-container, .contact-container {
         flex-direction: column;
-        gap: 40px;
+        gap: 50px;
+    }
+    .about-image-column {
+        width: 100%;
+        max-width: 500px;
     }
     .footer-container {
         grid-template-columns: 1fr;
@@ -610,16 +729,38 @@ a {
     .header-container {
         flex-direction: column;
         gap: 15px;
+        text-align: center;
+    }
+    .logo-area .logo-link {
+        flex-direction: column;
+        gap: 6px;
     }
     .nav-links {
         justify-content: center;
         flex-wrap: wrap;
+        gap: 12px;
     }
     .form-group-grid {
         grid-template-columns: 1fr;
         gap: 0;
     }
     .hero-title {
+        font-size: 34px;
+    }
+    .hero-subtitle {
+        font-size: 20px;
+    }
+    .contact-info-col h2 {
         font-size: 32px;
+    }
+    .appointment-form {
+        padding: 25px 20px;
+    }
+    .whatsapp-fixed-btn {
+        bottom: 20px;
+        left: 20px;
+        width: 50px;
+        height: 50px;
+        font-size: 26px;
     }
 }
