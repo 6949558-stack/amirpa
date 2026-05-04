@@ -263,9 +263,10 @@ img {
 }
 
 /* ==========================================================================
-   HERO SECTION
+   HERO SECTION עם רקע החתול והכלב
    ========================================================================== */
 .hero-section {
+    /* שימוש בתמונת החתול והכלב לרקע */
     background-image: url('orangebanner.png');
     background-size: cover;
     background-position: center;
