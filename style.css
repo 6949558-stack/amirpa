@@ -2245,3 +2245,38 @@ div[id] {
         font-size: 16px;
     }
 }
+
+
+/* ==== רק וואטסאפ בצד שמאל ==== */
+
+/* מסתיר את כל הכפתורים */
+.floating-buttons a {
+    display: none;
+}
+
+/* משאיר רק וואטסאפ (בהנחה שזה הירוק) */
+.floating-buttons a[href*="wa.me"],
+.floating-buttons a[href*="whatsapp"] {
+    display: flex;
+}
+
+/* מעביר לצד שמאל */
+.floating-buttons {
+    left: 10px;
+    right: auto;
+}
+
+/* התאמה לנייד */
+@media (max-width: 768px) {
+    .floating-buttons {
+        left: 8px;
+        bottom: 60px;
+    }
+
+    .floating-buttons a[href*="wa.me"],
+    .floating-buttons a[href*="whatsapp"] {
+        width: 48px;
+        height: 48px;
+        font-size: 20px;
+    }
+}
