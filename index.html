@@ -22,8 +22,8 @@
                         <i class="fa-solid fa-location-dot" aria-hidden="true"></i> מרחביה (ניווט ב-Waze)
                     </a>
                 </span>
-                <span class="top-info-item">
-                    <i class="fa-solid fa-clock" aria-hidden="true"></i> א'-ה' 09:00-19:00 | יום ו' 09:00-13:00
+                <span class="top-info-item top-hours-short">
+                    <i class="fa-solid fa-clock" aria-hidden="true"></i> שעות פעילות משתנות לפי ימים – פירוט באתר
                 </span>
             </div>
             <div class="top-info-left">
@@ -372,7 +372,16 @@
                             <i class="fa-solid fa-minus faq-icon" aria-hidden="true"></i>
                         </button>
                         <div class="faq-answer">
-                            <p>אנו פתוחים בימים א'-ה' בין 09:00 ל-19:00 ובימי שישי בין 09:00 ל-13:00. במקרי חירום ניתן ליצור קשר טלפוני בכל שעה.</p>
+                            <div class="hours-list">
+                                <p><strong>א׳:</strong> 09:00-12:30, 16:00-19:00</p>
+                                <p><strong>ב׳:</strong> 09:00-12:30, 20:00-22:00</p>
+                                <p><strong>ג׳:</strong> 09:00-12:30</p>
+                                <p><strong>ד׳:</strong> 09:00-12:30, 20:00-22:00</p>
+                                <p><strong>ה׳:</strong> 09:00-12:30, 16:00-19:00</p>
+                                <p><strong>ו׳:</strong> 09:00-12:00</p>
+                                <p><strong>שבת:</strong> סגור</p>
+                            </div>
+                            <p class="emergency-note">במקרי חירום מומלץ להתקשר טלפונית. אם ניתן יהיה לתת מענה, נחזור אליכם בהקדם.</p>
                         </div>
                     </div>
                     <div class="faq-item">
@@ -449,13 +458,25 @@
                             <a href="https://waze.com/ul?q=מרחביה" target="_blank" class="contact-waze-btn" aria-label="ניווט באמצעות Waze">
                                 <i class="fa-brands fa-waze" aria-hidden="true"></i> Waze
                             </a>
-                            <button type="submit" class="btn-submit-form">לקביעת תור מהיר</button>
+                            <button type="submit" class="btn-submit-form">שליחת פנייה</button>
                         </div>
                     </form>
                 </div>
             </div>
         </div>
     </section>
+
+    <div class="mobile-bottom-cta" aria-label="פעולות מהירות">
+        <a href="tel:0528667909" class="mobile-cta-call">
+            <i class="fa-solid fa-phone" aria-hidden="true"></i> התקשר עכשיו
+        </a>
+        <a href="https://wa.me/972528667909" target="_blank" class="mobile-cta-whatsapp">
+            <i class="fa-brands fa-whatsapp" aria-hidden="true"></i> WhatsApp
+        </a>
+        <a href="https://waze.com/ul?q=מרחביה" target="_blank" class="mobile-cta-waze">
+            <i class="fa-brands fa-waze" aria-hidden="true"></i> Waze
+        </a>
+    </div>
 
     <a href="https://wa.me/972528667909" target="_blank" class="floating-whatsapp-btn" aria-label="פנייה מהירה בוואטסאפ">
         <i class="fa-brands fa-whatsapp" aria-hidden="true"></i>
@@ -486,6 +507,7 @@
                     </p>
                     <p><i class="fa-solid fa-phone" aria-hidden="true"></i> טלפון: <a href="tel:0528667909">052-8667909</a></p>
                     <p><i class="fa-solid fa-envelope" aria-hidden="true"></i> מייל: <a href="mailto:halperin.vet@gmail.com">halperin.vet@gmail.com</a></p>
+                    <p><i class="fa-solid fa-clock" aria-hidden="true"></i> שעות: משתנות לפי ימים – ראו פירוט בשאלות נפוצות</p>
                 </div>
             </div>
             <div class="footer-bottom">
@@ -522,6 +544,7 @@
                 });
             }
 
+            // קישורי עוגן עם תיקון גובה ההדר הדביק
             const internalLinks = document.querySelectorAll('a[href^="#"]');
             internalLinks.forEach(link => {
                 link.addEventListener('click', (e) => {
@@ -539,9 +562,13 @@
                 });
             });
 
+            // אקורדיון שאלות נפוצות
             const faqItems = document.querySelectorAll('.faq-item');
             faqItems.forEach(item => {
                 const questionBtn = item.querySelector('.faq-question');
+                const faqIcon = item.querySelector('.faq-icon');
+
+                if (!questionBtn) return;
 
                 questionBtn.addEventListener('click', () => {
                     const isActive = item.classList.contains('active');
@@ -549,23 +576,26 @@
                     faqItems.forEach(otherItem => {
                         if (otherItem !== item && otherItem.classList.contains('active')) {
                             otherItem.classList.remove('active');
-                            otherItem.querySelector('.faq-icon').classList.replace('fa-minus', 'fa-plus');
-                            otherItem.querySelector('.faq-question').setAttribute('aria-expanded', 'false');
+                            const otherIcon = otherItem.querySelector('.faq-icon');
+                            const otherQuestion = otherItem.querySelector('.faq-question');
+                            if (otherIcon) otherIcon.classList.replace('fa-minus', 'fa-plus');
+                            if (otherQuestion) otherQuestion.setAttribute('aria-expanded', 'false');
                         }
                     });
 
                     if (!isActive) {
                         item.classList.add('active');
-                        questionBtn.querySelector('.faq-icon').classList.replace('fa-plus', 'fa-minus');
+                        if (faqIcon) faqIcon.classList.replace('fa-plus', 'fa-minus');
                         questionBtn.setAttribute('aria-expanded', 'true');
                     } else {
                         item.classList.remove('active');
-                        questionBtn.querySelector('.faq-icon').classList.replace('fa-minus', 'fa-plus');
+                        if (faqIcon) faqIcon.classList.replace('fa-minus', 'fa-plus');
                         questionBtn.setAttribute('aria-expanded', 'false');
                     }
                 });
             });
 
+            // סליידר המלצות
             const slides = document.querySelectorAll('.testimonial-slide');
             const prevBtn = document.querySelector('.prev-btn');
             const nextBtn = document.querySelector('.next-btn');
@@ -579,11 +609,13 @@
             }
 
             function nextSlide() {
+                if (!slides.length) return;
                 currentSlide = (currentSlide + 1) % slides.length;
                 showSlide(currentSlide);
             }
 
             function prevSlide() {
+                if (!slides.length) return;
                 currentSlide = (currentSlide - 1 + slides.length) % slides.length;
                 showSlide(currentSlide);
             }
@@ -611,6 +643,7 @@
                 startInterval();
             }
             
+            // תפריט מובייל: טקסט ברור במקום אייקון בלבד
             if (menuToggle && mobileMenu) {
                 menuToggle.addEventListener('click', () => {
                     mobileMenu.classList.toggle('active');
