@@ -18,7 +18,9 @@
         <div class="bar-container">
             <div class="top-info-right">
                 <span class="top-info-item">
-                    <i class="fa-solid fa-location-dot" aria-hidden="true"></i> מרחביה
+                    <a href="https://waze.com/ul?q=מרחביה" target="_blank" class="top-waze-link" aria-label="ניווט למרפאה באמצעות Waze">
+                        <i class="fa-solid fa-location-dot" aria-hidden="true"></i> מרחביה (ניווט ב-Waze)
+                    </a>
                 </span>
                 <span class="top-info-item">
                     <i class="fa-solid fa-clock" aria-hidden="true"></i> א'-ה' 09:00-19:00 | יום ו' 09:00-13:00
@@ -76,8 +78,8 @@
                 </p>
                 <div class="hero-buttons">
                     <a href="#contact" class="btn-hero btn-orange">לקביעת תור מהיר</a>
-                    <a href="tel:0528667909" class="btn-hero btn-outline">
-                        052-8667909 <i class="fa-solid fa-phone" aria-hidden="true"></i>
+                    <a href="https://waze.com/ul?q=מרחביה" target="_blank" class="btn-hero btn-waze">
+                        <i class="fa-brands fa-waze" aria-hidden="true"></i> ניווט ב-Waze
                     </a>
                 </div>
             </div>
@@ -422,7 +424,10 @@
                         </div>
                         <div class="form-actions">
                             <a href="tel:0528667909" class="contact-phone-btn">
-                                052-8667909 <i class="fa-solid fa-phone" aria-hidden="true"></i>
+                                <i class="fa-solid fa-phone" aria-hidden="true"></i> 052-8667909
+                            </a>
+                            <a href="https://waze.com/ul?q=מרחביה" target="_blank" class="contact-waze-btn" aria-label="ניווט באמצעות Waze">
+                                <i class="fa-brands fa-waze" aria-hidden="true"></i> Waze
                             </a>
                             <button type="submit" class="btn-submit-form">לקביעת תור מהיר</button>
                         </div>
@@ -453,7 +458,12 @@
                 </div>
                 <div class="footer-col contact-col">
                     <h3>פרטי התקשרות</h3>
-                    <p><i class="fa-solid fa-location-dot" aria-hidden="true"></i> כתובת: <a href="https://waze.com/ul?q=מרחביה" target="_blank">מרחביה</a></p>
+                    <p>
+                        <i class="fa-solid fa-location-dot" aria-hidden="true"></i> כתובת: 
+                        <a href="https://waze.com/ul?q=מרחביה" target="_blank" class="footer-waze-link">
+                            מרחביה (ניווט ב-Waze <i class="fa-brands fa-waze" aria-hidden="true"></i>)
+                        </a>
+                    </p>
                     <p><i class="fa-solid fa-phone" aria-hidden="true"></i> טלפון: <a href="tel:0528667909">052-8667909</a></p>
                     <p><i class="fa-solid fa-envelope" aria-hidden="true"></i> מייל: <a href="mailto:halperin.vet@gmail.com">halperin.vet@gmail.com</a></p>
                 </div>
@@ -467,7 +477,7 @@
 
     <script>
         document.addEventListener('DOMContentLoaded', () => {
-            // תמיכה בגלילה חלקה עבור קישורי עוגן (Anchor Links)
+            // תמיכה בגלילה חלקה עבור קישורי עוגן
             const internalLinks = document.querySelectorAll('a[href^="#"]');
             internalLinks.forEach(link => {
                 link.addEventListener('click', (e) => {
