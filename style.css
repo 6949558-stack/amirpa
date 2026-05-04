@@ -1806,3 +1806,116 @@ body {
         font-size: 28px;
     }
 }
+/* ==========================================================================
+   CHEN FINAL FIX V2 - MENU TEXT + ACCURATE ANCHORS + IPHONE POLISH
+   ========================================================================== */
+
+html {
+    scroll-padding-top: 126px;
+}
+
+section[id],
+div[id] {
+    scroll-margin-top: 126px;
+}
+
+.mobile-menu-toggle {
+    font-family: var(--font-heading);
+    white-space: nowrap;
+    line-height: 1;
+}
+
+@media (max-width: 900px) {
+    html {
+        scroll-padding-top: 104px;
+    }
+
+    section[id],
+    div[id] {
+        scroll-margin-top: 104px;
+    }
+
+    .mobile-menu-toggle {
+        width: auto !important;
+        min-width: 82px;
+        height: 42px;
+        padding: 0 14px;
+        border-radius: 12px;
+        background-color: var(--accent-color) !important;
+        color: #ffffff !important;
+        border: none !important;
+        font-size: 16px !important;
+        font-weight: 900;
+        box-shadow: 0 4px 12px rgba(255, 102, 0, 0.22);
+    }
+
+    .mobile-menu-toggle:hover,
+    .mobile-menu-toggle:focus {
+        background-color: var(--hover-color) !important;
+    }
+
+    .mobile-menu-toggle i {
+        display: none !important;
+    }
+
+    .mobile-menu-dropdown.active {
+        max-height: 620px;
+    }
+
+    .mobile-nav-links {
+        padding-top: 14px;
+        padding-bottom: 20px;
+    }
+
+    .mobile-nav-item {
+        min-height: 48px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .btn-booking-nav-mobile {
+        min-height: 52px;
+    }
+
+    .hero-section {
+        background-position: center center;
+    }
+
+    #about,
+    #services,
+    #testimonials,
+    #faq,
+    #contact,
+    #faq-contact {
+        scroll-margin-top: 104px;
+    }
+}
+
+@media (max-width: 480px) {
+    html {
+        scroll-padding-top: 96px;
+    }
+
+    section[id],
+    div[id],
+    #about,
+    #services,
+    #testimonials,
+    #faq,
+    #contact,
+    #faq-contact {
+        scroll-margin-top: 96px;
+    }
+
+    .mobile-menu-toggle {
+        min-width: 76px;
+        height: 40px;
+        padding: 0 12px;
+        font-size: 15px !important;
+    }
+
+    .hero-section {
+        min-height: 520px;
+    }
+}
