@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>אמירפאה – ד"ר אמיר הלפרין | וטרינר בעמק יזרעאל ועפולה</title>
     <meta name="description" content="מחפשים וטרינר בעפולה או בעמק יזרעאל? באמירפאה תקבלו טיפול מקצועי לכלבים וחתולים – חיסונים, בדיקות, טיפולי חירום וניתוחים עם יחס אישי וזמינות גבוהה.">
+    
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Assistant:wght@300;400;600;700;800&family=Heebo:wght@300;400;500;700;800;900&display=swap" rel="stylesheet">
@@ -466,6 +467,24 @@
 
     <script>
         document.addEventListener('DOMContentLoaded', () => {
+            // תמיכה בגלילה חלקה עבור קישורי עוגן (Anchor Links)
+            const internalLinks = document.querySelectorAll('a[href^="#"]');
+            internalLinks.forEach(link => {
+                link.addEventListener('click', (e) => {
+                    const targetId = link.getAttribute('href');
+                    if (targetId !== "#") {
+                        e.preventDefault();
+                        const targetSection = document.querySelector(targetId);
+                        if (targetSection) {
+                            targetSection.scrollIntoView({
+                                behavior: 'smooth',
+                                block: 'start'
+                            });
+                        }
+                    }
+                });
+            });
+
             // אקורדיון שאלות נפוצות
             const faqItems = document.querySelectorAll('.faq-item');
             faqItems.forEach(item => {
@@ -491,11 +510,12 @@
                 });
             });
 
-            // סליידר המלצות דינמי
+            // סליידר המלצות
             const slides = document.querySelectorAll('.testimonial-slide');
             const prevBtn = document.querySelector('.prev-btn');
             const nextBtn = document.querySelector('.next-btn');
             let currentSlide = 0;
+            let slideInterval;
 
             function showSlide(index) {
                 slides.forEach((slide, i) => {
@@ -514,10 +534,25 @@
             }
 
             if (nextBtn && prevBtn && slides.length > 0) {
-                nextBtn.addEventListener('click', nextSlide);
-                prevBtn.addEventListener('click', prevSlide);
-                // מעבר שקף אוטומטי כל 6 שניות
-                setInterval(nextSlide, 6000);
+                nextBtn.addEventListener('click', () => {
+                    nextSlide();
+                    resetInterval();
+                });
+                prevBtn.addEventListener('click', () => {
+                    prevSlide();
+                    resetInterval();
+                });
+                
+                function startInterval() {
+                    slideInterval = setInterval(nextSlide, 6000);
+                }
+                
+                function resetInterval() {
+                    clearInterval(slideInterval);
+                    startInterval();
+                }
+
+                startInterval();
             }
         });
     </script>
