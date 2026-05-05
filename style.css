@@ -1819,6 +1819,145 @@ div[id] {
     }
 }
 
-.header-container {
-    align-items: center !important;
+/* ==========================================================================
+   FINAL MOBILE HEADER OVERRIDE - LOGO + MENU SIZE FIX
+   ========================================================================== */
+@media (max-width: 900px) {
+    html {
+        scroll-padding-top: 128px !important;
+    }
+
+    section[id],
+    div[id],
+    #about,
+    #services,
+    #testimonials,
+    #faq,
+    #contact,
+    #faq-contact {
+        scroll-margin-top: 128px !important;
+    }
+
+    .header-container {
+        padding: 16px 14px !important;
+        gap: 14px !important;
+        justify-content: flex-start !important;
+        align-items: center !important;
+    }
+
+    .logo-area {
+        flex: 1 1 auto !important;
+        min-width: 0 !important;
+    }
+
+    .logo-link {
+        gap: 12px !important;
+        align-items: center !important;
+    }
+
+    .site-logo {
+        height: 82px !important;
+        max-width: 96px !important;
+        width: auto !important;
+        object-fit: contain !important;
+    }
+
+    .brand-name {
+        font-size: 31px !important;
+        line-height: 1 !important;
+        white-space: nowrap !important;
+    }
+
+    .brand-sub {
+        font-size: 16px !important;
+        line-height: 1.1 !important;
+        white-space: nowrap !important;
+    }
+
+    .mobile-menu-toggle {
+        flex: 0 0 auto !important;
+        min-width: 108px !important;
+        height: 52px !important;
+        padding: 0 16px !important;
+        font-size: 17px !important;
+        border-radius: 16px !important;
+    }
+}
+
+@media (max-width: 480px) {
+    html {
+        scroll-padding-top: 124px !important;
+    }
+
+    section[id],
+    div[id],
+    #about,
+    #services,
+    #testimonials,
+    #faq,
+    #contact,
+    #faq-contact {
+        scroll-margin-top: 124px !important;
+    }
+
+    .header-container {
+        padding: 15px 12px !important;
+        gap: 12px !important;
+    }
+
+    .site-logo {
+        height: 78px !important;
+        max-width: 92px !important;
+    }
+
+    .brand-name {
+        font-size: 29px !important;
+    }
+
+    .brand-sub {
+        font-size: 15px !important;
+    }
+
+    .mobile-menu-toggle {
+        min-width: 102px !important;
+        height: 50px !important;
+        font-size: 16px !important;
+    }
+}
+
+@media (max-width: 390px) {
+    html {
+        scroll-padding-top: 116px !important;
+    }
+
+    section[id],
+    div[id],
+    #about,
+    #services,
+    #testimonials,
+    #faq,
+    #contact,
+    #faq-contact {
+        scroll-margin-top: 116px !important;
+    }
+
+    .site-logo {
+        height: 72px !important;
+        max-width: 86px !important;
+    }
+
+    .brand-name {
+        font-size: 26px !important;
+    }
+
+    .brand-sub {
+        font-size: 14px !important;
+    }
+
+    .mobile-menu-toggle {
+        min-width: 94px !important;
+        height: 48px !important;
+        font-size: 15px !important;
+        padding: 0 12px !important;
+    }
 }
