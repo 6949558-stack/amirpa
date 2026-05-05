@@ -1819,10 +1819,6 @@ div[id] {
     }
 }
 
-/* הגדלת לוגו בנייד */
-@media (max-width: 900px) {
-    .site-logo {
-        height: 80px !important;
-        max-width: none !important;
-    }
+.header-container {
+    align-items: center !important;
 }
