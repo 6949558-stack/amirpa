@@ -1812,3 +1812,9 @@ div[id] {
         padding: 0 10px !important;
     }
 }
+/* ביטול רווח תחתון מיותר בנייד */
+@media (max-width: 900px) {
+    body {
+        padding-bottom: 0 !important;
+    }
+}
