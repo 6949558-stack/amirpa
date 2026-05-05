@@ -13,11 +13,10 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
 
-    <!-- Favicon -->
     <link rel="icon" href="favicon.ico">
     <link rel="apple-touch-icon" href="favicon.ico">
-
 </head>
+
 <body>
 
     <div class="top-info-bar">
@@ -45,8 +44,9 @@
 
     <header class="main-header" role="banner">
         <div class="header-container">
+
             <div class="logo-area">
-                <a href="#home" class="logo-link">
+                <a href="#home" class="logo-link" aria-label="מעבר לדף הבית">
                     <img src="Logo.png" alt="לוגו אמירפאה" class="site-logo">
                     <div class="logo-text">
                         <span class="brand-name">אמירפאה</span>
@@ -55,7 +55,7 @@
                 </a>
             </div>
             
-            <button class="mobile-menu-toggle show-only-on-mobile" aria-label="פתח תפריט">
+            <button class="mobile-menu-toggle show-only-on-mobile" type="button" aria-label="פתח תפריט" aria-expanded="false">
                 תפריט ☰
             </button>
             
@@ -76,7 +76,7 @@
         </div>
         
         <div class="mobile-menu-dropdown show-only-on-mobile">
-            <nav class="mobile-nav-links">
+            <nav class="mobile-nav-links" aria-label="תפריט מובייל">
                 <a href="#home" class="mobile-nav-item">דף הבית</a>
                 <a href="#about" class="mobile-nav-item">אודות</a>
                 <a href="#services" class="mobile-nav-item">שירותים</a>
@@ -388,7 +388,8 @@
                                 <p><strong>שבת:</strong> סגור</p>
                             </div>
                         </div>
-                   </div>
+                    </div>
+
                     <div class="faq-item">
                         <button class="faq-question" aria-expanded="false">
                             <span>חיסונים וטיפולים מונעים</span>
@@ -398,6 +399,7 @@
                             <p>מומלץ לחסן חיות מחמד באופן שנתי כדי להבטיח הגנה מלאה מפני מחלות נפוצות ומסוכנות בסביבה.</p>
                         </div>
                     </div>
+
                     <div class="faq-item">
                         <button class="faq-question" aria-expanded="false">
                             <span>הזמנת תורים למרפאה</span>
@@ -407,6 +409,7 @@
                             <p>ניתן להזמין תור מראש בטופס יצירת הקשר באתר, או בשיחה מהירה בוואטסאפ ובטלפון הזמינים באתר.</p>
                         </div>
                     </div>
+
                     <div class="faq-item">
                         <button class="faq-question" aria-expanded="false">
                             <span>שירותים מיוחדים וחירום</span>
@@ -535,11 +538,12 @@
                 if (menuToggle) {
                     menuToggle.textContent = 'תפריט ☰';
                     menuToggle.setAttribute('aria-label', 'פתח תפריט');
+                    menuToggle.setAttribute('aria-expanded', 'false');
                 }
             }
 
             function scrollToSection(targetSection) {
-                const headerOffset = window.innerWidth <= 900 ? 104 : 126;
+                const headerOffset = window.innerWidth <= 900 ? 130 : 126;
                 const elementPosition = targetSection.getBoundingClientRect().top;
                 const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
 
@@ -549,7 +553,6 @@
                 });
             }
 
-            // קישורי עוגן עם תיקון גובה ההדר הדביק
             const internalLinks = document.querySelectorAll('a[href^="#"]');
             internalLinks.forEach(link => {
                 link.addEventListener('click', (e) => {
@@ -567,7 +570,6 @@
                 });
             });
 
-            // אקורדיון שאלות נפוצות
             const faqItems = document.querySelectorAll('.faq-item');
             faqItems.forEach(item => {
                 const questionBtn = item.querySelector('.faq-question');
@@ -600,7 +602,6 @@
                 });
             });
 
-            // סליידר המלצות
             const slides = document.querySelectorAll('.testimonial-slide');
             const prevBtn = document.querySelector('.prev-btn');
             const nextBtn = document.querySelector('.next-btn');
@@ -648,7 +649,6 @@
                 startInterval();
             }
             
-            // תפריט מובייל: טקסט ברור במקום אייקון בלבד
             if (menuToggle && mobileMenu) {
                 menuToggle.addEventListener('click', () => {
                     mobileMenu.classList.toggle('active');
@@ -656,9 +656,11 @@
                     if (mobileMenu.classList.contains('active')) {
                         menuToggle.textContent = 'סגור ✕';
                         menuToggle.setAttribute('aria-label', 'סגור תפריט');
+                        menuToggle.setAttribute('aria-expanded', 'true');
                     } else {
                         menuToggle.textContent = 'תפריט ☰';
                         menuToggle.setAttribute('aria-label', 'פתח תפריט');
+                        menuToggle.setAttribute('aria-expanded', 'false');
                     }
                 });
             }
