@@ -12,6 +12,89 @@
 
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
   <link rel="stylesheet" href="style.css" />
+
+  <style>
+    /* תיקון קטן: מסיר את החתיכה/קישוט הכחול שמופיע ליד/מתחת לבאנר */
+    .hero-image::before,
+    .hero-image::after {
+      display: none !important;
+      content: none !important;
+    }
+
+    .testimonial-slider {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .testimonial-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 22px;
+      transition: opacity .25s ease;
+    }
+
+    .testimonial-grid.is-changing {
+      opacity: 0;
+    }
+
+    .testimonial-card {
+      min-height: 300px;
+    }
+
+    .testimonial-rating {
+      color: #2f80c1;
+      font-weight: 800;
+      margin-bottom: 8px;
+    }
+
+    .testimonial-controls {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      margin-top: 18px;
+    }
+
+    .testimonial-controls button {
+      width: 38px;
+      height: 38px;
+      border-radius: 999px;
+      border: 1px solid #d7e5f2;
+      background: #fff;
+      color: #2f80c1;
+      cursor: pointer;
+      font-size: 16px;
+      box-shadow: 0 8px 20px rgba(47,128,193,.08);
+    }
+
+    .testimonial-dots {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .testimonial-dots button {
+      width: 9px;
+      height: 9px;
+      padding: 0;
+      border-radius: 999px;
+      border: 0;
+      background: #c9dceb;
+      box-shadow: none;
+    }
+
+    .testimonial-dots button.active {
+      width: 22px;
+      background: #5ca9dc;
+    }
+
+    @media (max-width: 700px) {
+      .testimonial-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+
 </head>
 
 <body>
@@ -188,22 +271,13 @@
             <h2>לקוחות ממליצים</h2>
           </div>
 
-          <div class="testimonial-grid">
-            <article>
-              <span>26/09/2021</span>
-              <div class="stars">★★★★★</div>
-              <h3>ויטרינר מדהים ואנושי</h3>
-              <p>"כבר מהשיחה הראשונה אפשר להרגיש את האמפתיה הרבה שיש לו, את הקשב ההבנה והסובלנות הרבה. העדינות והאהבה שבה הוא טיפל בנו... אני לעולם לא אשכח את אמיר."</p>
-              <strong>lisamile</strong>
-            </article>
-
-            <article>
-              <span>17/04/2020</span>
-              <div class="stars">★★★★★</div>
-              <h3>מומלץ !!!</h3>
-              <p>"לדעתי הדוקטור הטוב ביותר בצפון. מומלץ מאוד. תמיד זמין ומקצועי. כלבים וחתולים בידיים הכי בטוחות שיש."</p>
-              <strong>arde1976</strong>
-            </article>
+          <div class="testimonial-slider" aria-label="המלצות לקוחות מתחלפות">
+            <div class="testimonial-grid" id="testimonialGrid"></div>
+            <div class="testimonial-controls">
+              <button type="button" id="testimonialNext" aria-label="המלצה הבאה"><i class="fa-solid fa-chevron-right"></i></button>
+              <div class="testimonial-dots" id="testimonialDots" aria-label="בחירת קבוצת המלצות"></div>
+              <button type="button" id="testimonialPrev" aria-label="המלצה קודמת"><i class="fa-solid fa-chevron-left"></i></button>
+            </div>
           </div>
         </section>
 
@@ -342,6 +416,141 @@
         });
       });
     }
+
+
+    const testimonials = [
+      {
+        name: 'arde1976',
+        rating: '5.0',
+        date: '17/04/2020',
+        title: 'מומלץ !!!',
+        text: 'לדעתי דוקטור הטוב ביותר בצפון. מומלץ מאוד. תמיד זמין ומקצועי.'
+      },
+      {
+        name: 'אורפז ויקיר',
+        rating: '5.0',
+        date: '19/02/2019',
+        title: 'מושלם',
+        text: 'חיפשתי באינטרנט וטרינר טוב ואמין והגעתי לאמיר. הוא בן אדם מדהים וד״ר מצוין. הגישה שלו לתינוקת שלי, הביטחון שהרגשתי כשהשארתי אותה שם, והסבלנות שלו ושל העוזרת המדהימה שלו היו פשוט יוצאי דופן. המחיר ממש בסדר ונורמלי לחלוטין. ממליצות בחום רב, אורפז וזואי.'
+      },
+      {
+        name: 'Marina',
+        rating: '5.0',
+        date: '07/07/2018',
+        title: 'מומלץ!',
+        text: 'כבר מספר שנים הכלב שלי מטופל אצלו ולא מחליפה אותו. שירות מעולה, תמיד זמין, מחיר הוגן לכל בעיה. ממליצה בחום!'
+      },
+      {
+        name: 'נתי',
+        rating: '4.4',
+        date: '29/08/2017',
+        title: 'שירות מעולה',
+        text: 'פניתי לבית העסק לצורך טיפול בכלב, קיבלתי שירות מעולה, הכלב טופל טוב, שילמתי מחיר בהתאם לציפיותיי, בחנתי הצעות נוספות ובחרתי בו הטוב מביניהם לדעתי.'
+      },
+      {
+        name: 'יוסי',
+        rating: '4.6',
+        date: '20/04/2016',
+        title: 'מקצועי ונפלא',
+        text: 'פניתי לאמירפאה לצורך טיפול בכלב. השירות היה מקצועי מאוד, היחס נפלא, קיבלו אותי בדיוק בזמן והמחיר היה סביר. בחרתי במרפאה כי היא קרובה ונוחה.'
+      },
+      {
+        name: 'עדיאל',
+        rating: '4.6',
+        date: '24/03/2016',
+        title: 'זמין גם בלילה',
+        text: 'פניתי לטיפול לכלבה. הוא היה היחידי שהיה זמין בלילה. הוא אדיב וטיפל בכלבה טוב.'
+      },
+      {
+        name: 'מאיה',
+        rating: '5.0',
+        date: '24/03/2016',
+        title: 'שירות מעולה',
+        text: 'פניתי לצורך בדיקה של כלבה. נותן שירות מעולה, אדיב ונחמד, היה זמין. המחיר היה בהתאם לציפיות.'
+      },
+      {
+        name: 'עינת',
+        rating: '5.0',
+        date: '24/03/2016',
+        title: 'אדיב והוגן',
+        text: 'פניתי לחיסון כלב. שירות אדיב במחיר הוגן. הכלב מרגיש טוב.'
+      },
+      {
+        name: 'Arbel',
+        rating: '5.0',
+        date: '17/03/2016',
+        title: 'מרפאה מצוינת',
+        text: 'הכלבה שלי אינה פשוטה ומאוד מפחדת, אבל אמיר הצליח להתחבב עליה ולבדוק אותה בלי לטשטש. הטיפול מקצועי ואדיב, ובהמשך הוא תמיד מתקשר לשאול מה שלומה ואם הטיפול עובד. תודה רבה על שירות מופלא, נמשיך לבקר.'
+      },
+      {
+        name: 'קסניה',
+        rating: '4.6',
+        date: '08/03/2016',
+        title: 'מקצועי ואדיב',
+        text: 'פניתי לאמירפאה לטיפול בכלבה שנדרסה על ידי רכב. עשו לה צילום רנטגן וטשטוש. השירות מאוד מקצועי, היחס אדיב, עמדו בזמנים והגעתי לפי המלצה שקיבלתי.'
+      }
+    ];
+
+    const testimonialGrid = document.getElementById('testimonialGrid');
+    const testimonialDots = document.getElementById('testimonialDots');
+    const testimonialNext = document.getElementById('testimonialNext');
+    const testimonialPrev = document.getElementById('testimonialPrev');
+    let testimonialIndex = 0;
+    const testimonialsPerPage = 2;
+    const totalTestimonialPages = Math.ceil(testimonials.length / testimonialsPerPage);
+
+    function renderStars(rating) {
+      const fullStars = Math.round(Number(rating));
+      return '★'.repeat(fullStars) + '☆'.repeat(5 - fullStars);
+    }
+
+    function renderTestimonials() {
+      if (!testimonialGrid || !testimonialDots) return;
+
+      testimonialGrid.classList.add('is-changing');
+
+      setTimeout(() => {
+        const start = testimonialIndex * testimonialsPerPage;
+        const current = testimonials.slice(start, start + testimonialsPerPage);
+
+        testimonialGrid.innerHTML = current.map(item => `
+          <article class="testimonial-card">
+            <span>${item.date}</span>
+            <div class="testimonial-rating">${item.rating}</div>
+            <div class="stars">${renderStars(item.rating)}</div>
+            <h3>${item.title}</h3>
+            <p>"${item.text}"</p>
+            <strong>${item.name}</strong>
+          </article>
+        `).join('');
+
+        testimonialDots.innerHTML = Array.from({ length: totalTestimonialPages }, (_, i) => `
+          <button type="button" class="${i === testimonialIndex ? 'active' : ''}" aria-label="מעבר לקבוצת המלצות ${i + 1}"></button>
+        `).join('');
+
+        testimonialDots.querySelectorAll('button').forEach((dot, i) => {
+          dot.addEventListener('click', () => {
+            testimonialIndex = i;
+            renderTestimonials();
+          });
+        });
+
+        testimonialGrid.classList.remove('is-changing');
+      }, 180);
+    }
+
+    function moveTestimonials(direction) {
+      testimonialIndex = (testimonialIndex + direction + totalTestimonialPages) % totalTestimonialPages;
+      renderTestimonials();
+    }
+
+    if (testimonialNext && testimonialPrev) {
+      testimonialNext.addEventListener('click', () => moveTestimonials(1));
+      testimonialPrev.addEventListener('click', () => moveTestimonials(-1));
+      renderTestimonials();
+      setInterval(() => moveTestimonials(1), 6500);
+    }
+
   </script>
 </body>
 </html>
