@@ -1,372 +1,457 @@
-<!DOCTYPE html>
-אמירפאה – ד”ר אמיר הלפרין | וטרינר בעמק יזרעאל
+/* ========================================================= AMIRPAH -
+FINAL CLEAN BLUE/WHITE DESIGN RTL Hebrew website | Desktop + Mobile
+========================================================= */
 
-    <div class="container top-info-inner">
-      <div class="top-info-right">
-        <a href="https://waze.com/ul?q=מרחביה" target="_blank" class="top-info-link">
-          <i class="fa-solid fa-location-dot"></i>
-          מרחביה (ניווט ב-Waze)
-        </a>
+:root { –blue: #0057b8; –blue-dark: #002f6c; –blue-deep: #001f4f;
+–blue-soft: #eaf4ff; –blue-line: #cfe3fb; –text: #101827; –muted:
+#5b6b80; –white: #ffffff; –bg: #f7fbff; –border: #dce8f5; –shadow-sm: 0
+8px 24px rgba(0, 47, 108, 0.07); –shadow-md: 0 18px 45px rgba(0, 47,
+108, 0.12); –radius: 22px; –font-heading: “Heebo”, “Assistant”, Arial,
+sans-serif; –font-body: “Assistant”, “Heebo”, Arial, sans-serif; }
 
-        <span class="top-info-link">
-          <i class="fa-regular fa-clock"></i>
-          שעות פעילות משתנות לפי ימים – פירוט באתר
-        </span>
-      </div>
+-   { box-sizing: border-box; margin: 0; padding: 0; }
 
-      <div class="top-info-left">
-        <a href="https://wa.me/972528667909" target="_blank" class="top-info-link whatsapp-top">
-          <i class="fa-brands fa-whatsapp"></i>
-          WhatsApp
-        </a>
+html { scroll-behavior: smooth; scroll-padding-top: 130px; }
 
-        <a href="tel:0528667909" class="top-info-link">
-          <i class="fa-solid fa-phone"></i>
-          052-8667909
-        </a>
-      </div>
-    </div>
+body { direction: rtl; font-family: var(–font-body); background:
+var(–white); color: var(–text); line-height: 1.7; overflow-x: hidden; }
 
-      <a href="#home" class="logo-wrap" aria-label="אמירפאה דף הבית">
-        <img src="assets/Logo.png" alt="לוגו אמירפאה" class="site-logo">
-        <div class="logo-text">
-          <strong>אמירפאה</strong>
-          <span>מרפאה וטרינרית</span>
-        </div>
-      </a>
+a { color: inherit; text-decoration: none; }
 
-      <nav class="desktop-nav" aria-label="תפריט ראשי">
-        <a href="#home" class="active">דף הבית</a>
-        <a href="#about">אודות</a>
-        <a href="#services">שירותים</a>
-        <a href="#testimonials">המלצות</a>
-        <a href="#faq">שאלות נפוצות</a>
-        <a href="#contact">צור קשר</a>
-      </nav>
+img { display: block; max-width: 100%; }
 
-      <a href="#contact" class="header-cta">
-        <i class="fa-regular fa-calendar-check"></i>
-        לקביעת תור
-      </a>
+button, input, select, textarea { font-family: inherit; }
 
-      <button class="mobile-menu-toggle" type="button" aria-label="פתיחת תפריט" aria-expanded="false">
-        <i class="fa-solid fa-bars"></i>
-      </button>
-    </div>
+.container { width: min(1180px, calc(100% - 40px)); margin-inline: auto;
+}
 
-    <nav class="mobile-nav" aria-label="תפריט מובייל">
-      <a href="#home">דף הבית</a>
-      <a href="#about">אודות</a>
-      <a href="#services">שירותים</a>
-      <a href="#testimonials">המלצות</a>
-      <a href="#faq">שאלות נפוצות</a>
-      <a href="#contact">צור קשר</a>
-      <a href="#contact" class="mobile-booking">לקביעת תור</a>
-    </nav>
+/* Top bar */ .top-info-bar { background: linear-gradient(90deg,
+var(–blue-deep), var(–blue-dark)); color: var(–white); font-weight: 700;
+font-size: 14px; }
 
-    <!-- Hero -->
-    <section id="home" class="hero-section">
-      <div class="container hero-grid">
-        <div class="hero-content">
-          <span class="eyebrow">וטרינר בעמק יזרעאל לכלבים וחתולים</span>
+.top-info-inner { min-height: 42px; display: flex; align-items: center;
+justify-content: space-between; gap: 24px; }
 
-          <h1>אמירפאה – ד"ר אמיר הלפרין</h1>
-          <h2>ד"ר אמיר עם ניסיון של יותר מ-20 שנה!</h2>
+.top-info-right, .top-info-left { display: flex; align-items: center;
+gap: 28px; }
 
-          <p>
-            מרפאה וטרינרית מתקדמת המציעה טיפולים מקיפים, בדיקות דם במקום,
-            צילומי רנטגן וחדר ניתוח מאובזר – הכל מתוך אהבה ומסירות אמיתית לבעלי החיים שלכם.
-          </p>
+.top-info-link { display: inline-flex; align-items: center; gap: 8px;
+white-space: nowrap; opacity: 0.95; }
 
-          <div class="hero-actions">
-            <a href="#contact" class="btn btn-primary">
-              <i class="fa-regular fa-calendar-check"></i>
-              לקביעת תור מהיר
-            </a>
-            <a href="https://waze.com/ul?q=מרחביה" target="_blank" class="btn btn-outline">
-              <i class="fa-brands fa-waze"></i>
-              ניווט ב-Waze
-            </a>
-          </div>
-        </div>
+.top-info-link i { color: #65b8ff; }
 
-        <div class="hero-image-wrap">
-          <img src="assets/dr-amir.png" alt="ד&quot;ר אמיר הלפרין עם כלב" class="hero-image">
-        </div>
-      </div>
-    </section>
+.whatsapp-top i { color: #25d366; }
 
-    <!-- Feature Strip -->
-    <section class="feature-strip" aria-label="יתרונות המרפאה">
-      <div class="container feature-strip-inner">
-        <div class="feature-mini">
-          <div class="mini-icon"><i class="fa-solid fa-shield-dog"></i></div>
-          <strong>רפואה מונעת</strong>
-          <span>וחיסונים</span>
-        </div>
+/* Header */ .main-header { position: sticky; top: 0; z-index: 1000;
+background: rgba(255, 255, 255, 0.96); border-bottom: 1px solid rgba(0,
+47, 108, 0.08); backdrop-filter: blur(14px); box-shadow: 0 4px 22px
+rgba(0, 31, 79, 0.04); }
 
-        <div class="feature-mini">
-          <div class="mini-icon"><i class="fa-solid fa-microscope"></i></div>
-          <strong>מעבדת דם ורנטגן</strong>
-          <span>דיגיטלי במקום</span>
-        </div>
+.header-inner { height: 84px; display: flex; align-items: center; gap:
+34px; }
 
-        <div class="feature-mini">
-          <div class="mini-icon"><i class="fa-solid fa-staff-snake"></i></div>
-          <strong>חדר ניתוח</strong>
-          <span>כירורגי מאובזר</span>
-        </div>
-      </div>
-    </section>
+.logo-wrap { display: flex; align-items: center; gap: 12px;
+margin-inline-start: auto; }
 
-    <!-- About -->
-    <section id="about" class="about-section">
-      <div class="container about-grid">
-        <div class="about-text">
-          <span class="section-kicker">קצת עלינו</span>
-          <h2>תמיד פה עבורכם</h2>
+.site-logo { width: 78px; height: 58px; object-fit: contain; }
 
-          <p class="lead">
-            ד"ר אמיר הלפרין - מוסמך ומנוסה, מלווה ומטפל בחיות המחמד עם המון סבלנות וידע מקצועי עשיר.
-          </p>
+.logo-text { display: flex; flex-direction: column; line-height: 1.05; }
 
-          <p>
-            ד"ר הלפרין רכש את מקצועו בעיר פארמה שבאיטליה ומביא איתו ניסיון עשיר של למעלה מ-20 שנה.
-            אנו באמירפאה מאמינים כי אבחון מוקדם ויחס אישי הם המפתח לבריאות ארוכת טווח של חיית המחמד שלכם.
-            המרפאה מצוידת בטכנולוגיות המתקדמות ביותר כדי להבטיח אבחון מהיר ומדויק לכל בעיה.
-          </p>
+.logo-text strong { font-family: var(–font-heading); font-size: 27px;
+font-weight: 900; color: var(–blue-dark); }
 
-          <ul class="check-list">
-            <li>רפואה מונעת וחיסונים</li>
-            <li>מעבדת דם ורנטגן דיגיטלי במקום</li>
-            <li>חדר ניתוח כירורגי מאובזר</li>
-          </ul>
+.logo-text span { font-weight: 800; color: #111827; font-size: 14px; }
 
-          <a href="#contact" class="btn btn-primary small-btn">
-            <i class="fa-regular fa-calendar-check"></i>
-            לקביעת תור מהיר
-          </a>
-        </div>
+.desktop-nav { display: flex; align-items: center; justify-content:
+center; gap: 34px; flex: 1; }
 
-        <div class="about-image-card">
-          <img src="assets/dr-amir.png" alt="ד&quot;ר אמיר בטיפול" loading="lazy">
-        </div>
-      </div>
-    </section>
+.desktop-nav a { position: relative; font-family: var(–font-heading);
+font-weight: 800; font-size: 16px; color: #172033; padding: 8px 0; }
 
-    <!-- Services -->
-    <section id="services" class="services-section">
-      <div class="container">
-        <div class="section-heading">
-          <span class="section-kicker">השירותים שלנו</span>
-          <h2>כל השירותים תחת קורת גג אחת</h2>
-          <p>אנחנו מעניקים את המעטפת הרפואית המלאה והמתקדמת ביותר לחיית המחמד שלכם</p>
-        </div>
+.desktop-nav a::after { content: ““; position: absolute; right: 0;
+bottom: -5px; width: 0; height: 3px; border-radius: 99px; background:
+var(–blue); transition: 0.25s ease; }
 
-        <div class="services-grid">
-          <article class="service-card">
-            <div class="service-icon"><i class="fa-solid fa-house-medical"></i></div>
-            <h3>שירותים מיוחדים</h3>
-            <ul>
-              <li>מנוי רפואי שנתי לבע"ח</li>
-              <li>שירות ביקורי בית</li>
-              <li>ציוד וטרינרי מתקדם</li>
-            </ul>
-          </article>
+.desktop-nav a:hover, .desktop-nav a.active { color: var(–blue); }
 
-          <article class="service-card">
-            <div class="service-icon"><i class="fa-solid fa-kit-medical"></i></div>
-            <h3>ניתוחים וחירום</h3>
-            <ul>
-              <li>שירותים כירורגיים</li>
-              <li>עיקור וסירוס</li>
-              <li>טיפולי חירום ואשפוז</li>
-            </ul>
-          </article>
+.desktop-nav a:hover::after, .desktop-nav a.active::after { width: 100%;
+}
 
-          <article class="service-card">
-            <div class="service-icon"><i class="fa-solid fa-microscope"></i></div>
-            <h3>אבחון ורפואה פנימית</h3>
-            <ul>
-              <li>בדיקות מעבדה</li>
-              <li>רפואה פנימית</li>
-              <li>אנדוקרינולוגיה ונוירולוגיה</li>
-            </ul>
-          </article>
+.header-cta { margin-inline-start: 0; margin-inline-end: auto; display:
+inline-flex; align-items: center; gap: 9px; border-radius: 10px;
+background: var(–blue); color: var(–white); font-weight: 900; padding:
+12px 24px; box-shadow: 0 10px 20px rgba(0, 87, 184, 0.18); }
 
-          <article class="service-card">
-            <div class="service-icon"><i class="fa-solid fa-shield-dog"></i></div>
-            <h3>טיפולים מונעים</h3>
-            <ul>
-              <li>חיסונים ובדיקות תקופתיות</li>
-              <li>תילוע וטיפול בקרציות ופרעושים</li>
-              <li>רפואה מונעת כוללת</li>
-            </ul>
-          </article>
+.header-cta:hover { background: var(–blue-dark); transform:
+translateY(-1px); }
 
-          <article class="service-card">
-            <div class="service-icon"><i class="fa-solid fa-tooth"></i></div>
-            <h3>טיפולים רפואיים</h3>
-            <ul>
-              <li>טיפולי שיניים לבע"ח</li>
-              <li>אורטופדיה וגריאטריה</li>
-              <li>פוריות לבעלי חיים</li>
-            </ul>
-          </article>
+.mobile-menu-toggle, .mobile-nav { display: none; }
 
-          <article class="service-card">
-            <div class="service-icon"><i class="fa-solid fa-paw"></i></div>
-            <h3>שירותים נלווים</h3>
-            <ul>
-              <li>ייעוץ תזונתי והתאמה אישית</li>
-              <li>מעקב בריאותי מתמשך</li>
-              <li>זמינות מלאה לכל שאלה</li>
-            </ul>
-          </article>
-        </div>
-      </div>
-    </section>
+/* Hero */ .hero-section { position: relative; background:
+radial-gradient(circle at 20% 20%, rgba(0, 87, 184, 0.09), transparent
+34%), linear-gradient(90deg, #ffffff 0%, #f5fbff 48%, #eaf4ff 100%);
+overflow: hidden; border-bottom: 1px solid var(–border); }
 
-    <!-- Testimonials + FAQ + Contact -->
-    <section class="bottom-section">
-      <div class="container bottom-grid">
+.hero-section::before { content: ““; position: absolute; inset: 0;
+background-image: url(”assets/pattern-paws.png”); opacity: 0.04;
+pointer-events: none; }
 
-        <div id="testimonials" class="panel testimonials-panel">
-          <div class="panel-title">
-            <span class="section-kicker">המלצות</span>
-            <h2>לקוחות ממליצים</h2>
-            <p>האהבה והטיפול המקצועי שלנו משתקפים בחוות הדעת של הלקוחות</p>
-          </div>
+.hero-grid { position: relative; z-index: 2; min-height: 520px; display:
+grid; grid-template-columns: 0.9fr 1.1fr; gap: 34px; align-items:
+center; }
 
-          <div class="testimonial-cards">
-            <article class="testimonial-card">
-              <div class="date">26/09/2021</div>
-              <div class="stars">★★★★★</div>
-              <h3>ויטרינר מדהים ואנושי</h3>
-              <p>"כבר מהשיחה הראשונה אפשר להרגיש את האמפתיה הרבה שיש לו, את הקשב ההבנה והסובלנות הרבה. העדינות והאהבה שבה הוא טיפל בנו... אני לעולם לא אשכח את אמיר."</p>
-              <strong>lisamile</strong>
-            </article>
+.hero-content { max-width: 560px; padding: 48px 0; }
 
-            <article class="testimonial-card">
-              <div class="date">17/04/2020</div>
-              <div class="stars">★★★★★</div>
-              <h3>מומלץ !!!</h3>
-              <p>"לדעתי הדוקטור הטוב ביותר בצפון. מומלץ מאוד. תמיד זמין ומקצועי. כלבים וחתולים בידיים הכי בטוחות שיש."</p>
-              <strong>arde1976</strong>
-            </article>
-          </div>
-        </div>
+.eyebrow, .section-kicker { display: inline-flex; align-items: center;
+color: var(–blue); font-weight: 900; font-size: 15px; margin-bottom:
+12px; }
 
-        <div id="faq" class="panel faq-panel">
-          <div class="panel-title">
-            <span class="section-kicker">שאלות נפוצות</span>
-            <h2>שאלות נפוצות</h2>
-          </div>
+.hero-content h1 { font-family: var(–font-heading); color:
+var(–blue-dark); font-size: clamp(40px, 5vw, 64px); line-height: 1.08;
+font-weight: 900; letter-spacing: -1px; margin-bottom: 8px; }
 
-          <details open>
-            <summary>זמינות ושעות פעילות</summary>
-            <div class="hours-list">
-              <p><strong>א׳:</strong> 09:00-12:30, 16:00-19:00</p>
-              <p><strong>ב׳:</strong> 09:00-12:30, 20:00-22:00</p>
-              <p><strong>ג׳:</strong> 09:00-12:30</p>
-              <p><strong>ד׳:</strong> 09:00-12:30, 20:00-22:00</p>
-              <p><strong>ה׳:</strong> 09:00-12:30, 16:00-19:00</p>
-              <p><strong>ו׳:</strong> 09:00-12:00</p>
-              <p><strong>שבת:</strong> סגור</p>
-            </div>
-          </details>
+.hero-content h2 { color: var(–blue); font-size: clamp(20px, 2vw, 27px);
+font-weight: 900; margin-bottom: 18px; }
 
-          <details>
-            <summary>חיסונים וטיפולים מונעים</summary>
-            <p>מומלץ לחסן חיות מחמד באופן תקופתי ולבצע מעקב בריאותי שוטף כדי לשמור על בריאות ארוכת טווח.</p>
-          </details>
+.hero-content h2::after { content: ““; display: block; width: 150px;
+height: 3px; background: linear-gradient(90deg, transparent, var(–blue),
+transparent); margin-top: 10px; }
 
-          <details>
-            <summary>הזמנת תורים למרפאה</summary>
-            <p>ניתן להזמין תור דרך הטופס באתר, בשיחת טלפון או דרך WhatsApp.</p>
-          </details>
+.hero-content p { color: #1f2937; font-size: 18px; max-width: 520px;
+margin-bottom: 28px; }
 
-          <details>
-            <summary>שירותים מיוחדים וחירום</summary>
-            <p>במרפאה קיימים חדר ניתוח מאובזר, רנטגן דיגיטלי ומעבדת דם במקום.</p>
-          </details>
-        </div>
+.hero-actions { display: flex; flex-wrap: wrap; gap: 14px; }
 
-        <div id="contact" class="panel contact-panel">
-          <div class="panel-title">
-            <span class="section-kicker">צור קשר</span>
-            <h2>יצירת קשר מהירה</h2>
-            <p>השאירו פרטים ונחזור אליכם בהקדם</p>
-          </div>
+.btn { display: inline-flex; align-items: center; justify-content:
+center; gap: 9px; border-radius: 12px; padding: 13px 26px; font-weight:
+900; transition: 0.25s ease; border: 2px solid transparent; }
 
-          <form action="https://formsubmit.co/amirpavet@gmail.com" method="POST" class="contact-form">
-            <input type="hidden" name="_captcha" value="false">
+.btn-primary { background: var(–blue); color: var(–white); box-shadow: 0
+12px 25px rgba(0, 87, 184, 0.18); }
 
-            <div class="form-row">
-              <input type="text" name="שם מלא" placeholder="שם מלא" required>
-              <input type="tel" name="טלפון" placeholder="מספר טלפון" required>
-            </div>
+.btn-primary:hover { background: var(–blue-dark); transform:
+translateY(-2px); }
 
-            <div class="form-row">
-              <select name="סוג חיה" required>
-                <option value="" selected disabled>בחרו סוג חיה</option>
-                <option value="כלב">כלב</option>
-                <option value="חתול">חתול</option>
-                <option value="אחר">אחר</option>
-              </select>
+.btn-outline { color: var(–blue-dark); border-color: var(–blue);
+background: rgba(255, 255, 255, 0.75); }
 
-              <select name="סיבת פנייה" required>
-                <option value="" selected disabled>סיבת פנייה</option>
-                <option value="תור">תור</option>
-                <option value="חיסון">חיסון</option>
-                <option value="תשלום">תשלום</option>
-                <option value="ניתוח">ניתוח</option>
-                <option value="חירום">חירום</option>
-                <option value="אחר">אחר</option>
-              </select>
-            </div>
+.btn-outline:hover { background: var(–blue-soft); transform:
+translateY(-2px); }
 
-            <input type="email" name="דואר אלקטרוני" placeholder="דואר אלקטרוני">
-            <textarea name="הודעה" rows="5" placeholder="איך נוכל לעזור לכם ולחיית המחמד שלכם?" required></textarea>
+.small-btn { padding: 12px 22px; }
 
-            <div class="quick-contact">
-              <a href="tel:0528667909"><i class="fa-solid fa-phone"></i> 052-8667909</a>
-              <a href="https://waze.com/ul?q=מרחביה" target="_blank"><i class="fa-brands fa-waze"></i> Waze</a>
-            </div>
+.hero-image-wrap { position: relative; align-self: end; }
 
-            <button type="submit" class="submit-btn">
-              <i class="fa-solid fa-paper-plane"></i>
-              שליחת פנייה
-            </button>
-          </form>
-        </div>
+.hero-image-wrap::before { content: ““; position: absolute; width: 72%;
+height: 55%; right: 16%; bottom: 0; background: linear-gradient(135deg,
+rgba(0, 87, 184, 0.25), rgba(0, 87, 184, 0.05)); border-radius: 50% 50%
+0 0; z-index: -1; }
 
-      </div>
-    </section>
+.hero-image { width: 100%; max-height: 500px; object-fit: contain;
+object-position: bottom center; }
 
-      <div class="footer-brand">
-        <img src="assets/Logo.png" alt="אמירפאה" class="footer-logo">
-        <h3>אמירפאה</h3>
-        <p>מרפאה וטרינרית מתקדמת ומקצועית במרחביה ועמק יזרעאל.</p>
-        <p>אנו מעניקים טיפול רפואי מלא ומקיף לכלבים וחתולים מכל הלב.</p>
-      </div>
+/* Feature strip */ .feature-strip { background: var(–white);
+border-bottom: 1px solid var(–border); }
 
-      <div class="footer-links">
-        <h3>קישורים ומידע</h3>
-        <a href="accessibility.html">הצהרת נגישות</a>
-        <a href="privacy.html">מדיניות פרטיות</a>
-      </div>
+.feature-strip-inner { min-height: 110px; display: grid;
+grid-template-columns: repeat(3, 1fr); }
 
-      <div class="footer-contact">
-        <h3>פרטי התקשרות</h3>
-        <p><i class="fa-solid fa-location-dot"></i> כתובת: <a href="https://waze.com/ul?q=מרחביה" target="_blank">מרחביה (ניווט ב-Waze)</a></p>
-        <p><i class="fa-solid fa-phone"></i> טלפון: <a href="tel:0528667909">052-8667909</a></p>
-        <p><i class="fa-solid fa-envelope"></i> מייל: <a href="mailto:halperin.vet@gmail.com">halperin.vet@gmail.com</a></p>
-        <p><i class="fa-regular fa-clock"></i> שעות: משתנות לפי ימים – ראו פירוט בשאלות נפוצות</p>
-      </div>
-    </div>
+.feature-mini { display: flex; align-items: center; justify-content:
+center; gap: 14px; text-align: right; border-inline-start: 1px solid
+var(–border); }
 
-    <div class="footer-bottom">
-      <p>© 2026 כל הזכויות שמורות לאמירפאה – ד"ר אמיר הלפרין</p>
-      <p>עוצב ונבנה על ידי חן יובל סרוסי</p>
-    </div>
+.feature-mini:last-child { border-inline-start: none; }
+
+.mini-icon { width: 54px; height: 54px; border-radius: 50%; background:
+var(–blue-soft); color: var(–blue); display: grid; place-items: center;
+font-size: 25px; }
+
+.feature-mini strong { display: block; font-family: var(–font-heading);
+font-size: 18px; color: var(–blue-dark); line-height: 1.2; }
+
+.feature-mini span { display: block; font-size: 15px; color:
+var(–muted); font-weight: 700; }
+
+/* About */ .about-section { background: linear-gradient(180deg,
+var(–bg), #ffffff); padding: 72px 0; }
+
+.about-grid { display: grid; grid-template-columns: 0.95fr 1.05fr; gap:
+48px; align-items: center; }
+
+.about-text h2, .section-heading h2, .panel-title h2 { font-family:
+var(–font-heading); font-size: clamp(30px, 3vw, 42px); color:
+var(–blue-dark); font-weight: 900; line-height: 1.15; margin-bottom:
+14px; }
+
+.lead { font-weight: 800; color: #26364b; font-size: 18px;
+margin-bottom: 12px; }
+
+.about-text p { color: var(–muted); font-size: 17px; margin-bottom:
+18px; }
+
+.check-list { list-style: none; display: grid; gap: 10px; margin: 22px 0
+26px; }
+
+.check-list li { position: relative; padding-right: 34px; font-weight:
+800; color: #1f2937; }
+
+.check-list li::before { content: “0c”; font-family: “Font Awesome 6
+Free”; font-weight: 900; position: absolute; right: 0; top: 2px; width:
+24px; height: 24px; border-radius: 50%; background: var(–blue-soft);
+color: var(–blue); display: grid; place-items: center; font-size: 12px;
+}
+
+.about-image-card { border-radius: var(–radius); background:
+linear-gradient(135deg, #ffffff, var(–blue-soft)); overflow: hidden;
+box-shadow: var(–shadow-md); border: 1px solid var(–border); min-height:
+350px; display: flex; align-items: flex-end; justify-content: center; }
+
+.about-image-card img { width: 100%; height: 430px; object-fit: cover;
+object-position: center; }
+
+/* Services */ .services-section { padding: 78px 0; background:
+var(–white); }
+
+.section-heading { text-align: center; max-width: 760px; margin: 0 auto
+42px; }
+
+.section-heading p, .panel-title p { color: var(–muted); font-size:
+17px; }
+
+.services-grid { display: grid; grid-template-columns: repeat(6, 1fr);
+gap: 16px; }
+
+.service-card { background: var(–white); border: 1px solid var(–border);
+border-radius: 18px; padding: 26px 18px; box-shadow: var(–shadow-sm);
+transition: 0.25s ease; min-height: 235px; }
+
+.service-card:hover { transform: translateY(-5px); box-shadow:
+var(–shadow-md); border-color: var(–blue-line); }
+
+.service-icon { width: 58px; height: 58px; border-radius: 18px;
+background: var(–blue-soft); color: var(–blue); display: grid;
+place-items: center; font-size: 27px; margin-bottom: 14px; }
+
+.service-card h3 { color: var(–blue-dark); font-family:
+var(–font-heading); font-size: 19px; line-height: 1.25; margin-bottom:
+12px; }
+
+.service-card ul { list-style: none; display: grid; gap: 7px; }
+
+.service-card li { color: var(–muted); font-size: 14.5px; line-height:
+1.35; font-weight: 700; }
+
+/* Bottom sections */ .bottom-section { background: var(–bg); padding:
+70px 0 60px; }
+
+.bottom-grid { display: grid; grid-template-columns: 1fr 0.86fr 1fr;
+gap: 18px; align-items: stretch; }
+
+.panel { background: var(–white); border: 1px solid var(–border);
+border-radius: 20px; box-shadow: var(–shadow-sm); padding: 28px; }
+
+.panel-title { text-align: center; margin-bottom: 20px; }
+
+.testimonial-cards { display: grid; grid-template-columns: 1fr 1fr; gap:
+14px; }
+
+.testimonial-card { border: 1px solid var(–border); border-radius: 18px;
+padding: 20px; background: linear-gradient(180deg, #ffffff, #fbfdff); }
+
+.date { color: var(–muted); font-size: 13px; font-weight: 800;
+margin-bottom: 6px; }
+
+.stars { color: var(–blue); letter-spacing: 2px; margin-bottom: 10px; }
+
+.testimonial-card h3 { color: var(–blue-dark); font-size: 18px;
+margin-bottom: 8px; }
+
+.testimonial-card p { color: #38475a; font-size: 14.5px; line-height:
+1.6; margin-bottom: 12px; }
+
+.testimonial-card strong { color: var(–blue); }
+
+details { border: 1px solid var(–border); border-radius: 14px;
+background: #fff; margin-bottom: 12px; overflow: hidden; }
+
+summary { cursor: pointer; padding: 15px 16px; font-weight: 900; color:
+var(–blue-dark); list-style: none; display: flex; justify-content:
+space-between; gap: 12px; }
+
+summary::after { content: “78”; font-family: “Font Awesome 6 Free”;
+font-weight: 900; color: var(–blue); transition: 0.25s ease; }
+
+details[open] summary::after { transform: rotate(180deg); }
+
+details p, .hours-list { padding: 0 16px 16px; color: var(–muted);
+font-weight: 700; }
+
+.hours-list p { margin-bottom: 4px; }
+
+.contact-form { display: grid; gap: 12px; }
+
+.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+
+.contact-form input, .contact-form select, .contact-form textarea {
+width: 100%; border: 1px solid var(–border); border-radius: 12px;
+background: #fff; padding: 13px 15px; font-size: 15px; color:
+var(–text); outline: none; transition: 0.2s ease; }
+
+.contact-form input:focus, .contact-form select:focus, .contact-form
+textarea:focus { border-color: var(–blue); box-shadow: 0 0 0 4px rgba(0,
+87, 184, 0.09); }
+
+.quick-contact { display: grid; grid-template-columns: 1fr 1fr; gap:
+10px; }
+
+.quick-contact a { border: 1px solid var(–border); border-radius: 12px;
+padding: 12px; text-align: center; font-weight: 900; color:
+var(–blue-dark); background: #fff; }
+
+.submit-btn { border: none; border-radius: 12px; padding: 14px; color:
+var(–white); background: var(–blue); font-weight: 900; font-size: 16px;
+cursor: pointer; transition: 0.25s ease; }
+
+.submit-btn:hover { background: var(–blue-dark); }
+
+/* Floating WhatsApp */ .floating-whatsapp { position: fixed; left:
+22px; bottom: 24px; width: 62px; height: 62px; border-radius: 50%;
+background: #25d366; color: #fff; display: grid; place-items: center;
+font-size: 34px; z-index: 999; box-shadow: 0 14px 28px rgba(37, 211,
+102, 0.28); transition: 0.25s ease; }
+
+.floating-whatsapp:hover { transform: translateY(-4px) scale(1.04); }
+
+/* Footer */ .site-footer { background: linear-gradient(90deg, #111827,
+#1f2937); color: #fff; padding: 48px 0 24px; }
+
+.footer-grid { display: grid; grid-template-columns: 1.2fr 0.7fr 1.3fr;
+gap: 42px; padding-bottom: 34px; border-bottom: 1px solid
+rgba(255,255,255,0.12); }
+
+.footer-logo { width: 92px; margin-bottom: 10px; filter:
+brightness(1.4); }
+
+.footer-grid h3 { font-family: var(–font-heading); font-size: 22px;
+margin-bottom: 14px; }
+
+.footer-grid p, .footer-grid a { color: rgba(255, 255, 255, 0.78);
+font-weight: 700; }
+
+.footer-links { display: grid; align-content: start; gap: 10px; }
+
+.footer-contact p { margin-bottom: 8px; }
+
+.footer-contact i { color: #65b8ff; margin-left: 6px; }
+
+.footer-bottom { width: min(1180px, calc(100% - 40px)); margin: 0 auto;
+padding-top: 18px; display: flex; justify-content: space-between; gap:
+20px; color: rgba(255, 255, 255, 0.55); font-weight: 700; }
+
+/* Responsive */ @media (max-width: 1180px) { .services-grid {
+grid-template-columns: repeat(3, 1fr); }
+
+.bottom-grid { grid-template-columns: 1fr; } }
+
+@media (max-width: 900px) { html { scroll-padding-top: 88px; }
+
+body { padding-bottom: 0; }
+
+.container { width: min(100% - 28px, 720px); }
+
+.top-info-inner { min-height: auto; padding: 10px 0; display: grid; gap:
+8px; justify-items: center; }
+
+.top-info-right, .top-info-left { justify-content: center; flex-wrap:
+wrap; gap: 12px 18px; font-size: 13px; }
+
+.header-inner { height: 76px; gap: 10px; }
+
+.logo-wrap { margin-inline-start: auto; }
+
+.site-logo { width: 62px; height: 48px; }
+
+.logo-text strong { font-size: 22px; }
+
+.logo-text span { font-size: 12px; }
+
+.desktop-nav, .header-cta { display: none; }
+
+.mobile-menu-toggle { margin-inline-start: 0; display: grid;
+place-items: center; width: 44px; height: 44px; border: 1px solid
+var(–border); border-radius: 12px; background: #fff; color:
+var(–blue-dark); font-size: 22px; cursor: pointer; }
+
+.mobile-nav { display: grid; max-height: 0; overflow: hidden;
+transition: max-height 0.25s ease; border-top: 1px solid var(–border);
+background: #fff; }
+
+.mobile-nav.open { max-height: 520px; }
+
+.mobile-nav a { padding: 14px 24px; border-bottom: 1px solid
+var(–border); font-weight: 900; color: var(–blue-dark); text-align:
+center; }
+
+.mobile-booking { margin: 12px 18px 18px; border-radius: 12px;
+background: var(–blue); color: #fff !important; border-bottom: none
+!important; }
+
+.hero-grid { min-height: auto; grid-template-columns: 1fr; text-align:
+center; gap: 4px; }
+
+.hero-content { order: 1; max-width: 100%; padding: 44px 0 18px; }
+
+.hero-content h2::after { margin-inline: auto; }
+
+.hero-content p { margin-inline: auto; font-size: 17px; }
+
+.hero-actions { justify-content: center; }
+
+.hero-image-wrap { order: 2; }
+
+.hero-image { max-height: 360px; }
+
+.feature-strip-inner { grid-template-columns: 1fr; padding: 10px 0; }
+
+.feature-mini { min-height: 94px; border-inline-start: none;
+border-bottom: 1px solid var(–border); }
+
+.feature-mini:last-child { border-bottom: none; }
+
+.about-grid { grid-template-columns: 1fr; gap: 28px; }
+
+.about-text { text-align: center; }
+
+.check-list { text-align: right; }
+
+.about-image-card img { height: 320px; }
+
+.services-grid { grid-template-columns: 1fr; }
+
+.service-card { min-height: auto; }
+
+.testimonial-cards, .form-row, .quick-contact { grid-template-columns:
+1fr; }
+
+.panel { padding: 22px; }
+
+.footer-grid { grid-template-columns: 1fr; text-align: center; gap:
+28px; }
+
+.footer-logo { margin-inline: auto; }
+
+.footer-bottom { flex-direction: column; text-align: center; gap: 8px; }
+
+.floating-whatsapp { width: 56px; height: 56px; left: 16px; bottom:
+18px; font-size: 30px; } }
+
+@media (max-width: 480px) { .top-info-link { font-size: 12.5px; }
+
+.hero-content h1 { font-size: 34px; }
+
+.btn { width: 100%; }
+
+.hero-image { max-height: 300px; }
+
+.about-section, .services-section, .bottom-section { padding: 48px 0; }
+}
