@@ -1,20 +1,15 @@
-פעוטון בתיה - אתר פרימיום מלא
+קבצי החלפה לאזור התזונה
 
-מה יש בקובץ:
-- index.html
-- style.css
-- script.js
-- updates.json
-- images/ עם תמונות מקומיות
+להחליף:
+1. index.html
+2. style.css
+3. להעלות לתיקיית images את tablecloth-bg.jpg
 
 חשוב:
-כל התמונות כבר בתוך תיקיית images. אין תלות בתמונות חיצוניות.
-אפשר להחליף כל תמונה בתמונה אמיתית על ידי שמירה באותו שם קובץ.
+התמונות הקיימות נשארות:
+images/breakfast.jpg
+images/fruits.jpg
+images/vegetables.jpg
+images/healthy.jpg
 
-עדכונים להורים:
-עורכים את updates.json בלבד.
-
-העלאה ל-GitHub:
-1. מחק את הקבצים הישנים מהתיקייה.
-2. העלה את כל התוכן מתוך ה-ZIP.
-3. ודא ש-index.html נמצא בשורש התיקייה.
+הסרנו את ארוחת מנחה קלה מהאזור.

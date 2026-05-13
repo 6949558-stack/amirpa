@@ -149,3 +149,150 @@ img{display:block;max-width:100%}
 @media(max-width:680px){
   .container{width:min(100% - 24px,1240px)}.topbar-grid{grid-template-columns:1fr 1fr;text-align:center}.header-grid{height:74px}.brand img{width:58px;height:58px}.brand strong{font-size:20px}.brand small{font-size:12px}.hero-photo img{height:300px}.hero h1{font-size:52px}.hero h2{font-size:28px}.hero-logo{width:90px;height:90px}.feature-grid,.values-grid,.media-grid,.media-grid.five,.food-row,.gallery-grid,.reviews-grid,.team-grid,.check-list{grid-template-columns:1fr}.timeline{grid-template-columns:1fr 1fr}.update-card{grid-template-columns:1fr;text-align:center}.update-icon{margin:auto}.update-card time{text-align:center}.footer-grid{justify-content:center;text-align:center}.contact-box h2{font-size:29px}
 }
+
+/* ===== Nutrition section replacement: tablecloth background + white card + 4 real images ===== */
+.nutrition-new{
+  padding: 82px 0;
+  background: #fff;
+}
+
+.nutrition-wrap{
+  background-image: url("images/tablecloth-bg.jpg");
+  background-size: cover;
+  background-position: center;
+  border-radius: 38px;
+  padding: 46px;
+  box-shadow: 0 18px 48px rgba(36,48,71,.08);
+  border: 1px solid rgba(232,238,242,.9);
+}
+
+.nutrition-card{
+  background: rgba(255,255,255,.94);
+  border-radius: 34px;
+  padding: 44px 42px 38px;
+  box-shadow: 0 16px 40px rgba(36,48,71,.10);
+  border: 1px solid rgba(255,255,255,.8);
+  text-align: center;
+  backdrop-filter: blur(2px);
+}
+
+.nutrition-head{
+  max-width: 900px;
+  margin: 0 auto 34px;
+}
+
+.nutrition-head .section-tag{
+  color: var(--green);
+  font-size: 24px;
+  font-weight: 900;
+}
+
+.nutrition-head h2{
+  color: var(--teal-dark);
+  font-size: clamp(40px, 5vw, 66px);
+  line-height: 1.05;
+  margin: 8px 0 10px;
+  font-weight: 900;
+}
+
+.nutrition-head p{
+  margin: 0;
+  color: #667085;
+  font-size: 22px;
+  font-weight: 800;
+}
+
+.nutrition-categories{
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+  align-items: start;
+}
+
+.nutrition-item{
+  position: relative;
+  text-align: center;
+  padding: 0 14px 8px;
+}
+
+.nutrition-item:not(:last-child)::after{
+  content: "";
+  position: absolute;
+  top: 24px;
+  left: -12px;
+  width: 1px;
+  height: 210px;
+  background: linear-gradient(to bottom, transparent, #eaded8, transparent);
+}
+
+.nutrition-photo-circle{
+  width: 178px;
+  height: 178px;
+  margin: 0 auto 16px;
+  border-radius: 50%;
+  padding: 7px;
+  background: #fff;
+  box-shadow: 0 12px 26px rgba(36,48,71,.12);
+  border: 4px dotted var(--green);
+}
+
+.nutrition-photo-circle img{
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+  display: block;
+}
+
+.nutrition-item h3{
+  margin: 0 0 4px;
+  font-size: 27px;
+  line-height: 1.1;
+  font-weight: 900;
+}
+
+.nutrition-item span{
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  color: #5f6368;
+  font-size: 19px;
+  font-weight: 900;
+}
+
+.nutrition-item span::before,
+.nutrition-item span::after{
+  content: "•";
+  font-size: 24px;
+}
+
+.nutrition-item.meat .nutrition-photo-circle{ border-color: #ef554f; }
+.nutrition-item.meat h3,
+.nutrition-item.meat span::before,
+.nutrition-item.meat span::after{ color: #e94b45; }
+
+.nutrition-item.parve .nutrition-photo-circle{ border-color: #74b95f; }
+.nutrition-item.parve h3,
+.nutrition-item.parve span::before,
+.nutrition-item.parve span::after{ color: #4f9f38; }
+
+.nutrition-item.dairy .nutrition-photo-circle{ border-color: #5b9ed6; }
+.nutrition-item.dairy h3,
+.nutrition-item.dairy span::before,
+.nutrition-item.dairy span::after{ color: #4c8fd0; }
+
+@media(max-width:1100px){
+  .nutrition-wrap{ padding: 26px; }
+  .nutrition-categories{ grid-template-columns: repeat(2, 1fr); }
+  .nutrition-item:not(:last-child)::after{ display: none; }
+}
+
+@media(max-width:680px){
+  .nutrition-wrap{ padding: 18px; border-radius: 28px; }
+  .nutrition-card{ padding: 30px 18px; border-radius: 26px; }
+  .nutrition-categories{ grid-template-columns: 1fr; gap: 28px; }
+  .nutrition-photo-circle{ width: 162px; height: 162px; }
+  .nutrition-head h2{ font-size: 36px; }
+  .nutrition-head p{ font-size: 18px; }
+}

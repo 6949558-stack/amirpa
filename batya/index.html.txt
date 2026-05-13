@@ -183,22 +183,48 @@
       </div>
     </section>
 
-    <section id="nutrition" class="section nutrition">
-      <div class="container nutrition-panel">
-        <div class="nutrition-photo reveal">
-          <img src="images/fruits.jpg" alt="תזונה בריאה">
-        </div>
-        <div class="nutrition-copy reveal">
-          <span class="section-tag">תזונה בריאה וביתית</span>
-          <h2>אוכל טרי, מזין ומבושל באהבה</h2>
-          <p>אנו מקפידים על תפריט מגוון, טרי ומותאם לילדים בגיל הרך.</p>
-        </div>
-        <div class="food-row reveal">
-          <article><img src="images/breakfast.jpg" alt=""><h3>ארוחת בוקר מזינה</h3></article>
-          <article><img src="images/fruits.jpg" alt=""><h3>פירות טריים</h3></article>
-          <article><img src="images/vegetables.jpg" alt=""><h3>ירקות טריים</h3></article>
-          <article><img src="images/hot-meal.jpg" alt=""><h3>ארוחה חמה ומזינה</h3></article>
-          <article><img src="images/snack.jpg" alt=""><h3>ארוחת מנחה קלה</h3></article>
+    <section id="nutrition" class="section nutrition nutrition-new">
+      <div class="container nutrition-wrap">
+        <div class="nutrition-card reveal">
+          <div class="nutrition-head">
+            <span class="section-tag">תזונה בריאה וביתית</span>
+            <h2>אוכל טרי, מזין ומבושל באהבה</h2>
+            <p>אנו מקפידים על תפריט מגוון, טרי ומותאם לילדים בגיל הרך.</p>
+          </div>
+
+          <div class="nutrition-categories">
+            <article class="nutrition-item meat">
+              <div class="nutrition-photo-circle">
+                <img src="images/healthy.jpg" alt="ארוחה חמה ומזינה">
+              </div>
+              <h3>ארוחה חמה ומזינה</h3>
+              <span>בשרי</span>
+            </article>
+
+            <article class="nutrition-item parve">
+              <div class="nutrition-photo-circle">
+                <img src="images/vegetables.jpg" alt="ירקות טריים">
+              </div>
+              <h3>ירקות טריים</h3>
+              <span>פרווה</span>
+            </article>
+
+            <article class="nutrition-item parve">
+              <div class="nutrition-photo-circle">
+                <img src="images/fruits.jpg" alt="פירות טריים">
+              </div>
+              <h3>פירות טריים</h3>
+              <span>פרווה</span>
+            </article>
+
+            <article class="nutrition-item dairy">
+              <div class="nutrition-photo-circle">
+                <img src="images/breakfast.jpg" alt="ארוחת בוקר מזינה">
+              </div>
+              <h3>ארוחת בוקר מזינה</h3>
+              <span>חלבי</span>
+            </article>
+          </div>
         </div>
       </div>
     </section>
