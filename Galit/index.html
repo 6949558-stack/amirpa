@@ -350,20 +350,35 @@
 
 <script>
 const btn = document.getElementById('menuBtn');
-btn.addEventListener('click', () => {
-  document.body.classList.toggle('menu-open');
-  btn.setAttribute('aria-expanded', document.body.classList.contains('menu-open') ? 'true' : 'false');
-});
-document.querySelectorAll('nav a').forEach(a => a.addEventListener('click', () => {
+const navMenu = document.getElementById('navMenu');
+
+function closeMenu(){
   document.body.classList.remove('menu-open');
   btn.setAttribute('aria-expanded', 'false');
-}));
+}
+
+function openMenu(){
+  document.body.classList.add('menu-open');
+  btn.setAttribute('aria-expanded', 'true');
+}
+
+btn.addEventListener('click', (e) => {
+  e.stopPropagation();
+  document.body.classList.contains('menu-open') ? closeMenu() : openMenu();
+});
+
+document.querySelectorAll('#navMenu a').forEach(a => {
+  a.addEventListener('click', closeMenu);
+});
+
+document.addEventListener('click', (e) => {
+  if(document.body.classList.contains('menu-open') && !navMenu.contains(e.target) && !btn.contains(e.target)){
+    closeMenu();
+  }
+});
 
 document.addEventListener('keydown', (e) => {
-  if(e.key === 'Escape'){
-    document.body.classList.remove('menu-open');
-    btn.setAttribute('aria-expanded', 'false');
-  }
+  if(e.key === 'Escape') closeMenu();
 });
 
 function sendWhatsApp(e){

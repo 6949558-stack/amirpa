@@ -2869,3 +2869,221 @@ section,
     }
   }
 }
+
+
+/* ==========================================================
+   V16 - MENU FIX + MOBILE POLISH
+   - Mobile header: menu on RIGHT, logo on LEFT
+   - Menu opens sharp and usable, not blurred
+   - Cleaner method section on mobile
+   - More subtle mobile animations
+   ========================================================== */
+
+@media (max-width:780px){
+
+  /* Header switch: hamburger right, logo left */
+  .nav{
+    display:grid !important;
+    grid-template-columns:64px 1fr auto !important;
+    align-items:center !important;
+    direction:ltr !important;
+  }
+
+  .menu{
+    grid-column:1 !important;
+    justify-self:start !important;
+    order:unset !important;
+    margin:0 !important;
+  }
+
+  .logo{
+    grid-column:3 !important;
+    justify-self:end !important;
+    order:unset !important;
+    margin:0 !important;
+    direction:rtl !important;
+  }
+
+  /* Make sure the page behind blurs, not the menu itself */
+  body.menu-open main,
+  body.menu-open footer,
+  body.menu-open .whatsapp{
+    filter:blur(5px) !important;
+    pointer-events:none !important;
+    user-select:none !important;
+  }
+
+  body.menu-open:before{
+    content:"" !important;
+    position:fixed !important;
+    inset:var(--mobile-header-h) 0 0 0 !important;
+    background:rgba(42,17,29,.20) !important;
+    z-index:9998 !important;
+    backdrop-filter:none !important;
+    -webkit-backdrop-filter:none !important;
+  }
+
+  /* Menu panel on the right, clean and readable */
+  body.menu-open #navMenu,
+  body.menu-open nav{
+    display:flex !important;
+    flex-direction:column !important;
+    position:fixed !important;
+    top:calc(var(--mobile-header-h) + 12px) !important;
+    right:16px !important;
+    left:auto !important;
+    width:min(330px, calc(100vw - 32px)) !important;
+    max-height:calc(100dvh - var(--mobile-header-h) - 28px) !important;
+    overflow-y:auto !important;
+    z-index:10003 !important;
+    padding:18px !important;
+    gap:8px !important;
+    background:#ffffff !important;
+    border:1px solid rgba(135,50,86,.16) !important;
+    border-radius:28px !important;
+    box-shadow:0 30px 90px rgba(42,17,29,.26) !important;
+    filter:none !important;
+    backdrop-filter:none !important;
+    -webkit-backdrop-filter:none !important;
+    opacity:1 !important;
+    transform:none !important;
+  }
+
+  body.menu-open #navMenu a,
+  body.menu-open nav a{
+    display:flex !important;
+    align-items:center !important;
+    justify-content:flex-start !important;
+    width:100% !important;
+    min-height:48px !important;
+    padding:13px 16px !important;
+    border-radius:18px !important;
+    background:rgba(247,228,238,.48) !important;
+    color:#5d1f3b !important;
+    font-weight:900 !important;
+    text-align:right !important;
+    filter:none !important;
+    opacity:1 !important;
+  }
+
+  body.menu-open #navMenu a.nav-cta,
+  body.menu-open nav a.nav-cta{
+    justify-content:center !important;
+    background:#873256 !important;
+    color:#fff !important;
+    margin-top:6px !important;
+  }
+
+  /* X icon */
+  body.menu-open .menu span:nth-child(1){
+    top:25px !important;
+    transform:rotate(45deg) !important;
+  }
+  body.menu-open .menu span:nth-child(2){
+    opacity:0 !important;
+  }
+  body.menu-open .menu span:nth-child(3){
+    top:25px !important;
+    transform:rotate(-45deg) !important;
+  }
+
+  /* Clean the busy method section */
+  .method-section{
+    padding-top:58px !important;
+    padding-bottom:58px !important;
+  }
+
+  .method-copy h2{
+    font-size:2rem !important;
+    max-width:380px !important;
+    margin-left:auto !important;
+    margin-right:auto !important;
+  }
+
+  .method-copy p{
+    max-width:390px !important;
+    margin-left:auto !important;
+    margin-right:auto !important;
+  }
+
+  .before-after{
+    gap:14px !important;
+    margin:22px auto !important;
+    max-width:390px !important;
+  }
+
+  .before-after div{
+    min-height:auto !important;
+    padding:18px 16px !important;
+  }
+
+  .before-after small{
+    display:block !important;
+    font-size:.88rem !important;
+    margin-bottom:4px !important;
+  }
+
+  .before-after strong{
+    display:block !important;
+    font-size:1.15rem !important;
+    line-height:1.35 !important;
+  }
+
+  blockquote{
+    max-width:390px !important;
+    margin:20px auto 0 !important;
+    font-size:.98rem !important;
+    line-height:1.8 !important;
+  }
+
+  /* Small animations for mobile - pleasant, not messy */
+  .mobile-profile-image,
+  .image-frame,
+  .about-image,
+  .method-photo img{
+    animation:mobileSoftFloat 5.5s ease-in-out infinite alternate;
+  }
+
+  .fit-row span,
+  .step span,
+  .program span,
+  .line-art{
+    animation:mobileGlowPulse 3.2s ease-in-out infinite alternate;
+  }
+
+  @keyframes mobileSoftFloat{
+    from{transform:translateY(0)}
+    to{transform:translateY(-6px)}
+  }
+
+  @keyframes mobileGlowPulse{
+    from{box-shadow:0 0 0 rgba(135,50,86,0)}
+    to{box-shadow:0 12px 28px rgba(135,50,86,.10)}
+  }
+
+  /* respect reduced motion */
+  @media (prefers-reduced-motion: reduce){
+    .mobile-profile-image,
+    .image-frame,
+    .about-image,
+    .method-photo img,
+    .fit-row span,
+    .step span,
+    .program span,
+    .line-art{
+      animation:none !important;
+    }
+  }
+}
+
+@media (max-width:430px){
+  body.menu-open #navMenu,
+  body.menu-open nav{
+    right:12px !important;
+    width:calc(100vw - 24px) !important;
+  }
+
+  .nav{
+    grid-template-columns:58px 1fr auto !important;
+  }
+}
