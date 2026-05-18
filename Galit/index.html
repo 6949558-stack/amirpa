@@ -3,259 +3,267 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
   <title>גלית סלמן | אימון אישי, NLP וחוסן מנטלי</title>
-  <meta name="description" content="גלית סלמן, מאמנת מוסמכת NLP Master. תהליכי אימון אישי, חוסן מנטלי, זוגיות, הורות, התמודדות עם חרדה וחוסר ודאות." />
+  <meta name="description" content="גלית סלמן, מאמנת NLP Master. אימון אישי לחוסן מנטלי, זוגיות, הורות והתמודדות עם חוסר ודאות." />
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Assistant:wght@300;400;500;600;700;800&family=Heebo:wght@300;400;500;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;600;700;800;900&family=Noto+Serif+Hebrew:wght@500;600;700;800;900&family=Assistant:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css" />
 </head>
-<body>
 
-  <header class="site-header">
-    <div class="container nav-wrap">
-      <a class="brand" href="#home" aria-label="גלית סלמן דף הבית">
-        <span class="brand-mark">GS</span>
+<body>
+  <header class="topbar">
+    <div class="container nav">
+      <a class="logo" href="#home" aria-label="גלית סלמן דף הבית">
+        <span class="logo-mark">ג</span>
         <span>
           <strong>גלית סלמן</strong>
-          <small>אימון אישי · NLP · חוסן מנטלי</small>
+          <small>אימון אישי · NLP</small>
         </span>
       </a>
 
-      <button class="menu-toggle" aria-label="פתיחת תפריט" aria-expanded="false">תפריט</button>
+      <button class="menu" id="menuBtn" aria-label="פתיחת תפריט">
+        <span></span><span></span><span></span>
+      </button>
 
-      <nav class="main-nav" aria-label="ניווט ראשי">
+      <nav id="navMenu">
         <a href="#pain">הכאב</a>
+        <a href="#method">הדרך</a>
         <a href="#about">אודות</a>
         <a href="#fit">למי זה מתאים</a>
         <a href="#process">התהליך</a>
-        <a href="#testimonials">עדויות</a>
-        <a class="nav-cta" href="#contact">שיחה חינמית</a>
+        <a href="#contact" class="nav-cta">שיחה חינמית</a>
       </nav>
     </div>
   </header>
 
   <main id="home">
 
-    <section class="hero section">
-      <div class="container hero-grid">
-        <div class="hero-content reveal">
-          <p class="eyebrow">אימון אישי · NLP · חוסן מנטלי</p>
+    <section class="hero alive-surface">
+      <div class="hero-noise"></div>
+      <div class="container hero-layout">
+        <div class="hero-copy reveal soft-enter">
+          <div class="soft-label">אימון אישי · NLP · חוסן מנטלי</div>
           <h1>למצוא את העוגן הפנימי שלכם, גם כשהכל מסביב רועד</h1>
-          <p class="lead">
-            תהליך אימון אישי שיעזור לך להחזיר את השליטה לידיים שלך, לשקם את החוסן המנטלי,
-            ולהתמודד עם חוסר הוודאות בלי לאבד את עצמך בדרך.
+          <p class="hero-lead">
+            תהליך אימון אישי שיעזור לך להחזיר את השליטה לידיים שלך, לשקם את החוסן המנטלי, ולהתמודד עם חוסר הוודאות בלי לאבד את עצמך בדרך.
           </p>
+
           <div class="hero-actions">
-            <a class="btn primary" href="#contact">קביעת שיחת היכרות חינמית</a>
-            <a class="btn secondary" href="#process">איך זה עובד?</a>
+            <a class="btn primary shimmer" href="#contact">קביעת שיחת היכרות חינמית</a>
+            <a class="btn ghost" href="#process">איך זה עובד?</a>
           </div>
-          <div class="trust-row">
-            <span>מאמנת מוסמכת NLP Master</span>
+
+          <div class="trust">
+            <span>מאמנת NLP Master</span>
             <span>תהליך עומק ממוקד</span>
-            <span>מרחב בטוח וישיר</span>
+            <span>שיחה ללא עלות</span>
           </div>
         </div>
 
-        <div class="hero-photo reveal">
-          <img src="assets/galit-hero.png" alt="גלית סלמן מאמנת NLP בחדר טיפולים מואר" />
-          <div class="floating-card">
-            <strong>נעים להכיר</strong>
-            <span>גלית סלמן · מאמנת מוסמכת NLP Master</span>
+        <div class="hero-card reveal soft-enter delay-1">
+          <div class="image-frame">
+            <img src="assets/galit-hero.png" alt="גלית סלמן מאמנת NLP">
+          </div>
+          <div class="warm-note">
+            <strong>גלית סלמן</strong>
+            <span>מאמנת מוסמכת NLP Master</span>
           </div>
         </div>
       </div>
     </section>
 
-    <section id="pain" class="section pain-section">
+    <section class="intro-strip">
+      <div class="container intro-card reveal">
+        <p>לפעמים כל מה שצריך הוא שמישהו יראה אתכם רגע - בלי שיפוט, בלי רעש, בלי מסכות.</p>
+        <a href="tel:0507800713">050-7800713</a>
+      </div>
+    </section>
+
+<section id="pain" class="section pain-section">
       <div class="container">
-        <div class="section-head centered reveal">
-          <p class="eyebrow">האמת הכואבת</p>
+        <div class="section-heading reveal">
+          <span>הכאב</span>
           <h2>החיים בצל חוסר הוודאות</h2>
           <p>
-            בואו נגיד את זה בגלוי: אין לנו שליטה על מה שקורה בחוץ.
-            אבל כן אפשר ללמוד לשלוט בדרך שבה אנחנו מגיבים, בוחרים ומחזיקים את עצמנו בתוך הסערה.
+            בואו נגיד את זה בגלוי: אין לנו שליטה על מה שקורה בחוץ. אבל כן אפשר ללמוד לשלוט בדרך שבה אנחנו מגיבים, בוחרים ומחזיקים את עצמנו בתוך הסערה.
           </p>
         </div>
 
-        <div class="cards-grid three">
-          <article class="info-card reveal">
-            <span class="icon">01</span>
+        <div class="emotional-grid">
+          <article class="emotion-card reveal">
+            <div class="line-art short-fuse"></div>
             <h3>הפתיל הקצר בבית</h3>
             <p>הלחץ והחרדה הופכים לעצבים. אתם מוצאים את עצמכם מתגוננים, מתפרצים, ודווקא האנשים הכי קרובים נפגעים.</p>
           </article>
-          <article class="info-card reveal">
-            <span class="icon">02</span>
+          <article class="emotion-card reveal">
+            <div class="line-art stuck"></div>
             <h3>תקיעות וקיפאון</h3>
             <p>אין אנרגיה לתכנן קדימה. החדשות והרשתות שואבות את הכוחות, והפחד מקשה לקבל החלטות על העתיד.</p>
           </article>
-          <article class="info-card reveal">
-            <span class="icon">03</span>
-            <h3>אובדן ביטחון עצמי</h3>
+          <article class="emotion-card reveal">
+            <div class="line-art mirror"></div>
+            <h3>אובדן ביטחון וזהות</h3>
             <p>אתם מסתכלים במראה ושואלים: מי האדם הזה? השגרה התנפצה, והביטחון שהיה שם קודם כמעט נעלם.</p>
           </article>
         </div>
 
-        <div class="note-box reveal">
-          <h3>אבל חשוב שתדעו: זה לא אומר שאתם שבורים.</h3>
-          <p>אתם לא חלשים ולא “קשים לטיפול”. אתם אנשים עם כוחות נפש שעדיין לא גילו עד לאן הם מגיעים.</p>
+        <div class="reframe reveal warm-glow">
+          <div class="battery-soft"><span></span></div>
+          <div>
+            <strong>אתם לא שבורים. אתם לא חלשים.</strong>
+            <p>אתם לא חלשים ולא “קשים לטיפול”. אתם אנשים עם כוחות נפש שעדיין לא גילו עד לאן הם מגיעים.</p>
+          </div>
+          <a href="#contact" class="btn primary shimmer">בואו נבדוק התאמה</a>
         </div>
       </div>
     </section>
 
-    <section class="section solution-section">
-      <div class="container split-grid">
-        <div class="image-stack reveal">
-          <img class="main-img" src="assets/galit-sun.png" alt="גלית סלמן באור טבעי בחדר טיפולים" />
-          <img class="small-img" src="assets/galit-coffee.png" alt="גלית סלמן מחייכת עם כוס קפה" />
+    <section id="method" class="section method-section">
+      <div class="container method-layout">
+        <div class="method-photo reveal">
+          <img src="assets/galit-smile.png" alt="גלית סלמן מחייכת">
+          <div class="floating-text">הפחד לא חייב להיעלם כדי שתתחילו לזוז</div>
         </div>
-        <div class="split-content reveal">
-          <p class="eyebrow">הדרך החוצה</p>
-          <h2>מחרדה לחוסן מנטלי</h2>
-          <h3>הפחד לא חייב להיעלם כדי שתתחילו לזוז.</h3>
+
+        <div class="method-copy reveal">
+          <span class="mini-title"><i></i> הדרך החוצה</span>
+          <h2>מחרדה לחוסן מנטלי - אבל הפחד לא חייב להיעלם כדי שתתחילו לזוז.</h2>
           <p>
-            אנחנו חיים במדינה שקורה בה כל הזמן משהו. בקליניקה אנחנו לומדים איך לעמוד יציבים מול סערה,
-            עם כלים מעשיים מעולם ה-NLP שמשנים את הדרך שבה המוח מפרש מצבים ומגיב אליהם.
+            אנחנו חיים במדינה שקורה בה כל הזמן משהו. בקליניקה אנחנו לומדים איך לעמוד יציבים מול סערה, עם כלים מעשיים מעולם ה-NLP שמשנים את הדרך שבה המוח מפרש מצבים ומגיב אליהם.
           </p>
-          <div class="quote-box">
-            <p>
-              אני לא כאן כדי ללטף את האגו או להגיד ש"הכל יהיה בסדר".
-              התפקיד שלי הוא לשים מראה, להוריד התקרבנות ולהחזיר את כוח הבחירה.
-            </p>
+
+          <div class="before-after">
+            <div>
+              <small>לפני</small>
+              <strong>רעש, עומס, תגובתיות</strong>
+            </div>
+            <div>
+              <small>אחרי</small>
+              <strong>שקט, בחירה, יציבות</strong>
+            </div>
           </div>
-          <a class="btn primary" href="#contact">אני רוצה להתחיל בשיחה</a>
+
+          <blockquote>
+            “אני לא כאן כדי ללטף את האגו או להגיד ש"הכל יהיה בסדר". התפקיד שלי הוא לשים מראה, להוריד התקרבנות ולהחזיר את כוח הבחירה.”
+          </blockquote>
         </div>
       </div>
     </section>
 
     <section id="about" class="section about-section">
-      <div class="container about-grid">
-        <div class="about-content reveal">
-          <p class="eyebrow">סמכות מתוך ניסיון</p>
+      <div class="container about-layout">
+        <div class="about-copy reveal">
+          <span>נעים להכיר</span>
           <h2>אני גלית סלמן. לפני שאני מאמנת, אני אישה שחיה את זה.</h2>
           <p>
-            נעים מאוד, אני גלית סלמן. מאמנת אישית ו-NLP Master. אבל בראש ובראשונה,
-            אני אישה שעמדה במצבים מאתגרים.
+            מאמנת אישית ו-NLP Master. אבל לפני התעודות, אני אישה, אמא ואדם שעמד מול מצבים מאתגרים באמת.
           </p>
           <p>
-            כאמא לשלושה ילדים מיוחדים, ומתוך למעלה מ-30 שנות ניסיון חיים,
-            למדתי על בשרי שלמרות חרדות, משברים ותקופות של חוסר ודאות קיצוני,
-            תמיד אפשר לעמוד על הרגליים.
+            כאמא לשלושה ילדים מיוחדים ומתוך למעלה מ-30 שנות ניסיון חיים, למדתי שגם מתוך חרדות, משברים וחוסר ודאות קיצוני אפשר לעמוד על הרגליים.
           </p>
           <p>
-            הכלי שאני הכי גאה בו הוא היכולת לראות את החוזקות שלכם גם כשהכל נראה בלתי אפשרי,
-            ולשקף אותן עד שאתם חוזרים להאמין בעצמכם.
+            הכלי שאני הכי גאה בו הוא היכולת לראות את החוזקות שלכם גם כשהכל נראה בלתי אפשרי - ולשקף אותן עד שאתם חוזרים להאמין בעצמכם.
           </p>
         </div>
-        <div class="about-photo reveal">
-          <img src="assets/galit-writing.png" alt="גלית סלמן כותבת במחברת במהלך תהליך אימון" />
+
+        <div class="about-image reveal">
+          <img src="assets/galit-about.png" alt="גלית סלמן כותבת במחברת">
+          <div>לא פלסטר. תהליך.</div>
         </div>
       </div>
     </section>
 
     <section id="fit" class="section fit-section">
       <div class="container">
-        <div class="section-head centered reveal">
-          <p class="eyebrow">למי זה מתאים?</p>
+        <div class="section-heading reveal">
+          <span>למי זה מתאים?</span>
           <h2>אם אחד מאלה נשמע לכם מוכר, אתם במקום הנכון.</h2>
         </div>
 
-        <div class="cards-grid four">
-          <article class="fit-card reveal">
-            <h3>זוגיות</h3>
-            <p>המתח מבחוץ נכנס הביתה. הוויכוחים תכופים, הפתיל מתקצר, ואתם רוצים לחזור להיות ביחד, לא רק לגור יחד.</p>
+        <div class="fit-list">
+          <article class="fit-row reveal">
+            <span>01</span>
+            <div>
+              <h3>זוגיות</h3>
+              <p>כשהמתח מבחוץ נכנס הביתה, הוויכוחים נהיים תכופים, ואתם רוצים לחזור להיות יחד באמת.</p>
+            </div>
           </article>
-          <article class="fit-card reveal">
-            <h3>שנות ה-20 וה-30</h3>
-            <p>שאלות של זהות, חוסר ביטחון, תקיעות וחיפוש דרך אישית בעולם משתנה ומלחיץ.</p>
+          <article class="fit-row reveal">
+            <span>02</span>
+            <div>
+              <h3>שנות ה-20 וה-30</h3>
+              <p>שאלות של זהות, תקיעות, חוסר ביטחון וחיפוש דרך אישית בתוך תקופה עמוסה ולא יציבה.</p>
+            </div>
           </article>
-          <article class="fit-card reveal">
-            <h3>הורים ונוער</h3>
-            <p>הורים שרוצים להבין, ונוער שרוצה שיבינו אותו. כלים לתקשורת טובה יותר ולחיזוק הביטחון העצמי.</p>
+          <article class="fit-row reveal">
+            <span>03</span>
+            <div>
+              <h3>הורים ונוער</h3>
+              <p>הורים שרוצים להבין, ונוער שרוצה שיבינו אותו. כלים לתקשורת טובה יותר ולביטחון עצמי.</p>
+            </div>
           </article>
-          <article class="fit-card reveal">
-            <h3>כשכולם קיבלו ממך</h3>
-            <p>את שם בשביל כולם, ובסוף היום נשארת ריקה. הגיע הזמן להחזיר גם אותך לתמונה.</p>
+          <article class="fit-row reveal">
+            <span>04</span>
+            <div>
+              <h3>כשכולם קיבלו ממך</h3>
+              <p>את שם בשביל כולם, אבל בסוף היום את ריקה. הגיע הזמן להחזיר גם אותך לתמונה.</p>
+            </div>
           </article>
         </div>
       </div>
     </section>
 
     <section id="process" class="section process-section">
-      <div class="container process-grid">
-        <div class="process-content reveal">
-          <p class="eyebrow">התהליך</p>
+      <div class="container process-layout">
+        <div class="process-intro reveal">
+          <span>התהליך</span>
           <h2>ביטחון וחוסן אמיתיים לא נבנים ביום אחד.</h2>
-          <p>
-            במיוחד בתקופה כזו, אי אפשר לשים פלסטר. כדי לייצר שינוי עמוק שמחזיק לאורך זמן,
-            אנחנו יוצאים לדרך משותפת של 10-12 מפגשים ממוקדים.
-          </p>
-          <p>
-            המחויבות הדדית: אני אביא את הכלים, הכיוון והמרחב. אתם תביאו את הנכונות ואת העבודה היומיומית.
-            כי שינוי אמיתי לא קורה רק בזמן השיחה, הוא קורה בין השיחות.
-          </p>
+          <p class="process-copy">במיוחד בתקופה כזו, אי אפשר לשים פלסטר. כדי לייצר שינוי עמוק שמחזיק לאורך זמן, אנחנו יוצאים לדרך משותפת של 10-12 מפגשים ממוקדים.</p><p class="process-copy">המחויבות הדדית: אני אביא את הכלים, הכיוון והמרחב. אתם תביאו את הנכונות ואת העבודה היומיומית. כי שינוי אמיתי לא קורה רק בזמן השיחה, הוא קורה בין השיחות.</p><div class="change-pulse warm-glow"><i></i><strong>משהו בתוככם כבר מבקש שינוי.</strong></div>
         </div>
 
-        <div class="steps reveal">
-          <div class="step">
-            <span>01</span>
-            <div>
-              <h3>שיחת היכרות</h3>
-              <p>20 דקות ללא עלות וללא התחייבות, כדי לבדוק אם אנחנו מדברים את אותה שפה.</p>
-            </div>
-          </div>
-          <div class="step">
-            <span>02</span>
-            <div>
-              <h3>מיפוי עומק</h3>
-              <p>מבינים מה באמת מפעיל אתכם, איפה התקיעות, ומה צריך להשתנות בפועל.</p>
-            </div>
-          </div>
-          <div class="step">
-            <span>03</span>
-            <div>
-              <h3>עבודה עם כלים</h3>
-              <p>NLP, תרגול, שיקוף, חיזוק בחירה ופעולות בין המפגשים.</p>
-            </div>
-          </div>
-          <div class="step">
-            <span>04</span>
-            <div>
-              <h3>חוסן שמחזיק</h3>
-              <p>המטרה היא לא רגע של הקלה, אלא שינוי שמרגישים בבית, בזוגיות ובעצמך.</p>
-            </div>
-          </div>
+        <div class="steps">
+          <article class="step reveal"><span>01</span><h3>שיחת היכרות</h3><p>שיחה ראשונית ללא עלות וללא התחייבות, כדי לבדוק אם אנחנו מדברים את אותה שפה.</p></article>
+          <article class="step reveal"><span>02</span><h3>מיפוי עומק</h3><p>מבינים מה באמת מפעיל אתכם, איפה התקיעות, ומה צריך להשתנות בפועל.</p></article>
+          <article class="step reveal"><span>03</span><h3>כלים ותרגול</h3><p>NLP, תרגול, שיקוף, חיזוק בחירה ופעולות בין המפגשים.</p></article>
+          <article class="step reveal"><span>04</span><h3>חוסן שמחזיק</h3><p>המטרה היא לא רגע של הקלה, אלא שינוי שמרגישים בבית, בזוגיות ובעצמך.</p></article>
         </div>
       </div>
     </section>
 
-    <section class="section plans-section">
+    <section class="section programs-section">
       <div class="container">
-        <div class="section-head centered reveal">
-          <p class="eyebrow">מסלולי ליווי</p>
+        <div class="section-heading reveal">
+          <span>מסלולי ליווי</span>
           <h2>שלוש דרכים להתחיל. אחת מהן נכונה לכם.</h2>
         </div>
 
-        <div class="plans-grid">
-          <article class="plan-card reveal">
-            <span class="plan-num">01</span>
+        <div class="paths reveal">
+          <div><b>שיחת היכרות</b></div>
+          <div><b>ליווי אישי</b></div>
+          <div><b>סדנה קבוצתית</b></div>
+        </div>
+
+        <div class="programs">
+          <article class="program reveal">
+            <span>01</span>
             <h3>פגישת היכרות חינמית</h3>
-            <p>20 דקות, ללא עלות, ללא התחייבות. רק כדי לראות אם נכון לצאת לדרך.</p>
+            <p>שיחה ראשונית ללא עלות וללא התחייבות. רק לבדוק התאמה ולשמוע מה נכון לכם.</p>
             <a href="#contact">לקביעת שיחה</a>
           </article>
-
-          <article class="plan-card featured reveal">
-            <span class="badge">המסלול המומלץ</span>
-            <span class="plan-num">02</span>
+          <article class="program featured reveal">
+            <small>המסלול המומלץ</small>
+            <span>02</span>
             <h3>ליווי אישי · 10 מפגשים</h3>
-            <p>תהליך עומק ממוקד שנבנה כדי לייצר שינוי שמחזיק לאורך זמן בזוגיות, בבית ובעיקר בפנים.</p>
+            <p>תהליך עומק ממוקד שנועד לייצר שינוי שמחזיק לאורך זמן בבית, בזוגיות ובעיקר בתוככם.</p>
             <a href="#contact">יוצאים לדרך</a>
           </article>
-
-          <article class="plan-card reveal">
-            <span class="plan-num">03</span>
+          <article class="program reveal">
+            <span>03</span>
             <h3>סדנאות קבוצתיות</h3>
-            <p>סדנאות קטנות עד 10 משתתפים שמשלבות NLP, הורות מודעת ותקשורת מקרבת.</p>
+            <p>סדנאות קטנות שמשלבות NLP, הורות מודעת ותקשורת מקרבת בקבוצה אינטימית.</p>
             <a href="#contact">לפרטים נוספים</a>
           </article>
         </div>
@@ -263,73 +271,51 @@
     </section>
 
     <section id="testimonials" class="section testimonials-section">
-      <div class="container">
-        <div class="section-head centered reveal">
-          <p class="eyebrow">עדויות</p>
+      <div class="container testimonial-layout">
+        <div class="testimonial-title reveal">
+          <span>עדויות</span>
           <h2>אל תקשיבו לי, תקשיבו לאלה שכבר עשו את השינוי.</h2>
+          <img src="assets/galit-soft.png" alt="גלית סלמן">
         </div>
 
-        <div class="testimonials-grid">
-          <article class="testimonial reveal">
-            <p>“מבחורה עם פתיל קצר שתמיד צריכה להגן על עצמה ולירות על כולם, הפכתי לאדם רגוע, בטוח בעצמו, שהתקשורת היא הצד החזק שלו.”</p>
-            <strong>מ.כ.</strong>
-            <span>לקוחה</span>
-          </article>
-          <article class="testimonial reveal">
-            <p>“גלית לא מוותרת. היא שמה לי מראה מול הפנים, גרמה לי להפסיק להתקרבן ולקחת את החיים שלי בידיים.”</p>
-            <strong>ד.ל.</strong>
-            <span>לקוח</span>
-          </article>
-          <article class="testimonial reveal">
-            <p>“אני גאה בעצמי שלמדתי להשמיע את הקול שלי. הבנתי שהמחשבה זו לא עובדה.”</p>
-            <strong>ג.א.</strong>
-            <span>לקוחה</span>
-          </article>
+        <div class="quotes">
+          <article class="quote reveal"><p>“מפתיל קצר הפכתי לאדם רגוע, בטוח בעצמו, שהתקשורת היא הצד החזק שלו.”</p><strong>מ.כ.</strong><small>לקוחה</small></article>
+          <article class="quote reveal"><p>“גלית שמה לי מראה מול הפנים וגרמה לי לקחת את החיים שלי בידיים.”</p><strong>ד.ל.</strong><small>לקוח</small></article>
+          <article class="quote reveal"><p>“למדתי להשמיע את הקול שלי. הבנתי שהמחשבה זו לא עובדה.”</p><strong>ג.א.</strong><small>לקוחה</small></article>
         </div>
       </div>
     </section>
 
-    <section class="section final-cta">
-      <div class="container final-grid">
-        <div class="reveal">
-          <p class="eyebrow">הצעד הבא</p>
-          <h2>הגיע הזמן שמישהו יהיה שם בשבילכם.</h2>
-          <p>אתם לא צריכים שהחיים ישתנו כדי להרגיש אחרת. אתם צריכים לשנות את הדרך שבה אתם חיים אותם.</p>
-          <a class="btn primary" href="#contact">לקביעת שיחת היכרות חינמית</a>
+    <section class="section faq-section">
+      <div class="container">
+        <div class="section-heading reveal">
+          <span>שאלות נפוצות</span>
+          <h2>לפני שמתחילים, הנה כמה דברים שחשוב לדעת.</h2>
         </div>
-        <img class="reveal" src="assets/galit-soft-smile.png" alt="גלית סלמן מחייכת באור טבעי" />
+
+        <div class="faq-list">
+          <details class="reveal"><summary>כמה זמן נמשך תהליך?</summary><p>בדרך כלל מדובר בתהליך עומק של 10-12 מפגשים ממוקדים, בהתאם לצורך ולמטרה האישית.</p></details>
+          <details class="reveal"><summary>האם שיחת ההיכרות באמת ללא עלות?</summary><p>כן. שיחת היכרות ראשונית ללא עלות וללא התחייבות.</p></details>
+          <details class="reveal"><summary>זה מתאים גם לנוער?</summary><p>כן, בהתאם למקרה. התהליך מתאים גם להורים ונוער סביב תקשורת, זהות וביטחון עצמי.</p></details>
+          <details class="reveal"><summary>מה קורה אם אני לא יודע להסביר מה עובר עליי?</summary><p>זה בסדר. חלק מהתהליך הוא לעשות סדר במה שמרגיש מבולגן בפנים.</p></details>
+        </div>
       </div>
     </section>
 
     <section id="contact" class="section contact-section">
-      <div class="container contact-grid">
-        <div class="contact-info reveal">
-          <p class="eyebrow">צרו קשר</p>
-          <h2>מתחילים בשיחה אחת.</h2>
-          <p>השאירו שם ומספר, וגלית תחזור בהקדם לתיאום שיחת היכרות ראשונה, ללא עלות.</p>
-
-          <div class="contact-card">
-            <span>טלפון לתיאום</span>
-            <a href="tel:0507800713">050-7800713</a>
-          </div>
-
-          <p class="privacy-note">כל שיחה נשמרת בינינו. תמיד.</p>
+      <div class="container contact-layout">
+        <div class="contact-copy reveal">
+          <span>הצעד הבא</span>
+          <h2>הגיע הזמן שמישהו יהיה שם בשבילכם.</h2>
+          <p>אתם לא צריכים שהחיים ישתנו כדי להרגיש אחרת. אתם צריכים לשנות את הדרך שבה אתם חיים אותם. השאירו שם ומספר, וגלית תחזור אליכם בהקדם לתיאום שיחת היכרות ראשונה, ללא עלות.</p>
+          <a class="phone" href="tel:0507800713">050-7800713</a>
         </div>
 
         <form class="contact-form reveal" onsubmit="sendWhatsApp(event)">
-          <label>
-            שם מלא
-            <input id="fullName" type="text" name="name" placeholder="השם שלך" required />
-          </label>
-          <label>
-            טלפון
-            <input id="phone" type="tel" name="phone" placeholder="מספר טלפון לחזרה" required />
-          </label>
-          <label>
-            מה מביא אתכם אלינו?
-            <textarea id="message" name="message" rows="5" placeholder="ספרו לי קצת על עצמכם ומה הייתם רוצים לשנות..."></textarea>
-          </label>
-          <button class="btn primary" type="submit">שלחו הודעה לגלית</button>
+          <label>שם מלא<input id="name" required placeholder="השם שלך"></label>
+          <label>טלפון<input id="phone" required placeholder="מספר טלפון לחזרה"></label>
+          <label>מה מביא אתכם אליי?<textarea id="msg" rows="5" placeholder="ספרו לי קצת מה הייתם רוצים לשנות..."></textarea></label>
+          <button class="btn primary shimmer">שלחו הודעה לגלית</button>
           <small>הטופס פותח הודעת WhatsApp מוכנה לשליחה.</small>
         </form>
       </div>
@@ -337,59 +323,42 @@
 
   </main>
 
-  <footer class="site-footer">
-    <div class="container footer-grid">
+  <footer>
+    <div class="container footer-inner">
+      <strong>גלית סלמן</strong>
       <div>
-        <div class="brand footer-brand">
-          <span class="brand-mark">GS</span>
-          <span>
-            <strong>גלית סלמן</strong>
-            <small>מלווה אנשים לחזור להיות הם עצמם.</small>
-          </span>
-        </div>
-      </div>
-      <div class="footer-links">
         <a href="#pain">הכאב</a>
         <a href="#about">אודות</a>
         <a href="#process">התהליך</a>
         <a href="#contact">צור קשר</a>
       </div>
-      <p>© 2026 גלית סלמן. כל הזכויות שמורות.</p>
+      <small>© 2026 גלית סלמן. כל הזכויות שמורות.</small>
     </div>
   </footer>
 
-  <a class="whatsapp-float" href="https://wa.me/972507800713" target="_blank" rel="noopener" aria-label="שליחת הודעת וואטסאפ">WhatsApp</a>
+  <a class="whatsapp" href="https://wa.me/972507800713" target="_blank" rel="noopener">WhatsApp</a>
 
-  <script>
-    const menuToggle = document.querySelector('.menu-toggle');
-    const mainNav = document.querySelector('.main-nav');
+<script>
+const btn = document.getElementById('menuBtn');
+btn.addEventListener('click', () => document.body.classList.toggle('menu-open'));
+document.querySelectorAll('nav a').forEach(a => a.addEventListener('click', () => document.body.classList.remove('menu-open')));
 
-    menuToggle.addEventListener('click', () => {
-      const isOpen = mainNav.classList.toggle('open');
-      menuToggle.setAttribute('aria-expanded', isOpen);
-    });
+function sendWhatsApp(e){
+  e.preventDefault();
+  const name = document.getElementById('name').value.trim();
+  const phone = document.getElementById('phone').value.trim();
+  const msg = document.getElementById('msg').value.trim();
+  const text = `שלום גלית, אשמח לתאם שיחת היכרות.%0Aשם: ${encodeURIComponent(name)}%0Aטלפון: ${encodeURIComponent(phone)}%0Aמה מביא אותי: ${encodeURIComponent(msg)}`;
+  window.open(`https://wa.me/972507800713?text=${text}`, '_blank');
+}
 
-    document.querySelectorAll('.main-nav a').forEach(link => {
-      link.addEventListener('click', () => mainNav.classList.remove('open'));
-    });
+const obs = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if(entry.isIntersecting) entry.target.classList.add('visible');
+  });
+}, { threshold:.12 });
 
-    function sendWhatsApp(event) {
-      event.preventDefault();
-      const name = document.getElementById('fullName').value.trim();
-      const phone = document.getElementById('phone').value.trim();
-      const message = document.getElementById('message').value.trim();
-
-      const text = `שלום גלית, אשמח לתאם שיחת היכרות.%0Aשם: ${encodeURIComponent(name)}%0Aטלפון: ${encodeURIComponent(phone)}%0Aמה מביא אותי: ${encodeURIComponent(message)}`;
-      window.open(`https://wa.me/972507800713?text=${text}`, '_blank');
-    }
-
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) entry.target.classList.add('visible');
-      });
-    }, { threshold: 0.12 });
-
-    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
-  </script>
+document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+</script>
 </body>
 </html>
