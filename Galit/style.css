@@ -2631,3 +2631,241 @@ section,
     max-width:100% !important;
   }
 }
+
+
+/* ==========================================================
+   V15 - FINAL MOBILE CLEANUP
+   Fixes from real iPhone screenshots:
+   - About image first, with "לא פלסטר. תהליך." on the image
+   - No empty space after "משהו בתוככם כבר מבקש שינוי"
+   - Footer no giant bottom gap
+   - Mobile menu opens as a clean readable panel, not blurred
+   - Remove fixed WhatsApp overlap on mobile
+   ========================================================== */
+
+@media (max-width:780px){
+
+  /* remove the artificial huge bottom spacing from previous versions */
+  body{
+    padding-bottom:0 !important;
+  }
+
+  /* mobile header stays clean */
+  .topbar{
+    z-index:10000 !important;
+  }
+
+  /* menu overlay behind, menu above - sharp and readable */
+  .menu-open:before{
+    content:"" !important;
+    position:fixed !important;
+    inset:var(--mobile-header-h) 0 0 0 !important;
+    background:rgba(42,17,29,.22) !important;
+    backdrop-filter:blur(6px) !important;
+    -webkit-backdrop-filter:blur(6px) !important;
+    z-index:10001 !important;
+  }
+
+  .menu-open nav,
+  body.menu-open nav,
+  #navMenu{
+    filter:none !important;
+  }
+
+  body.menu-open #navMenu,
+  body.menu-open nav{
+    display:flex !important;
+    position:fixed !important;
+    top:calc(var(--mobile-header-h) + 14px) !important;
+    left:16px !important;
+    right:auto !important;
+    width:min(330px, calc(100vw - 32px)) !important;
+    max-height:calc(100dvh - var(--mobile-header-h) - 28px) !important;
+    overflow-y:auto !important;
+    z-index:10002 !important;
+    background:rgba(255,255,255,.985) !important;
+    border:1px solid rgba(135,50,86,.16) !important;
+    border-radius:28px !important;
+    box-shadow:0 30px 90px rgba(42,17,29,.26) !important;
+    backdrop-filter:none !important;
+    -webkit-backdrop-filter:none !important;
+    padding:18px !important;
+    gap:6px !important;
+  }
+
+  body.menu-open nav a{
+    display:block !important;
+    width:100% !important;
+    padding:15px 16px !important;
+    border-radius:18px !important;
+    background:rgba(247,228,238,.38) !important;
+    color:#5d1f3b !important;
+    font-weight:900 !important;
+    text-align:right !important;
+  }
+
+  body.menu-open nav a.nav-cta{
+    background:#873256 !important;
+    color:#fff !important;
+    text-align:center !important;
+    margin-top:8px !important;
+  }
+
+  /* make hamburger become X */
+  .menu-open .menu span:nth-child(1){
+    top:25px !important;
+    transform:rotate(45deg) !important;
+  }
+  .menu-open .menu span:nth-child(2){
+    opacity:0 !important;
+  }
+  .menu-open .menu span:nth-child(3){
+    top:25px !important;
+    transform:rotate(-45deg) !important;
+  }
+
+  /* ABOUT SECTION - image first and label ON image */
+  .about-layout{
+    display:flex !important;
+    flex-direction:column !important;
+  }
+
+  .about-image{
+    order:1 !important;
+    width:100% !important;
+    max-width:430px !important;
+    margin:0 auto 26px !important;
+    position:relative !important;
+  }
+
+  .about-copy{
+    order:2 !important;
+  }
+
+  .about-image img{
+    width:100% !important;
+    aspect-ratio:4/5 !important;
+    object-fit:cover !important;
+    object-position:center center !important;
+    border-radius:30px !important;
+    box-shadow:0 22px 62px rgba(85,35,58,.12) !important;
+  }
+
+  .about-image .about-overlay-label,
+  .about-image > div{
+    position:absolute !important;
+    right:18px !important;
+    left:18px !important;
+    bottom:18px !important;
+    width:auto !important;
+    margin:0 !important;
+    padding:14px 18px !important;
+    border-radius:22px !important;
+    text-align:center !important;
+    background:rgba(255,255,255,.88) !important;
+    color:#873256 !important;
+    font-weight:900 !important;
+    box-shadow:0 16px 38px rgba(85,35,58,.10) !important;
+    backdrop-filter:blur(14px) !important;
+    -webkit-backdrop-filter:blur(14px) !important;
+  }
+
+  /* remove the dead gap around change pulse */
+  .process-section{
+    padding-bottom:54px !important;
+  }
+
+  .process-layout{
+    gap:0 !important;
+  }
+
+  .process-intro{
+    margin-bottom:22px !important;
+  }
+
+  .process-copy{
+    margin-bottom:14px !important;
+  }
+
+  .change-pulse{
+    margin:18px auto 22px !important;
+    padding:20px 18px !important;
+  }
+
+  .change-pulse i{
+    width:58px !important;
+    height:58px !important;
+    flex-basis:58px !important;
+    margin-bottom:8px !important;
+  }
+
+  .change-pulse strong{
+    margin:0 !important;
+    line-height:1.45 !important;
+  }
+
+  .steps{
+    margin-top:0 !important;
+  }
+
+  /* footer - compact and not ugly */
+  footer{
+    margin-top:0 !important;
+    padding:34px 0 28px !important;
+  }
+
+  .footer-inner{
+    text-align:center !important;
+    align-items:center !important;
+    justify-content:center !important;
+    gap:16px !important;
+  }
+
+  .footer-inner div{
+    justify-content:center !important;
+    gap:16px !important;
+  }
+
+  .footer-inner a{
+    font-size:.98rem !important;
+  }
+
+  .footer-inner small{
+    text-align:center !important;
+  }
+
+  /* WhatsApp no longer floats over content on mobile.
+     There are CTA buttons and the form opens WhatsApp, so no overlap. */
+  .whatsapp{
+    position:static !important;
+    display:inline-flex !important;
+    width:auto !important;
+    margin:22px auto 0 !important;
+    transform:none !important;
+    opacity:1 !important;
+  }
+
+  body > .whatsapp{
+    display:none !important;
+  }
+
+  /* Make contact the last clean CTA without extra mobile browser gap */
+  .contact-section{
+    padding-bottom:48px !important;
+  }
+}
+
+/* Smaller phones */
+@media (max-width:430px){
+  @media (max-width:780px){
+    .about-image{
+      max-width:100% !important;
+    }
+
+    body.menu-open #navMenu,
+    body.menu-open nav{
+      left:12px !important;
+      width:calc(100vw - 24px) !important;
+    }
+  }
+}

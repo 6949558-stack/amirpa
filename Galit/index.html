@@ -181,7 +181,7 @@
 
         <div class="about-image reveal">
           <img src="assets/galit-about.png" alt="גלית סלמן כותבת במחברת">
-          <div>לא פלסטר. תהליך.</div>
+          <div class="about-overlay-label">לא פלסטר. תהליך.</div>
         </div>
       </div>
     </section>
@@ -350,8 +350,21 @@
 
 <script>
 const btn = document.getElementById('menuBtn');
-btn.addEventListener('click', () => document.body.classList.toggle('menu-open'));
-document.querySelectorAll('nav a').forEach(a => a.addEventListener('click', () => document.body.classList.remove('menu-open')));
+btn.addEventListener('click', () => {
+  document.body.classList.toggle('menu-open');
+  btn.setAttribute('aria-expanded', document.body.classList.contains('menu-open') ? 'true' : 'false');
+});
+document.querySelectorAll('nav a').forEach(a => a.addEventListener('click', () => {
+  document.body.classList.remove('menu-open');
+  btn.setAttribute('aria-expanded', 'false');
+}));
+
+document.addEventListener('keydown', (e) => {
+  if(e.key === 'Escape'){
+    document.body.classList.remove('menu-open');
+    btn.setAttribute('aria-expanded', 'false');
+  }
+});
 
 function sendWhatsApp(e){
   e.preventDefault();
